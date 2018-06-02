@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.UI.Animations;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -83,12 +84,13 @@ namespace FastNote
             MainView.IsPaneOpen = true;
         }
 
-        private void ThemeRB_Checked(object sender, RoutedEventArgs e)
+        private async void ThemeRB_Checked(object sender, RoutedEventArgs e)
         {
+            await MainView.Fade(value: 0f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
             if (TDefault.IsChecked == true) this.RequestedTheme = ElementTheme.Default;
             if (TDark.IsChecked == true) this.RequestedTheme = ElementTheme.Dark;
             if (TLight.IsChecked == true) this.RequestedTheme = ElementTheme.Light;
-            Debug.WriteLine(Settings.Default.ThemeDefault.ToString() + " " + Settings.Default.ThemeDark.ToString() + " " + Settings.Default.ThemeLight.ToString());
+            await MainView.Fade(value: 1f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
         }
 
         private void MainPagePage_Loaded(object sender, RoutedEventArgs e)
@@ -203,12 +205,14 @@ namespace FastNote
 
         private void MainView_PaneOpening(SplitView sender, object args)
         {
-            SettingsButton.Visibility = Visibility.Collapsed;
+            SettingsButton.Scale(scaleX: 0f, scaleY: 0f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
+            SettingsButton_Close.Scale(scaleX: 1f, scaleY: 1f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
         }
 
         private void MainView_PaneClosing(SplitView sender, SplitViewPaneClosingEventArgs args)
-        {
-            SettingsButton.Visibility = Visibility.Visible;
+        {            
+            SettingsButton_Close.Scale(scaleX: 0f, scaleY: 0f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
+            SettingsButton.Scale(scaleX: 1f, scaleY: 1f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
         }
 
         private void MainEdit_SelectionChanged(object sender, RoutedEventArgs e)

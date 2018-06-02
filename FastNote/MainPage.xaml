@@ -6,6 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:buttons="using:Microsoft.Toolkit.Uwp.UI.Controls.TextToolbarButtons"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{StaticResource settings}"
@@ -27,7 +28,7 @@
                         <Setter Target="MainView.(DisplayMode)" Value="Inline"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowWidth="686"/>
+                        <AdaptiveTrigger MinWindowWidth="680"/>
                     </VisualState.StateTriggers>
                 </VisualState>
             </VisualStateGroup>
@@ -41,14 +42,20 @@
                 <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <AppBarSeparator/>
-                        <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar"/>
+                        <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
+                            <controls:TextToolbar.ButtonModifications>
+                                <buttons:DefaultButton Type="Link" IsVisible="False"/>
+                            </controls:TextToolbar.ButtonModifications>
+                        </controls:TextToolbar>
                         <AppBarSeparator/>
                     </StackPanel>
                 </Grid>
 
                 <RichEditBox Grid.Row="1" x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged"/>
                 <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <AppBarButton x:Name="SettingsButton" Icon="More" Click="SettingsButton_Click" LabelPosition="Collapsed"/>
+                    <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
+                        <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
+                    </AppBarButton>
                 </CommandBar>
             </Grid>
 
@@ -178,7 +185,9 @@
                         </PivotItem>
                     </Pivot>
                     <CommandBar Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <AppBarButton x:Name="SettingsButton_Close" Icon="Cancel" Click="SettingsButton_Close_Click" LabelPosition="Collapsed"/>
+                        <AppBarButton x:Name="SettingsButton_Close" Click="SettingsButton_Close_Click" LabelPosition="Collapsed">
+                            <SymbolIcon Symbol="Cancel" x:Name="CloseIcon"/>
+                        </AppBarButton>
                     </CommandBar>
                 </Grid>
             </SplitView.Pane>
