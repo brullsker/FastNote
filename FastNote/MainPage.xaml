@@ -5,10 +5,192 @@
     xmlns:local="using:FastNote"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{StaticResource settings}"
+    x:Name="MainPagePage" Loaded="MainPagePage_Loaded">
 
     <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowWidth">
+                <VisualState x:Name="small">
+                    <VisualState.Setters>
+                        <Setter Target="MainView.(DisplayMode)" Value="Overlay"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="normal">
+                    <VisualState.Setters>
+                        <Setter Target="MainView.(DisplayMode)" Value="Inline"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="686"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" PaneOpening="MainView_PaneOpening" PaneClosing="MainView_PaneClosing">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <AppBarSeparator/>
+                        <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar"/>
+                        <AppBarSeparator/>
+                    </StackPanel>
+                </Grid>
 
+                <RichEditBox Grid.Row="1" x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged"/>
+                <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <AppBarButton x:Name="SettingsButton" Icon="More" Click="SettingsButton_Click" LabelPosition="Collapsed"/>
+                </CommandBar>
+            </Grid>
+
+            <SplitView.Pane>
+                <Grid>
+                    <Pivot>
+                        <PivotItem>
+                            <PivotItem.Header>
+                                <TextBlock Text="More" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
+                            </PivotItem.Header>
+                            <ListView x:Name="MoreOptionsList" Margin="0,12" SelectionChanged="MoreOptionsList_SelectionChanged">
+                                <ListViewItem>
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <SymbolIcon Symbol="Print" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                            <AppBarSeparator/>
+                                            <TextBlock Text="PRINT" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </ListViewItem>
+                                <ListViewItem>
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE160;" />
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;" FontSize="12" Margin="0,5,0,0"/>
+                                        </Grid>
+
+                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                            <AppBarSeparator/>
+                                            <TextBlock Text="SHARE FILE" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </ListViewItem>
+                                <ListViewItem>
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE132;" />
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;" Foreground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" FontSize="12" Margin="0,5,0,0"/>
+                                        </Grid>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                            <AppBarSeparator/>
+                                            <Grid>
+                                                <TextBlock Text="SHARE SELECTED TEXT" x:Name="ShareSelectedTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                <TextBlock Text="SHARE WHOLE TEXT" x:Name="ShareWholeTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </StackPanel>
+                                    </Grid>
+                                </ListViewItem>
+                                <ListViewItem>
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <SymbolIcon Symbol="SaveLocal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                            <AppBarSeparator/>
+                                            <TextBlock Text="EXPORT" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </ListViewItem>
+                                <ListViewItem>
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <SymbolIcon Symbol="Delete" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                            <AppBarSeparator/>
+                                            <TextBlock Text="CLEAR ALL" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </ListViewItem>
+                            </ListView>
+                        </PivotItem>
+                        <PivotItem>
+                            <PivotItem.Header>
+                                <TextBlock Text="Settings" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
+                            </PivotItem.Header>
+                            <StackPanel Orientation="Vertical" Margin="0,12">
+                                <TextBlock Text="THEME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                <RadioButton Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
+                                <RadioButton Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
+                                <RadioButton Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
+                                <TextBlock Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                <ComboBox HorizontalAlignment="Stretch" SelectedIndex="0">
+                                    <ComboBoxItem Content="English" x:Name="LangEng"/>
+                                    <ComboBoxItem Content="Deutsch" x:Name="LangDe"/>
+                                </ComboBox>
+                            </StackPanel>
+                        </PivotItem>
+                        <PivotItem>
+                            <PivotItem.Header>
+                                <TextBlock Text="About" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
+                            </PivotItem.Header>
+                            <StackPanel Orientation="Vertical" Margin="0,12">
+                                <Grid Margin="0,12,0,6">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Background="Silver" Margin="0,0,12,0">
+                                        <Image Source="/Assets/SmallTile.scale-400.png" Width="136"/>
+                                    </Border>
+                                    <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                                        <TextBlock Text="1" x:Name="AboutAppTextBlock" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,6"/>
+                                        <TextBlock Text="&#xA9; 2018 by brullsker" HorizontalAlignment="Center"/>
+                                        <HyperlinkButton Content="Mail" NavigateUri="mailto:brullsker@outlook.de" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
+                                        <HyperlinkButton Content="Telegram" NavigateUri="https://t.me/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
+                                        <HyperlinkButton Content="Twitter" NavigateUri="https://t.co/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                </Grid>
+                            </StackPanel>
+                        </PivotItem>
+                    </Pivot>
+                    <CommandBar Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top">
+                        <AppBarButton x:Name="SettingsButton_Close" Icon="Cancel" Click="SettingsButton_Close_Click" LabelPosition="Collapsed"/>
+                    </CommandBar>
+                </Grid>
+            </SplitView.Pane>
+        </SplitView>
+        <controls:Loading x:Name="LoadingControl">
+            <controls:Loading.Background>
+                <SolidColorBrush Color="Black" Opacity="0.7"/>
+            </controls:Loading.Background>
+            <StackPanel Orientation="Horizontal" Margin="12,0">
+                <ProgressRing Foreground="White" IsActive="True"/>
+                <TextBlock Foreground="White" Text="Working on it..." VerticalAlignment="Center" Margin="12,0,0,0"/>
+            </StackPanel>
+        </controls:Loading>
     </Grid>
 </Page>
