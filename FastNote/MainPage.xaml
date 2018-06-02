@@ -45,13 +45,16 @@
                         <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
                             <controls:TextToolbar.ButtonModifications>
                                 <buttons:DefaultButton Type="Link" IsVisible="False"/>
+                                <buttons:DefaultButton Type="OrderedList" IsVisible="False"/>
                             </controls:TextToolbar.ButtonModifications>
                         </controls:TextToolbar>
                         <AppBarSeparator/>
                     </StackPanel>
                 </Grid>
 
-                <RichEditBox Grid.Row="1" x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged"/>
+                <Grid x:Name="container" Grid.Row="1">
+                    <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged"/>
+                </Grid>
                 <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
                         <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
