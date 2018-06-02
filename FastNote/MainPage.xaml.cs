@@ -22,6 +22,8 @@ using Windows.UI.Xaml.Navigation;
 using Microsoft.Toolkit.Uwp.Helpers;
 using Microsoft.Toolkit.Uwp.UI.Helpers;
 using Windows.UI.Text;
+using Windows.Graphics.Printing;
+using Windows.UI.Xaml.Printing;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -41,6 +43,11 @@ namespace FastNote
 
         DispatcherTimer timer = new DispatcherTimer();
 
+        private PrintManager printMan;
+        private PrintDocument printDoc;
+        private IPrintDocumentSource printDocSource;
+        WebView wv = new WebView();
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -50,6 +57,20 @@ namespace FastNote
             ShareSelectedTextContent.Visibility = Visibility.Collapsed;
 
             LoadDocument();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            // Register for PrintTaskRequested event
+            printMan = PrintManager.GetForCurrentView();
+            printMan.PrintTaskRequested += PrintTaskRequested;
+
+            // Build a PrintDocument and register for callbacks
+            printDoc = new PrintDocument();
+            printDocSource = printDoc.DocumentSource;
+            printDoc.Paginate += Paginate;
+            printDoc.GetPreviewPage += GetPreviewPage;
+            printDoc.AddPages += AddPages;
         }
 
         public async void LoadDocument()
@@ -80,6 +101,52 @@ namespace FastNote
             timer.Start();
         }
 
+        private void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs args)
+        {
+            // Create the PrintTask
+            // Defines the title and delegate for PrintTaskSourceRequested
+            var printTask = args.Request.CreatePrintTask("FastNote", PrintTaskSourceRequested);
+
+            // Handle PrintTask.Completed to catch failed print jobs
+            printTask.Completed += PrintTaskCompleted;
+        }
+        private void PrintTaskSourceRequested(PrintTaskSourceRequestedArgs args)
+        {
+            // Set the document source
+            args.SetSource(printDocSource);
+        }
+        private void Paginate(object sender, PaginateEventArgs e)
+        {
+            printDoc.SetPreviewPageCount(1, PreviewPageCountType.Final);
+        }
+        private void GetPreviewPage(object sender, GetPreviewPageEventArgs e)
+        {
+            printDoc.SetPreviewPage(e.PageNumber, this.wv);
+        }
+        private void AddPages(object sender, AddPagesEventArgs e)
+        {
+            printDoc.AddPage(this.wv);
+            printDoc.AddPagesComplete();
+        }
+        private async void PrintTaskCompleted(PrintTask sender, PrintTaskCompletedEventArgs args)
+        {
+            if (args.Completion == PrintTaskCompletion.Failed)
+            {
+                Debug.WriteLine("Printing failed");
+            }
+            if (args.Completion == PrintTaskCompletion.Canceled)
+            {
+                Debug.WriteLine("Printing cancelled");
+            }
+            if (args.Completion == PrintTaskCompletion.Abandoned)
+            {
+                Debug.WriteLine("Printing abandoned");
+            }
+            if (args.Completion == PrintTaskCompletion.Submitted)
+            {
+                Debug.WriteLine("Printing submitted");
+            }
+        }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
@@ -125,40 +192,31 @@ namespace FastNote
         {
             if (MoreOptionsList.SelectedIndex == 0)
             {
-                MessageDialog md = new MessageDialog("Printing has not been implemented yet", "Not implemented");
-                await md.ShowAsync();
-
-                string converted = ConvertToHtml(MainEdit);
-
-                await ApplicationData.Current.LocalFolder.CreateFileAsync("html.html", CreationCollisionOption.ReplaceExisting);
-                StorageFile html = await ApplicationData.Current.LocalFolder.GetFileAsync("html.html");
-                await Windows.Storage.FileIO.WriteTextAsync(html, converted);
-
-                var grid = new Grid();
-                var webview = new WebView();
-                grid.Children.Add(webview);
-                Uri uri = new Uri("ms-appdata:///local/html.html");
-                webview.Source = uri;
-
-                var printHelper = new PrintHelper(grid);
-                Debug.WriteLine("Printhelper created");
-                printHelper.AddFrameworkElementToPrint(webview);
-                Debug.WriteLine("Frameworkelement added");
-                printHelper.OnPrintFailed += PrintHelper_OnPrintFailed;
-                printHelper.OnPrintSucceeded += PrintHelper_OnPrintSucceeded;
-                await printHelper.ShowPrintUIAsync("FastNote Print");
-                async void PrintHelper_OnPrintSucceeded()
+                await ApplicationData.Current.LocalCacheFolder.CreateFileAsync("printingCache.html");
+                StorageFile printingFile = await ApplicationData.Current.LocalCacheFolder.GetFileAsync("printingCache.html");
+                string html = ConvertToHtml(MainEdit);
+                await FileIO.WriteTextAsync(printingFile, html);
+                Uri uri = new Uri("ms-appdata:///localcache/printingCache.html");
+                wv.Source = uri;
+                if (PrintManager.IsSupported())
                 {
-                    printHelper.Dispose();
-                    var dialog = new MessageDialog("Printing done.");
-                    await dialog.ShowAsync();
+                    try
+                    {
+                        // Show print UI
+                        await PrintManager.ShowPrintUIAsync();
+                    }
+                    catch
+                    {
+                        // Printing cannot proceed at this time
+                        MessageDialog mesd = new MessageDialog("Can't proceed with printing");
+                        await mesd.ShowAsync();
+                    }
                 }
-
-                async void PrintHelper_OnPrintFailed()
+                else
                 {
-                    printHelper.Dispose();
-                    var dialog = new MessageDialog("Printing failed.");
-                    await dialog.ShowAsync();
+                    // Printing is not supported on this device
+                    MessageDialog mesd = new MessageDialog("Printing not supported");
+                    await mesd.ShowAsync();
                 }
 
             }
