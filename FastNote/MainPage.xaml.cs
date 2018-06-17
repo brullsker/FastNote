@@ -173,15 +173,10 @@ namespace FastNote
                         using (var stream = await saveFile.OpenStreamForWriteAsync())
                         {
                             var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
-                            Debug.WriteLine("LogicalDPI set");
                             var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
-                            Debug.WriteLine("GetPixelAsync() done");
                             var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream.AsRandomAccessStream());
-                            Debug.WriteLine("BitmapEncoder created");
                             encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            Debug.WriteLine("PixelData set");
                             await encoder.FlushAsync();
-                            Debug.WriteLine("Flush");
                         }
                         if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
                         if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
@@ -276,7 +271,15 @@ namespace FastNote
                 LoadingControl.IsLoading = true;
 
                 StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.CreateFolderAsync("share", CreationCollisionOption.ReplaceExisting);
-                StorageFile sharefile = await file.CopyAsync(folder, Settings.Default.DefaultShareName + ".rtf", NameCollisionOption.ReplaceExisting);
+
+                if (Settings.Default.ShareFileType == 0) ShareRTF_Click(sender, e);
+                if (Settings.Default.ShareFileType == 1) ShareHTML_Click(sender, e);
+                if (Settings.Default.ShareFileType == 2) ShareTXT_Click(sender, e);
+                if (Settings.Default.ShareFileType == 3) ShareJPG_Click(sender, e);
+                if (Settings.Default.ShareFileType == 4) SharePNG_Click(sender, e);
+                if (Settings.Default.ShareFileType == 5) ShareBMP_Click(sender, e);
+                if (Settings.Default.ShareFileType == 6) ShareGIF_Click(sender, e);
+                if (Settings.Default.ShareFileType == 7) ShareTIFF_Click(sender, e);
 
                 IReadOnlyList<StorageFile> pickedFiles = await folder.GetFilesAsync();
 
@@ -532,6 +535,60 @@ namespace FastNote
             string charcount;
             MainEdit.Document.GetText(TextGetOptions.None, out charcount);
             CharCount.Text = Convert.ToString(charcount.Length - 1);
+        }
+
+        private async void ShareRTF_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.ShareFileType = 0;
+            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
+            StorageFile sharefile = await file.CopyAsync(folder, Settings.Default.DefaultShareName + ".rtf", NameCollisionOption.ReplaceExisting);
+        }
+
+        private async void ShareHTML_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.ShareFileType = 1;
+            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
+            StorageFile saveFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + "html");
+            MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
+            await FileIO.WriteTextAsync(saveFile, txtstring);
+        }
+
+        private async void ShareTXT_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.ShareFileType = 2;
+            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
+            StorageFile saveFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + "txt");
+            await FileIO.WriteTextAsync(saveFile, ConvertToHtml(MainEdit));
+        }
+
+        private async void ShareJPG_Click(object sender, RoutedEventArgs e)
+        {
+            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
+
+        }
+
+        private async void SharePNG_Click(object sender, RoutedEventArgs e)
+        {
+            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
+
+        }
+
+        private async void ShareBMP_Click(object sender, RoutedEventArgs e)
+        {
+            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
+
+        }
+
+        private async void ShareGIF_Click(object sender, RoutedEventArgs e)
+        {
+            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
+
+        }
+
+        private async void ShareTIFF_Click(object sender, RoutedEventArgs e)
+        {
+            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
+
         }
     }
 }

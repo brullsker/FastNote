@@ -59,7 +59,7 @@ namespace FastNote
         }
 
         [DefaultSettingValue(Value = 0)]
-        public int DefaultExportFileType
+        public int ShareFileType
         {
             get { return Get<int>(); }
             set { Set(value); }
