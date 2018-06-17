@@ -59,6 +59,7 @@
                 </Grid>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="2">
+                    <TextBlock Text="Character count:"/>
                     <TextBlock x:Name="CharCount"/>
                 </StackPanel>
                 
@@ -145,64 +146,68 @@
                             <PivotItem.Header>
                                 <TextBlock Text="Settings" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
-                            <StackPanel Orientation="Vertical" Margin="0,12">
-                                <TextBlock Text="DEFAULT EXPORT FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                <TextBox x:Name="DefExpFN" PlaceholderText="Enter name..." Text="{Binding DefaultExportName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
-                                <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultExpFN" Click="RestoreDefaultExpFN_Click"/>
-                                <TextBlock Text="DEFAULT SHARE FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
-                                <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
-                                <TextBlock Text="THEME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                <RadioButton Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
-                                <RadioButton Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
-                                <RadioButton Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
-                                <TextBlock Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                <ComboBox IsEnabled="False" HorizontalAlignment="Stretch" SelectedIndex="0" BorderThickness="0">
-                                    <ComboBoxItem Content="English" x:Name="LangEng"/>
-                                    <ComboBoxItem Content="Deutsch" x:Name="LangDe"/>
-                                </ComboBox>
-                            </StackPanel>
+                            <ScrollViewer VerticalScrollMode="Auto">
+                                <StackPanel Orientation="Vertical" Margin="0,12">
+                                    <TextBlock Text="DEFAULT EXPORT FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <TextBox x:Name="DefExpFN" PlaceholderText="Enter name..." Text="{Binding DefaultExportName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
+                                    <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultExpFN" Click="RestoreDefaultExpFN_Click"/>
+                                    <TextBlock Text="DEFAULT SHARE FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
+                                    <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
+                                    <TextBlock Text="THEME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <RadioButton Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
+                                    <RadioButton Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
+                                    <RadioButton Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
+                                    <TextBlock Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <ComboBox IsEnabled="False" HorizontalAlignment="Stretch" SelectedIndex="0" BorderThickness="0">
+                                        <ComboBoxItem Content="English" x:Name="LangEng"/>
+                                        <ComboBoxItem Content="Deutsch" x:Name="LangDe"/>
+                                    </ComboBox>
+                                </StackPanel>
+                            </ScrollViewer>
                         </PivotItem>
                         <PivotItem>
                             <PivotItem.Header>
                                 <TextBlock Text="About" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
-                            <StackPanel Orientation="Vertical" Margin="0,12">
-                                <Grid Margin="0,12,0,6">
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto"/>
-                                        <ColumnDefinition/>
-                                    </Grid.ColumnDefinitions>
-                                    <Border Background="Silver" Margin="0,0,12,0">
-                                        <Image Source="/Assets/SmallTile.scale-400.png" Width="136"/>
-                                    </Border>
-                                    <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
-                                        <TextBlock Text="1" x:Name="AboutAppTextBlock" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,6"/>
-                                        <TextBlock Text="&#xA9; 2018 by brullsker" HorizontalAlignment="Center"/>
-                                        <HyperlinkButton Content="Mail" NavigateUri="mailto:brullsker@outlook.de" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
-                                        <HyperlinkButton Content="Telegram" NavigateUri="https://t.me/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
-                                        <HyperlinkButton Content="Twitter" NavigateUri="https://t.co/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
-                                    </StackPanel>
-                                </Grid>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Text="Contribute to FastNote:" Style="{StaticResource BaseTextBlockStyle}"/>
-                                    <HyperlinkButton Content=" GitHub" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
-                                </StackPanel>
-                                <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
-                                    <TextBlock Text="Help me with a donation:" Style="{StaticResource BaseTextBlockStyle}"/>
-                                    <HyperlinkButton Content=" PayPal" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
-                                </StackPanel>
-                                <TextBlock Text="Used Libraries and SDKs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0"/>
-                                <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                    <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                        <TextBlock Text="Windows Community Toolkit"/>
-                                        <StackPanel Orientation="Horizontal">
-                                            <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/Microsoft/UWPCommunityToolkit" Padding="0"/>
-                                            <TextBlock Text="Licensed under the MIT License" FontSize="12" Margin="12,0,0,0"/>
+                            <ScrollViewer VerticalScrollMode="Auto">
+                                <StackPanel Orientation="Vertical" Margin="0,12">
+                                    <Grid Margin="0,12,0,6">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Border Background="Silver" Margin="0,0,12,0">
+                                            <Image Source="/Assets/SmallTile.scale-400.png" Width="136"/>
+                                        </Border>
+                                        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
+                                            <TextBlock Text="1" x:Name="AboutAppTextBlock" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,6"/>
+                                            <TextBlock Text="&#xA9; 2018 by brullsker" HorizontalAlignment="Center"/>
+                                            <HyperlinkButton Content="Mail" NavigateUri="mailto:brullsker@outlook.de" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
+                                            <HyperlinkButton Content="Telegram" NavigateUri="https://t.me/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
+                                            <HyperlinkButton Content="Twitter" NavigateUri="https://t.co/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
                                         </StackPanel>
+                                    </Grid>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="Contribute to FastNote:" Style="{StaticResource BaseTextBlockStyle}"/>
+                                        <HyperlinkButton Content=" GitHub" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
                                     </StackPanel>
-                                </Border>
-                            </StackPanel>
+                                    <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                                        <TextBlock Text="Help me with a donation:" Style="{StaticResource BaseTextBlockStyle}"/>
+                                        <HyperlinkButton Content=" PayPal" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
+                                    </StackPanel>
+                                    <TextBlock Text="Used Libraries and SDKs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0"/>
+                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
+                                            <TextBlock Text="Windows Community Toolkit"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/Microsoft/UWPCommunityToolkit" Padding="0"/>
+                                                <TextBlock Text="Licensed under the MIT License" FontSize="12" Margin="12,0,0,0"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                </StackPanel>
+                            </ScrollViewer>
                         </PivotItem>
                     </Pivot>
                     <CommandBar Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top">

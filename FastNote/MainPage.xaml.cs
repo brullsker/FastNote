@@ -418,13 +418,11 @@ namespace FastNote
             DefShrFN.Text = "FastNote Share";
         }
 
-        string charcount;
-
         private void MainEdit_TextChanged(object sender, RoutedEventArgs e)
         {
             string charcount;
             MainEdit.Document.GetText(TextGetOptions.None, out charcount);
-            CharCount.Text = charcount.Length.ToString();
+            CharCount.Text = " " + charcount.Length.ToString();
         }
     }
 }
