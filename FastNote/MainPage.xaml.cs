@@ -24,6 +24,9 @@ using Microsoft.Toolkit.Uwp.UI.Helpers;
 using Windows.UI.Text;
 using Windows.Graphics.Printing;
 using Windows.UI.Xaml.Printing;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.Graphics.Display;
+using Windows.Graphics.Imaging;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -139,10 +142,13 @@ namespace FastNote
                 picker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
                 picker.FileTypeChoices.Add("HTML page", new List<string>() { ".html" });
                 picker.FileTypeChoices.Add("Plain text", new List<string>() { ".txt" });
+                picker.FileTypeChoices.Add("JPG Image", new List<string>() { ".jpg" });
+                picker.FileTypeChoices.Add("Portable Networks Graphics", new List<string>() { ".png" });
                 picker.SuggestedFileName = Settings.Default.DefaultExportName;
                 StorageFile saveFile = await picker.PickSaveFileAsync();
                 if (saveFile != null)
                 {
+                    var renderTargetBitmap = new RenderTargetBitmap();
                     if (saveFile.FileType == ".rtf")
                     {
                         MainEdit.RequestedTheme = ElementTheme.Light;
@@ -156,6 +162,49 @@ namespace FastNote
                     {
                         MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
                         await FileIO.WriteTextAsync(saveFile, txtstring);
+                    }
+                    if (saveFile.FileType == ".jpg")
+                    {
+                        MainEdit.RequestedTheme = ElementTheme.Light;
+                        MainEdit.Focus(FocusState.Programmatic);
+                        Debug.WriteLine("Focus set");
+                        await renderTargetBitmap.RenderAsync(MainEdit);
+                        Debug.WriteLine("Rendered");
+                        using (var stream = await saveFile.OpenStreamForWriteAsync())
+                        {
+                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
+                            Debug.WriteLine("LogicalDPI set");
+                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
+                            Debug.WriteLine("GetPixelAsync() done");
+                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream.AsRandomAccessStream());
+                            Debug.WriteLine("BitmapEncoder created");
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            Debug.WriteLine("PixelData set");
+                            await encoder.FlushAsync();
+                            Debug.WriteLine("Flush");
+                        }
+                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
+                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
+                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
+                    }
+                    if (saveFile.FileType == ".png")
+                    {
+                        MainEdit.RequestedTheme = ElementTheme.Light;
+                        MainEdit.Focus(FocusState.Programmatic);
+                        Debug.WriteLine("Focus set");
+                        await renderTargetBitmap.RenderAsync(MainEdit);
+                        Debug.WriteLine("Rendered");
+                        using (var stream = await saveFile.OpenStreamForWriteAsync())
+                        {
+                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
+                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
+                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.PngEncoderId, stream.AsRandomAccessStream());
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
+                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
+                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
                     }
                 }
                 else
