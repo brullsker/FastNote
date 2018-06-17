@@ -107,21 +107,24 @@
                                             <AppBarSeparator/>
                                             <TextBlock Text="SHARE FILE" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
-                                        <Button BorderThickness="0" Grid.Column="2" HorizontalAlignment="Right" Width="44" Height="44">
-                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
-                                            <Button.Flyout>
-                                                <MenuFlyout Placement="Right">
-                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
-                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="HTML page (.html)" Tag="&#xE12B;" x:Name="ShareHTML" Click="ShareHTML_Click"/>
-                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Plain text (.txt)" Tag="&#xE1A2;" x:Name="ShareTXT" Click="ShareTXT_Click"/>
-                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="JPG image (.jpg)" Tag="&#xE187;" x:Name="ShareJPG" Click="ShareJPG_Click"/>
-                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Portable Networks Graphics (.png)" Tag="&#xE2AC;" x:Name="SharePNG" Click="SharePNG_Click"/>
-                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Bitmap (.bmp)" Tag="&#xE80A;" x:Name="ShareBMP" Click="ShareBMP_Click"/>
-                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="GIF image (.gif)" Tag="&#xE173;" x:Name="ShareGIF" Click="ShareGIF_Click"/>
-                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="TIFF image (.tiff)" Tag="&#xE15A;" x:Name="ShareTIFF" Click="ShareTIFF_Click"/>
-                                                </MenuFlyout>
-                                            </Button.Flyout>
-                                        </Button>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                            <Border Width="2" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
+                                            <Button BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" HorizontalAlignment="Right" Width="44" Height="44">
+                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
+                                                <Button.Flyout>
+                                                    <MenuFlyout Placement="Right">
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="HTML page (.html)" Tag="&#xE12B;" x:Name="ShareHTML" Click="ShareHTML_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Plain text (.txt)" Tag="&#xE1A2;" x:Name="ShareTXT" Click="ShareTXT_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="JPG image (.jpg)" Tag="&#xE187;" x:Name="ShareJPG" Click="ShareJPG_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Portable Networks Graphics (.png)" Tag="&#xE2AC;" x:Name="SharePNG" Click="SharePNG_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Bitmap (.bmp)" Tag="&#xE80A;" x:Name="ShareBMP" Click="ShareBMP_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="GIF image (.gif)" Tag="&#xE173;" x:Name="ShareGIF" Click="ShareGIF_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="TIFF image (.tiff)" Tag="&#xE15A;" x:Name="ShareTIFF" Click="ShareTIFF_Click"/>
+                                                    </MenuFlyout>
+                                                </Button.Flyout>
+                                            </Button>
+                                        </StackPanel>
                                     </Grid>
                                 </ListViewItem>
                                 <ListViewItem Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
