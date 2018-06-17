@@ -120,4 +120,46 @@
   <data name="CharactersText.Text" xml:space="preserve">
     <value> characters</value>
   </data>
+  <data name="More_FileHeaderText.Text" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="More_File_ClearAll.Text" xml:space="preserve">
+    <value>CLEAR ALL</value>
+  </data>
+  <data name="More_File_ExportText.Text" xml:space="preserve">
+    <value>EXPORT</value>
+  </data>
+  <data name="More_File_ShareFileText.Text" xml:space="preserve">
+    <value>SHARE FILE</value>
+  </data>
+  <data name="More_File_ShareText_Selected.Text" xml:space="preserve">
+    <value>SHARE SELECTED TEXT</value>
+  </data>
+  <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
+    <value>SHARE WHOLE TEXT</value>
+  </data>
+  <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
+    <value>Bitmap (.bmp)</value>
+  </data>
+  <data name="Share_File_ShareFile_GIF.Text" xml:space="preserve">
+    <value>GIF image (.gif)</value>
+  </data>
+  <data name="Share_File_ShareFile_HTML.Text" xml:space="preserve">
+    <value>HTML page (.html)</value>
+  </data>
+  <data name="Share_File_ShareFile_JPG.Text" xml:space="preserve">
+    <value>JPG image (.jpg)</value>
+  </data>
+  <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
+    <value>Portable Networks Graphics (.png)</value>
+  </data>
+  <data name="Share_File_ShareFile_RTF.Text" xml:space="preserve">
+    <value>Rich Text (.rtf)</value>
+  </data>
+  <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
+    <value>TIFF image (.tiff)</value>
+  </data>
+  <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
+    <value>Plain text (.txt)</value>
+  </data>
 </root>

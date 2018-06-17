@@ -75,7 +75,7 @@
                     <Pivot>
                         <PivotItem>
                             <PivotItem.Header>
-                                <TextBlock Text="File" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
+                                <TextBlock Text="File" x:Uid="More_FileHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
                             <ListView x:Name="MoreOptionsList" Margin="0,12" SelectionChanged="MoreOptionsList_SelectionChanged">
                                 <ListViewItem Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
@@ -87,7 +87,7 @@
                                         <SymbolIcon Symbol="SaveLocal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         <StackPanel Orientation="Horizontal" Grid.Column="1">
                                             <AppBarSeparator/>
-                                            <TextBlock Text="EXPORT" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                            <TextBlock Text="EXPORT" x:Uid="More_File_ExportText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
@@ -105,7 +105,7 @@
 
                                         <StackPanel Orientation="Horizontal" Grid.Column="1">
                                             <AppBarSeparator/>
-                                            <TextBlock Text="SHARE FILE" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                            <TextBlock Text="SHARE FILE" x:Uid="More_File_ShareFileText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Grid.Column="2">
                                             <Border Width="2" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
@@ -113,14 +113,14 @@
                                                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
                                                 <Button.Flyout>
                                                     <MenuFlyout Placement="Right">
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="HTML page (.html)" Tag="&#xE12B;" x:Name="ShareHTML" Click="ShareHTML_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Plain text (.txt)" Tag="&#xE1A2;" x:Name="ShareTXT" Click="ShareTXT_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="JPG image (.jpg)" Tag="&#xE187;" x:Name="ShareJPG" Click="ShareJPG_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Portable Networks Graphics (.png)" Tag="&#xE2AC;" x:Name="SharePNG" Click="SharePNG_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Bitmap (.bmp)" Tag="&#xE80A;" x:Name="ShareBMP" Click="ShareBMP_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="GIF image (.gif)" Tag="&#xE173;" x:Name="ShareGIF" Click="ShareGIF_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="TIFF image (.tiff)" Tag="&#xE15A;" x:Name="ShareTIFF" Click="ShareTIFF_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="More_File_ShareFile_RTF" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_HTML" Text="HTML page (.html)" Tag="&#xE12B;" x:Name="ShareHTML" Click="ShareHTML_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TXT" Text="Plain text (.txt)" Tag="&#xE1A2;" x:Name="ShareTXT" Click="ShareTXT_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_JPG" Text="JPG image (.jpg)" Tag="&#xE187;" x:Name="ShareJPG" Click="ShareJPG_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_PNG" Text="Portable Networks Graphics (.png)" Tag="&#xE2AC;" x:Name="SharePNG" Click="SharePNG_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_BMP" Text="Bitmap (.bmp)" Tag="&#xE80A;" x:Name="ShareBMP" Click="ShareBMP_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_GIF" Text="GIF image (.gif)" Tag="&#xE173;" x:Name="ShareGIF" Click="ShareGIF_Click"/>
+                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TIFF" Text="TIFF image (.tiff)" Tag="&#xE15A;" x:Name="ShareTIFF" Click="ShareTIFF_Click"/>
                                                     </MenuFlyout>
                                                 </Button.Flyout>
                                             </Button>
@@ -140,8 +140,8 @@
                                         <StackPanel Orientation="Horizontal" Grid.Column="1">
                                             <AppBarSeparator/>
                                             <Grid>
-                                                <TextBlock Text="SHARE SELECTED TEXT" x:Name="ShareSelectedTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
-                                                <TextBlock Text="SHARE WHOLE TEXT" x:Name="ShareWholeTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                <TextBlock Text="SHARE SELECTED TEXT" x:Uid="More_File_ShareText_Selected" x:Name="ShareSelectedTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                <TextBlock Text="SHARE WHOLE TEXT" x:Uid="More_File_ShareText_Whole" x:Name="ShareWholeTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                             </Grid>
                                         </StackPanel>
                                     </Grid>
@@ -155,7 +155,7 @@
                                         <SymbolIcon Symbol="Delete" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         <StackPanel Orientation="Horizontal" Grid.Column="1">
                                             <AppBarSeparator/>
-                                            <TextBlock Text="CLEAR ALL" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                            <TextBlock Text="CLEAR ALL" x:Uid="More_File_ClearAll" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
