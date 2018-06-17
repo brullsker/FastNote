@@ -129,6 +129,9 @@
   <data name="LoadingText.Text" xml:space="preserve">
     <value>Einen Moment Geduld...</value>
   </data>
+  <data name="Manifest_AppDescText" xml:space="preserve">
+    <value>FastNote ist ein minimalistischer Open-Source Rich-Text-Editor für die Universal Windows Platform, der Änderungen in Echtzeit speichert.</value>
+  </data>
   <data name="More_AboutHeaderText.Text" xml:space="preserve">
     <value>Über</value>
   </data>
