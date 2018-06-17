@@ -34,7 +34,7 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         <Rectangle x:Name="Rect" Width="900" Height="1600"/>
-        <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" PaneOpening="MainView_PaneOpening" PaneClosing="MainView_PaneClosing">
+        <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"  PaneClosing="MainView_PaneClosing">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"/>

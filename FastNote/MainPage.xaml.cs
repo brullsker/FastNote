@@ -47,10 +47,14 @@ namespace FastNote
         public MainPage()
         {
             this.InitializeComponent();
+            Debug.WriteLine("InitalizeComponent check");
 
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
+            Debug.WriteLine("Timer interval set");
             timer.Tick += Timer_Tick;
+            Debug.WriteLine("Timer tick event handler set up");
             ShareSelectedTextContent.Visibility = Visibility.Collapsed;
+            Debug.WriteLine("ShareSelectedTextContent.Visibility set to collapsed");
 
             LoadDocument();
         }
@@ -89,6 +93,8 @@ namespace FastNote
         {
             if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", Package.Current.DisplayName.ToString().ToUpper(), Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
             MainView.IsPaneOpen = true;
+            MainView_PaneOpening(sender, e);
+
         }
 
         private async void ThemeRB_Checked(object sender, RoutedEventArgs e)
@@ -241,7 +247,7 @@ namespace FastNote
             args.Request.Data.Properties.Description = "Share file";
         }
 
-        private void MainView_PaneOpening(SplitView sender, object args)
+        private void MainView_PaneOpening(object sender, RoutedEventArgs e)
         {
             SettingsButton.Scale(scaleX: 0f, scaleY: 0f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
             SettingsButton_Close.Scale(scaleX: 1f, scaleY: 1f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
