@@ -263,7 +263,7 @@ namespace FastNote
                 }
                 else
                 {
-                    MessageDialog md = new MessageDialog(resourceLoader.GetString("Dialog_FileNotSaved"), resourceLoader.GetString("Dialog_OperationCancelled");
+                    MessageDialog md = new MessageDialog(resourceLoader.GetString("Dialog_FileNotSaved"), resourceLoader.GetString("Dialog_OperationCancelled"));
                     await md.ShowAsync();
                 }
                 LoadingControl.IsLoading = false;
