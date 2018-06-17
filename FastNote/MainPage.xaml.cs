@@ -46,7 +46,8 @@ namespace FastNote
 
         DispatcherTimer timer = new DispatcherTimer();
 
-       
+        RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -148,7 +149,6 @@ namespace FastNote
                 StorageFile saveFile = await picker.PickSaveFileAsync();
                 if (saveFile != null)
                 {
-                    var renderTargetBitmap = new RenderTargetBitmap();
                     if (saveFile.FileType == ".rtf")
                     {
                         MainEdit.RequestedTheme = ElementTheme.Light;
@@ -287,11 +287,59 @@ namespace FastNote
                     MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
                     await FileIO.WriteTextAsync(shareFile, txtstring);
                 }
-                if (Settings.Default.ShareFileType == 3) ShareJPG_Click(sender, e);
-                if (Settings.Default.ShareFileType == 4) SharePNG_Click(sender, e);
-                if (Settings.Default.ShareFileType == 5) ShareBMP_Click(sender, e);
-                if (Settings.Default.ShareFileType == 6) ShareGIF_Click(sender, e);
-                if (Settings.Default.ShareFileType == 7) ShareTIFF_Click(sender, e);
+                if (Settings.Default.ShareFileType >= 3)
+                {
+                    string ext = ".jpg";
+                    if (Settings.Default.ShareFileType == 4) ext = ".png";
+                    if (Settings.Default.ShareFileType == 5) ext = ".bmp";
+                    if (Settings.Default.ShareFileType == 6) ext = ".gif";
+                    if (Settings.Default.ShareFileType == 7) ext = ".tiff";
+                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ext, CreationCollisionOption.ReplaceExisting);
+                    MainEdit.RequestedTheme = ElementTheme.Light;
+                    MainEdit.Focus(FocusState.Programmatic);
+                    Debug.WriteLine("Focus set");
+                    await renderTargetBitmap.RenderAsync(MainEdit);
+                    Debug.WriteLine("Rendered");
+                    using (var stream = await shareFile.OpenStreamForWriteAsync())
+                    {
+                        var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
+                        var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
+                        if (Settings.Default.ShareFileType == 3)
+                        {
+                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream.AsRandomAccessStream()); ;
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        if (Settings.Default.ShareFileType == 4)
+                        {
+                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.PngEncoderId, stream.AsRandomAccessStream()); ;
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        if (Settings.Default.ShareFileType == 5)
+                        {
+                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.BmpEncoderId, stream.AsRandomAccessStream()); ;
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        if (Settings.Default.ShareFileType == 6)
+                        {
+                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, stream.AsRandomAccessStream()); ;
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        if (Settings.Default.ShareFileType == 7)
+                        {
+                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.TiffEncoderId, stream.AsRandomAccessStream()); ;
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        stream.Dispose();
+                    }
+                    if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
+                    if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
+                    if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
+                }
 
                 IReadOnlyList<StorageFile> pickedFiles = await folder.GetFilesAsync();
 
@@ -552,49 +600,49 @@ namespace FastNote
         private void ShareRTF_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 0;
-            ShareItem.Focus(FocusState.Pointer);
+            MoreOptionsList.SelectedItem = ShareItem;
         }
 
         private void ShareHTML_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 1;
-            ShareItem.Focus(FocusState.Pointer);
+            MoreOptionsList.SelectedItem = ShareItem;
         }
 
         private void ShareTXT_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 2;
-            ShareItem.Focus(FocusState.Pointer);
+            MoreOptionsList.SelectedItem = ShareItem;
         }
 
         private async void ShareJPG_Click(object sender, RoutedEventArgs e)
         {
-            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
-
+            Settings.Default.ShareFileType = 3;
+            MoreOptionsList.SelectedItem = ShareItem;
         }
 
         private async void SharePNG_Click(object sender, RoutedEventArgs e)
         {
-            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
-
+            Settings.Default.ShareFileType = 4;
+            MoreOptionsList.SelectedItem = ShareItem;
         }
 
         private async void ShareBMP_Click(object sender, RoutedEventArgs e)
         {
-            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
-
+            Settings.Default.ShareFileType = 5;
+            MoreOptionsList.SelectedItem = ShareItem;
         }
 
         private async void ShareGIF_Click(object sender, RoutedEventArgs e)
         {
-            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
-
+            Settings.Default.ShareFileType = 6;
+            MoreOptionsList.SelectedItem = ShareItem;
         }
 
         private async void ShareTIFF_Click(object sender, RoutedEventArgs e)
         {
-            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
-
+            Settings.Default.ShareFileType = 7;
+            MoreOptionsList.SelectedItem = ShareItem;
         }
     }
 }
