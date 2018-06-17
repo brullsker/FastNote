@@ -120,6 +120,24 @@
   <data name="CharactersText.Text" xml:space="preserve">
     <value> characters</value>
   </data>
+  <data name="More_AboutHeaderText.Text" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="More_About_Contribute.Text" xml:space="preserve">
+    <value>Contribute to FastNote:</value>
+  </data>
+  <data name="More_About_DevEmail.Content" xml:space="preserve">
+    <value>Mail</value>
+  </data>
+  <data name="More_About_Donate.Text" xml:space="preserve">
+    <value>Help me with a donation:</value>
+  </data>
+  <data name="More_About_Libs.Text" xml:space="preserve">
+    <value>Used libraries &amp; SDKs</value>
+  </data>
+  <data name="More_About_LicenseMIT.Text" xml:space="preserve">
+    <value>Licensed under the MIT license</value>
+  </data>
   <data name="More_FileHeaderText.Text" xml:space="preserve">
     <value>File</value>
   </data>

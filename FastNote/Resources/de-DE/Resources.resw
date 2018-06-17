@@ -120,6 +120,24 @@
   <data name="CharactersText.Text" xml:space="preserve">
     <value> Zeichen</value>
   </data>
+  <data name="More_AboutHeaderText.Text" xml:space="preserve">
+    <value>Über</value>
+  </data>
+  <data name="More_About_Contribute.Text" xml:space="preserve">
+    <value>Bei der Entwicklung helfen:</value>
+  </data>
+  <data name="More_About_DevEmail.Content" xml:space="preserve">
+    <value>E-Mail</value>
+  </data>
+  <data name="More_About_Donate.Text" xml:space="preserve">
+    <value>Spenden:</value>
+  </data>
+  <data name="More_About_Libs.Text" xml:space="preserve">
+    <value>Genutzte Libraries und SDKs</value>
+  </data>
+  <data name="More_About_LicenseMIT.Text" xml:space="preserve">
+    <value>Lizensiert unter der MIT-Lizenz</value>
+  </data>
   <data name="More_FileHeaderText.Text" xml:space="preserve">
     <value>Datei</value>
   </data>
