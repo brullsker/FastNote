@@ -58,9 +58,9 @@
                     <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="2">
-                    <TextBlock Text="Character count:"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="12,0">
                     <TextBlock x:Name="CharCount"/>
+                    <TextBlock Text=" characters"/>
                 </StackPanel>
                 
                 <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">

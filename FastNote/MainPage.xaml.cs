@@ -474,7 +474,7 @@ namespace FastNote
         {
             string charcount;
             MainEdit.Document.GetText(TextGetOptions.None, out charcount);
-            CharCount.Text = " " + charcount.Length.ToString();
+            CharCount.Text = Convert.ToString(charcount.Length - 1);
         }
     }
 }
