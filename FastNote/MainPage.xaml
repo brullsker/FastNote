@@ -33,6 +33,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
+        <Rectangle x:Name="Rect" Width="900" Height="1600"/>
         <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" PaneOpening="MainView_PaneOpening" PaneClosing="MainView_PaneClosing">
             <Grid>
                 <Grid.RowDefinitions>
@@ -76,10 +77,10 @@
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <SymbolIcon Symbol="Print" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <SymbolIcon Symbol="SaveLocal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         <StackPanel Orientation="Horizontal" Grid.Column="1">
                                             <AppBarSeparator/>
-                                            <TextBlock Text="PRINT" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                            <TextBlock Text="EXPORT" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
@@ -116,19 +117,6 @@
                                                 <TextBlock Text="SHARE SELECTED TEXT" x:Name="ShareSelectedTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                                 <TextBlock Text="SHARE WHOLE TEXT" x:Name="ShareWholeTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                             </Grid>
-                                        </StackPanel>
-                                    </Grid>
-                                </ListViewItem>
-                                <ListViewItem>
-                                    <Grid HorizontalAlignment="Stretch">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <SymbolIcon Symbol="SaveLocal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                            <AppBarSeparator/>
-                                            <TextBlock Text="EXPORT" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
@@ -184,6 +172,10 @@
                                         <HyperlinkButton Content="Twitter" NavigateUri="https://t.co/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
                                     </StackPanel>
                                 </Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Contribute to FastNote:" Style="{StaticResource BaseTextBlockStyle}"/>
+                                    <HyperlinkButton Content=" GitHub" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
+                                </StackPanel>
                             </StackPanel>
                         </PivotItem>
                     </Pivot>

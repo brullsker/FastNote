@@ -43,11 +43,7 @@ namespace FastNote
 
         DispatcherTimer timer = new DispatcherTimer();
 
-        private PrintManager printMan;
-        private PrintDocument printDoc;
-        private IPrintDocumentSource printDocSource;
-        WebView wv = new WebView();
-
+       
         public MainPage()
         {
             this.InitializeComponent();
@@ -59,24 +55,12 @@ namespace FastNote
             LoadDocument();
         }
 
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            // Register for PrintTaskRequested event
-            printMan = PrintManager.GetForCurrentView();
-            printMan.PrintTaskRequested += PrintTaskRequested;
-
-            // Build a PrintDocument and register for callbacks
-            printDoc = new PrintDocument();
-            printDocSource = printDoc.DocumentSource;
-            printDoc.Paginate += Paginate;
-            printDoc.GetPreviewPage += GetPreviewPage;
-            printDoc.AddPages += AddPages;
-        }
-
         public async void LoadDocument()
         {
             storageFolder = ApplicationData.Current.LocalFolder;
+            Debug.WriteLine("Loading document: StorageFolder found");
             string filepath = storageFolder.Path.ToString() + "/" + documentName;
+            Debug.WriteLine("Loading document: filepath set");
             if (File.Exists(filepath))
             {
                 Debug.WriteLine(filepath + " exists. It will be loaded now.");
@@ -100,54 +84,7 @@ namespace FastNote
             MainEdit.Focus(FocusState.Keyboard);
             timer.Start();
         }
-
-        private void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs args)
-        {
-            // Create the PrintTask
-            // Defines the title and delegate for PrintTaskSourceRequested
-            var printTask = args.Request.CreatePrintTask("FastNote", PrintTaskSourceRequested);
-
-            // Handle PrintTask.Completed to catch failed print jobs
-            printTask.Completed += PrintTaskCompleted;
-        }
-        private void PrintTaskSourceRequested(PrintTaskSourceRequestedArgs args)
-        {
-            // Set the document source
-            args.SetSource(printDocSource);
-        }
-        private void Paginate(object sender, PaginateEventArgs e)
-        {
-            printDoc.SetPreviewPageCount(1, PreviewPageCountType.Final);
-        }
-        private void GetPreviewPage(object sender, GetPreviewPageEventArgs e)
-        {
-            printDoc.SetPreviewPage(e.PageNumber, this.wv);
-        }
-        private void AddPages(object sender, AddPagesEventArgs e)
-        {
-            printDoc.AddPage(this.wv);
-            printDoc.AddPagesComplete();
-        }
-        private async void PrintTaskCompleted(PrintTask sender, PrintTaskCompletedEventArgs args)
-        {
-            if (args.Completion == PrintTaskCompletion.Failed)
-            {
-                Debug.WriteLine("Printing failed");
-            }
-            if (args.Completion == PrintTaskCompletion.Canceled)
-            {
-                Debug.WriteLine("Printing cancelled");
-            }
-            if (args.Completion == PrintTaskCompletion.Abandoned)
-            {
-                Debug.WriteLine("Printing abandoned");
-            }
-            if (args.Completion == PrintTaskCompletion.Submitted)
-            {
-                Debug.WriteLine("Printing submitted");
-            }
-        }
-
+        
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", Package.Current.DisplayName.ToString().ToUpper(), Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
@@ -192,58 +129,6 @@ namespace FastNote
         {
             if (MoreOptionsList.SelectedIndex == 0)
             {
-                await ApplicationData.Current.LocalCacheFolder.CreateFileAsync("printingCache.html");
-                StorageFile printingFile = await ApplicationData.Current.LocalCacheFolder.GetFileAsync("printingCache.html");
-                string html = ConvertToHtml(MainEdit);
-                await FileIO.WriteTextAsync(printingFile, html);
-                Uri uri = new Uri("ms-appdata:///localcache/printingCache.html");
-                wv.Source = uri;
-                if (PrintManager.IsSupported())
-                {
-                    try
-                    {
-                        // Show print UI
-                        await PrintManager.ShowPrintUIAsync();
-                    }
-                    catch
-                    {
-                        // Printing cannot proceed at this time
-                        MessageDialog mesd = new MessageDialog("Can't proceed with printing");
-                        await mesd.ShowAsync();
-                    }
-                }
-                else
-                {
-                    // Printing is not supported on this device
-                    MessageDialog mesd = new MessageDialog("Printing not supported");
-                    await mesd.ShowAsync();
-                }
-
-            }
-            if (MoreOptionsList.SelectedIndex == 1)
-            {
-                LoadingControl.IsLoading = true;
-                DataTransferManager.GetForCurrentView().DataRequested += ShareFile_DataRequested;
-                DataTransferManager.ShowShareUI();
-                LoadingControl.IsLoading = false;
-            }
-            if (MoreOptionsList.SelectedIndex == 2)
-            {
-                LoadingControl.IsLoading = true;
-                if (MainEdit.Document.Selection.Length == 0)
-                {
-                    DataTransferManager.GetForCurrentView().DataRequested += ShareTextAll_DataRequested;
-                    DataTransferManager.ShowShareUI();
-                }
-                else
-                {
-                    DataTransferManager.GetForCurrentView().DataRequested += ShareText_DataRequested;
-                    DataTransferManager.ShowShareUI();
-                }
-                LoadingControl.IsLoading = false;
-            }
-            if (MoreOptionsList.SelectedIndex == 3)
-            {
                 LoadingControl.IsLoading = true;
                 Windows.Storage.Pickers.FileSavePicker picker = new Windows.Storage.Pickers.FileSavePicker();
                 picker.DefaultFileExtension = ".rtf";
@@ -277,7 +162,29 @@ namespace FastNote
                 }
                 LoadingControl.IsLoading = false;
             }
-            if (MoreOptionsList.SelectedIndex == 4)
+            if (MoreOptionsList.SelectedIndex == 1)
+            {                
+                LoadingControl.IsLoading = true;
+                DataTransferManager.GetForCurrentView().DataRequested += ShareFile_DataRequested;
+                DataTransferManager.ShowShareUI();
+                LoadingControl.IsLoading = false;
+            }
+            if (MoreOptionsList.SelectedIndex == 2)
+            {
+                LoadingControl.IsLoading = true;
+                if (MainEdit.Document.Selection.Length == 0)
+                {
+                    DataTransferManager.GetForCurrentView().DataRequested += ShareTextAll_DataRequested;
+                    DataTransferManager.ShowShareUI();
+                }
+                else
+                {
+                    DataTransferManager.GetForCurrentView().DataRequested += ShareText_DataRequested;
+                    DataTransferManager.ShowShareUI();
+                }
+                LoadingControl.IsLoading = false;
+            }
+            if (MoreOptionsList.SelectedIndex == 3)
             {
                 LoadingControl.IsLoading = true;
                 await file.DeleteAsync();
@@ -308,8 +215,7 @@ namespace FastNote
         private async void ShareFile_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
             StorageFolder folder = ApplicationData.Current.LocalCacheFolder;
-            if (File.Exists(folder.Path + "/FastNote Share.rtf")) File.Delete(folder.Path + "/FastNote Share.rtf");
-            StorageFile sharefile = await file.CopyAsync(folder, "FastNote Share.rtf");
+            StorageFile sharefile = await file.CopyAsync(folder, "FastNote Share.rtf", NameCollisionOption.ReplaceExisting);
             IReadOnlyList<StorageFile> pickedFiles = await ApplicationData.Current.LocalCacheFolder.GetFilesAsync();
             Debug.WriteLine(pickedFiles.Count.ToString());
             this.storageItems = pickedFiles;
