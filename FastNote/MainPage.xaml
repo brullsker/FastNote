@@ -55,7 +55,7 @@
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1">
-                    <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" IsSpellCheckEnabled="True" TextChanged="MainEdit_TextChanged"/>
+                    <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="2">
@@ -154,6 +154,8 @@
                                     <TextBlock Text="DEFAULT SHARE FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
                                     <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
+                                    <TextBlock Text="SPELLCHECKER" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <ToggleSwitch OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
                                     <TextBlock Text="THEME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <RadioButton Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
                                     <RadioButton Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>

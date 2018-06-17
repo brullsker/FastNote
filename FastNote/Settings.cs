@@ -50,5 +50,12 @@ namespace FastNote
             get { return Get<string>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = true)]
+        public bool SpellCheckEnabled
+        {
+            get { return Get<bool>(); }
+            set { Set(value); }
+        }
     }
 }
