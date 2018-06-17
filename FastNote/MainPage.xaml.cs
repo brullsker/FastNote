@@ -430,6 +430,7 @@ namespace FastNote
             if (MainEdit.Document.Selection.Length == 0) { ShareSelectedTextContent.Visibility = Visibility.Collapsed; ShareWholeTextContent.Visibility = Visibility.Visible; }
             else { ShareWholeTextContent.Visibility = Visibility.Collapsed; ShareSelectedTextContent.Visibility = Visibility.Visible; }
         }
+
         public static string ConvertToHtml(RichEditBox richEditBox)
         {
             string text, strColour, strFntName, strHTML;
@@ -615,31 +616,31 @@ namespace FastNote
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private async void ShareJPG_Click(object sender, RoutedEventArgs e)
+        private void ShareJPG_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 3;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private async void SharePNG_Click(object sender, RoutedEventArgs e)
+        private void SharePNG_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 4;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private async void ShareBMP_Click(object sender, RoutedEventArgs e)
+        private void ShareBMP_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 5;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private async void ShareGIF_Click(object sender, RoutedEventArgs e)
+        private void ShareGIF_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 6;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private async void ShareTIFF_Click(object sender, RoutedEventArgs e)
+        private void ShareTIFF_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 7;
             MoreOptionsList.SelectedItem = ShareItem;
