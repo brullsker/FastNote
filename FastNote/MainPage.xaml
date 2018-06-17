@@ -91,11 +91,12 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
-                                <ListViewItem Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                    <Grid HorizontalAlignment="Stretch">
+                                <ListViewItem Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0">
+                                    <Grid HorizontalAlignment="Stretch" Width="284">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition/>
+                                            <ColumnDefinition Width="Auto"/>
                                         </Grid.ColumnDefinitions>
                                         <Grid>
                                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE160;" />
@@ -106,6 +107,21 @@
                                             <AppBarSeparator/>
                                             <TextBlock Text="SHARE FILE" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
+                                        <Button Grid.Column="2" HorizontalAlignment="Right" Width="44" Height="44">
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
+                                            <Button.Flyout>
+                                                <MenuFlyout Placement="Right">
+                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Rich Text (.rtf)" Tag="&#xE160;"/>
+                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="HTML page (.html)" Tag="&#xE12B;"/>
+                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Plain text (.txt)" Tag="&#xE1A2;"/>
+                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="JPG image (.jpg)" Tag="&#xE187;"/>
+                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Portable Networks Graphics (.png)" Tag="&#xE2AC;"/>
+                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="Bitmap (.bmp)" Tag="&#xE80A;"/>
+                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="GIF image (.gif)" Tag="&#xE173;"/>
+                                                    <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" Text="TIFF image (.tiff)" Tag="&#xE15A;"/>
+                                                </MenuFlyout>
+                                            </Button.Flyout>
+                                        </Button>
                                     </Grid>
                                 </ListViewItem>
                                 <ListViewItem Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
