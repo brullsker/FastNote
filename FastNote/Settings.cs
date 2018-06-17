@@ -36,5 +36,19 @@ namespace FastNote
             get { return Get<bool>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = "FastNote Export")]
+        public string DefaultExportName
+        {
+            get { return Get<string>(); }
+            set { Set(value); }
+        }
+
+        [DefaultSettingValue(Value = "FastNote Share")]
+        public string DefaultShareName
+        {
+            get { return Get<string>(); }
+            set { Set(value); }
+        }
     }
 }

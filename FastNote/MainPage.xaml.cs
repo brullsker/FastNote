@@ -136,7 +136,7 @@ namespace FastNote
                 picker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
                 picker.FileTypeChoices.Add("HTML page", new List<string>() { ".html" });
                 picker.FileTypeChoices.Add("Plain text", new List<string>() { ".txt" });
-                picker.SuggestedFileName = "FastNote Export";
+                picker.SuggestedFileName = Settings.Default.DefaultExportName;
                 StorageFile saveFile = await picker.PickSaveFileAsync();
                 if (saveFile != null)
                 {
@@ -167,7 +167,7 @@ namespace FastNote
                 LoadingControl.IsLoading = true;
 
                 StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.CreateFolderAsync("share", CreationCollisionOption.ReplaceExisting);
-                StorageFile sharefile = await file.CopyAsync(folder, "FastNote Share.rtf", NameCollisionOption.ReplaceExisting);
+                StorageFile sharefile = await file.CopyAsync(folder, Settings.Default.DefaultShareName + ".rtf", NameCollisionOption.ReplaceExisting);
 
                 IReadOnlyList<StorageFile> pickedFiles = await folder.GetFilesAsync();
 
@@ -406,6 +406,16 @@ namespace FastNote
             }
             strHTML += "</span></html>";
             return strHTML;
+        }
+
+        private void RestoreDefaultExpFN_Click(object sender, RoutedEventArgs e)
+        {
+            DefExpFN.Text = "FastNote Export";
+        }
+
+        private void RestoreDefaultShrFN_Click(object sender, RoutedEventArgs e)
+        {
+            DefShrFN.Text = "FastNote Share";
         }
     }
 }
