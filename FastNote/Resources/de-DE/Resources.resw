@@ -138,6 +138,48 @@
   <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
     <value>ALLES TEILEN</value>
   </data>
+  <data name="More_SettingsHeaderText.Text" xml:space="preserve">
+    <value>Einstellungen</value>
+  </data>
+  <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
+    <value>STANDARD-DATEINAME (EXPORT)</value>
+  </data>
+  <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
+    <value>Name eingeben...</value>
+  </data>
+  <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
+    <value>STANDARD-DATEINAME (TEILEN)</value>
+  </data>
+  <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
+    <value>Name eingeben...</value>
+  </data>
+  <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
+    <value>Standard wiederherstellen</value>
+  </data>
+  <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
+    <value>SPRACHE</value>
+  </data>
+  <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
+    <value>RECHTSCHREIBEPRÜFUNG</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
+    <value>Aktiviert</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch_OffContent" xml:space="preserve">
+    <value>Deaktiviert</value>
+  </data>
+  <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
+    <value>DESIGN-MODUS</value>
+  </data>
+  <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
+    <value>Dunkel</value>
+  </data>
+  <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
+    <value>Hell</value>
+  </data>
   <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
     <value>Bitmap (.bmp)</value>
   </data>
@@ -160,6 +202,6 @@
     <value>TIFF-Bild (.tiff)</value>
   </data>
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
-    <value>Einfacher Text (.txt)</value>
+    <value>Textdatei (.txt)</value>
   </data>
 </root>

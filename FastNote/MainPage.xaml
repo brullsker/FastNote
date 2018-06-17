@@ -108,8 +108,8 @@
                                             <TextBlock Text="SHARE FILE" x:Uid="More_File_ShareFileText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Grid.Column="2">
-                                            <Border Width="2" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
-                                            <Button BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" HorizontalAlignment="Right" Width="44" Height="44">
+                                            <Border Width="6" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
+                                            <Button BorderThickness="0" Background="Transparent" HorizontalAlignment="Right" Width="44" Height="44">
                                                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
                                                 <Button.Flyout>
                                                     <MenuFlyout Placement="Right">
@@ -163,23 +163,23 @@
                         </PivotItem>
                         <PivotItem>
                             <PivotItem.Header>
-                                <TextBlock Text="Settings" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
+                                <TextBlock Text="Settings" x:Uid="More_SettingsHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
                             <ScrollViewer VerticalScrollMode="Auto">
                                 <StackPanel Orientation="Vertical" Margin="0,12">
-                                    <TextBlock Text="DEFAULT EXPORT FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,0,0,6"/>
-                                    <TextBox x:Name="DefExpFN" PlaceholderText="Enter name..." Text="{Binding DefaultExportName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
-                                    <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultExpFN" Click="RestoreDefaultExpFN_Click"/>
-                                    <TextBlock Text="DEFAULT SHARE FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
-                                    <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
-                                    <TextBlock Text="SPELLCHECKER" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <ToggleSwitch OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
-                                    <TextBlock Text="THEME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <RadioButton Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
-                                    <RadioButton Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
-                                    <RadioButton Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
-                                    <TextBlock Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <TextBlock Text="DEFAULT EXPORT FILENAME" x:Uid="More_Settings_DefExpNameText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,0,0,6"/>
+                                    <TextBox x:Name="DefExpFN" PlaceholderText="Enter name..." x:Uid="More_Settings_DefExpName_TextBox" Text="{Binding DefaultExportName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
+                                    <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" x:Uid="More_Settings_FileNamesRestoreDefault" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultExpFN" Click="RestoreDefaultExpFN_Click"/>
+                                    <TextBlock Text="DEFAULT SHARE FILENAME" x:Uid="More_Settings_DefShrNameText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." x:Uid="More_Settings_DefShrName_TextBox" Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
+                                    <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" x:Uid="More_Settings_FileNamesRestoreDefault" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
+                                    <TextBlock Text="SPELLCHECKER" x:Uid="More_Settings_SpellCheckHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <ToggleSwitch x:Uid="More_Settings_SpellChek_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
+                                    <TextBlock Text="THEME" x:Uid="More_Settings_ThemeHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <RadioButton x:Uid="More_Settings_Theme_Default" Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
+                                    <RadioButton x:Uid="More_Settings_Theme_Dark" Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
+                                    <RadioButton x:Uid="More_Settings_Theme_Light" Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
+                                    <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ComboBox IsEnabled="False" HorizontalAlignment="Stretch" SelectedIndex="0" BorderThickness="0">
                                         <ComboBoxItem Content="English" x:Name="LangEng"/>
                                         <ComboBoxItem Content="Deutsch" x:Name="LangDe"/>

@@ -138,6 +138,48 @@
   <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
     <value>SHARE WHOLE TEXT</value>
   </data>
+  <data name="More_SettingsHeaderText.Text" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
+    <value>DEFAULT EXPORT FILENAME</value>
+  </data>
+  <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
+    <value>Enter name...</value>
+  </data>
+  <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
+    <value>DEFAULT SHARE FILENAME</value>
+  </data>
+  <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
+    <value>Enter name...</value>
+  </data>
+  <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
+    <value>Restore default</value>
+  </data>
+  <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
+    <value>LANGUAGE</value>
+  </data>
+  <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
+    <value>SPELLCHECKER</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
+    <value>Enabled</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch_OffContent" xml:space="preserve">
+    <value>Disabled</value>
+  </data>
+  <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
+    <value>THEME</value>
+  </data>
+  <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
+    <value>Dark</value>
+  </data>
+  <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
+    <value>Light</value>
+  </data>
   <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
     <value>Bitmap (.bmp)</value>
   </data>
