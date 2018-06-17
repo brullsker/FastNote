@@ -39,6 +39,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"/>
                     <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
@@ -54,8 +55,13 @@
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1">
-                    <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" IsSpellCheckEnabled="True"/>
+                    <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" IsSpellCheckEnabled="True" TextChanged="MainEdit_TextChanged"/>
                 </Grid>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="2">
+                    <TextBlock x:Name="CharCount"/>
+                </StackPanel>
+                
                 <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
                     <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
                         <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
@@ -71,7 +77,7 @@
                                 <TextBlock Text="More" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
                             <ListView x:Name="MoreOptionsList" Margin="0,12" SelectionChanged="MoreOptionsList_SelectionChanged">
-                                <ListViewItem>
+                                <ListViewItem Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
@@ -84,7 +90,7 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
-                                <ListViewItem>
+                                <ListViewItem Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
@@ -101,7 +107,7 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
-                                <ListViewItem>
+                                <ListViewItem Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
@@ -120,7 +126,7 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
-                                <ListViewItem>
+                                <ListViewItem Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
