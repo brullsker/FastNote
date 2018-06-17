@@ -47,14 +47,13 @@ namespace FastNote
         public MainPage()
         {
             this.InitializeComponent();
-            Debug.WriteLine("InitalizeComponent check");
 
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
-            Debug.WriteLine("Timer interval set");
             timer.Tick += Timer_Tick;
-            Debug.WriteLine("Timer tick event handler set up");
             ShareSelectedTextContent.Visibility = Visibility.Collapsed;
-            Debug.WriteLine("ShareSelectedTextContent.Visibility set to collapsed");
+            if (Settings.Default.ThemeDefault == true) this.RequestedTheme = ElementTheme.Default;
+            if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
+            if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
 
             LoadDocument();
         }
@@ -94,22 +93,20 @@ namespace FastNote
             if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", Package.Current.DisplayName.ToString().ToUpper(), Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
             MainView.IsPaneOpen = true;
             MainView_PaneOpening(sender, e);
-
         }
 
+        bool updatetheme = false;
         private async void ThemeRB_Checked(object sender, RoutedEventArgs e)
         {
-            await MainView.Fade(value: 0f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
-            if (TDefault.IsChecked == true) this.RequestedTheme = ElementTheme.Default;
-            if (TDark.IsChecked == true) this.RequestedTheme = ElementTheme.Dark;
-            if (TLight.IsChecked == true) this.RequestedTheme = ElementTheme.Light;
-            await MainView.Fade(value: 1f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
-        }
-
-        private void MainPagePage_Loaded(object sender, RoutedEventArgs e)
-        {
-            MainView.IsPaneOpen = true;
-            MainView.IsPaneOpen = false;
+            if (updatetheme == false) updatetheme = true;
+            else
+            {
+                await MainView.Fade(value: 0f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
+                if (TDefault.IsChecked == true) this.RequestedTheme = ElementTheme.Default;
+                if (TDark.IsChecked == true) this.RequestedTheme = ElementTheme.Dark;
+                if (TLight.IsChecked == true) this.RequestedTheme = ElementTheme.Light;
+                await MainView.Fade(value: 1f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
+            }
         }
 
         private async void Timer_Tick(object sender, object e)
