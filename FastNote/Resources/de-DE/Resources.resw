@@ -120,6 +120,12 @@
   <data name="CharactersText.Text" xml:space="preserve">
     <value> Zeichen</value>
   </data>
+  <data name="Dialog_FileNotSaved" xml:space="preserve">
+    <value>Datei wurde nicht gespeichert.</value>
+  </data>
+  <data name="Dialog_OperationCancelled" xml:space="preserve">
+    <value>Operation abgebrochen</value>
+  </data>
   <data name="LoadingText.Text" xml:space="preserve">
     <value>Einen Moment Geduld...</value>
   </data>

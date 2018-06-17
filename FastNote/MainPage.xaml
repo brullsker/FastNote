@@ -78,7 +78,7 @@
                                 <TextBlock Text="File" x:Uid="More_FileHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
                             <ListView x:Name="MoreOptionsList" Margin="0,12" SelectionChanged="MoreOptionsList_SelectionChanged">
-                                <ListViewItem Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                <ListViewItem BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
@@ -91,7 +91,7 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
-                                <ListViewItem Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ShareItem">
+                                <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ShareItem">
                                     <Grid HorizontalAlignment="Stretch" Width="284">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
@@ -127,7 +127,7 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
-                                <ListViewItem Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                <ListViewItem BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
@@ -146,7 +146,7 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
-                                <ListViewItem Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                     <Grid HorizontalAlignment="Stretch">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
+using Windows.ApplicationModel.Resources;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -47,6 +48,7 @@ namespace FastNote
         DispatcherTimer timer = new DispatcherTimer();
 
         RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
+        ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView();
 
         public MainPage()
         {
@@ -261,7 +263,7 @@ namespace FastNote
                 }
                 else
                 {
-                    MessageDialog md = new MessageDialog("File wasn't saved.", "Operation cancelled");
+                    MessageDialog md = new MessageDialog(resourceLoader.GetString("Dialog_FileNotSaved"), resourceLoader.GetString("Dialog_OperationCancelled");
                     await md.ShowAsync();
                 }
                 LoadingControl.IsLoading = false;
