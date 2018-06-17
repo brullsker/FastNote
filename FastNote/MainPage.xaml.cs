@@ -165,6 +165,28 @@ namespace FastNote
             if (MoreOptionsList.SelectedIndex == 1)
             {                
                 LoadingControl.IsLoading = true;
+
+                StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.CreateFolderAsync("share", CreationCollisionOption.ReplaceExisting);
+                StorageFile sharefile = await file.CopyAsync(folder, "FastNote Share.rtf", NameCollisionOption.ReplaceExisting);
+
+                IReadOnlyList<StorageFile> pickedFiles = await folder.GetFilesAsync();
+
+                if (pickedFiles.Count > 0)
+                {
+                    this.storageItems = pickedFiles;
+
+                    // Display the file names in the UI.
+                    string selectedFiles = String.Empty;
+                    for (int index = 0; index < pickedFiles.Count; index++)
+                    {
+                        selectedFiles += pickedFiles[index].Name;
+
+                        if (index != (pickedFiles.Count - 1))
+                        {
+                            selectedFiles += ", ";
+                        }
+                    }
+                }
                 DataTransferManager.GetForCurrentView().DataRequested += ShareFile_DataRequested;
                 DataTransferManager.ShowShareUI();
                 LoadingControl.IsLoading = false;
@@ -195,6 +217,8 @@ namespace FastNote
             MoreOptionsList.SelectedItem = null;
         }
 
+        private IReadOnlyList<StorageFile> storageItems;
+
         private void ShareText_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
             args.Request.Data.SetText(MainEdit.Document.Selection.Text);
@@ -210,15 +234,8 @@ namespace FastNote
             args.Request.Data.Properties.Description = "Share whole text";
         }
 
-        private IReadOnlyList<StorageFile> storageItems;
-
-        private async void ShareFile_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
+        private void ShareFile_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
-            StorageFolder folder = ApplicationData.Current.LocalCacheFolder;
-            StorageFile sharefile = await file.CopyAsync(folder, "FastNote Share.rtf", NameCollisionOption.ReplaceExisting);
-            IReadOnlyList<StorageFile> pickedFiles = await ApplicationData.Current.LocalCacheFolder.GetFilesAsync();
-            Debug.WriteLine(pickedFiles.Count.ToString());
-            this.storageItems = pickedFiles;
             args.Request.Data.SetStorageItems(this.storageItems);
             args.Request.Data.Properties.Title = Package.Current.DisplayName;
             args.Request.Data.Properties.Description = "Share file";
