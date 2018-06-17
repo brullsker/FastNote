@@ -245,7 +245,7 @@
             </controls:Loading.Background>
             <StackPanel Orientation="Horizontal" Margin="12,0">
                 <ProgressRing Foreground="White" IsActive="True"/>
-                <TextBlock Foreground="White" Text="Working on it..." VerticalAlignment="Center" Margin="12,0,0,0"/>
+                <TextBlock Foreground="White" Text="Working on it..." x:Uid="LoadingText" VerticalAlignment="Center" Margin="12,0,0,0"/>
             </StackPanel>
         </controls:Loading>
     </Grid>

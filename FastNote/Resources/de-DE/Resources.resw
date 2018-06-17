@@ -120,6 +120,9 @@
   <data name="CharactersText.Text" xml:space="preserve">
     <value> Zeichen</value>
   </data>
+  <data name="LoadingText.Text" xml:space="preserve">
+    <value>Einen Moment Geduld...</value>
+  </data>
   <data name="More_AboutHeaderText.Text" xml:space="preserve">
     <value>Über</value>
   </data>

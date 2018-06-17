@@ -120,6 +120,9 @@
   <data name="CharactersText.Text" xml:space="preserve">
     <value> characters</value>
   </data>
+  <data name="LoadingText.Text" xml:space="preserve">
+    <value>Working on it...</value>
+  </data>
   <data name="More_AboutHeaderText.Text" xml:space="preserve">
     <value>About</value>
   </data>
