@@ -272,9 +272,21 @@ namespace FastNote
 
                 StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.CreateFolderAsync("share", CreationCollisionOption.ReplaceExisting);
 
-                if (Settings.Default.ShareFileType == 0) ShareRTF_Click(sender, e);
-                if (Settings.Default.ShareFileType == 1) ShareHTML_Click(sender, e);
-                if (Settings.Default.ShareFileType == 2) ShareTXT_Click(sender, e);
+                if (Settings.Default.ShareFileType == 0)
+                {
+                    StorageFile sharefile = await file.CopyAsync(folder, Settings.Default.DefaultShareName + ".rtf", NameCollisionOption.ReplaceExisting);
+                }
+                if (Settings.Default.ShareFileType == 1)
+                {
+                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".html", CreationCollisionOption.ReplaceExisting);
+                    await FileIO.WriteTextAsync(shareFile, ConvertToHtml(MainEdit));
+                }
+                if (Settings.Default.ShareFileType == 2)
+                {
+                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".txt", CreationCollisionOption.ReplaceExisting);
+                    MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
+                    await FileIO.WriteTextAsync(shareFile, txtstring);
+                }
                 if (Settings.Default.ShareFileType == 3) ShareJPG_Click(sender, e);
                 if (Settings.Default.ShareFileType == 4) SharePNG_Click(sender, e);
                 if (Settings.Default.ShareFileType == 5) ShareBMP_Click(sender, e);
@@ -537,28 +549,22 @@ namespace FastNote
             CharCount.Text = Convert.ToString(charcount.Length - 1);
         }
 
-        private async void ShareRTF_Click(object sender, RoutedEventArgs e)
+        private void ShareRTF_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 0;
-            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
-            StorageFile sharefile = await file.CopyAsync(folder, Settings.Default.DefaultShareName + ".rtf", NameCollisionOption.ReplaceExisting);
+            ShareItem.Focus(FocusState.Pointer);
         }
 
-        private async void ShareHTML_Click(object sender, RoutedEventArgs e)
+        private void ShareHTML_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 1;
-            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
-            StorageFile saveFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + "html");
-            MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
-            await FileIO.WriteTextAsync(saveFile, txtstring);
+            ShareItem.Focus(FocusState.Pointer);
         }
 
-        private async void ShareTXT_Click(object sender, RoutedEventArgs e)
+        private void ShareTXT_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 2;
-            StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.GetFolderAsync("share");
-            StorageFile saveFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + "txt");
-            await FileIO.WriteTextAsync(saveFile, ConvertToHtml(MainEdit));
+            ShareItem.Focus(FocusState.Pointer);
         }
 
         private async void ShareJPG_Click(object sender, RoutedEventArgs e)

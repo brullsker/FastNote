@@ -91,7 +91,7 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
-                                <ListViewItem Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0">
+                                <ListViewItem Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ShareItem">
                                     <Grid HorizontalAlignment="Stretch" Width="284">
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="Auto"/>
