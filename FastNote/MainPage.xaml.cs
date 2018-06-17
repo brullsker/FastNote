@@ -144,14 +144,6 @@ namespace FastNote
                 picker.FileTypeChoices.Add("Bitmap", new List<string>() { ".bmp" });
                 picker.FileTypeChoices.Add("GIF image", new List<string>() { ".gif" });
                 picker.FileTypeChoices.Add("TIFF image", new List<string>() { ".tiff" });
-                if (Settings.Default.DefaultExportFileType == 0) picker.DefaultFileExtension = ".rtf";
-                if (Settings.Default.DefaultExportFileType == 1) picker.DefaultFileExtension = ".html";
-                if (Settings.Default.DefaultExportFileType == 2) picker.DefaultFileExtension = ".txt";
-                if (Settings.Default.DefaultExportFileType == 3) picker.DefaultFileExtension = ".jpg";
-                if (Settings.Default.DefaultExportFileType == 4) picker.DefaultFileExtension = ".png";
-                if (Settings.Default.DefaultExportFileType == 5) picker.DefaultFileExtension = ".bmp";
-                if (Settings.Default.DefaultExportFileType == 6) picker.DefaultFileExtension = ".gif";
-                if (Settings.Default.DefaultExportFileType == 7) picker.DefaultFileExtension = ".tiff";
                 picker.SuggestedFileName = Settings.Default.DefaultExportName;
                 StorageFile saveFile = await picker.PickSaveFileAsync();
                 if (saveFile != null)

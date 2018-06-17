@@ -154,17 +154,6 @@
                                     <TextBlock Text="DEFAULT SHARE FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
                                     <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
-                                    <TextBlock Text="DEFAULT EXPORT FILE TYPE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <ComboBox IsEnabled="False" HorizontalAlignment="Stretch" SelectedIndex="{Binding DefaultExportFileType, Mode=TwoWay}" BorderThickness="0">
-                                        <ComboBoxItem Content="Rich Text (*.rtf)"/>
-                                        <ComboBoxItem Content="HTML page (*.html)"/>
-                                        <ComboBoxItem Content="Plain text (*.txt)"/>
-                                        <ComboBoxItem Content="JPG imgage (*.jpg)"/>
-                                        <ComboBoxItem Content="Portable Networks Graphics (*.png)"/>
-                                        <ComboBoxItem Content="Bitmap (*.bmp)"/>
-                                        <ComboBoxItem Content="GIF image (*.gif)"/>
-                                        <ComboBoxItem Content="TIFF image (*.tiff)"/>
-                                    </ComboBox>
                                     <TextBlock Text="SPELLCHECKER" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ToggleSwitch OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
                                     <TextBlock Text="THEME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
