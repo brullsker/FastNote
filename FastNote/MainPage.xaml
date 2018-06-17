@@ -177,7 +177,7 @@
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Background="Silver" Margin="0,0,12,0">
+                                        <Border Background="Gray" Margin="0,0,12,0">
                                             <Image Source="/Assets/SmallTile.scale-400.png" Width="136"/>
                                         </Border>
                                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
