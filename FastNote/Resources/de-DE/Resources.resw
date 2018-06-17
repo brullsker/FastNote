@@ -139,7 +139,7 @@
     <value>ALLES TEILEN</value>
   </data>
   <data name="More_SettingsHeaderText.Text" xml:space="preserve">
-    <value>Einstellungen</value>
+    <value>Optionen</value>
   </data>
   <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
     <value>STANDARD-DATEINAME (EXPORT)</value>
@@ -160,13 +160,13 @@
     <value>SPRACHE</value>
   </data>
   <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
-    <value>RECHTSCHREIBEPRÜFUNG</value>
+    <value>RECHTSCHREIBUNG PRÜFEN</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
+    <value>Aus</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
-    <value>Aktiviert</value>
-  </data>
-  <data name="More_Settings_SpellCheck_Switch_OffContent" xml:space="preserve">
-    <value>Deaktiviert</value>
+    <value>Ein</value>
   </data>
   <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
     <value>DESIGN-MODUS</value>

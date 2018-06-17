@@ -174,7 +174,7 @@
                                     <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." x:Uid="More_Settings_DefShrName_TextBox" Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
                                     <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" x:Uid="More_Settings_FileNamesRestoreDefault" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
                                     <TextBlock Text="SPELLCHECKER" x:Uid="More_Settings_SpellCheckHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <ToggleSwitch x:Uid="More_Settings_SpellChek_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
+                                    <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
                                     <TextBlock Text="THEME" x:Uid="More_Settings_ThemeHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Default" Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Dark" Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
