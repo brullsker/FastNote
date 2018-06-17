@@ -129,21 +129,29 @@ namespace FastNote
             MainView.IsPaneOpen = false;
         }
 
-
-
         private async void MoreOptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (MoreOptionsList.SelectedIndex == 0)
             {
                 LoadingControl.IsLoading = true;
                 Windows.Storage.Pickers.FileSavePicker picker = new Windows.Storage.Pickers.FileSavePicker();
-                picker.DefaultFileExtension = ".rtf";
                 picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
                 picker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
                 picker.FileTypeChoices.Add("HTML page", new List<string>() { ".html" });
                 picker.FileTypeChoices.Add("Plain text", new List<string>() { ".txt" });
-                picker.FileTypeChoices.Add("JPG Image", new List<string>() { ".jpg" });
+                picker.FileTypeChoices.Add("JPG image", new List<string>() { ".jpg" });
                 picker.FileTypeChoices.Add("Portable Networks Graphics", new List<string>() { ".png" });
+                picker.FileTypeChoices.Add("Bitmap", new List<string>() { ".bmp" });
+                picker.FileTypeChoices.Add("GIF image", new List<string>() { ".gif" });
+                picker.FileTypeChoices.Add("TIFF image", new List<string>() { ".tiff" });
+                if (Settings.Default.DefaultExportFileType == 0) picker.DefaultFileExtension = ".rtf";
+                if (Settings.Default.DefaultExportFileType == 1) picker.DefaultFileExtension = ".html";
+                if (Settings.Default.DefaultExportFileType == 2) picker.DefaultFileExtension = ".txt";
+                if (Settings.Default.DefaultExportFileType == 3) picker.DefaultFileExtension = ".jpg";
+                if (Settings.Default.DefaultExportFileType == 4) picker.DefaultFileExtension = ".png";
+                if (Settings.Default.DefaultExportFileType == 5) picker.DefaultFileExtension = ".bmp";
+                if (Settings.Default.DefaultExportFileType == 6) picker.DefaultFileExtension = ".gif";
+                if (Settings.Default.DefaultExportFileType == 7) picker.DefaultFileExtension = ".tiff";
                 picker.SuggestedFileName = Settings.Default.DefaultExportName;
                 StorageFile saveFile = await picker.PickSaveFileAsync();
                 if (saveFile != null)
@@ -199,6 +207,63 @@ namespace FastNote
                             var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
                             var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
                             var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.PngEncoderId, stream.AsRandomAccessStream());
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
+                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
+                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
+                    }
+                    if (saveFile.FileType == ".bmp")
+                    {
+                        MainEdit.RequestedTheme = ElementTheme.Light;
+                        MainEdit.Focus(FocusState.Programmatic);
+                        Debug.WriteLine("Focus set");
+                        await renderTargetBitmap.RenderAsync(MainEdit);
+                        Debug.WriteLine("Rendered");
+                        using (var stream = await saveFile.OpenStreamForWriteAsync())
+                        {
+                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
+                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
+                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.BmpEncoderId, stream.AsRandomAccessStream());
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
+                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
+                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
+                    }
+                    if (saveFile.FileType == ".gif")
+                    {
+                        MainEdit.RequestedTheme = ElementTheme.Light;
+                        MainEdit.Focus(FocusState.Programmatic);
+                        Debug.WriteLine("Focus set");
+                        await renderTargetBitmap.RenderAsync(MainEdit);
+                        Debug.WriteLine("Rendered");
+                        using (var stream = await saveFile.OpenStreamForWriteAsync())
+                        {
+                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
+                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
+                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, stream.AsRandomAccessStream());
+                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
+                            await encoder.FlushAsync();
+                        }
+                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
+                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
+                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
+                    }
+                    if (saveFile.FileType == ".tiff")
+                    {
+                        MainEdit.RequestedTheme = ElementTheme.Light;
+                        MainEdit.Focus(FocusState.Programmatic);
+                        Debug.WriteLine("Focus set");
+                        await renderTargetBitmap.RenderAsync(MainEdit);
+                        Debug.WriteLine("Rendered");
+                        using (var stream = await saveFile.OpenStreamForWriteAsync())
+                        {
+                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
+                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
+                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.TiffEncoderId, stream.AsRandomAccessStream());
                             encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
                             await encoder.FlushAsync();
                         }
