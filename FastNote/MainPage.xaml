@@ -141,17 +141,17 @@
                             </PivotItem.Header>
                             <StackPanel Orientation="Vertical" Margin="0,12">
                                 <TextBlock Text="DEFAULT EXPORT FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                <TextBox x:Name="DefExpFN" PlaceholderText="Enter name..." Text="{Binding DefaultExportName, Mode=TwoWay}" BorderThickness="0,0,0,2" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
-                                <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Defaults" x:Name="RestoreDefaultExpFN" Click="RestoreDefaultExpFN_Click"/>
+                                <TextBox x:Name="DefExpFN" PlaceholderText="Enter name..." Text="{Binding DefaultExportName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
+                                <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultExpFN" Click="RestoreDefaultExpFN_Click"/>
                                 <TextBlock Text="DEFAULT SHARE FILE NAME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
-                                <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Defaults" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
+                                <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
+                                <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
                                 <TextBlock Text="THEME" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                 <RadioButton Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
                                 <RadioButton Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
                                 <RadioButton Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
                                 <TextBlock Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                <ComboBox HorizontalAlignment="Stretch" SelectedIndex="0">
+                                <ComboBox IsEnabled="False" HorizontalAlignment="Stretch" SelectedIndex="0" BorderThickness="0">
                                     <ComboBoxItem Content="English" x:Name="LangEng"/>
                                     <ComboBoxItem Content="Deutsch" x:Name="LangDe"/>
                                 </ComboBox>
