@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -7,6 +8,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -30,8 +32,13 @@ namespace FastNote
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+            langlist.Add(CultureInfo.CurrentCulture.ToString());
+            langlist.Add("en-US");
+            langlist.Add("de-DE");
+            ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];
         }
 
+        List<string> langlist = new List<string>();
         /// <summary>
         /// Wird aufgerufen, wenn die Anwendung durch den Endbenutzer normal gestartet wird. Weitere Einstiegspunkte
         /// werden z. B. verwendet, wenn die Anwendung gestartet wird, um eine bestimmte Datei zu öffnen.

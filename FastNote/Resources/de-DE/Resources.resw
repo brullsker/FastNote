@@ -189,6 +189,12 @@
   <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
     <value>SPRACHE</value>
   </data>
+  <data name="More_Settings_Language_Default.Content" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="More_Settings_Lang_AppRest.Text" xml:space="preserve">
+    <value>App benötigt Neustart zum Übernehmen</value>
+  </data>
   <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
     <value>RECHTSCHREIBUNG PRÜFEN</value>
   </data>

@@ -28,6 +28,7 @@ using Windows.UI.Xaml.Printing;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Graphics.Display;
 using Windows.Graphics.Imaging;
+using System.Globalization;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -60,13 +61,6 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) this.RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
-
-            if (Settings.Default.LanguageIndex == 0)
-            {
-                
-            }
-            else 
-
             LoadDocument();
         }
 
