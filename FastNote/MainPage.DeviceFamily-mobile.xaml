@@ -12,13 +12,12 @@
     DataContext="{StaticResource settings}"
     x:Name="MainPagePage">
 
-    <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
+    <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowWidth">
                 <VisualState x:Name="small">
                     <VisualState.Setters>
                         <Setter Target="MainView.(DisplayMode)" Value="Overlay"/>
-                        <Setter Target="MainView.(PaneBackground)" Value="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
@@ -27,7 +26,6 @@
                 <VisualState x:Name="normal">
                     <VisualState.Setters>
                         <Setter Target="MainView.(DisplayMode)" Value="Inline"/>
-                        <Setter Target="MainView.(PaneBackground)" Value="{ThemeResource SystemControlAcrylicWindowBrush}"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="680"/>
@@ -35,14 +33,14 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlAcrylicWindowBrush}"  PaneClosing="MainView_PaneClosing">
+        <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"  PaneClosing="MainView_PaneClosing">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"/>
                     <RowDefinition/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
+                <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                         <AppBarSeparator/>
                         <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
