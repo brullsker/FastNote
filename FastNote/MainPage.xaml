@@ -108,9 +108,11 @@
                                             <TextBlock Text="SHARE FILE" x:Uid="More_File_ShareFileText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Grid.Column="2">
-                                            <Border Width="6" Background="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
-                                            <Button BorderThickness="0" Background="Transparent" HorizontalAlignment="Right" Width="44" Height="44">
+                                            <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44">
                                                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
+                                                <Button.Background>
+                                                    <SolidColorBrush Color="{ThemeResource SystemChromeLowColor}" Opacity="0.5"/>
+                                                </Button.Background>
                                                 <Button.Flyout>
                                                     <MenuFlyout Placement="Right">
                                                         <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="More_File_ShareFile_RTF" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
@@ -180,9 +182,10 @@
                                     <RadioButton x:Uid="More_Settings_Theme_Dark" Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Light" Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
                                     <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <ComboBox IsEnabled="False" HorizontalAlignment="Stretch" SelectedIndex="0" BorderThickness="0">
-                                        <ComboBoxItem Content="English" x:Name="LangEng"/>
-                                        <ComboBoxItem Content="Deutsch" x:Name="LangDe"/>
+                                    <ComboBox x:Name="LangBox" IsEnabled="False" HorizontalAlignment="Stretch" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" BorderThickness="0">
+                                        <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>
+                                        <ComboBoxItem Content="English"/>
+                                        <ComboBoxItem Content="Deutsch"/>
                                     </ComboBox>
                                 </StackPanel>
                             </ScrollViewer>

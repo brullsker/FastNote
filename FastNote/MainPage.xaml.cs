@@ -61,6 +61,12 @@ namespace FastNote
             if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
 
+            if (Settings.Default.LanguageIndex == 0)
+            {
+                
+            }
+            else 
+
             LoadDocument();
         }
 
