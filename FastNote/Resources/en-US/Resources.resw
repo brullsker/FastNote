@@ -243,4 +243,7 @@
   <data name="More_File_Exit.Text" xml:space="preserve">
     <value>EXIT APP</value>
   </data>
+  <data name="More_About_Langs.Text" xml:space="preserve">
+    <value>Translations</value>
+  </data>
 </root>

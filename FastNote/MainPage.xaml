@@ -181,7 +181,7 @@
                             <PivotItem.Header>
                                 <TextBlock Text="Settings" x:Uid="More_SettingsHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
-                            <ScrollViewer VerticalScrollMode="Auto">
+                            <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Hidden">
                                 <StackPanel Orientation="Vertical" Margin="0,12">
                                     <TextBlock Text="DEFAULT EXPORT FILENAME" x:Uid="More_Settings_DefExpNameText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,0,0,6"/>
                                     <TextBox x:Name="DefExpFN" PlaceholderText="Enter name..." x:Uid="More_Settings_DefExpName_TextBox" Text="{Binding DefaultExportName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
@@ -209,7 +209,7 @@
                             <PivotItem.Header>
                                 <TextBlock Text="About" x:Uid="More_AboutHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
-                            <ScrollViewer VerticalScrollMode="Auto">
+                            <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Hidden">
                                 <StackPanel Orientation="Vertical" Margin="0,12">
                                     <Grid Margin="0,0,0,6">
                                         <Grid.ColumnDefinitions>
@@ -227,22 +227,29 @@
                                             <HyperlinkButton Content="Twitter" NavigateUri="https://t.co/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
                                         </StackPanel>
                                     </Grid>
-                                    <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
                                         <TextBlock Text="Contribute to FastNote:" x:Uid="More_About_Contribute" Style="{StaticResource BaseTextBlockStyle}"/>
                                         <HyperlinkButton Content=" GitHub" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
                                     </StackPanel>
-                                    <StackPanel Orientation="Horizontal" Margin="0,6,0,0">
+                                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
                                         <TextBlock Text="Help me with a donation:" x:Uid="More_About_Donate" Style="{StaticResource BaseTextBlockStyle}"/>
                                         <HyperlinkButton Content=" PayPal" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
                                     </StackPanel>
-                                    <TextBlock Text="Used Libraries and SDKs" x:Uid="More_About_Libs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,6,0,0"/>
-                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                    <TextBlock Text="Used Libraries and SDKs" x:Uid="More_About_Libs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0"/>
+                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
                                         <StackPanel Orientation="Vertical" Margin="6,2,6,6">
                                             <TextBlock Text="Windows Community Toolkit"/>
                                             <StackPanel Orientation="Horizontal">
                                                 <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/Microsoft/UWPCommunityToolkit" Padding="0"/>
                                                 <TextBlock Text="Licensed under the MIT License" x:Uid="More_About_LicenseMIT" FontSize="12" Margin="12,0,0,0"/>
                                             </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <TextBlock Text="Translations" x:Uid="More_About_Langs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0"/>
+                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
+                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
+                                            <TextBlock Text="Deutsch - brullsker"/>
+                                            <HyperlinkButton Content="Mail" x:Uid="More_About_DevEmail" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="mailto:brullsker@outlook.de" Padding="0"/>
                                         </StackPanel>
                                     </Border>
                                 </StackPanel>
