@@ -240,4 +240,7 @@
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
     <value>Plain text (.txt)</value>
   </data>
+  <data name="More_File_Exit.Text" xml:space="preserve">
+    <value>EXIT APP</value>
+  </data>
 </root>

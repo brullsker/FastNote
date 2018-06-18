@@ -388,6 +388,7 @@ namespace FastNote
                 LoadDocument();
                 LoadingControl.IsLoading = false;
             }
+            if (MoreOptionsList.SelectedIndex == 4) Application.Current.Exit();
             MoreOptionsList.SelectedItem = null;
         }
 

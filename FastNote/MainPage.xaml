@@ -161,6 +161,20 @@
                                         </StackPanel>
                                     </Grid>
                                 </ListViewItem>
+
+                                <ListViewItem BorderThickness="0" VerticalAlignment="Bottom" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                    <Grid HorizontalAlignment="Stretch">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E8;" Foreground="Red"/>
+                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                            <AppBarSeparator/>
+                                            <TextBlock Text="EXIT APP" x:Uid="More_File_Exit" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Grid>
+                                </ListViewItem>
                             </ListView>
                         </PivotItem>
                         <PivotItem>
