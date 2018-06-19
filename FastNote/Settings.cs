@@ -71,5 +71,12 @@ namespace FastNote
             get { return Get<int>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = false)]
+        public bool MenuOpenOnStartup
+        {
+            get { return Get<bool>(); }
+            set { Set(value); }
+        }
     }
 }

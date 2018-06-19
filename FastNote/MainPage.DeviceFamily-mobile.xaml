@@ -33,7 +33,7 @@
                 </VisualState>
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"  PaneClosing="MainView_PaneClosing">
+        <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"  PaneClosing="MainView_PaneClosing" IsPaneOpen="{Binding MenuOpenOnStartup, Mode=OneTime}">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="48"/>
@@ -201,6 +201,8 @@
                                         <ComboBoxItem Content="Deutsch"/>
                                     </ComboBox>
                                     <TextBlock HorizontalAlignment="Center" Text="App restart required to apply" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
+                                    <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding MenuOpenOnStartup, Mode=TwoWay}"/>
                                 </StackPanel>
                             </ScrollViewer>
                         </PivotItem>

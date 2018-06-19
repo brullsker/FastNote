@@ -246,4 +246,7 @@
   <data name="More_About_Langs.Text" xml:space="preserve">
     <value>Translations</value>
   </data>
+  <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
+    <value>OPEN MENU ON STARTUP</value>
+  </data>
 </root>
