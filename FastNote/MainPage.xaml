@@ -85,110 +85,172 @@
                             <PivotItem.Header>
                                 <TextBlock Text="File" x:Uid="More_FileHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
-                            <ListView x:Name="MoreOptionsList" Margin="0,12" SelectionChanged="MoreOptionsList_SelectionChanged">
-                                <ListViewItem BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                    <Grid HorizontalAlignment="Stretch">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <SymbolIcon Symbol="SaveLocal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                            <AppBarSeparator/>
-                                            <TextBlock Text="EXPORT" x:Uid="More_File_ExportText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </Grid>
-                                </ListViewItem>
-                                <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ShareItem">
-                                    <Grid HorizontalAlignment="Stretch" Width="284">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition Width="Auto"/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid>
-                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE160;" />
-                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;" FontSize="12" Margin="0,5,0,0"/>
-                                        </Grid>
-
-                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                            <AppBarSeparator/>
-                                            <TextBlock Text="SHARE FILE" x:Uid="More_File_ShareFileText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                        <StackPanel Orientation="Horizontal" Grid.Column="2">
-                                            <AppBarSeparator Style="{StaticResource AppBarSeparatorStyleThin}"/>
-                                            <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44" Background="Transparent">
-                                                <controls:LayoutTransformControl>
-                                                    <controls:LayoutTransformControl.Transform>
-                                                        <TransformGroup>
-                                                            <RotateTransform Angle="0" x:Name="ShareArrow"/>
-                                                        </TransformGroup>
-                                                    </controls:LayoutTransformControl.Transform>
-                                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
-                                                </controls:LayoutTransformControl>
-                                                <Button.Flyout>
-                                                    <MenuFlyout Placement="Right" x:Name="ShareMenu">
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="More_File_ShareFile_RTF" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_HTML" Text="HTML page (.html)" Tag="&#xE12B;" x:Name="ShareHTML" Click="ShareHTML_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TXT" Text="Plain text (.txt)" Tag="&#xE1A2;" x:Name="ShareTXT" Click="ShareTXT_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_JPG" Text="JPG image (.jpg)" Tag="&#xE187;" x:Name="ShareJPG" Click="ShareJPG_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_PNG" Text="Portable Networks Graphics (.png)" Tag="&#xE2AC;" x:Name="SharePNG" Click="SharePNG_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_BMP" Text="Bitmap (.bmp)" Tag="&#xE80A;" x:Name="ShareBMP" Click="ShareBMP_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_GIF" Text="GIF image (.gif)" Tag="&#xE173;" x:Name="ShareGIF" Click="ShareGIF_Click"/>
-                                                        <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TIFF" Text="TIFF image (.tiff)" Tag="&#xE15A;" x:Name="ShareTIFF" Click="ShareTIFF_Click"/>
-                                                    </MenuFlyout>
-                                                </Button.Flyout>
-                                            </Button>
-                                        </StackPanel>
-                                    </Grid>
-                                </ListViewItem>
-                                <ListViewItem BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                    <Grid HorizontalAlignment="Stretch">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <Grid>
-                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE132;" />
-                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;" Foreground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" FontSize="12" Margin="0,5,0,0"/>
-                                        </Grid>
-                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                            <AppBarSeparator/>
-                                            <Grid>
-                                                <TextBlock Text="SHARE SELECTED TEXT" x:Uid="More_File_ShareText_Selected" x:Name="ShareSelectedTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
-                                                <TextBlock Text="SHARE WHOLE TEXT" x:Uid="More_File_ShareText_Whole" x:Name="ShareWholeTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                            <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Hidden">
+                                <StackPanel Orientation="Vertical">
+                                    <ListView x:Name="MoreOptionsList" Margin="0,12" SelectionChanged="MoreOptionsList_SelectionChanged">
+                                        <ListViewItem BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <SymbolIcon Symbol="SaveLocal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                                    <AppBarSeparator/>
+                                                    <TextBlock Text="EXPORT" x:Uid="More_File_ExportText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                </StackPanel>
                                             </Grid>
-                                        </StackPanel>
-                                    </Grid>
-                                </ListViewItem>
-                                <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                    <Grid HorizontalAlignment="Stretch">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <SymbolIcon Symbol="Delete" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                            <AppBarSeparator/>
-                                            <TextBlock Text="CLEAR ALL" x:Uid="More_File_ClearAll" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </Grid>
-                                </ListViewItem>
+                                        </ListViewItem>
+                                        <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ShareItem">
+                                            <Grid HorizontalAlignment="Stretch" Width="284">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid>
+                                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE160;" />
+                                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;" FontSize="12" Margin="0,5,0,0"/>
+                                                </Grid>
 
-                                <ListViewItem BorderThickness="0" VerticalAlignment="Bottom" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                    <Grid HorizontalAlignment="Stretch">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E8;" Foreground="Red"/>
-                                        <StackPanel Orientation="Horizontal" Grid.Column="1">
-                                            <AppBarSeparator/>
-                                            <TextBlock Text="EXIT APP" x:Uid="More_File_Exit" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
-                                        </StackPanel>
-                                    </Grid>
-                                </ListViewItem>
-                            </ListView>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                                    <AppBarSeparator/>
+                                                    <TextBlock Text="SHARE FILE" x:Uid="More_File_ShareFileText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                                    <AppBarSeparator Style="{StaticResource AppBarSeparatorStyleThin}"/>
+                                                    <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44" Background="Transparent">
+                                                        <controls:LayoutTransformControl>
+                                                            <controls:LayoutTransformControl.Transform>
+                                                                <TransformGroup>
+                                                                    <RotateTransform Angle="0" x:Name="ShareArrow"/>
+                                                                </TransformGroup>
+                                                            </controls:LayoutTransformControl.Transform>
+                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
+                                                        </controls:LayoutTransformControl>
+                                                        <Button.Flyout>
+                                                            <MenuFlyout Placement="Right" x:Name="ShareMenu">
+                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="More_File_ShareFile_RTF" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
+                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_HTML" Text="HTML page (.html)" Tag="&#xE12B;" x:Name="ShareHTML" Click="ShareHTML_Click"/>
+                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TXT" Text="Plain text (.txt)" Tag="&#xE1A2;" x:Name="ShareTXT" Click="ShareTXT_Click"/>
+                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_JPG" Text="JPG image (.jpg)" Tag="&#xE187;" x:Name="ShareJPG" Click="ShareJPG_Click"/>
+                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_PNG" Text="Portable Networks Graphics (.png)" Tag="&#xE2AC;" x:Name="SharePNG" Click="SharePNG_Click"/>
+                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_BMP" Text="Bitmap (.bmp)" Tag="&#xE80A;" x:Name="ShareBMP" Click="ShareBMP_Click"/>
+                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_GIF" Text="GIF image (.gif)" Tag="&#xE173;" x:Name="ShareGIF" Click="ShareGIF_Click"/>
+                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TIFF" Text="TIFF image (.tiff)" Tag="&#xE15A;" x:Name="ShareTIFF" Click="ShareTIFF_Click"/>
+                                                            </MenuFlyout>
+                                                        </Button.Flyout>
+                                                    </Button>
+                                                </StackPanel>
+                                            </Grid>
+                                        </ListViewItem>
+                                        <ListViewItem BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid>
+                                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE132;" />
+                                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE72D;" Foreground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}" FontSize="12" Margin="0,5,0,0"/>
+                                                </Grid>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                                    <AppBarSeparator/>
+                                                    <Grid>
+                                                        <TextBlock Text="SHARE SELECTED TEXT" x:Uid="More_File_ShareText_Selected" x:Name="ShareSelectedTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                        <TextBlock Text="SHARE WHOLE TEXT" x:Uid="More_File_ShareText_Whole" x:Name="ShareWholeTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                    </Grid>
+                                                </StackPanel>
+                                            </Grid>
+                                        </ListViewItem>
+                                        <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <SymbolIcon Symbol="Delete" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                                    <AppBarSeparator/>
+                                                    <TextBlock Text="CLEAR ALL" x:Uid="More_File_ClearAll" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </ListViewItem>
+
+                                        <ListViewItem BorderThickness="0" VerticalAlignment="Bottom" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <Grid HorizontalAlignment="Stretch">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                </Grid.ColumnDefinitions>
+                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E8;" Foreground="Red"/>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                                    <AppBarSeparator/>
+                                                    <TextBlock Text="EXIT APP" x:Uid="More_File_Exit" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </ListViewItem>
+                                    </ListView>
+                                    <MenuFlyoutSeparator/>
+                                    <TextBlock Text="SPECIAL CHARACTERS" HorizontalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <GridView SelectionMode="Single">
+                                        <GridViewItem Tag="©" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xA9;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="®" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xAE;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="¬" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xAC;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="·" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xB7;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="¨" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xA8;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="¶" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xB6;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="¦" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xA6;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="|" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#x7C;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="±" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xB1;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="µ" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xB5;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="¼" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xBC;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="½" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xBD;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="¾" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xBE;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="×" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xD7;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="÷" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xF7;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="Ø" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xD8;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="«" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xAB;" />
+                                        </GridViewItem>
+                                        <GridViewItem Tag="»" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xBB;" />
+                                        </GridViewItem>
+                                    </GridView>
+                                </StackPanel>
+                            </ScrollViewer>
                         </PivotItem>
                         <PivotItem>
                             <PivotItem.Header>
