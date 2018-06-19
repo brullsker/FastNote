@@ -54,7 +54,7 @@
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-                    <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
+                    <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}" ContextRequested="MainEdit_ContextRequested"/>
                 </Grid>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="12,0">
