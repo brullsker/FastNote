@@ -19,6 +19,8 @@
                     <VisualState.Setters>
                         <Setter Target="MainView.(DisplayMode)" Value="Overlay"/>
                         <Setter Target="MainView.(PaneBackground)" Value="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
+                        <Setter Target="ShareArrow.(Angle)" Value="90"/>
+                        <Setter Target="ShareMenu.(Placement)" Value="Bottom"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
@@ -28,6 +30,8 @@
                     <VisualState.Setters>
                         <Setter Target="MainView.(DisplayMode)" Value="Inline"/>
                         <Setter Target="MainView.(PaneBackground)" Value="{ThemeResource SystemControlAcrylicWindowBrush}"/>
+                        <Setter Target="ShareArrow.(Angle)" Value="0"/>
+                        <Setter Target="ShareMenu.(Placement)" Value="Right"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="680"/>
@@ -56,12 +60,15 @@
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1" Background="Transparent">
-                    <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
+                    <RichEditBox PlaceholderText="Start taking notes..." x:Uid="EditPlaceHolder" x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="12,0">
-                    <TextBlock x:Name="CharCount"/>
-                    <TextBlock Text=" characters" x:Uid="CharactersText"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="2" BorderBrush="{ThemeResource SystemControlAcrylicWindowBrush}" BorderThickness="0,1,0,0">
+                    <TextBlock x:Name="CharCount" Margin="12,0,0,0"/>
+                    <TextBlock Text=" characters" x:Uid="CharactersText" Margin="0,0,12,0"/>
+                    <StackPanel.Background>
+                        <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" Opacity="0.4"/>
+                    </StackPanel.Background>
                 </StackPanel>
                 
                 <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
@@ -109,13 +116,18 @@
                                             <TextBlock Text="SHARE FILE" x:Uid="More_File_ShareFileText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" Grid.Column="2">
-                                            <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44">
-                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
-                                                <Button.Background>
-                                                    <SolidColorBrush Color="{ThemeResource SystemChromeLowColor}" Opacity="0.5"/>
-                                                </Button.Background>
+                                            <AppBarSeparator Style="{StaticResource AppBarSeparatorStyleThin}"/>
+                                            <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44" Background="Transparent">
+                                                <controls:LayoutTransformControl>
+                                                    <controls:LayoutTransformControl.Transform>
+                                                        <TransformGroup>
+                                                            <RotateTransform Angle="0" x:Name="ShareArrow"/>
+                                                        </TransformGroup>
+                                                    </controls:LayoutTransformControl.Transform>
+                                                    <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
+                                                </controls:LayoutTransformControl>
                                                 <Button.Flyout>
-                                                    <MenuFlyout Placement="Right">
+                                                    <MenuFlyout Placement="Right" x:Name="ShareMenu">
                                                         <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="More_File_ShareFile_RTF" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
                                                         <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_HTML" Text="HTML page (.html)" Tag="&#xE12B;" x:Name="ShareHTML" Click="ShareHTML_Click"/>
                                                         <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TXT" Text="Plain text (.txt)" Tag="&#xE1A2;" x:Name="ShareTXT" Click="ShareTXT_Click"/>

@@ -436,8 +436,8 @@ namespace FastNote
 
         public static string ConvertToHtml(RichEditBox richEditBox)
         {
-            string text, strColour, strFntName, strHTML;
-            richEditBox.Document.GetText(TextGetOptions.None, out text);
+            string strColour, strFntName, strHTML;
+            richEditBox.Document.GetText(TextGetOptions.None, out string text);
             ITextRange txtRange = richEditBox.Document.GetRange(0, text.Length);
             strHTML = "<html>";
             int lngOriginalStart = txtRange.StartPosition;
@@ -596,8 +596,7 @@ namespace FastNote
 
         private void MainEdit_TextChanged(object sender, RoutedEventArgs e)
         {
-            string charcount;
-            MainEdit.Document.GetText(TextGetOptions.None, out charcount);
+            MainEdit.Document.GetText(TextGetOptions.None, out string charcount);
             CharCount.Text = Convert.ToString(charcount.Length - 1);
         }
 

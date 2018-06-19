@@ -249,4 +249,7 @@
   <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
     <value>MENÜ BEIM START ÖFFNEN</value>
   </data>
+  <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
+    <value>Notiz eingeben...</value>
+  </data>
 </root>
