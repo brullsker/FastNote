@@ -55,7 +55,7 @@
                     </StackPanel>
                 </Grid>
 
-                <Grid x:Name="container" Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                <Grid x:Name="container" Grid.Row="1" Background="Transparent">
                     <RichEditBox x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
 
@@ -202,7 +202,7 @@
                                         <ComboBoxItem Content="English"/>
                                         <ComboBoxItem Content="Deutsch"/>
                                     </ComboBox>
-                                    <TextBlock Text="App restart required to apply" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
+                                    <TextBlock Text="App restart required to apply" HorizontalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
                                 </StackPanel>
                             </ScrollViewer>
                         </PivotItem>

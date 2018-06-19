@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Uwp.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -32,7 +33,7 @@ namespace FastNote
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
-            langlist.Add(CultureInfo.CurrentCulture.ToString());
+            langlist.Add(SystemInformation.Culture.ToString());
             langlist.Add("en-US");
             langlist.Add("de-DE");
             ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];

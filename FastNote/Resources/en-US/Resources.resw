@@ -184,7 +184,7 @@
     <value>Enter name...</value>
   </data>
   <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
-    <value>Restore default</value>
+    <value>Reset</value>
   </data>
   <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
     <value>LANGUAGE</value>
