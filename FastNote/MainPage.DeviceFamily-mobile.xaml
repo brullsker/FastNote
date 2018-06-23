@@ -186,64 +186,6 @@
                                             </Grid>
                                         </ListViewItem>
                                     </ListView>
-                                    <MenuFlyoutSeparator/>
-                                    <TextBlock Text="SPECIAL CHARACTERS" HorizontalAlignment="Center" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <GridView SelectionMode="Single">
-                                        <GridViewItem Tag="©" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xA9;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="®" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xAE;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="¬" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xAC;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="·" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xB7;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="¨" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xA8;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="¶" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xB6;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="¦" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xA6;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="|" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#x7C;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="±" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xB1;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="µ" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xB5;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="¼" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xBC;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="½" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xBD;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="¾" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xBE;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="×" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xD7;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="÷" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xF7;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="Ø" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xD8;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="«" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xAB;" />
-                                        </GridViewItem>
-                                        <GridViewItem Tag="»" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                            <FontIcon FontFamily="Segoe UI" Glyph="&#xBB;" />
-                                        </GridViewItem>
-                                    </GridView>
                                 </StackPanel>
                             </ScrollViewer>
                         </PivotItem>
