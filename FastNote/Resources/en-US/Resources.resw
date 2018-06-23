@@ -201,7 +201,7 @@
   <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
     <value>Enabled</value>
   </data>
-  <data name="More_Settings_SpellCheck_Switch_OffContent" xml:space="preserve">
+  <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
     <value>Disabled</value>
   </data>
   <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
