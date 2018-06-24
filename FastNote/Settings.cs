@@ -78,5 +78,19 @@ namespace FastNote
             get { return Get<bool>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = "Segoe UI")]
+        public string FontFamily
+        {
+            get { return Get<string>(); }
+            set { Set(value); }
+        }
+
+        [DefaultSettingValue(Value = 15)]
+        public int FontSize
+        {
+            get { return Get<int>(); }
+            set { Set(value); }
+        }
     }
 }

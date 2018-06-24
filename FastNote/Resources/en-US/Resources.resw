@@ -252,4 +252,10 @@
   <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
     <value>Start taking notes...</value>
   </data>
+  <data name="More_Settings_FontSizeHeader.Text" xml:space="preserve">
+    <value>FONT SIZE</value>
+  </data>
+  <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>Enter number...</value>
+  </data>
 </root>

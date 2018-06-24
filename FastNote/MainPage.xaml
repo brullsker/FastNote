@@ -60,7 +60,7 @@
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1" Background="Transparent">
-                    <RichEditBox PlaceholderText="Start taking notes..." x:Uid="EditPlaceHolder" x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
+                    <RichEditBox FontSize="{Binding FontSize, Mode=OneWay}" PlaceholderText="Start taking notes..." x:Uid="EditPlaceHolder" x:Name="MainEdit" BorderThickness="0" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="2" BorderBrush="{ThemeResource SystemControlAcrylicWindowBrush}" BorderThickness="0,1,0,0">
@@ -208,6 +208,8 @@
                                     <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" x:Uid="More_Settings_FileNamesRestoreDefault" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
                                     <TextBlock Text="SPELLCHECKER" x:Uid="More_Settings_SpellCheckHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
+                                    <TextBlock x:Uid="More_Settings_FontSizeHeader" Text="FONT SIZE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <TextBox Text="{Binding FontSize, Mode=TwoWay}" PlaceholderText="Enter number..." x:Name="NumberPlaceholder" BorderThickness="0,0,0,2"/>
                                     <TextBlock Text="THEME" x:Uid="More_Settings_ThemeHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Default" Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Dark" Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
