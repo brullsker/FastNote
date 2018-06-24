@@ -51,6 +51,8 @@ namespace FastNote
         RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
         ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView();
 
+        string[] fonts = Microsoft.Graphics.Canvas.Text.CanvasTextFormat.GetSystemFontFamilies();
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -61,6 +63,10 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) this.RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
+            foreach (string font in fonts) { Debug.WriteLine("Font: " + font); }
+            List<string> FontList = fonts.ToList<string>();
+            FontList.Sort();
+            foreach (string font in FontList) { Debug.WriteLine("Sorted Font: " + font); }
             LoadDocument();
         }
 
@@ -93,7 +99,7 @@ namespace FastNote
             MainEdit.Focus(FocusState.Keyboard);
             timer.Start();
         }
-        
+
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", Package.Current.DisplayName.ToString().ToUpper(), Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
@@ -269,7 +275,7 @@ namespace FastNote
                 LoadingControl.IsLoading = false;
             }
             if (MoreOptionsList.SelectedIndex == 1)
-            {                
+            {
                 LoadingControl.IsLoading = true;
 
                 StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.CreateFolderAsync("share", CreationCollisionOption.ReplaceExisting);
@@ -423,7 +429,7 @@ namespace FastNote
         }
 
         private void MainView_PaneClosing(SplitView sender, SplitViewPaneClosingEventArgs args)
-        {            
+        {
             SettingsButton_Close.Scale(scaleX: 0f, scaleY: 0f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
             SettingsButton.Scale(scaleX: 1f, scaleY: 1f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
         }
