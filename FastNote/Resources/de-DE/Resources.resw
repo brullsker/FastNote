@@ -258,4 +258,7 @@
   <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
     <value>Zahl eingeben...</value>
   </data>
+  <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
+    <value>SCHRIFTART</value>
+  </data>
 </root>

@@ -677,9 +677,46 @@ namespace FastNote
             MainEdit.FontFamily = fontfam;
         }
 
-        private void FontFamBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        private void RepeatButton_Click(object sender, RoutedEventArgs e)
         {
+            int fs = Convert.ToInt32(FontSizeTextBox.Text);
+            fs++;
+            FontSizeTextBox.Text = fs.ToString();
+        }
 
+        private void RepeatButton_Click_1(object sender, RoutedEventArgs e)
+        {
+            int fs = Convert.ToInt32(FontSizeTextBox.Text);
+            if (fs > 0)
+            {
+                fs--;
+                FontSizeTextBox.Text = fs.ToString();
+            }
+        }
+
+        private void FontSizeTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                if (FontSizeTextBox.Text != null)
+                {
+                    int fs = Convert.ToInt32(FontSizeTextBox.Text);
+                    MainEdit.FontSize = fs;
+                    Settings.Default.FontSize = fs;
+                }
+                else
+                {
+                    MainEdit.FontSize = 1;
+                    Settings.Default.FontSize = 1;
+                }
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine(ex);
+                MainEdit.FontSize = 1;
+                Settings.Default.FontSize = 1;
+                FontSizeTextBox.Text = "1";
+            }
         }
     }
 }
