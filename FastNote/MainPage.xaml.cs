@@ -73,8 +73,9 @@ namespace FastNote
             Debug.WriteLine("Got fonts");
             FontList = fonts.ToList<string>(); Debug.WriteLine("FontList made");
             FontList.Sort(); Debug.WriteLine("List ordered");
-            foreach (string font in FontList) { Debug.WriteLine("Sorted Font: " + font); }
-            FontFamBox.ItemsSource = FontList;
+            List<ComboBoxItem> FontItems = new List<ComboBoxItem>();
+            foreach (string font in FontList) { Debug.WriteLine("Sorted Font: " + font); FontItems.Add(new ComboBoxItem { Content = new TextBlock { Text = font, FontFamily = new FontFamily(font) } }); };
+            FontFamBox.ItemsSource = FontItems;
             if (Settings.Default.FontFamSegFS == true)
             {
                 int sui = FontList.IndexOf("Segoe UI");
