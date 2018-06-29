@@ -79,10 +79,10 @@ namespace FastNote
             set { Set(value); }
         }
 
-        [DefaultSettingValue(Value = "Segoe UI")]
-        public string FontFamily
+        [DefaultSettingValue(Value = 0)]
+        public int FontFamily
         {
-            get { return Get<string>(); }
+            get { return Get<int>(); }
             set { Set(value); }
         }
 
@@ -90,6 +90,13 @@ namespace FastNote
         public int FontSize
         {
             get { return Get<int>(); }
+            set { Set(value); }
+        }
+
+        [DefaultSettingValue(Value = true)]
+        public bool FontFamSegFS
+        {
+            get { return Get<bool>(); }
             set { Set(value); }
         }
     }

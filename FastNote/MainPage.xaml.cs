@@ -51,7 +51,7 @@ namespace FastNote
         RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
         ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView();
 
-        string[] fonts = Microsoft.Graphics.Canvas.Text.CanvasTextFormat.GetSystemFontFamilies();
+        List<string> FontList = new List<string>();
 
         public MainPage()
         {
@@ -63,11 +63,26 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) this.RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
-            foreach (string font in fonts) { Debug.WriteLine("Font: " + font); }
-            List<string> FontList = fonts.ToList<string>();
-            FontList.Sort();
-            foreach (string font in FontList) { Debug.WriteLine("Sorted Font: " + font); }
             LoadDocument();
+            FontStuff();
+        }
+
+        private void FontStuff()
+        {
+            string[] fonts = Microsoft.Graphics.Canvas.Text.CanvasTextFormat.GetSystemFontFamilies();
+            Debug.WriteLine("Got fonts");
+            FontList = fonts.ToList<string>(); Debug.WriteLine("FontList made");
+            FontList.Sort(); Debug.WriteLine("List ordered");
+            foreach (string font in FontList) { Debug.WriteLine("Sorted Font: " + font); }
+            FontFamBox.ItemsSource = FontList;
+            if (Settings.Default.FontFamSegFS == true)
+            {
+                int sui = FontList.IndexOf("Segoe UI");
+                Debug.WriteLine(sui);
+                Settings.Default.FontFamily = sui;
+                Settings.Default.FontFamSegFS = false;
+            }
+            else Debug.WriteLine("Not first scan");
         }
 
         public async void LoadDocument()
@@ -652,6 +667,19 @@ namespace FastNote
         {
             Settings.Default.ShareFileType = 7;
             MoreOptionsList.SelectedItem = ShareItem;
+        }
+
+        private void FontFamBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string font = FontList[Settings.Default.FontFamily];
+            Debug.WriteLine(font);
+            FontFamily fontfam = new FontFamily(font);
+            MainEdit.FontFamily = fontfam;
+        }
+
+        private void FontFamBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
