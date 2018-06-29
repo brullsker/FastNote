@@ -681,8 +681,11 @@ namespace FastNote
         private void RepeatButton_Click(object sender, RoutedEventArgs e)
         {
             int fs = Convert.ToInt32(FontSizeTextBox.Text);
-            fs++;
-            FontSizeTextBox.Text = fs.ToString();
+            if (fs < 1638)
+            {
+                fs++;
+                FontSizeTextBox.Text = fs.ToString();
+            }
         }
 
         private void RepeatButton_Click_1(object sender, RoutedEventArgs e)
@@ -702,8 +705,21 @@ namespace FastNote
                 if (FontSizeTextBox.Text != null)
                 {
                     int fs = Convert.ToInt32(FontSizeTextBox.Text);
-                    MainEdit.FontSize = fs;
-                    Settings.Default.FontSize = fs;
+                    if (fs < 1)
+                    {
+                        fs = 1;
+                        MainEdit.FontSize = fs;
+                        Settings.Default.FontSize = fs;
+                    }
+                    else if (fs > 1368)
+                    {
+                        fs = 1368;
+                    }
+                    else
+                    {
+                        MainEdit.FontSize = fs;
+                        Settings.Default.FontSize = fs;
+                    }
                 }
                 else
                 {

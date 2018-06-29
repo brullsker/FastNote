@@ -216,8 +216,8 @@
                                         </Grid.ColumnDefinitions>
                                         <TextBox Height="32" x:Name="FontSizeTextBox" Text="{Binding FontSize, Mode=TwoWay}" PlaceholderText="Enter number..." x:Uid="NumberPlaceholder" TextChanged="FontSizeTextBox_TextChanged" BorderThickness="0,0,0,2"/>
                                         <StackPanel Orientation="Vertical" Grid.Column="1">
-                                            <RepeatButton Content="&#xE014;" FontFamily="Segoe MDL2 Assets" FontSize="12" Padding="0" Width="24" Height="16" Click="RepeatButton_Click"/>
-                                            <RepeatButton Content="&#xE015;" FontFamily="Segoe MDL2 Assets" FontSize="12" Padding="0" Width="24" Height="16" Click="RepeatButton_Click_1"/>
+                                            <RepeatButton Content="&#xE014;" FontFamily="Segoe MDL2 Assets" FontSize="12" Padding="0" Width="24" Height="16" Click="RepeatButton_Click" Background="#66FFFFFF"/>
+                                            <RepeatButton Content="&#xE015;" FontFamily="Segoe MDL2 Assets" FontSize="12" Padding="0" Width="24" Height="16" Click="RepeatButton_Click_1" Background="#66FFFFFF"/>
                                         </StackPanel>
                                     </Grid>
                                     <TextBlock x:Uid="More_Settings_FontFamilyHeader" Text="FONT FAMILY" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
