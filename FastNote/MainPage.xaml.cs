@@ -63,8 +63,8 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) this.RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
-            LoadDocument();
             FontStuff();
+            LoadDocument();
         }
 
         private void FontStuff()
@@ -112,7 +112,8 @@ namespace FastNote
             MainEdit.Document.LoadFromStream(Windows.UI.Text.TextSetOptions.FormatRtf, randAccStream);
             Debug.WriteLine("File loaded");
             randAccStream.Dispose();
-            MainEdit.Focus(FocusState.Keyboard);
+            MainEdit.Focus(FocusState.Keyboard); MainEdit.Document.GetText(TextGetOptions.None, out string txt);
+            MainEdit.Document.Selection.SetRange(startPosition: txt.Length, endPosition: txt.Length);
             timer.Start();
         }
 

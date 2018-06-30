@@ -221,7 +221,7 @@
                                         </StackPanel>
                                     </Grid>
                                     <TextBlock x:Uid="More_Settings_FontFamilyHeader" Text="FONT FAMILY" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <ComboBox x:Name="FontFamBox" IsEnabled="True" HorizontalAlignment="Stretch" BorderThickness="0" SelectedIndex="{Binding FontFamily, Mode=TwoWay}" SelectionChanged="FontFamBox_SelectionChanged">
+                                    <ComboBox x:Name="FontFamBox" IsEnabled="True" HorizontalAlignment="Stretch" BorderThickness="0" SelectedIndex="{Binding FontFamily, Mode=TwoWay}" SelectionChanged="FontFamBox_SelectionChanged" >
                                     </ComboBox>
                                     <TextBlock Text="THEME" x:Uid="More_Settings_ThemeHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Default" Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
