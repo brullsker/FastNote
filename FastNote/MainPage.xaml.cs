@@ -8,27 +8,17 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Resources;
 using Windows.ApplicationModel.DataTransfer;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using Microsoft.Toolkit.Uwp.Helpers;
-using Microsoft.Toolkit.Uwp.UI.Helpers;
 using Windows.UI.Text;
-using Windows.Graphics.Printing;
-using Windows.UI.Xaml.Printing;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Graphics.Display;
 using Windows.Graphics.Imaging;
-using System.Globalization;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -63,7 +53,6 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) this.RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
-            FontStuff();
             LoadDocument();
         }
 
@@ -74,7 +63,7 @@ namespace FastNote
             FontList = fonts.ToList<string>(); Debug.WriteLine("FontList made");
             FontList.Sort(); Debug.WriteLine("List ordered");
             List<ComboBoxItem> FontItems = new List<ComboBoxItem>();
-            foreach (string font in FontList) { Debug.WriteLine("Sorted Font: " + font); FontItems.Add(new ComboBoxItem { Content = new TextBlock { Text = font, FontFamily = new FontFamily(font) } }); };
+            foreach (string font in FontList) { FontItems.Add(new ComboBoxItem { Content = new TextBlock { Text = font, FontFamily = new FontFamily(font) } }); };
             FontFamBox.ItemsSource = FontItems;
             if (Settings.Default.FontFamSegFS == true)
             {
@@ -88,6 +77,7 @@ namespace FastNote
 
         public async void LoadDocument()
         {
+            FontStuff();
             storageFolder = ApplicationData.Current.LocalFolder;
             Debug.WriteLine("Loading document: StorageFolder found");
             string filepath = storageFolder.Path.ToString() + "/" + documentName;
