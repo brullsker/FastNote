@@ -726,5 +726,17 @@ namespace FastNote
                 FontSizeTextBox.Text = "1";
             }
         }
+
+        private void FontSizeTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            FontSizeButtons.RequestedTheme = ElementTheme.Light;
+        }
+
+        private void FontSizeTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.ThemeDefault == true) FontSizeButtons.RequestedTheme = ElementTheme.Default;
+            if (Settings.Default.ThemeLight == true) FontSizeButtons.RequestedTheme = ElementTheme.Light;
+            if (Settings.Default.ThemeDark == true) FontSizeButtons.RequestedTheme = ElementTheme.Dark;
+        }
     }
 }
