@@ -63,7 +63,7 @@
                     <RichEditBox FontSize="{Binding FontSize, Mode=OneWay}" PlaceholderText="Start taking notes..." x:Uid="EditPlaceHolder" x:Name="MainEdit" BorderThickness="0" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
 
-                <StackPanel Orientation="Horizontal" Grid.Row="2" BorderBrush="{ThemeResource SystemControlAcrylicWindowBrush}" BorderThickness="0,1,0,0">
+                <StackPanel Orientation="Horizontal" Grid.Row="2" BorderBrush="{ThemeResource SystemControlTransparentRevealBorderBrush}" BorderThickness="0,1,0,0">
                     <TextBlock x:Name="CharCount" Margin="12,0,0,0"/>
                     <TextBlock Text=" characters" x:Uid="CharactersText" Margin="0,0,12,0"/>
                     <StackPanel.Background>
