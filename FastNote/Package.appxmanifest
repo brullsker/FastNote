@@ -25,6 +25,13 @@
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="gray" />
       </uap:VisualElements>
+      <Extensions>
+        <uap:Extension Category="windows.protocol" EntryPoint="FastNote.App">
+          <uap:Protocol Name="fastnote">
+            <uap:DisplayName>FastNote</uap:DisplayName>
+          </uap:Protocol>
+        </uap:Extension>
+      </Extensions>
     </Application>
   </Applications>
   <Capabilities>
