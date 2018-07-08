@@ -129,16 +129,65 @@
                                                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
                                                         </controls:LayoutTransformControl>
                                                         <Button.Flyout>
-                                                            <MenuFlyout Placement="Right" x:Name="ShareMenu">
-                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="More_File_ShareFile_RTF" Text="Rich Text (.rtf)" Tag="&#xE160;" x:Name="ShareRTF" Click="ShareRTF_Click"/>
-                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_HTML" Text="HTML page (.html)" Tag="&#xE12B;" x:Name="ShareHTML" Click="ShareHTML_Click"/>
-                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TXT" Text="Plain text (.txt)" Tag="&#xE1A2;" x:Name="ShareTXT" Click="ShareTXT_Click"/>
-                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_JPG" Text="JPG image (.jpg)" Tag="&#xE187;" x:Name="ShareJPG" Click="ShareJPG_Click"/>
-                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_PNG" Text="Portable Networks Graphics (.png)" Tag="&#xE2AC;" x:Name="SharePNG" Click="SharePNG_Click"/>
-                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_BMP" Text="Bitmap (.bmp)" Tag="&#xE80A;" x:Name="ShareBMP" Click="ShareBMP_Click"/>
-                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_GIF" Text="GIF image (.gif)" Tag="&#xE173;" x:Name="ShareGIF" Click="ShareGIF_Click"/>
-                                                                <MenuFlyoutItem Style="{StaticResource MenuFlyoutItemIconStyle}" x:Uid="Share_File_ShareFile_TIFF" Text="TIFF image (.tiff)" Tag="&#xE15A;" x:Name="ShareTIFF" Click="ShareTIFF_Click"/>
-                                                            </MenuFlyout>
+                                                            <Flyout Placement="Right" x:Name="ShareMenu" FlyoutPresenterStyle="{StaticResource FlyoutNoPadding}">
+                                                                <ListView Padding="0" Margin="0">
+                                                                    <ListViewItem x:Name="ShareRTF" Tapped="ShareRTF_Click" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE160;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="More_File_ShareFile_RTF"  Text="Rich Text (.rtf)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ShareHTML" Tapped="ShareHTML_Click" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE12B;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_HTML" Text="HTML page (.html)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ShareTXT" Tapped="ShareTXT_Click" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE1A2;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_TXT" Text="Plain Text (.txt)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ShareJPG" Tapped="ShareJPG_Click" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE187;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_JPG" Text="JPG Image (.jpg)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="SharePNG" Tapped="SharePNG_Click" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2AC;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_PNG" Text="Portable Networks Graphics (.png)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel></ListViewItem>
+                                                                    <ListViewItem x:Name="ShareBMP" Tapped="ShareBMP_Click" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE80A;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_BMP" Text="Bitmap (.bmp)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ShareGIF" Tapped="ShareGIF_Click" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE173;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_GIF" Text="GIF image (.gif)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ShareTIFF" Tapped="ShareTIFF_Click" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE15A;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_TIFF" Text="TIFF Image (.tiff)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                </ListView>
+                                                            </Flyout>
                                                         </Button.Flyout>
                                                     </Button>
                                                 </StackPanel>
