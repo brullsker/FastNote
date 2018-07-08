@@ -324,7 +324,7 @@
                                         <StackPanel Orientation="Vertical" Margin="6,2,6,6">
                                             <TextBlock Text="Observable Settings"/>
                                             <StackPanel Orientation="Horizontal">
-                                                <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/Microsoft/UWPCommunityToolkit" Padding="0"/>
+                                                <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/joseangelmt/ObservableSettings" Padding="0"/>
                                                 <TextBlock Text="Public domain" x:Uid="More_About_NoLicense" FontSize="12" Margin="12,0,0,0"/>
                                             </StackPanel>
                                         </StackPanel>
