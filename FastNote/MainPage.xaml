@@ -324,6 +324,14 @@
                                             </StackPanel>
                                         </StackPanel>
                                     </Border>
+                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
+                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
+                                            <TextBlock Text="Observable Settings"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/Microsoft/UWPCommunityToolkit" Padding="0"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
                                     <TextBlock Text="Translations" x:Uid="More_About_Langs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0"/>
                                     <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
                                         <StackPanel Orientation="Vertical" Margin="6,2,6,6">
