@@ -73,9 +73,9 @@
                             <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
                         </AppBarButton>
                     </CommandBar>
-                    <Grid x:Name="Draggable1" Grid.Column="1"/>
-                    <Grid x:Name="Draggable2" Grid.Column="3"/>
-                    <Grid x:Name="Draggable3" Grid.Column="4"/>
+                    <Grid x:Name="Draggable1" Grid.Column="1" Tapped="Draggable1_Tapped"/>
+                    <Grid x:Name="Draggable2" Grid.Column="3" Tapped="Draggable2_Tapped"/>
+                    <Grid x:Name="Draggable3" Grid.Column="4" Tapped="Draggable3_Tapped"/>
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1" Background="Transparent">

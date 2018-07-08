@@ -20,6 +20,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.Graphics.Display;
 using Windows.Graphics.Imaging;
 using Windows.UI.ViewManagement;
+using Windows.ApplicationModel.Core;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -47,7 +48,12 @@ namespace FastNote
         public MainPage()
         {
             this.InitializeComponent();
-            
+            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+            coreTitleBar.ExtendViewIntoTitleBar = true;
+            Draggable1.Height = coreTitleBar.Height;
+            Draggable2.Height = coreTitleBar.Height;
+            Draggable3.Height = coreTitleBar.Height;
+            Window.Current.SetTitleBar(Draggable1);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timer.Tick += Timer_Tick;
             ShareSelectedTextContent.Visibility = Visibility.Collapsed;
@@ -741,6 +747,21 @@ namespace FastNote
         private void ShareMenu_OptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShareMenu_OptionsList.SelectedItem = null;
+        }
+
+        private void Draggable1_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Window.Current.SetTitleBar(Draggable1);
+        }
+
+        private void Draggable2_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Window.Current.SetTitleBar(Draggable2);
+        }
+
+        private void Draggable3_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Window.Current.SetTitleBar(Draggable3);
         }
     }
 }
