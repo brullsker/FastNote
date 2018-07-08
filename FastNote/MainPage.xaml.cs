@@ -19,6 +19,7 @@ using Windows.UI.Text;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Graphics.Display;
 using Windows.Graphics.Imaging;
+using Windows.UI.ViewManagement;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -46,7 +47,7 @@ namespace FastNote
         public MainPage()
         {
             this.InitializeComponent();
-
+            
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timer.Tick += Timer_Tick;
             ShareSelectedTextContent.Visibility = Visibility.Collapsed;

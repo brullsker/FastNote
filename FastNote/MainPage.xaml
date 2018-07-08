@@ -7,10 +7,13 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:buttons="using:Microsoft.Toolkit.Uwp.UI.Controls.TextToolbarButtons"
+    xmlns:extns="using:Microsoft.Toolkit.Uwp.UI.Extensions"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{StaticResource settings}"
-    x:Name="MainPagePage">
+    x:Name="MainPagePage"
+    extns:ApplicationViewExtensions.ExtendViewIntoTitleBar="True"
+    extns:TitleBar.ButtonBackgroundColor="Transparent">
 
     <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -47,7 +50,14 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="68"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="2">
                         <AppBarSeparator/>
                         <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
                             <controls:TextToolbar.ButtonModifications>
@@ -57,6 +67,15 @@
                         </controls:TextToolbar>
                         <AppBarSeparator/>
                     </StackPanel>
+
+                    <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
+                            <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
+                        </AppBarButton>
+                    </CommandBar>
+                    <Grid x:Name="Draggable1" Grid.Column="1"/>
+                    <Grid x:Name="Draggable2" Grid.Column="3"/>
+                    <Grid x:Name="Draggable3" Grid.Column="4"/>
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1" Background="Transparent">
@@ -70,12 +89,6 @@
                         <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" Opacity="0.4"/>
                     </StackPanel.Background>
                 </StackPanel>
-                
-                <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
-                        <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
-                    </AppBarButton>
-                </CommandBar>
             </Grid>
 
             <SplitView.Pane>
