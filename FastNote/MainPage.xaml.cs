@@ -396,9 +396,7 @@ namespace FastNote
             if (MoreOptionsList.SelectedIndex == 3)
             {
                 LoadingControl.IsLoading = true;
-                await file.DeleteAsync();
-                timer.Stop();
-                LoadDocument();
+                MainEdit.Document.SetText(TextSetOptions.None, "");
                 LoadingControl.IsLoading = false;
             }
             if (MoreOptionsList.SelectedIndex == 4) Application.Current.Exit();
