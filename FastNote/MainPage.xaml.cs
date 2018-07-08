@@ -738,5 +738,10 @@ namespace FastNote
             if (Settings.Default.ThemeLight == true) FontSizeButtons.RequestedTheme = ElementTheme.Light;
             if (Settings.Default.ThemeDark == true) FontSizeButtons.RequestedTheme = ElementTheme.Dark;
         }
+
+        private void ShareMenu_OptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShareMenu_OptionsList.SelectedItem = null;
+        }
     }
 }

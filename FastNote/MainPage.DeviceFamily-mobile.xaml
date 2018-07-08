@@ -125,7 +125,7 @@
                                                         </controls:LayoutTransformControl>
                                                         <Button.Flyout>
                                                             <Flyout Placement="Right" x:Name="ShareMenu" FlyoutPresenterStyle="{StaticResource FlyoutNoPadding}">
-                                                                <ListView Padding="0" Margin="0">
+                                                                <ListView Padding="0" Margin="0" x:Name="ShareMenu_OptionsList" SelectionChanged="ShareMenu_OptionsList_SelectionChanged">
                                                                     <ListViewItem x:Name="ShareRTF" Tapped="ShareRTF_Click" VerticalContentAlignment="Center">
                                                                         <StackPanel Orientation="Horizontal">
                                                                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE160;"/>
