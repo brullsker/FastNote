@@ -261,4 +261,7 @@
   <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
     <value>FONT FAMILY</value>
   </data>
+  <data name="More_About_NoLicense.Text" xml:space="preserve">
+    <value>Public domain</value>
+  </data>
 </root>
