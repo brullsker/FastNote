@@ -21,6 +21,7 @@ using Windows.Graphics.Display;
 using Windows.Graphics.Imaging;
 using Windows.UI.ViewManagement;
 using Windows.ApplicationModel.Core;
+using Microsoft.Toolkit.Uwp.UI.Extensions;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -50,9 +51,7 @@ namespace FastNote
             this.InitializeComponent();
             var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
             coreTitleBar.ExtendViewIntoTitleBar = true;
-            Draggable1.Height = coreTitleBar.Height;
-            Draggable2.Height = coreTitleBar.Height;
-            Draggable3.Height = coreTitleBar.Height;
+            TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, Windows.UI.Colors.Transparent);
             Window.Current.SetTitleBar(Draggable1);
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timer.Tick += Timer_Tick;
@@ -762,6 +761,26 @@ namespace FastNote
         private void Draggable3_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             Window.Current.SetTitleBar(Draggable3);
+        }
+
+        private void Draggable1_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            Window.Current.SetTitleBar(Draggable1);
+        }
+
+        private void Draggable2_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            Window.Current.SetTitleBar(Draggable2);
+        }
+
+        private void Draggable3_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            Window.Current.SetTitleBar(Draggable3);
+        }
+
+        private void DraggableBtn_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
+        {
+            if (MainView.IsPaneOpen == true && MainView.DisplayMode == SplitViewDisplayMode.Inline) Window.Current.SetTitleBar(DraggableBtn);
         }
     }
 }

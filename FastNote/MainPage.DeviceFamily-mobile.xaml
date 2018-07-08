@@ -45,7 +45,17 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="68"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="Draggable1" Grid.Column="1" PointerMoved="Draggable1_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
+                    <Grid x:Name="Draggable2" Grid.Column="3" PointerMoved="Draggable2_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
+                    <Grid x:Name="Draggable3" Grid.Column="4" PointerMoved="Draggable3_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
                         <AppBarSeparator/>
                         <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
                             <controls:TextToolbar.ButtonModifications>
@@ -55,22 +65,20 @@
                         </controls:TextToolbar>
                         <AppBarSeparator/>
                     </StackPanel>
+                    <CommandBar x:Name="DraggableBtn" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
+                        <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
+                            <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
+                        </AppBarButton>
+                    </CommandBar>
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <RichEditBox FontSize="{Binding FontSize, Mode=OneWay}" PlaceholderText="Start taking notes..." x:Uid="EditPlaceHolder" x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
-
                 <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="12,0">
                     <TextBlock x:Name="CharCount"/>
                     <TextBlock Text=" characters" x:Uid="CharactersText"/>
-                </StackPanel>
-                
-                <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
-                    <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
-                        <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
-                    </AppBarButton>
-                </CommandBar>
+                </StackPanel>                
             </Grid>
 
             <SplitView.Pane>

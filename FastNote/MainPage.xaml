@@ -11,9 +11,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{StaticResource settings}"
-    x:Name="MainPagePage"
-    extns:ApplicationViewExtensions.ExtendViewIntoTitleBar="True"
-    extns:TitleBar.ButtonBackgroundColor="Transparent">
+    x:Name="MainPagePage">
 
     <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
         <VisualStateManager.VisualStateGroups>
@@ -24,6 +22,9 @@
                         <Setter Target="MainView.(PaneBackground)" Value="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
                         <Setter Target="ShareArrow.(Angle)" Value="90"/>
                         <Setter Target="ShareMenu.(Placement)" Value="Bottom"/>
+                        <Setter Target="ToolBarPanel.(Grid.Column)" Value="1"/>
+                        <Setter Target="Draggable1.(Grid.Column)" Value="2"/>
+                        <Setter Target="SecondColumn.(Width)" Value="Auto"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
@@ -35,6 +36,9 @@
                         <Setter Target="MainView.(PaneBackground)" Value="{ThemeResource SystemControlAcrylicWindowBrush}"/>
                         <Setter Target="ShareArrow.(Angle)" Value="0"/>
                         <Setter Target="ShareMenu.(Placement)" Value="Right"/>
+                        <Setter Target="ToolBarPanel.(Grid.Column)" Value="2"/>
+                        <Setter Target="Draggable1.(Grid.Column)" Value="1"/>
+                        <Setter Target="SecondColumn.(Width)" Value="*"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="680"/>
@@ -52,12 +56,12 @@
                 <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition/>
+                        <ColumnDefinition x:Name="SecondColumn"/>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
                         <ColumnDefinition Width="68"/>
                     </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="2">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="2" x:Name="ToolBarPanel">
                         <AppBarSeparator/>
                         <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
                             <controls:TextToolbar.ButtonModifications>
@@ -68,14 +72,14 @@
                         <AppBarSeparator/>
                     </StackPanel>
 
-                    <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
+                    <CommandBar x:Name="DraggableBtn" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}" HorizontalAlignment="Left" VerticalAlignment="Top" PointerMoved="DraggableBtn_PointerMoved">
                         <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
                             <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
                         </AppBarButton>
                     </CommandBar>
-                    <Grid x:Name="Draggable1" Grid.Column="1" Tapped="Draggable1_Tapped"/>
-                    <Grid x:Name="Draggable2" Grid.Column="3" Tapped="Draggable2_Tapped"/>
-                    <Grid x:Name="Draggable3" Grid.Column="4" Tapped="Draggable3_Tapped"/>
+                    <Grid x:Name="Draggable1" Grid.Column="1" PointerMoved="Draggable1_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
+                    <Grid x:Name="Draggable2" Grid.Column="3" PointerMoved="Draggable2_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
+                    <Grid x:Name="Draggable3" Grid.Column="4" PointerMoved="Draggable3_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1" Background="Transparent">
