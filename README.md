@@ -22,5 +22,5 @@
 ## Screenshots
 
 ## Build
-1. Download [https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Common.dll](Common.dll) and add a Reference to it in the Solution.
+1. Download [Common.dll](https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Common.dll) and add a Reference to it in the Solution.
 2. Build it!
