@@ -194,7 +194,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Common">
-      <HintPath>..\..\ObservableSettings-master\Common\bin\Release\Common.dll</HintPath>
+      <HintPath>..\..\..\Dependencies\Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

@@ -52,9 +52,9 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="68"/>
                     </Grid.ColumnDefinitions>
-                    <Grid x:Name="Draggable1" Grid.Column="1" PointerMoved="Draggable1_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
-                    <Grid x:Name="Draggable2" Grid.Column="3" PointerMoved="Draggable2_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
-                    <Grid x:Name="Draggable3" Grid.Column="4" PointerMoved="Draggable3_PointerMoved" Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}"/>
+                    <Grid x:Name="Draggable1" Grid.Column="1" PointerMoved="Draggable1_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                    <Grid x:Name="Draggable2" Grid.Column="3" PointerMoved="Draggable2_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                    <Grid x:Name="Draggable3" Grid.Column="4" PointerMoved="Draggable3_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
                     <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
                         <AppBarSeparator/>
                         <controls:TextToolbar Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
@@ -263,7 +263,7 @@
                                     <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
                                     <TextBlock x:Uid="More_Settings_FontSizeHeader" Text="FONT SIZE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <Grid>
-                                        <TextBox Style="{StaticResource TextBoxStyle}" Height="32" x:Name="FontSizeTextBox" Text="{Binding FontSize, Mode=TwoWay}" PlaceholderText="Enter number..." x:Uid="NumberPlaceholder" TextChanged="FontSizeTextBox_TextChanged" BorderThickness="0,0,0,2" GotFocus="FontSizeTextBox_GotFocus" LostFocus="FontSizeTextBox_LostFocus"/>
+                                        <TextBox Style="{StaticResource TextBoxStyleMobile}" Height="32" x:Name="FontSizeTextBox" Text="{Binding FontSize, Mode=TwoWay}" PlaceholderText="Enter number..." x:Uid="NumberPlaceholder" TextChanged="FontSizeTextBox_TextChanged" BorderThickness="0,0,0,2" GotFocus="FontSizeTextBox_GotFocus" LostFocus="FontSizeTextBox_LostFocus"/>
                                         <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="FontSizeButtons">
                                             <RepeatButton Style="{StaticResource RepeatButtonStyle}" Content="&#xE014;" FontFamily="Segoe MDL2 Assets" FontSize="12" Padding="0" Width="24" Height="15" Click="RepeatButton_Click" Background="Transparent"/>
                                             <RepeatButton Style="{StaticResource RepeatButtonStyle}" Content="&#xE015;" FontFamily="Segoe MDL2 Assets" FontSize="12" Padding="0" Width="24" Height="15" Click="RepeatButton_Click_1" Background="Transparent"/>
