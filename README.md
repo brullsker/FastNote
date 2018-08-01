@@ -6,7 +6,7 @@
   <h3 align="center">FastNote</h3>
 
   <p align="center">
-    FastNote is a UWP rich text editor. It has a clear UI and saves changes as they happen. 
+    UWP rich text editor
     <br>
     <br>
     <a href="https://github.com/brullsker/FastNote/releases">Download</a>
@@ -18,9 +18,16 @@
 <br>
 
 ## Features
+- Write notes and texts and format it
+- Saves changes as they happen
+- Export your text in 8 file formats (including RTF, HTML, TXT and several image formats)
+- Share selected text or the whole file
+- Set up a different font size and font family
+- Supports English and German (contact me to translate into your language)
 
 ## Screenshots
 
 ## Build
-1. Download [Common.dll](https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Common.dll) and add a Reference to it in the Solution.
-2. Build it!
+1. Clone the repo and load the solution into VS. Remove the reference "Common".
+2. Download [Common.dll](https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Common.dll) and add a reference to it in the solution.
+3. Build it!
