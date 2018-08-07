@@ -26,6 +26,7 @@
 - Supports English and German (contact me to translate into your language)
 
 ## Screenshots
+![Screenshot 1](https://raw.githubusercontent.com/brullsker/FastNote/blob/master/GHAssets/Screenshots/FastNote%2006.08.2018%2023_18_35.png)
 
 ## Build
 1. Clone the repo and load the solution into VS. Remove the reference "Common".
