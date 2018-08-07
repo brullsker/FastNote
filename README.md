@@ -8,15 +8,11 @@
   <p align="center">
     UWP rich text editor
     <br>
-    <br>
     <a href="https://github.com/brullsker/FastNote/releases">Download</a>
     &middot;
     <a href="https://t.me/brullsker">Dev contact</a>
   </p>
 </p>
-
-<br>
-
 ## Features
 - Write notes and texts and format it
 - Saves changes as they happen
@@ -26,7 +22,12 @@
 - Supports English and German (contact me to translate into your language)
 
 ## Screenshots
-![Screenshot 1](https://raw.githubusercontent.com/brullsker/FastNote/blob/master/GHAssets/Screenshots/FastNote%2006.08.2018%2023_18_35.png)
+<p align="left">
+  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Screenshots/FastNote%2006.08.2018%2023_18_35.png" height=500/>
+  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Screenshots/FastNote%2006.08.2018%2023_18_56.png" height=500/>
+  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Screenshots/FastNote%2006.08.2018%2023_19_43.png" height=500/>
+  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Screenshots/FastNote%2007.08.2018%2008_12_10.png" height=500/>
+  </p>
 
 ## Build
 1. Clone the repo and load the solution into VS. Remove the reference "Common".
