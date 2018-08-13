@@ -13,6 +13,7 @@
     <a href="https://t.me/brullsker">Dev contact</a>
   </p>
 </p>
+
 ## Features
 - Write notes and texts and format it
 - Saves changes as they happen
@@ -22,12 +23,7 @@
 - Supports English and German (contact me to translate into your language)
 
 ## Screenshots
-<p align="center">
-  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Screenshots/FastNote%2006.08.2018%2023_18_35.png" height=400/>
-  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Screenshots/FastNote%2006.08.2018%2023_18_56.png" height=400/>
-  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Screenshots/FastNote%2006.08.2018%2023_19_43.png" height=400/>
-  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Screenshots/FastNote%2007.08.2018%2008_12_10.png" height=400/>
-  </p>
+See [here](https://github.com/brullsker/FastNote/tree/master/GHAssets/Screenshots)
 
 ## Build
 1. Clone the repo and load the solution into VS. Remove the reference "Common".
