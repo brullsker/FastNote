@@ -1,17 +1,9 @@
-[!https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Square44x44Logo.scale-200.png]
+![Logo](https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Square44x44Logo.scale-200.png)
   
-<p align="center">
+# FastNote
+UWP rich text editor  
 
-  <h3 align="center">FastNote</h3>
-
-  <p align="center">
-    UWP rich text editor
-    <br>
-    <a href="https://github.com/brullsker/FastNote/releases">Download</a>
-    &middot;
-    <a href="https://t.me/brullsker">Dev contact</a>
-  </p>
-</p>
+[Download](https://github.com/brullsker/FastNote/releases) : : [Dev contact](https://t.me/brullsker)
 
 ## Features
 - Write notes and texts and format it
