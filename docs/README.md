@@ -1,5 +1,6 @@
+[!https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Square44x44Logo.scale-200.png]
+  
 <p align="center">
-  <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Square44x44Logo.scale-200.png" width=80 height=80>
 
   <h3 align="center">FastNote</h3>
 
