@@ -312,8 +312,10 @@
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Background="Gray" Margin="0,0,12,0">
-                                            <Image Source="/Assets/SmallTile.scale-400.png" Width="136"/>
+                                        <Border Background="Gray" Margin="0,0,12,0" Width="136" Height="136">
+                                            <Grid>
+                                                <Image Source="/Assets/StoreLogo.scale-400.png" Width="68"/>
+                                            </Grid>
                                         </Border>
                                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
                                             <TextBlock Text="1" x:Name="AboutAppTextBlock" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,6"/>
