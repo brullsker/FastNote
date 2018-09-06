@@ -8,7 +8,7 @@
   <p align="center">
     UWP rich text editor
     <br>
-    <a href="https://github.com/brullsker/FastNote/releases">Download</a>
+    <a href="https://www.microsoft.com/store/productId/9N5GRR8757VQ">Download</a>
     &middot;
     <a href="https://t.me/brullsker">Dev contact</a>
   </p>

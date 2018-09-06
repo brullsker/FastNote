@@ -3,7 +3,7 @@
 # FastNote
 UWP rich text editor  
 
-[Download](https://github.com/brullsker/FastNote/releases) : : [Dev contact](https://t.me/brullsker)
+[Download](https://www.microsoft.com/store/productId/9N5GRR8757VQ) : : [Dev contact](https://t.me/brullsker)
 
 ## Features
 - Write notes and texts and format it
