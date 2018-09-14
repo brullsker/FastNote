@@ -84,6 +84,13 @@
             <SplitView.Pane>
                 <Grid>
                     <Pivot>
+                        <Pivot.RightHeader>
+                            <CommandBar Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top">
+                                <AppBarButton x:Name="SettingsButton_Close" Click="SettingsButton_Close_Click" LabelPosition="Collapsed">
+                                    <SymbolIcon Symbol="Cancel" x:Name="CloseIcon"/>
+                                </AppBarButton>
+                            </CommandBar>
+                        </Pivot.RightHeader>
                         <PivotItem>
                             <PivotItem.Header>
                                 <TextBlock Text="File" x:Uid="More_FileHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
@@ -349,11 +356,6 @@
                             </ScrollViewer>
                         </PivotItem>
                     </Pivot>
-                    <CommandBar Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top">
-                        <AppBarButton x:Name="SettingsButton_Close" Click="SettingsButton_Close_Click" LabelPosition="Collapsed">
-                            <SymbolIcon Symbol="Cancel" x:Name="CloseIcon"/>
-                        </AppBarButton>
-                    </CommandBar>
                 </Grid>
             </SplitView.Pane>
         </SplitView>
