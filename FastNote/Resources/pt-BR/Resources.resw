@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CharactersText.Text" xml:space="preserve">
+    <value> caracteres</value>
+  </data>
+  <data name="Dialog_FileNotSaved" xml:space="preserve">
+    <value>O arquivo não foi salvo.</value>
+  </data>
+  <data name="Dialog_OperationCancelled" xml:space="preserve">
+    <value>Operação cancelada</value>
+  </data>
+  <data name="LoadingText.Text" xml:space="preserve">
+    <value>Trabalhando nisso...</value>
+  </data>
+  <data name="Manifest_AppDescText" xml:space="preserve">
+    <value>FastNote é um editor aberto minimalista de Rich Text Format (RTF) que salva mudanças em tempo real para a plataforma universal do Windows.</value>
+  </data>
+  <data name="More_AboutHeaderText.Text" xml:space="preserve">
+    <value>Sobre</value>
+  </data>
+  <data name="More_About_Contribute.Text" xml:space="preserve">
+    <value>Contribua ao FastNote:</value>
+  </data>
+  <data name="More_About_DevEmail.Content" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="More_About_Donate.Text" xml:space="preserve">
+    <value>Ajude-me com uma doação:</value>
+  </data>
+  <data name="More_About_Libs.Text" xml:space="preserve">
+    <value>Bibliotecas e SDKs usados:</value>
+  </data>
+  <data name="More_About_LicenseMIT.Text" xml:space="preserve">
+    <value>Licenciado sob a Licença MIT</value>
+  </data>
+  <data name="More_FileHeaderText.Text" xml:space="preserve">
+    <value>Arquivo</value>
+  </data>
+  <data name="More_File_ClearAll.Text" xml:space="preserve">
+    <value>LIMPAR TUDO</value>
+  </data>
+  <data name="More_File_ExportText.Text" xml:space="preserve">
+    <value>EXPORTAR</value>
+  </data>
+  <data name="More_File_ShareFileText.Text" xml:space="preserve">
+    <value>COMPARTILHAR ARQUIVO</value>
+  </data>
+  <data name="More_File_ShareText_Selected.Text" xml:space="preserve">
+    <value>COMPARTILHAR TEXTO SELECIONADO</value>
+  </data>
+  <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
+    <value>COMPARTILHAR TEXTO INTEIRO</value>
+  </data>
+  <data name="More_SettingsHeaderText.Text" xml:space="preserve">
+    <value>Configurações</value>
+  </data>
+  <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
+    <value>NOME DO ARQUIVO DE EXPORTAÇÃO PADRÃO</value>
+  </data>
+  <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
+    <value>Entre com o nome...</value>
+  </data>
+  <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
+    <value>NOME DO ARQUIVO DE COMPARTILHAMENTO PADRÃO</value>
+  </data>
+  <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
+    <value>Entre com o nome...</value>
+  </data>
+  <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
+    <value>Resetar</value>
+  </data>
+  <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
+    <value>IDIOMA</value>
+  </data>
+  <data name="More_Settings_Language_Default.Content" xml:space="preserve">
+    <value>Padrão</value>
+  </data>
+  <data name="More_Settings_Lang_AppRest.Text" xml:space="preserve">
+    <value>O app requer reiniciar para a aplicação da mudança</value>
+  </data>
+  <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
+    <value>CHECADOR DE PRONÚNCIA</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
+    <value>Habilitado</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
+    <value>Desabilitado</value>
+  </data>
+  <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
+    <value>TEMA</value>
+  </data>
+  <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
+    <value>Escuro</value>
+  </data>
+  <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
+    <value>Padrão</value>
+  </data>
+  <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
+    <value>Claro</value>
+  </data>
+  <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
+    <value>Bitmap (.bmp)</value>
+  </data>
+  <data name="Share_File_ShareFile_GIF.Text" xml:space="preserve">
+    <value>Imagem GIF (.gif)</value>
+  </data>
+  <data name="Share_File_ShareFile_HTML.Text" xml:space="preserve">
+    <value>Página HTML (.html)</value>
+  </data>
+  <data name="Share_File_ShareFile_JPG.Text" xml:space="preserve">
+    <value>Imagem JPG (.jpg)</value>
+  </data>
+  <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
+    <value>Imagem PNG (.png)</value>
+  </data>
+  <data name="Share_File_ShareFile_RTF.Text" xml:space="preserve">
+    <value>Rich Text (.rtf)</value>
+  </data>
+  <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
+    <value>Imagem TIFF (.tiff)</value>
+  </data>
+  <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
+    <value>Texto simples (.txt)</value>
+  </data>
+  <data name="More_File_Exit.Text" xml:space="preserve">
+    <value>SAIR</value>
+  </data>
+  <data name="More_About_Langs.Text" xml:space="preserve">
+    <value>Traduções</value>
+  </data>
+  <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
+    <value>ABRIR MENU AO INICIAR O APP</value>
+  </data>
+  <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
+    <value>Comece a escrever suas notas...</value>
+  </data>
+  <data name="More_Settings_FontSizeHeader.Text" xml:space="preserve">
+    <value>TAMANHO DA FONTE</value>
+  </data>
+  <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>Entre com o número...</value>
+  </data>
+  <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
+    <value>FAMÍLIA DA FONTE</value>
+  </data>
+  <data name="More_About_NoLicense.Text" xml:space="preserve">
+    <value>Domínio Público</value>
+  </data>
+
+</root>
