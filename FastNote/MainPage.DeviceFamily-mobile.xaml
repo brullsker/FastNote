@@ -100,7 +100,7 @@
                                                 <SymbolIcon Symbol="SaveLocal" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 <StackPanel Orientation="Horizontal" Grid.Column="1">
                                                     <AppBarSeparator/>
-                                                    <TextBlock Text="EXPORT" x:Uid="More_File_ExportText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                    <TextBlock Text="EXPORT" Width="220" TextTrimming="CharacterEllipsis" x:Uid="More_File_ExportText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                                 </StackPanel>
                                             </Grid>
                                         </ListViewItem>
@@ -118,7 +118,7 @@
 
                                                 <StackPanel Orientation="Horizontal" Grid.Column="1">
                                                     <AppBarSeparator/>
-                                                    <TextBlock Text="SHARE FILE" x:Uid="More_File_ShareFileText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                    <TextBlock Text="SHARE FILE" Width="167" TextTrimming="CharacterEllipsis" x:Uid="More_File_ShareFileText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal" Grid.Column="2">
                                                     <AppBarSeparator Style="{StaticResource AppBarSeparatorStyleThin}"/>
@@ -210,8 +210,8 @@
                                                 <StackPanel Orientation="Horizontal" Grid.Column="1">
                                                     <AppBarSeparator/>
                                                     <Grid>
-                                                        <TextBlock Text="SHARE SELECTED TEXT" x:Uid="More_File_ShareText_Selected" x:Name="ShareSelectedTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
-                                                        <TextBlock Text="SHARE WHOLE TEXT" x:Uid="More_File_ShareText_Whole" x:Name="ShareWholeTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                        <TextBlock Text="SHARE SELECTED TEXT" Width="220" TextTrimming="CharacterEllipsis" x:Uid="More_File_ShareText_Selected" x:Name="ShareSelectedTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                        <TextBlock Text="SHARE WHOLE TEXT" Width="220" TextTrimming="CharacterEllipsis" x:Uid="More_File_ShareText_Whole" x:Name="ShareWholeTextContent" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                                     </Grid>
                                                 </StackPanel>
                                             </Grid>
@@ -225,7 +225,7 @@
                                                 <SymbolIcon Symbol="Delete" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                                 <StackPanel Orientation="Horizontal" Grid.Column="1">
                                                     <AppBarSeparator/>
-                                                    <TextBlock Text="CLEAR ALL" x:Uid="More_File_ClearAll" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                    <TextBlock Text="CLEAR ALL" Width="220" TextTrimming="CharacterEllipsis" x:Uid="More_File_ClearAll" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                                 </StackPanel>
                                             </Grid>
                                         </ListViewItem>
@@ -239,7 +239,7 @@
                                                 <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE7E8;" Foreground="Red"/>
                                                 <StackPanel Orientation="Horizontal" Grid.Column="1">
                                                     <AppBarSeparator/>
-                                                    <TextBlock Text="EXIT APP" x:Uid="More_File_Exit" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                    <TextBlock Text="EXIT APP" Width="220" TextTrimming="CharacterEllipsis" x:Uid="More_File_Exit" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
                                                 </StackPanel>
                                             </Grid>
                                         </ListViewItem>
@@ -281,6 +281,7 @@
                                         <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>
                                         <ComboBoxItem Content="English"/>
                                         <ComboBoxItem Content="Deutsch"/>
+                                        <ComboBoxItem Content="Português do Brasil"/>
                                     </ComboBox>
                                     <TextBlock HorizontalAlignment="Center" Text="App restart required to apply" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
                                     <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>

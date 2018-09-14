@@ -36,6 +36,7 @@ namespace FastNote
             langlist.Add(SystemInformation.Culture.ToString());
             langlist.Add("en-US");
             langlist.Add("de-DE");
+            langlist.Add("pt-BR");
             ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];
         }
 

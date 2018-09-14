@@ -114,6 +114,7 @@
     </AppxManifest>
     <None Include="FastNote_StoreKey.pfx" />
     <None Include="FastNote_TemporaryKey.pfx" />
+    <PRIResource Include="Resources\pt-BR\Resources.resw" />
     <PRIResource Include="Resources\de-DE\Resources.resw" />
     <PRIResource Include="Resources\en-US\Resources.resw" />
   </ItemGroup>
