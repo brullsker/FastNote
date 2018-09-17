@@ -235,7 +235,7 @@
     <value>Rich Text (.rtf)</value>
   </data>
   <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
-    <value>TIFF image (.tiff)</value>
+    <value>package</value>
   </data>
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
     <value>Plain text (.txt)</value>
@@ -263,5 +263,91 @@
   </data>
   <data name="More_About_NoLicense.Text" xml:space="preserve">
     <value>Public domain</value>
+  </data>
+  <data name="More_About_MIT.Header" xml:space="preserve">
+    <value>The MIT License</value>
+  </data>
+  <data name="More_About_PP.Header" xml:space="preserve">
+    <value>Privacy Policy</value>
+  </data>
+  <data name="Store_AdditionalLicenseTerms" xml:space="preserve">
+    <value>Privacy policy: https://1drv.ms/b/s!Ah_MAaR2jd8uhvYSHjfFHqMwfA3eeQ</value>
+  </data>
+  <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
+    <value>© 2018 by brullsker. All rights reserved.</value>
+  </data>
+  <data name="Store_Description" xml:space="preserve">
+    <value>You are looking for an app to take notes that saves changes as they happen, without requiring you to save them? Then you got to the right place! FastNote has many nice features, such as:
+
+- Export into several file formats
+- Share text or file
+- Spellchecker
+
+... and much more! Experience FastNote today and make your life easier.</value>
+  </data>
+  <data name="Store_Feature1" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Store_Feature2" xml:space="preserve">
+    <value>Autosave</value>
+  </data>
+  <data name="Store_Feature3" xml:space="preserve">
+    <value>Export (e.g. rtf, txt, several image formats)</value>
+  </data>
+  <data name="Store_Feature4" xml:space="preserve">
+    <value>Share (file or text)</value>
+  </data>
+  <data name="Store_Feature5" xml:space="preserve">
+    <value>Style notes</value>
+  </data>
+  <data name="Store_Feature6" xml:space="preserve">
+    <value>Fluent Design</value>
+  </data>
+  <data name="Store_ReleaseNotes" xml:space="preserve">
+    <value>Portugese (Brazil) added as UI language
+Privacy and license information added
+Bugfixes</value>
+  </data>
+  <data name="Store_Sc_Desktop4" xml:space="preserve">
+    <value>Gorgeous also when using white theme thanks to Fluent Design System</value>
+  </data>
+  <data name="Store_Sc_Mobile4" xml:space="preserve">
+    <value>Gorgeous also when using white theme thanks to the UWP Design System</value>
+  </data>
+  <data name="Store_Sc_MR1" xml:space="preserve">
+    <value>Be productive in Mixed Reality too!</value>
+  </data>
+  <data name="Store_Sc_Universal1" xml:space="preserve">
+    <value>Take notes and style them</value>
+  </data>
+  <data name="Store_Sc_Universal2" xml:space="preserve">
+    <value>Export and share your work by using powerful tools</value>
+  </data>
+  <data name="Store_Sc_Universal3" xml:space="preserve">
+    <value>Set up options like fontsize or font family</value>
+  </data>
+  <data name="Store_SearchTerm1" xml:space="preserve">
+    <value>FastNote</value>
+  </data>
+  <data name="Store_SearchTerm2" xml:space="preserve">
+    <value>Fast</value>
+  </data>
+  <data name="Store_SearchTerm3" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="Store_SearchTerm4" xml:space="preserve">
+    <value>Notes</value>
+  </data>
+  <data name="Store_SearchTerm5" xml:space="preserve">
+    <value>Text editor</value>
+  </data>
+  <data name="Store_SearchTerm6" xml:space="preserve">
+    <value>Notepad</value>
+  </data>
+  <data name="Store_SearchTerm7" xml:space="preserve">
+    <value>Autosave</value>
+  </data>
+  <data name="Store_ShortDescription" xml:space="preserve">
+    <value>Take some notes! Saves changes as they happen.</value>
   </data>
 </root>

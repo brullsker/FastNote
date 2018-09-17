@@ -359,13 +359,13 @@
                                         </StackPanel>
                                     </Border>
                                     <MenuFlyoutSeparator Margin="0,12"/>
-                                    <controls:Expander Header="Privacy Policy" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                                    <controls:Expander Header="Privacy Policy" x:Uid="More_About_PP" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                         <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Margin="6">
                                             This software does not send any information regarding the user and his input to any third party unless the user is explicitly allowing to do so. This does not apply for crash reports and telemetry automatically sent to the developer via Microsoft Store services in order to improve the software and find issues in it.<LineBreak/>
                                             If there are any further questions about privacy in this software, use the contact data above.
                                         </TextBlock>
                                     </controls:Expander>
-                                    <controls:Expander Header="The MIT License" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
+                                    <controls:Expander Header="The MIT License" x:Uid="More_About_MIT" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
                                         <TextBlock Margin="6" Style="{StaticResource CaptionTextBlockStyle}">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: <LineBreak/> <LineBreak/>
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. <LineBreak/> <LineBreak/>
 THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</TextBlock>

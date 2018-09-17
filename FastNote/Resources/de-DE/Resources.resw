@@ -264,4 +264,90 @@
   <data name="More_About_NoLicense.Text" xml:space="preserve">
     <value>Lizenzfrei</value>
   </data>
+  <data name="More_About_MIT.Header" xml:space="preserve">
+    <value>Die MIT-Lizenz</value>
+  </data>
+  <data name="More_About_PP.Header" xml:space="preserve">
+    <value>Datenschutzerklärung</value>
+  </data>
+  <data name="Store_AdditionalLicenseTerms" xml:space="preserve">
+    <value>Datenschutzerklärung: https://1drv.ms/b/s!Ah_MAaR2jd8uhvYSHjfFHqMwfA3eeQ</value>
+  </data>
+  <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
+    <value>© 2018 by brullsker. Alle Rechte vorbehalten.</value>
+  </data>
+  <data name="Store_Description" xml:space="preserve">
+    <value>Du suchst eine Notizen-App, die sich deine Änderungen merkt, ohne dass du extra speichern musst? Dann bist du hier genau an der richtigen Stelle. FastNote hat viele tolle Features, wie z.B:
+
+- Exportieren in verschiedene Dateiformate
+- Teilen von Text oder Datei
+- Rechtschreibprüfung
+
+... und vieles mehr! Lass dich noch heute überraschen.</value>
+  </data>
+  <data name="Store_Feature1" xml:space="preserve">
+    <value>Notizen</value>
+  </data>
+  <data name="Store_Feature2" xml:space="preserve">
+    <value>Automatisches Speichern</value>
+  </data>
+  <data name="Store_Feature3" xml:space="preserve">
+    <value>Exportieren (z.B. rtf, txt, verschiedene Bildformate)</value>
+  </data>
+  <data name="Store_Feature4" xml:space="preserve">
+    <value>Teilen (Datei oder Text)</value>
+  </data>
+  <data name="Store_Feature5" xml:space="preserve">
+    <value>Notizen formatieren</value>
+  </data>
+  <data name="Store_Feature6" xml:space="preserve">
+    <value>Fluent Design</value>
+  </data>
+  <data name="Store_ReleaseNotes" xml:space="preserve">
+    <value>Portugiesisch (Brasilien) hinzugefügt
+Lizenz- / Privatsphäreninfos hinzugefügt
+Fehlerbehebungen</value>
+  </data>
+  <data name="Store_Sc_Desktop4" xml:space="preserve">
+    <value>Auch im hellen Design wunderschön dank Fluent Design</value>
+  </data>
+  <data name="Store_Sc_Mobile4" xml:space="preserve">
+    <value>Auch im hellen Design wunderschön dank dem UWP Design System</value>
+  </data>
+  <data name="Store_Sc_MR1" xml:space="preserve">
+    <value>Sei auch in der Mixed Reality produktiv!</value>
+  </data>
+  <data name="Store_Sc_Universal1" xml:space="preserve">
+    <value>Mach dir Notizen und formatiere sie</value>
+  </data>
+  <data name="Store_Sc_Universal2" xml:space="preserve">
+    <value>Exportiere und Teile deine Arbeit mithilfe umfangreicher Tools</value>
+  </data>
+  <data name="Store_Sc_Universal3" xml:space="preserve">
+    <value>Passe Optionen wie Schriftgröße oder -art an</value>
+  </data>
+  <data name="Store_SearchTerm1" xml:space="preserve">
+    <value>FastNote</value>
+  </data>
+  <data name="Store_SearchTerm2" xml:space="preserve">
+    <value>Fast</value>
+  </data>
+  <data name="Store_SearchTerm3" xml:space="preserve">
+    <value>Note</value>
+  </data>
+  <data name="Store_SearchTerm4" xml:space="preserve">
+    <value>Notizen</value>
+  </data>
+  <data name="Store_SearchTerm5" xml:space="preserve">
+    <value>Textverarbeitung</value>
+  </data>
+  <data name="Store_SearchTerm6" xml:space="preserve">
+    <value>Notepad</value>
+  </data>
+  <data name="Store_SearchTerm7" xml:space="preserve">
+    <value>Autosave</value>
+  </data>
+  <data name="Store_ShortDescription" xml:space="preserve">
+    <value>Mach dir Notizen! Speichert Änderungen automatisch.</value>
+  </data>
 </root>
