@@ -270,9 +270,6 @@
   <data name="More_About_PP.Header" xml:space="preserve">
     <value>Privacy Policy</value>
   </data>
-  <data name="Store_AdditionalLicenseTerms" xml:space="preserve">
-    <value>Privacy policy: https://1drv.ms/b/s!Ah_MAaR2jd8uhvYSHjfFHqMwfA3eeQ</value>
-  </data>
   <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
     <value>© 2018 by brullsker. All rights reserved.</value>
   </data>
@@ -349,5 +346,14 @@ Bugfixes</value>
   </data>
   <data name="Store_ShortDescription" xml:space="preserve">
     <value>Take some notes! Saves changes as they happen.</value>
+  </data>
+  <data name="ShareUI_FileDesc" xml:space="preserve">
+    <value>Share file</value>
+  </data>
+  <data name="ShareUI_SelectedTextDesc" xml:space="preserve">
+    <value>Share selected text</value>
+  </data>
+  <data name="ShareUI_WholeTextDesc" xml:space="preserve">
+    <value>Share whole text</value>
   </data>
 </root>

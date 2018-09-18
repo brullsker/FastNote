@@ -414,23 +414,23 @@ namespace FastNote
         private void ShareText_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
             args.Request.Data.SetText(MainEdit.Document.Selection.Text);
-            args.Request.Data.Properties.Title = Package.Current.DisplayName;
-            args.Request.Data.Properties.Description = "Share selected text";
+            args.Request.Data.Properties.Title = "FastNote";
+            args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_SelectedTextDesc");
         }
 
         private void ShareTextAll_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
             MainEdit.Document.GetText(Windows.UI.Text.TextGetOptions.None, out string data);
             args.Request.Data.SetText(data);
-            args.Request.Data.Properties.Title = Package.Current.DisplayName;
-            args.Request.Data.Properties.Description = "Share whole text";
+            args.Request.Data.Properties.Title = "FastNote";
+            args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_WholeTextDesc");
         }
 
         private void ShareFile_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
             args.Request.Data.SetStorageItems(this.storageItems);
-            args.Request.Data.Properties.Title = Package.Current.DisplayName;
-            args.Request.Data.Properties.Description = "Share file";
+            args.Request.Data.Properties.Title = "FastNote";
+            args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_FileDesc");
         }
 
         private void MainView_PaneOpening(object sender, RoutedEventArgs e)
