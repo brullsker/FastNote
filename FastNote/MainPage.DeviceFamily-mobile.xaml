@@ -290,7 +290,7 @@
                                         <ComboBoxItem Content="Deutsch"/>
                                         <ComboBoxItem Content="Português do Brasil"/>
                                     </ComboBox>
-                                    <TextBlock HorizontalAlignment="Center" Text="App restart required to apply" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
+                                    <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Text="App restart required to apply" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
                                     <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding MenuOpenOnStartup, Mode=TwoWay}"/>
                                 </StackPanel>
@@ -308,7 +308,7 @@
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         <Border Background="Gray" Margin="0,0,12,0" Width="136" Height="136">
-                                            <Image Source="/Assets/StoreLogo.scale-400.png" Width="68"/>
+                                            <Image Source="ms-appx:///Assets/StoreLogo.scale-400.png" Width="68"/>
                                         </Border>
                                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
                                             <TextBlock Text="1" x:Name="AboutAppTextBlock" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,6"/>
