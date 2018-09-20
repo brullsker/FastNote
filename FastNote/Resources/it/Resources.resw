@@ -118,115 +118,115 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CharactersText.Text" xml:space="preserve">
-    <value> Zeichen</value>
+    <value> caratteri</value>
   </data>
   <data name="Dialog_FileNotSaved" xml:space="preserve">
-    <value>Datei wurde nicht gespeichert.</value>
+    <value>Il file non è stato salvato.</value>
   </data>
   <data name="Dialog_OperationCancelled" xml:space="preserve">
-    <value>Operation abgebrochen</value>
+    <value>Operazione interrotta</value>
   </data>
   <data name="LoadingText.Text" xml:space="preserve">
-    <value>Einen Moment Geduld...</value>
+    <value>Un momento di pazienza...</value>
   </data>
   <data name="Manifest_AppDescText" xml:space="preserve">
-    <value>FastNote ist ein minimalistischer Open-Source Rich-Text-Editor für die Universal Windows Platform, der Änderungen in Echtzeit speichert.</value>
+    <value>FastNote è un editor di testi ricchi di testo open source minimalista per la Universal Windows Platform che salva le modifiche in tempo reale.</value>
   </data>
   <data name="More_AboutHeaderText.Text" xml:space="preserve">
-    <value>Über</value>
+    <value>A proposito di</value>
   </data>
   <data name="More_About_Contribute.Text" xml:space="preserve">
-    <value>Bei der Entwicklung helfen:</value>
+    <value>Aiuto allo sviluppo:</value>
   </data>
   <data name="More_About_DevEmail.Content" xml:space="preserve">
-    <value>E-Mail</value>
+    <value>Posta elettronica</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Spenden:</value>
+    <value>Donazioni:</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
-    <value>Genutzte Libraries und SDKs</value>
+    <value>Librerie e SDK usati</value>
   </data>
   <data name="More_About_LicenseMIT.Text" xml:space="preserve">
-    <value>Lizensiert unter der MIT-Lizenz</value>
+    <value>Concesso in licenza MIT</value>
   </data>
   <data name="More_FileHeaderText.Text" xml:space="preserve">
-    <value>Datei</value>
+    <value>File</value>
   </data>
   <data name="More_File_ClearAll.Text" xml:space="preserve">
-    <value>ALLES LÖSCHEN</value>
+    <value>ELIMINA TUTTO</value>
   </data>
   <data name="More_File_ExportText.Text" xml:space="preserve">
-    <value>EXPORTIEREN</value>
+    <value>ESPORTAZIONE</value>
   </data>
   <data name="More_File_ShareFileText.Text" xml:space="preserve">
-    <value>DATEI TEILEN</value>
+    <value>CONDIVIDI FILE</value>
   </data>
   <data name="More_File_ShareText_Selected.Text" xml:space="preserve">
-    <value>AUSWAHL TEILEN</value>
+    <value>CONDIVIDI SELEZIONE DEL TESTO</value>
   </data>
   <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
-    <value>ALLES TEILEN</value>
+    <value>CONDIVIDERE L'INTERO TESTO</value>
   </data>
   <data name="More_SettingsHeaderText.Text" xml:space="preserve">
-    <value>Optionen</value>
+    <value>Impostazioni</value>
   </data>
   <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
-    <value>STANDARD-DATEINAME (EXPORT)</value>
+    <value>NOME FILE STANDARD (ESPORTAZIONE)</value>
   </data>
   <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Name eingeben...</value>
+    <value>Inserisci nome...</value>
   </data>
   <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
-    <value>STANDARD-DATEINAME (TEILEN)</value>
+    <value>NOME FILE STANDARD (CONDIVISIONE)</value>
   </data>
   <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Name eingeben...</value>
+    <value>Inserisci nome...</value>
   </data>
   <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
-    <value>Zürücksetzen</value>
+    <value>Reinizializzazione</value>
   </data>
   <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
-    <value>SPRACHE</value>
+    <value>LINGUA</value>
   </data>
   <data name="More_Settings_Language_Default.Content" xml:space="preserve">
-    <value>Auto</value>
+    <value>Automatico</value>
   </data>
   <data name="More_Settings_Lang_AppRest.Text" xml:space="preserve">
-    <value>App benötigt Neustart zum Übernehmen</value>
+    <value>L'applicazione deve ripartire per riprendere il controllo</value>
   </data>
   <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
-    <value>RECHTSCHREIBUNG PRÜFEN</value>
+    <value>CONTROLLARE L'ORTOGRAFIA</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
-    <value>Ein</value>
+    <value>Attivato</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
-    <value>Aus</value>
+    <value>Disattivato</value>
   </data>
   <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
-    <value>DESIGN-MODUS</value>
+    <value>TEMA</value>
   </data>
   <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Dunkel</value>
+    <value>Scuro</value>
   </data>
   <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Standard</value>
+    <value>Predefinito</value>
   </data>
   <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Hell</value>
+    <value>Luce</value>
   </data>
   <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
     <value>Bitmap (.bmp)</value>
   </data>
   <data name="Share_File_ShareFile_GIF.Text" xml:space="preserve">
-    <value>GIF-Grafik (.gif)</value>
+    <value>Grafica GIF (.gif)</value>
   </data>
   <data name="Share_File_ShareFile_HTML.Text" xml:space="preserve">
-    <value>HTML-Seite (.html)</value>
+    <value>Pagina HTML (.html)</value>
   </data>
   <data name="Share_File_ShareFile_JPG.Text" xml:space="preserve">
-    <value>JPG-Grafik (.jpg)</value>
+    <value>Grafica JPG (.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
     <value>Portable Networks Graphics (.png)</value>
@@ -235,93 +235,93 @@
     <value>Rich Text (.rtf)</value>
   </data>
   <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
-    <value>TIFF-Grafik (.tiff)</value>
+    <value>Grafica TIFF (.tiff)</value>
   </data>
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
-    <value>Textdatei (.txt)</value>
+    <value>File di testo (.txt)</value>
   </data>
   <data name="More_File_Exit.Text" xml:space="preserve">
-    <value>APP BEENDEN</value>
+    <value>USCITA APP</value>
   </data>
   <data name="More_About_Langs.Text" xml:space="preserve">
-    <value>Übersetzungen</value>
+    <value>Traslazioni</value>
   </data>
   <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
-    <value>MENÜ BEIM START ÖFFNEN</value>
+    <value>APRIRE IL MENU ALL'INIZIO</value>
   </data>
   <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
-    <value>Notiz eingeben...</value>
+    <value>Inserisci nota...</value>
   </data>
   <data name="More_Settings_FontSizeHeader.Text" xml:space="preserve">
-    <value>SCHIRFTGRÖSSE</value>
+    <value>DIMENSIONE FONT</value>
   </data>
   <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>Zahl eingeben...</value>
+    <value>Inserire il numero...</value>
   </data>
   <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
-    <value>SCHRIFTART</value>
+    <value>TIPO DI FONT</value>
   </data>
   <data name="More_About_NoLicense.Text" xml:space="preserve">
-    <value>Lizenzfrei</value>
+    <value>Senza licenza</value>
   </data>
   <data name="More_About_MIT.Header" xml:space="preserve">
-    <value>Die MIT-Lizenz</value>
+    <value>La licenza MIT</value>
   </data>
   <data name="More_About_PP.Header" xml:space="preserve">
-    <value>Datenschutzerklärung</value>
+    <value>Informativa sulla privacy</value>
   </data>
   <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
-    <value>© 2018 by brullsker. Alle Rechte vorbehalten.</value>
+    <value>© 2018 by brullsker. Tutti i diritti riservati.</value>
   </data>
   <data name="Store_Description" xml:space="preserve">
-    <value>Du suchst eine Notizen-App, die sich deine Änderungen merkt, ohne dass du extra speichern musst? Dann bist du hier genau an der richtigen Stelle. FastNote hat viele tolle Features, wie z.B:
+    <value>Sei alla ricerca di un'app di note che ricordi i tuoi cambiamenti senza doverli salvare? Allora siete venuti nel posto giusto. FastNote ha molte grandi caratteristiche, come ad esempio 
 
-- Exportieren in verschiedene Dateiformate
-- Teilen von Text oder Datei
-- Rechtschreibprüfung
+- Esportazione in diversi formati di file 
+- Condividi testo o file 
+- controllo ortografico 
 
-... und vieles mehr! Lass dich noch heute überraschen.</value>
+... e molto altro ancora! Lasciate che vi sorprenda oggi.</value>
   </data>
   <data name="Store_Feature1" xml:space="preserve">
-    <value>Notizen</value>
+    <value>Biglietti</value>
   </data>
   <data name="Store_Feature2" xml:space="preserve">
-    <value>Automatisches Speichern</value>
+    <value>Salvataggio automatico</value>
   </data>
   <data name="Store_Feature3" xml:space="preserve">
-    <value>Exportieren (z.B. rtf, txt, verschiedene Bildformate)</value>
+    <value>Esportazione (ad es. rtf, txt, diversi formati immagine)</value>
   </data>
   <data name="Store_Feature4" xml:space="preserve">
-    <value>Teilen (Datei oder Text)</value>
+    <value>Condividi (file o testo)</value>
   </data>
   <data name="Store_Feature5" xml:space="preserve">
-    <value>Notizen formatieren</value>
+    <value>Note sul formato</value>
   </data>
   <data name="Store_Feature6" xml:space="preserve">
     <value>Fluent Design</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>Portugiesisch (Brasilien) hinzugefügt
-Lizenz- / Privatsphäreninfos hinzugefügt
-Fehlerbehebungen</value>
+    <value>Portoghese (Brasile) aggiunto 
+Licenza / aggiunta l'informazione sulla privacy 
+Correzioni</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
-    <value>Auch im hellen Design wunderschön dank Fluent Design</value>
+    <value>Bello anche nel design luminoso grazie al Fluent Design</value>
   </data>
   <data name="Store_Sc_Mobile4" xml:space="preserve">
-    <value>Auch im hellen Design wunderschön dank dem UWP Design System</value>
+    <value>Bello anche nel design luminoso grazie al UWP Design System</value>
   </data>
   <data name="Store_Sc_MR1" xml:space="preserve">
-    <value>Sei auch in der Mixed Reality produktiv!</value>
+    <value>Sii produttivo anche in Mixed Reality!</value>
   </data>
   <data name="Store_Sc_Universal1" xml:space="preserve">
-    <value>Mach dir Notizen und formatiere sie</value>
+    <value>Prendere appunti e formattarli</value>
   </data>
   <data name="Store_Sc_Universal2" xml:space="preserve">
-    <value>Exportiere und Teile deine Arbeit mithilfe umfangreicher Tools</value>
+    <value>Esporta e condividi il tuo lavoro utilizzando strumenti completi</value>
   </data>
   <data name="Store_Sc_Universal3" xml:space="preserve">
-    <value>Passe Optionen wie Schriftgröße oder -art an</value>
+    <value>Personalizza opzioni come la dimensione o il tipo di carattere</value>
   </data>
   <data name="Store_SearchTerm1" xml:space="preserve">
     <value>FastNote</value>
@@ -333,10 +333,10 @@ Fehlerbehebungen</value>
     <value>Note</value>
   </data>
   <data name="Store_SearchTerm4" xml:space="preserve">
-    <value>Notizen</value>
+    <value>Biglietti</value>
   </data>
   <data name="Store_SearchTerm5" xml:space="preserve">
-    <value>Textverarbeitung</value>
+    <value>elaborazione testi</value>
   </data>
   <data name="Store_SearchTerm6" xml:space="preserve">
     <value>Notepad</value>
@@ -345,16 +345,16 @@ Fehlerbehebungen</value>
     <value>Autosave</value>
   </data>
   <data name="Store_ShortDescription" xml:space="preserve">
-    <value>Mach dir Notizen! Speichert Änderungen automatisch.</value>
+    <value>Prendere appunti! Salva automaticamente le modifiche.</value>
   </data>
   <data name="ShareUI_FileDesc" xml:space="preserve">
-    <value>Datei teilen</value>
+    <value>Condividi file</value>
   </data>
   <data name="ShareUI_SelectedTextDesc" xml:space="preserve">
-    <value>Auswahl teilen</value>
+    <value>Condividi selezione del testo</value>
   </data>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
-    <value>Alles teilen</value>
+    <value>Condivere l'intero testo</value>
   </data>
 
 </root>

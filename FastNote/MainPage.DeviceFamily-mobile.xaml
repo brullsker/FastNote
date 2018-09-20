@@ -286,9 +286,12 @@
                                     <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ComboBox x:Name="LangBox" IsEnabled="True" HorizontalAlignment="Stretch" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" BorderThickness="0,0,0,2">
                                         <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>
-                                        <ComboBoxItem Content="English"/>
-                                        <ComboBoxItem Content="Deutsch"/>
-                                        <ComboBoxItem Content="Português do Brasil"/>
+                                        <ComboBoxItem Content="English (United States)"/>
+                                        <ComboBoxItem Content="Deutsch (Deutschland)"/>
+                                        <ComboBoxItem Content="Português (Brasil)"/>
+                                        <ComboBoxItem Content="Français"/>
+                                        <ComboBoxItem Content="Italiano"/>
+                                        <ComboBoxItem Content="Español"/>
                                     </ComboBox>
                                     <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Text="App restart required to apply" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
                                     <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
@@ -308,7 +311,7 @@
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         <Border Background="Gray" Margin="0,0,12,0" Width="136" Height="136">
-                                            <Image Source="ms-appx:///Assets/StoreLogo.scale-400.png" Width="68"/>
+                                            <Image Source="ms-appx:///Assets/StoreLogo.png" Width="68"/>
                                         </Border>
                                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
                                             <TextBlock Text="1" x:Name="AboutAppTextBlock" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,6"/>

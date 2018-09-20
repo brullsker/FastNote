@@ -235,7 +235,7 @@
     <value>Rich Text (.rtf)</value>
   </data>
   <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
-    <value>package</value>
+    <value>TIFF image (.tiff)</value>
   </data>
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
     <value>Plain text (.txt)</value>
@@ -306,10 +306,10 @@ Privacy and license information added
 Bugfixes</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
-    <value>Gorgeous also when using white theme thanks to Fluent Design System</value>
+    <value>Gorgeous also when using light theme thanks to Fluent Design System</value>
   </data>
   <data name="Store_Sc_Mobile4" xml:space="preserve">
-    <value>Gorgeous also when using white theme thanks to the UWP Design System</value>
+    <value>Gorgeous also when using light theme thanks to the UWP Design System</value>
   </data>
   <data name="Store_Sc_MR1" xml:space="preserve">
     <value>Be productive in Mixed Reality too!</value>
@@ -356,4 +356,5 @@ Bugfixes</value>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
     <value>Share whole text</value>
   </data>
+
 </root>

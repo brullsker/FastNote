@@ -299,9 +299,12 @@
                                     <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ComboBox x:Name="LangBox" IsEnabled="True" HorizontalAlignment="Stretch" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" BorderThickness="0,0,0,2">
                                         <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>
-                                        <ComboBoxItem Content="English"/>
-                                        <ComboBoxItem Content="Deutsch"/>
-                                        <ComboBoxItem Content="Português do Brasil"/>
+                                        <ComboBoxItem Content="English (United States)"/>
+                                        <ComboBoxItem Content="Deutsch (Deutschland)"/>
+                                        <ComboBoxItem Content="Português (Brasil)"/>
+                                        <ComboBoxItem Content="Français"/>
+                                        <ComboBoxItem Content="Italiano"/>
+                                        <ComboBoxItem Content="Español"/>
                                     </ComboBox>
                                     <TextBlock Text="App restart required to apply" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
                                     <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
@@ -322,7 +325,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Border Background="Gray" Margin="0,0,12,0" Width="136" Height="136">
                                             <Grid>
-                                                <Image Source="/Assets/StoreLogo.scale-400.png" Width="68"/>
+                                                <Image Source="ms-appx:///Assets/StoreLogo.png" Width="68"/>
                                             </Grid>
                                         </Border>
                                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
@@ -371,6 +374,12 @@
                                         <StackPanel Orientation="Vertical" Margin="6,2,6,6">
                                             <TextBlock Text="Português do Brasil - JNMarcos"/>
                                             <HyperlinkButton Content="Mail" IsEnabled="False" x:Uid="More_About_DevEmail" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="mailto:jnacmarcos@gmail.com" Padding="0"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
+                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
+                                            <TextBlock Text="FR, IT, ES, NL, PL - powered by DeepL" Style="{StaticResource BodyTextBlockStyle}"/>
+                                            <HyperlinkButton Content="DeepL Translator" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://deepl.com/translator" Padding="0"/>
                                         </StackPanel>
                                     </Border>
                                     <MenuFlyoutSeparator Margin="0,12"/>
