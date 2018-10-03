@@ -26,7 +26,7 @@
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
     <PackageCertificateThumbprint>EF6F5C4450AC22B74A7B0FCE78DAB0D88FEDF7FF</PackageCertificateThumbprint>
     <AppxBundleAutoResourcePackageQualifiers>Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
-    <AppxDefaultResourceQualifiers>Language=de-DE;en-US;pt-BR</AppxDefaultResourceQualifiers>
+    <AppxDefaultResourceQualifiers>Language=de-DE;en-US;pt-BR;fr;it;es;nl;pl</AppxDefaultResourceQualifiers>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -116,10 +116,12 @@
     </AppxManifest>
     <None Include="FastNote_StoreKey.pfx" />
     <None Include="FastNote_TemporaryKey.pfx" />
+    <PRIResource Include="Resources\pt-BR\Resources.resw" />
+    <PRIResource Include="Resources\pl\Resources.resw" />
+    <PRIResource Include="Resources\nl\Resources.resw" />
     <PRIResource Include="Resources\it\Resources.resw" />
     <PRIResource Include="Resources\fr\Resources.resw" />
     <PRIResource Include="Resources\es\Resources.resw" />
-    <PRIResource Include="Resources\pt-BR\Resources.resw" />
     <PRIResource Include="Resources\de-DE\Resources.resw" />
     <PRIResource Include="Resources\en-US\Resources.resw" />
   </ItemGroup>
@@ -208,6 +210,7 @@
       <HintPath>..\..\..\Dependencies\Common.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

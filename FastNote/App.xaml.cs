@@ -40,6 +40,8 @@ namespace FastNote
             langlist.Add("fr");
             langlist.Add("it");
             langlist.Add("es");
+            langlist.Add("nl");
+            langlist.Add("pl");
             ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];
         }
 

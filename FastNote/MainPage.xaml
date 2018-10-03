@@ -305,6 +305,8 @@
                                         <ComboBoxItem Content="Français"/>
                                         <ComboBoxItem Content="Italiano"/>
                                         <ComboBoxItem Content="Español"/>
+                                        <ComboBoxItem Content="Nederlandse"/>
+                                        <ComboBoxItem Content="Polska"/>
                                     </ComboBox>
                                     <TextBlock Text="App restart required to apply" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
                                     <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
