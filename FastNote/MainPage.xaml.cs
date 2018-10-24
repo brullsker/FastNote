@@ -22,6 +22,7 @@ using Windows.Graphics.Imaging;
 using Windows.UI.ViewManagement;
 using Windows.ApplicationModel.Core;
 using Microsoft.Toolkit.Uwp.UI.Extensions;
+using Windows.UI;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -46,13 +47,35 @@ namespace FastNote
 
         List<string> FontList = new List<string>();
 
+        CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+
         public MainPage()
         {
             this.InitializeComponent();
-            var coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
-            coreTitleBar.ExtendViewIntoTitleBar = true;
-            TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, Windows.UI.Colors.Transparent);
-            Window.Current.SetTitleBar(Draggable1);
+
+            if (SystemInformation.DeviceFamily == "Windows.Mobile")
+            {
+                if (Settings.Default.ToolBarOnBottomMobile == true)
+                {
+                    TopBarGrid.Visibility = Visibility.Collapsed;
+                    BottomBarGrid.Visibility = Visibility.Visible;
+                }
+                else if (Settings.Default.ToolBarOnBottomMobile == false)
+                {
+                    BottomBarGrid.Visibility = Visibility.Collapsed;
+                    TopBarGrid.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                if (Settings.Default.ToolBarOnBottomDesktop == true) Grid.SetRow(TopBarGrid, 2);
+                else if (Settings.Default.ToolBarOnBottomDesktop == false)
+                {
+                    coreTitleBar.ExtendViewIntoTitleBar = true;
+                    Window.Current.SetTitleBar(Draggable1);
+                    TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, Windows.UI.Colors.Transparent);
+                }
+            }
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timer.Tick += Timer_Tick;
             ShareSelectedTextContent.Visibility = Visibility.Collapsed;
@@ -436,6 +459,7 @@ namespace FastNote
         private void MainView_PaneOpening(object sender, RoutedEventArgs e)
         {
             SettingsButton.Scale(scaleX: 0f, scaleY: 0f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
+            SettingsButton2.Scale(scaleX: 0f, scaleY: 0f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
             SettingsButton_Close.Scale(scaleX: 1f, scaleY: 1f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
         }
 
@@ -443,6 +467,7 @@ namespace FastNote
         {
             SettingsButton_Close.Scale(scaleX: 0f, scaleY: 0f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
             SettingsButton.Scale(scaleX: 1f, scaleY: 1f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
+            SettingsButton2.Scale(scaleX: 1f, scaleY: 1f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
         }
 
         private void MainEdit_SelectionChanged(object sender, RoutedEventArgs e)
@@ -781,6 +806,41 @@ namespace FastNote
         private void DraggableBtn_PointerMoved(object sender, Windows.UI.Xaml.Input.PointerRoutedEventArgs e)
         {
             if (MainView.IsPaneOpen == true && MainView.DisplayMode == SplitViewDisplayMode.Inline) Window.Current.SetTitleBar(DraggableBtn);
+        }
+
+        private void ToggleToolBar_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (SystemInformation.DeviceFamily == "Windows.Mobile")
+            {
+                if (Settings.Default.ToolBarOnBottomMobile == true)
+                {
+                    TopBarGrid.Visibility = Visibility.Collapsed;
+                    BottomBarGrid.Visibility = Visibility.Visible;
+                }
+                else if (Settings.Default.ToolBarOnBottomMobile == false)
+                {
+                    BottomBarGrid.Visibility = Visibility.Collapsed;
+                    TopBarGrid.Visibility = Visibility.Visible;
+                }
+            }
+            else
+            {
+                if (Settings.Default.ToolBarOnBottomDesktop == true)
+                {
+                    var color = (Color)this.Resources["SystemAltHighColor"];
+                    Debug.WriteLine(color.ToString());
+                    Grid.SetRow(TopBarGrid, 2);
+                    coreTitleBar.ExtendViewIntoTitleBar = false;
+                    TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, color);
+                }
+                else if (Settings.Default.ToolBarOnBottomDesktop == false)
+                {
+                    Grid.SetRow(TopBarGrid, 0);
+                    coreTitleBar.ExtendViewIntoTitleBar = true;
+                    Window.Current.SetTitleBar(Draggable1);
+                    TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, Windows.UI.Colors.Transparent);
+                }
+            }
         }
     }
 }

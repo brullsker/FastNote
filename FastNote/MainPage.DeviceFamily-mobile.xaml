@@ -10,6 +10,7 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{StaticResource settings}"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
     x:Name="MainPagePage">
 
     <Grid>
@@ -40,45 +41,78 @@
         <SplitView x:Name="MainView" DisplayMode="Inline" PaneBackground="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"  PaneClosing="MainView_PaneClosing" IsPaneOpen="{Binding MenuOpenOnStartup, Mode=OneTime}">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="Auto" MaxHeight="48"/>
                     <RowDefinition/>
+                    <RowDefinition Height="Auto" MaxHeight="48"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="Auto"/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition Width="68"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid x:Name="Draggable1" Grid.Column="1" PointerMoved="Draggable1_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
-                    <Grid x:Name="Draggable2" Grid.Column="3" PointerMoved="Draggable2_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
-                    <Grid x:Name="Draggable3" Grid.Column="4" PointerMoved="Draggable3_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
-                    <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
-                        <AppBarSeparator/>
-                        <controls:TextToolbar Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
-                            <controls:TextToolbar.ButtonModifications>
-                                <buttons:DefaultButton Type="Link" IsVisible="False"/>
-                                <buttons:DefaultButton Type="OrderedList" IsVisible="False"/>
-                            </controls:TextToolbar.ButtonModifications>
-                        </controls:TextToolbar>
-                        <AppBarSeparator/>
-                    </StackPanel>
-                    <CommandBar x:Name="DraggableBtn" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
-                        <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
-                            <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
-                        </AppBarButton>
-                    </CommandBar>
+                <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" x:Name="TopBarGrid">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="68"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid x:Name="Draggable1" Grid.Column="1" PointerMoved="Draggable1_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                        <Grid x:Name="Draggable2" Grid.Column="3" PointerMoved="Draggable2_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                        <Grid x:Name="Draggable3" Grid.Column="4" PointerMoved="Draggable3_PointerMoved" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                        <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <AppBarSeparator/>
+                            <controls:TextToolbar Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center" x:Name="TextToolBar">
+                                <controls:TextToolbar.ButtonModifications>
+                                    <buttons:DefaultButton Type="Link" IsVisible="False"/>
+                                    <buttons:DefaultButton Type="OrderedList" IsVisible="False"/>
+                                </controls:TextToolbar.ButtonModifications>
+                            </controls:TextToolbar>
+                            <AppBarSeparator/>
+                        </StackPanel>
+                        <CommandBar x:Name="DraggableBtn" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <AppBarButton x:Name="SettingsButton" Click="SettingsButton_Click" LabelPosition="Collapsed">
+                                <SymbolIcon Symbol="More" x:Name="MoreIcon"/>
+                            </AppBarButton>
+                        </CommandBar>
+                    </Grid>
                 </Grid>
 
                 <Grid x:Name="container" Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <RichEditBox FontSize="{Binding FontSize, Mode=OneWay}" PlaceholderText="Start taking notes..." x:Uid="EditPlaceHolder" x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
-                <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="12,0">
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="12,0">
                     <TextBlock x:Name="CharCount"/>
                     <TextBlock Text=" characters" x:Uid="CharactersText"/>
-                </StackPanel>                
+                </StackPanel>
+
+                <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Grid.Row="2" x:Name="BottomBarGrid">
+                    <interactivity:Interaction.Behaviors>
+                        <local:KeepAboveInputPaneBehavior/>
+                    </interactivity:Interaction.Behaviors>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="68"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <AppBarSeparator/>
+                            <controls:TextToolbar Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Editor="{Binding ElementName=MainEdit}" Format="RichText" HorizontalAlignment="Center">
+                                <controls:TextToolbar.ButtonModifications>
+                                    <buttons:DefaultButton Type="Link" IsVisible="False"/>
+                                    <buttons:DefaultButton Type="OrderedList" IsVisible="False"/>
+                                </controls:TextToolbar.ButtonModifications>
+                            </controls:TextToolbar>
+                            <AppBarSeparator/>
+                        </StackPanel>
+                        <CommandBar Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <AppBarButton x:Name="SettingsButton2" Click="SettingsButton_Click" LabelPosition="Collapsed">
+                                <SymbolIcon Symbol="More"/>
+                            </AppBarButton>
+                        </CommandBar>
+                    </Grid>
+                </Grid>
             </Grid>
 
             <SplitView.Pane>
@@ -139,7 +173,13 @@
                                                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
                                                         </controls:LayoutTransformControl>
                                                         <Button.Flyout>
-                                                            <Flyout Placement="Right" x:Name="ShareMenu" FlyoutPresenterStyle="{StaticResource FlyoutNoPadding}">
+                                                            <Flyout Placement="Right" x:Name="ShareMenu">
+
+                                                                <Flyout.FlyoutPresenterStyle>
+                                                                    <Style TargetType="FlyoutPresenter">
+                                                                        <Setter Property="Padding" Value="0" />
+                                                                    </Style>
+                                                                </Flyout.FlyoutPresenterStyle>
                                                                 <ListView Padding="0" Margin="0" x:Name="ShareMenu_OptionsList" SelectionChanged="ShareMenu_OptionsList_SelectionChanged">
                                                                     <ListViewItem x:Name="ShareRTF" Tapped="ShareRTF_Click" VerticalContentAlignment="Center">
                                                                         <StackPanel Orientation="Horizontal">
@@ -283,6 +323,8 @@
                                     <RadioButton x:Uid="More_Settings_Theme_Default" Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Dark" Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Light" Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
+                                    <TextBlock Text="TEXT TOOLBAR POSITION" x:Uid="More_Settings_ToolbarPositionHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <ToggleSwitch x:Uid="More_Settings_ToolbarPosition_Switch" OffContent="Top" OnContent="Bottom" IsOn="{Binding ToolBarOnBottomMobile, Mode=TwoWay}" x:Name="ToggleToolBar" Toggled="ToggleToolBar_Toggled"/>
                                     <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ComboBox x:Name="LangBox" IsEnabled="True" HorizontalAlignment="Stretch" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" BorderThickness="0,0,0,2">
                                         <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>

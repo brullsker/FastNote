@@ -11,6 +11,8 @@ namespace FastNote
             get { return settings; }
         }
 
+        bool IsMobile;
+
         public Settings()
             : base(ApplicationData.Current.LocalSettings)
         {
@@ -95,6 +97,20 @@ namespace FastNote
 
         [DefaultSettingValue(Value = true)]
         public bool FontFamSegFS
+        {
+            get { return Get<bool>(); }
+            set { Set(value); }
+        }
+
+        [DefaultSettingValue(Value = false)]
+        public bool ToolBarOnBottomDesktop
+        {
+            get { return Get<bool>(); }
+            set { Set(value); }
+        }
+
+        [DefaultSettingValue(Value = true)]
+        public bool ToolBarOnBottomMobile
         {
             get { return Get<bool>(); }
             set { Set(value); }
