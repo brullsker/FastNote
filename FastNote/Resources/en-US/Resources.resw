@@ -365,4 +365,10 @@ Bugfixes</value>
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
     <value>Bottom</value>
   </data>
+  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
+    <value>You can disable ads for free in the settings</value>
+  </data>
+  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
+    <value>SHOW AD TO SUPPORT DEVELOPMENT</value>
+  </data>
 </root>

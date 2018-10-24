@@ -8,6 +8,7 @@
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:buttons="using:Microsoft.Toolkit.Uwp.UI.Controls.TextToolbarButtons"
     xmlns:extns="using:Microsoft.Toolkit.Uwp.UI.Extensions"
+    xmlns:Ads="using:Microsoft.Advertising.WinRT.UI"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     DataContext="{StaticResource settings}"
@@ -99,6 +100,10 @@
 
             <SplitView.Pane>
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
                     <Pivot IsHeaderItemsCarouselEnabled="True">
                         <Pivot.RightHeader>
                             <CommandBar Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top">
@@ -306,6 +311,8 @@
                                     <RadioButton x:Uid="More_Settings_Theme_Light" Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
                                     <TextBlock Text="TEXT TOOLBAR POSITION" x:Uid="More_Settings_ToolbarPositionHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ToggleSwitch x:Uid="More_Settings_ToolbarPosition_Switch" OffContent="Top" OnContent="Bottom" IsOn="{Binding ToolBarOnBottomDesktop, Mode=TwoWay}" x:Name="ToggleToolBar" Toggled="ToggleToolBar_Toggled"/>
+                                    <TextBlock Text="SHOW AD TO SUPPORT DEVELOPMENT" x:Uid="More_Settings_ShowAdHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disable" OnContent="Enable" IsOn="{Binding ShowAd, Mode=TwoWay}" x:Name="ToggleAd" Toggled="ToggleAd_Toggled"/>
                                     <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ComboBox x:Name="LangBox" IsEnabled="True" HorizontalAlignment="Stretch" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" BorderThickness="0,0,0,2">
                                         <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>
@@ -409,6 +416,11 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
                             </ScrollViewer>
                         </PivotItem>
                     </Pivot>
+
+                    <StackPanel Orientation="Vertical" x:Name="MenuAd" Grid.Row="1">
+                        <TextBlock Text="You can disable ads for free in the settings" HorizontalAlignment="Center" TextAlignment="Center" Margin="12,0" x:Uid="DisableAdDisclaimer" Style="{StaticResource CaptionTextBlockStyle}"/>
+                        <Ads:AdControl Width="320" Height="50" Grid.Row="1" AdUnitId="{x:Bind adid}" ApplicationId="{x:Bind appid}"/>
+                    </StackPanel>
                 </Grid>
             </SplitView.Pane>
         </SplitView>

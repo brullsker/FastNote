@@ -33,6 +33,9 @@ namespace FastNote
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1";
+        public string adid = "test";
+
         string documentName = "doc.rtf";
         string documentTempName = "temp.rtf";
 
@@ -82,6 +85,7 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) this.RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
+            if (Settings.Default.ShowAd == false) MenuAd.Visibility = Visibility.Collapsed;
             LoadDocument();
         }
 
@@ -841,6 +845,12 @@ namespace FastNote
                     TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, Windows.UI.Colors.Transparent);
                 }
             }
+        }
+
+        private void ToggleAd_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (ToggleAd.IsOn == true) MenuAd.Visibility = Visibility.Visible;
+            else if (ToggleAd.IsOn == false) MenuAd.Visibility = Visibility.Collapsed;
         }
     }
 }

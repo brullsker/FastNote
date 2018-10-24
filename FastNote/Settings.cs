@@ -115,5 +115,12 @@ namespace FastNote
             get { return Get<bool>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = true)]
+        public bool ShowAd
+        {
+            get { return Get<bool>(); }
+            set { Set(value); }
+        }
     }
 }
