@@ -356,5 +356,19 @@ Correzioni</value>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
     <value>Condivere l'intero testo</value>
   </data>
-
+  <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
+    <value>POSIZIONE DELLA BARRA DEGLI STRUMENTI DI TESTO</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
+    <value>In cima</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
+    <value>Sul fondo</value>
+  </data>
+  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
+    <value>È possibile disabilitare gli annunci gratuitamente nelle impostazioni</value>
+  </data>
+  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
+    <value>MOSTRA ANNUNCIO PER SOSTENERE LO SVILUPPO</value>
+  </data>
 </root>

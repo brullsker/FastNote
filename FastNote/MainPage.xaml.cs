@@ -23,6 +23,7 @@ using Windows.UI.ViewManagement;
 using Windows.ApplicationModel.Core;
 using Microsoft.Toolkit.Uwp.UI.Extensions;
 using Windows.UI;
+using Windows.System;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -33,6 +34,12 @@ namespace FastNote
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        //Application ID: 9n5grr8757vq
+        //Ad Unit ID: 1100034316
+
+        //Test Application ID: 3f83fe91-d6be-434d-a0ae-7351c5a997f1
+        //Test Ad Unit ID: test
+
         public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1";
         public string adid = "test";
 
@@ -851,6 +858,25 @@ namespace FastNote
         {
             if (ToggleAd.IsOn == true) MenuAd.Visibility = Visibility.Visible;
             else if (ToggleAd.IsOn == false) MenuAd.Visibility = Visibility.Collapsed;
+        }
+
+        private async void DonateLink_Click(object sender, RoutedEventArgs e)
+        {
+            //DonateFlyout.ShowAt(DonateLink);
+            Uri uri = new Uri("https://paypal.me/brullskerservices");
+            await Launcher.LaunchUriAsync(uri);
+        }
+
+        private async void DonateTest_Click(object sender, RoutedEventArgs e)
+        {
+            MessageDialog md = new MessageDialog("Not implementetd");
+            await md.ShowAsync();
+        }
+
+        private async void DonatePayPal_Click(object sender, RoutedEventArgs e)
+        {
+            Uri uri = new Uri("https://paypal.me/brullskerservices");
+            await Launcher.LaunchUriAsync(uri);
         }
     }
 }

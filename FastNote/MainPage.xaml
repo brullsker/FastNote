@@ -361,7 +361,22 @@
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
                                         <TextBlock Text="Help me with a donation:" x:Uid="More_About_Donate" Style="{StaticResource BaseTextBlockStyle}"/>
-                                        <HyperlinkButton Content=" PayPal" NavigateUri="https://paypal.me/brullskerservices" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
+                                        <HyperlinkButton Content=" PayPal" x:Name="DonateLink" Click="DonateLink_Click" Padding="0" Style="{StaticResource TextBlockButtonStyle}">
+                                            <FlyoutBase.AttachedFlyout>
+                                                <Flyout x:Name="DonateFlyout">
+                                                    <Flyout.FlyoutPresenterStyle>
+                                                        <Style TargetType="FlyoutPresenter">
+                                                            <Setter Property="Background" Value="{ThemeResource SystemControlAcrylicElementMediumHighBrush}" />
+                                                            <Setter Property="Padding" Value="0" />
+                                                        </Style>
+                                                    </Flyout.FlyoutPresenterStyle>
+                                                    <StackPanel>
+                                                        <Button x:Name="DonateTest" Content="Test" Click="DonateTest_Click" Style="{StaticResource ButtonRevealStyle}"/>
+                                                        <Button x:Name="DonatePayPal" Content="PayPal" Click="DonatePayPal_Click" Style="{StaticResource ButtonRevealStyle}"/>
+                                                    </StackPanel>
+                                                </Flyout>
+                                            </FlyoutBase.AttachedFlyout>
+                                        </HyperlinkButton>
                                     </StackPanel>
                                     <TextBlock Text="Used Libraries and SDKs" x:Uid="More_About_Libs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0"/>
                                     <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
@@ -419,7 +434,7 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 
                     <StackPanel Orientation="Vertical" x:Name="MenuAd" Grid.Row="1">
                         <TextBlock Text="You can disable ads for free in the settings" HorizontalAlignment="Center" TextAlignment="Center" Margin="12,0" x:Uid="DisableAdDisclaimer" Style="{StaticResource CaptionTextBlockStyle}"/>
-                        <Ads:AdControl Width="320" Height="50" Grid.Row="1" AdUnitId="{x:Bind adid}" ApplicationId="{x:Bind appid}"/>
+                        <Ads:AdControl Width="320" Height="50" AdUnitId="{x:Bind adid}" ApplicationId="{x:Bind appid}"/>
                     </StackPanel>
                 </Grid>
             </SplitView.Pane>

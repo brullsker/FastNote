@@ -356,5 +356,20 @@ Corrections de bogues</value>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
     <value>Partager le texte entier</value>
   </data>
+  <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
+    <value>POSITION DE LA BARRE D'OUTILS TEXTE</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
+    <value>Sur le dessus</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
+    <value>Sur le fond</value>
+  </data>
+  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
+    <value>Vous pouvez désactiver gratuitement les publicités dans les paramètres suivants</value>
+  </data>
+  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
+    <value>MONTRER LA PUBLICITÉ POUR SOUTENIR LE DÉVELOPPEMENT</value>
+  </data>
 
 </root>

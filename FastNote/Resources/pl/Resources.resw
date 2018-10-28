@@ -356,5 +356,20 @@ Poprawki błędów</value>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
     <value>Udostępniaj cały tekst</value>
   </data>
+  <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
+    <value>POZYCJA PASKA NARZĘDZI TEKSTOWYCH</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
+    <value>Na górze</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
+    <value>Na dnie</value>
+  </data>
+  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
+    <value>Możesz wyłączyć ogłoszenia za darmo w ustawieniach</value>
+  </data>
+  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
+    <value>POKAŻ REKLAMĘ W CELU WSPARCIA ROZWOJU</value>
+  </data>
 
 </root>

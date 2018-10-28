@@ -356,5 +356,20 @@ Fehlerbehebungen</value>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
     <value>Alles teilen</value>
   </data>
+  <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
+    <value>POSITION DER FORMATIERUNGSLEISTE</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
+    <value>Oben</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
+    <value>Unten</value>
+  </data>
+  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
+    <value>Die Werbung kann kostenlos in den Optionen ausgeschaltet werden</value>
+  </data>
+  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
+    <value>ENTWICKLUNG UNTERSTÜTZEN UND WERBUNG ANZEIGEN</value>
+  </data>
 
 </root>

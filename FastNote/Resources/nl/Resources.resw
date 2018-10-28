@@ -356,5 +356,20 @@ Bugfixes</value>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
     <value>Volledige tekst delen</value>
   </data>
+  <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
+    <value>POSITIE VAN DE TEKSTBALK</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
+    <value>Top</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
+    <value>Hieronder</value>
+  </data>
+  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
+    <value>U kunt advertenties gratis uitschakelen in de instellingen</value>
+  </data>
+  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
+    <value>TOON ADVERTENTIE TER ONDERSTEUNING VAN DE ONTWIKKELING</value>
+  </data>
 
 </root>
