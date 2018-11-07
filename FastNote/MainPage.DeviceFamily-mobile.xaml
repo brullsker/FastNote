@@ -447,7 +447,7 @@
                                     <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
                                         <StackPanel Orientation="Vertical" Margin="6,2,6,6">
                                             <TextBlock Text="Português do Brasil - JNMarcos"/>
-                                            <HyperlinkButton Content="Mail" IsEnabled="False" x:Uid="More_About_DevEmail" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="mailto:jnacmarcos@gmail.com" Padding="0"/>
+                                            <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/JNMarcos" Padding="0"/>
                                         </StackPanel>
                                     </Border>
                                     <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
