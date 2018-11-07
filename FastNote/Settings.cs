@@ -11,8 +11,6 @@ namespace FastNote
             get { return settings; }
         }
 
-        bool IsMobile;
-
         public Settings()
             : base(ApplicationData.Current.LocalSettings)
         {

@@ -920,17 +920,18 @@ namespace FastNote
             else if (ToggleAd.IsOn == false) MenuAd.Visibility = Visibility.Collapsed;
         }
 
-        private async void DonateLink_Click(object sender, RoutedEventArgs e)
+        private void DonateLink_Click(object sender, RoutedEventArgs e)
         {
-            //DonateFlyout.ShowAt(DonateLink);
-            Uri uri = new Uri("https://paypal.me/brullskerservices");
-            await Launcher.LaunchUriAsync(uri);
+            DonateFlyout.ShowAt(DonateLink);
+            //Uri uri = new Uri("https://paypal.me/brullskerservices");
+            //await Launcher.LaunchUriAsync(uri);
         }
 
-        private async void DonateTest_Click(object sender, RoutedEventArgs e)
+        Misc.Purchases purch = new Misc.Purchases();
+
+        private void DonateTest_Click(object sender, RoutedEventArgs e)
         {
-            MessageDialog md = new MessageDialog("Not implementetd");
-            await md.ShowAsync();
+            purch.PurchaseAddOn("9MW7825XP327");
         }
 
         private async void DonatePayPal_Click(object sender, RoutedEventArgs e)
@@ -1000,6 +1001,36 @@ namespace FastNote
             if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
             LoadingControl.IsLoading = false;
+        }
+
+        private void Donate0099_Click(object sender, RoutedEventArgs e)
+        {
+            purch.PurchaseAddOn("9PGVLJHM39HK");
+        }
+
+        private void Donate0249_Click(object sender, RoutedEventArgs e)
+        {
+            purch.PurchaseAddOn("9PFTZQ520ZLH");
+        }
+
+        private void Donate0999_Click(object sender, RoutedEventArgs e)
+        {
+            purch.PurchaseAddOn("9PHKXXG943N2");
+        }
+
+        private void Donate2499_Click(object sender, RoutedEventArgs e)
+        {
+            purch.PurchaseAddOn("9N7214FXLS49");
+        }
+
+        private void Donate4999_Click(object sender, RoutedEventArgs e)
+        {
+            purch.PurchaseAddOn("9PNNTW5G9ZK7");
+        }
+
+        private void Donate9999_Click(object sender, RoutedEventArgs e)
+        {
+            purch.PurchaseAddOn("9P0K74P8PWGR");
         }
     }
 }

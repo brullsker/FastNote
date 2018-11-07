@@ -401,8 +401,8 @@
                                         <HyperlinkButton Content=" GitHub" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
                                     </StackPanel>
                                     <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                                        <TextBlock Text="Help me with a donation:" x:Uid="More_About_Donate" Style="{StaticResource BaseTextBlockStyle}"/>
-                                        <HyperlinkButton Content=" PayPal" x:Name="DonateLink" Click="DonateLink_Click" Padding="0" Style="{StaticResource TextBlockButtonStyle}">
+                                        <TextBlock Text="Support the development:" x:Uid="More_About_Donate" Style="{StaticResource BaseTextBlockStyle}"/>
+                                        <HyperlinkButton Content=" Donate!" x:Uid="DonateText" x:Name="DonateLink" Click="DonateLink_Click" Padding="0" Style="{StaticResource TextBlockButtonStyle}">
                                             <FlyoutBase.AttachedFlyout>
                                                 <Flyout x:Name="DonateFlyout">
                                                     <Flyout.FlyoutPresenterStyle>
@@ -410,10 +410,36 @@
                                                             <Setter Property="Padding" Value="0" />
                                                         </Style>
                                                     </Flyout.FlyoutPresenterStyle>
-                                                    <StackPanel>
-                                                        <Button x:Name="DonateTest" Content="Test" Click="DonateTest_Click"/>
-                                                        <Button x:Name="DonatePayPal" Content="PayPal" Click="DonatePayPal_Click"/>
-                                                    </StackPanel>
+                                                    <Grid Margin="6">
+                                                        <Grid.RowDefinitions>
+                                                            <RowDefinition Height="Auto"/>
+                                                            <RowDefinition/>
+                                                        </Grid.RowDefinitions>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Button x:Name="Donate0099" Content="$ 0.99" Click="Donate0099_Click" Margin="0,0,3,0"/>
+                                                            <Button Grid.Column="1" x:Name="Donate0249" Content="$ 2.49" Click="Donate0249_Click" Margin="3,0,3,0"/>
+                                                            <Button Grid.Column="2" x:Name="Donate0999" Content="$ 9.99" Click="Donate0999_Click" Margin="3,0,3,0"/>
+                                                            <Button Grid.Column="3" x:Name="Donate2499" Content="$ 24.99" Click="Donate2499_Click" Margin="3,0,3,0"/>
+                                                            <Button Grid.Column="4" x:Name="Donate4999" Content="$ 49.99" Click="Donate4999_Click" Margin="3,0,3,0"/>
+                                                            <Button Grid.Column="5" x:Name="Donate9999" Content="$ 99.99" Click="Donate9999_Click" Margin="3,0,0,0"/>
+                                                        </Grid>
+                                                        <Grid Grid.Row="1" Margin="0,6,0,0">
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition/>
+                                                                <ColumnDefinition/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <Button x:Name="DonateTest" HorizontalAlignment="Stretch" Content="Test" Click="DonateTest_Click" Margin="0,0,3,0"/>
+                                                            <Button Grid.Column="1" HorizontalAlignment="Stretch" x:Name="DonatePayPal" Content="PayPal" Click="DonatePayPal_Click" Margin="3,0,0,0"/>
+                                                        </Grid>
+                                                    </Grid>
                                                 </Flyout>
                                             </FlyoutBase.AttachedFlyout>
                                         </HyperlinkButton>
@@ -434,6 +460,15 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/joseangelmt/ObservableSettings" Padding="0"/>
                                                 <TextBlock Text="Public domain" x:Uid="More_About_NoLicense" FontSize="12" Margin="12,0,0,0"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
+                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
+                                            <TextBlock Text="Syncfusion Essential Studio UWP"/>
+                                            <StackPanel Orientation="Horizontal">
+                                                <HyperlinkButton Content="Website" x:Uid="WebsiteText" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://www.syncfusion.com/uwp-ui-controls" Padding="0"/>
+                                                <TextBlock Text="Proprietary" x:Uid="ProprietaryText" FontSize="12" Margin="12,0,0,0"/>
                                             </StackPanel>
                                         </StackPanel>
                                     </Border>

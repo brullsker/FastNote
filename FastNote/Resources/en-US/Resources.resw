@@ -142,7 +142,7 @@
     <value>Mail</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Help me with a donation:</value>
+    <value>Support the development:</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
     <value>Used libraries &amp; SDKs</value>
@@ -418,5 +418,14 @@ Bugfixes</value>
   </data>
   <data name="FileTXT" xml:space="preserve">
     <value>Plain text</value>
+  </data>
+  <data name="DonateText.Content" xml:space="preserve">
+    <value> Donate!</value>
+  </data>
+  <data name="ProprietaryText.Text" xml:space="preserve">
+    <value>Proprietary</value>
+  </data>
+  <data name="WebsiteText.Content" xml:space="preserve">
+    <value>Website</value>
   </data>
 </root>
