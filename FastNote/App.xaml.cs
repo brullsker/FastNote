@@ -31,6 +31,7 @@ namespace FastNote
         /// </summary>
         public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mzg0NTFAMzEzNjJlMzMyZTMwSGJNNE42VWhCa1lxWG1RVm84Z1AremZZcUdPKzZ6TXJjcklNVGp3UHU4MD0=");
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             langlist.Add(SystemInformation.Culture.ToString());

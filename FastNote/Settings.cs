@@ -122,5 +122,12 @@ namespace FastNote
             get { return Get<bool>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = 0)]
+        public int HTMLEncoding
+        {
+            get { return Get<int>(); }
+            set { Set(value); }
+        }
     }
 }

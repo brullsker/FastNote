@@ -24,6 +24,8 @@ using Windows.ApplicationModel.Core;
 using Microsoft.Toolkit.Uwp.UI.Extensions;
 using Windows.UI;
 using Windows.System;
+using Syncfusion.DocIO.DLS;
+using Color = Windows.UI.Color;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -35,7 +37,7 @@ namespace FastNote
     public sealed partial class MainPage : Page
     {
         //Application ID: 9n5grr8757vq
-        //Ad Unit ID: 1100034316
+        //Ad Unit ID: 1100034498
 
         //Test Application ID: 3f83fe91-d6be-434d-a0ae-7351c5a997f1
         //Test Ad Unit ID: test
@@ -56,6 +58,7 @@ namespace FastNote
         ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView();
 
         List<string> FontList = new List<string>();
+        List<string> EncodingList = new List<string>();
 
         CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
 
@@ -115,9 +118,23 @@ namespace FastNote
             else Debug.WriteLine("Not first scan");
         }
 
+        private void HTMLStuff()
+        {
+            EncodingList.Add(resourceLoader.GetString("DefaultString"));
+            EncodingList.Add("ANSI");
+            EncodingList.Add("ASCII");
+            EncodingList.Add("ISO-8859-1");
+            EncodingList.Add("UTF-8");
+            EncodingList.Add("UTF-16");
+            List<ComboBoxItem> HTMLItems = new List<ComboBoxItem>();
+            foreach (string code in EncodingList) { HTMLItems.Add(new ComboBoxItem { Content = new TextBlock { Text = code } }); };
+            HTMLEncodingBox.ItemsSource = HTMLItems;
+        }
+
         public async void LoadDocument()
         {
             FontStuff();
+            HTMLStuff();
             storageFolder = ApplicationData.Current.LocalFolder;
             Debug.WriteLine("Loading document: StorageFolder found");
             string filepath = storageFolder.Path.ToString() + "/" + documentName;
@@ -170,14 +187,14 @@ namespace FastNote
 
         private async void Timer_Tick(object sender, object e)
         {
-            Debug.WriteLine("Saving file");
+            //Debug.WriteLine("Saving file");
             StorageFile file = await storageFolder.GetFileAsync(documentName);
             CachedFileManager.DeferUpdates(file);
             IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite);
             MainEdit.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
-            Debug.WriteLine("File saved");
+            //Debug.WriteLine("File saved");
             randAccStream.Dispose();
-            Debug.WriteLine(Window.Current.Bounds.Width.ToString() + "; " + Window.Current.Bounds.Height.ToString());
+            //Debug.WriteLine(Window.Current.Bounds.Width.ToString() + "; " + Window.Current.Bounds.Height.ToString());
         }
 
         private void SettingsButton_Close_Click(object sender, RoutedEventArgs e)
@@ -192,14 +209,17 @@ namespace FastNote
                 LoadingControl.IsLoading = true;
                 Windows.Storage.Pickers.FileSavePicker picker = new Windows.Storage.Pickers.FileSavePicker();
                 picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-                picker.FileTypeChoices.Add("Rich Text", new List<string>() { ".rtf" });
-                picker.FileTypeChoices.Add("HTML page", new List<string>() { ".html" });
-                picker.FileTypeChoices.Add("Plain text", new List<string>() { ".txt" });
-                picker.FileTypeChoices.Add("JPG image", new List<string>() { ".jpg" });
-                picker.FileTypeChoices.Add("Portable Networks Graphics", new List<string>() { ".png" });
-                picker.FileTypeChoices.Add("Bitmap", new List<string>() { ".bmp" });
-                picker.FileTypeChoices.Add("GIF image", new List<string>() { ".gif" });
-                picker.FileTypeChoices.Add("TIFF image", new List<string>() { ".tiff" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileRTF"), new List<string>() { ".rtf" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileHTML"), new List<string>() { ".html" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileDocx"), new List<string>() { ".docx" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileDoc"), new List<string>() { ".doc" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileEpub"), new List<string>() { ".epub" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileTXT"), new List<string>() { ".txt" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileJPG"), new List<string>() { ".jpg" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FilePNG"), new List<string>() { ".png" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileBMP"), new List<string>() { ".bmp" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileGIF"), new List<string>() { ".gif" });
+                picker.FileTypeChoices.Add(resourceLoader.GetString("FileTIFF"), new List<string>() { ".tiff" });
                 picker.SuggestedFileName = Settings.Default.DefaultExportName;
                 StorageFile saveFile = await picker.PickSaveFileAsync();
                 if (saveFile != null)
@@ -212,7 +232,10 @@ namespace FastNote
                         if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
                         if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
                     }
-                    if (saveFile.FileType == ".html") await FileIO.WriteTextAsync(saveFile, ConvertToHtml(MainEdit));
+                    if (saveFile.FileType == ".html") await FileIO.WriteTextAsync(saveFile, ConvertToHtml(MainEdit, EncodingList));
+                    if (saveFile.FileType == ".docx") SfSave(saveFile, Syncfusion.DocIO.FormatType.Docx);
+                    if (saveFile.FileType == ".doc") SfSave(saveFile, Syncfusion.DocIO.FormatType.Doc);
+                    if (saveFile.FileType == ".epub") SfSave(saveFile, Syncfusion.DocIO.FormatType.EPub);
                     if (saveFile.FileType == ".txt")
                     {
                         MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
@@ -334,15 +357,30 @@ namespace FastNote
                 if (Settings.Default.ShareFileType == 1)
                 {
                     StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".html", CreationCollisionOption.ReplaceExisting);
-                    await FileIO.WriteTextAsync(shareFile, ConvertToHtml(MainEdit));
+                    await FileIO.WriteTextAsync(shareFile, ConvertToHtml(MainEdit, EncodingList));
                 }
                 if (Settings.Default.ShareFileType == 2)
+                {
+                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".docx", CreationCollisionOption.ReplaceExisting);
+                    SfSave(shareFile, Syncfusion.DocIO.FormatType.Docx);
+                }
+                if (Settings.Default.ShareFileType == 3)
+                {
+                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".doc", CreationCollisionOption.ReplaceExisting);
+                    SfSave(shareFile, Syncfusion.DocIO.FormatType.Doc);
+                }
+                if (Settings.Default.ShareFileType == 4)
+                {
+                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".epub", CreationCollisionOption.ReplaceExisting);
+                    SfSave(shareFile, Syncfusion.DocIO.FormatType.EPub);
+                }
+                if (Settings.Default.ShareFileType == 5)
                 {
                     StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".txt", CreationCollisionOption.ReplaceExisting);
                     MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
                     await FileIO.WriteTextAsync(shareFile, txtstring);
                 }
-                if (Settings.Default.ShareFileType >= 3)
+                if (Settings.Default.ShareFileType >= 6)
                 {
                     string ext = ".jpg";
                     if (Settings.Default.ShareFileType == 4) ext = ".png";
@@ -487,12 +525,16 @@ namespace FastNote
             else { ShareWholeTextContent.Visibility = Visibility.Collapsed; ShareSelectedTextContent.Visibility = Visibility.Visible; }
         }
 
-        public static string ConvertToHtml(RichEditBox richEditBox)
+        public static string ConvertToHtml(RichEditBox richEditBox, List<string> list)
         {
             string strColour, strFntName, strHTML;
             richEditBox.Document.GetText(TextGetOptions.None, out string text);
             ITextRange txtRange = richEditBox.Document.GetRange(0, text.Length);
             strHTML = "<html>";
+            if (Settings.Default.HTMLEncoding != 0)
+            {
+                strHTML += "<meta charset=&#x22;" + list[Settings.Default.HTMLEncoding] + "&#x22;>";
+            }
             int lngOriginalStart = txtRange.StartPosition;
             int lngOriginalLength = txtRange.EndPosition;
             float shtSize = 11;
@@ -665,39 +707,57 @@ namespace FastNote
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private void ShareTXT_Click(object sender, RoutedEventArgs e)
+        private void ShareDOCX_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 2;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private void ShareJPG_Click(object sender, RoutedEventArgs e)
+        private void ShareDOC_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 3;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private void SharePNG_Click(object sender, RoutedEventArgs e)
+        private void ShareEPUB_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 4;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private void ShareBMP_Click(object sender, RoutedEventArgs e)
+        private void ShareTXT_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 5;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private void ShareGIF_Click(object sender, RoutedEventArgs e)
+        private void ShareJPG_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 6;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
-        private void ShareTIFF_Click(object sender, RoutedEventArgs e)
+        private void SharePNG_Click(object sender, RoutedEventArgs e)
         {
             Settings.Default.ShareFileType = 7;
+            MoreOptionsList.SelectedItem = ShareItem;
+        }
+
+        private void ShareBMP_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.ShareFileType = 8;
+            MoreOptionsList.SelectedItem = ShareItem;
+        }
+
+        private void ShareGIF_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.ShareFileType = 9;
+            MoreOptionsList.SelectedItem = ShareItem;
+        }
+
+        private void ShareTIFF_Click(object sender, RoutedEventArgs e)
+        {
+            Settings.Default.ShareFileType = 10;
             MoreOptionsList.SelectedItem = ShareItem;
         }
 
@@ -877,6 +937,69 @@ namespace FastNote
         {
             Uri uri = new Uri("https://paypal.me/brullskerservices");
             await Launcher.LaunchUriAsync(uri);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Settings.Default.ThemeDefault == true)
+            {
+                var c = Application.Current.Resources["SystemAltHighColor"];
+                Debug.WriteLine(c.ToString());
+                if (c.ToString() == "#FF000000")
+                {
+                    BitmapImage docx = new BitmapImage(new Uri("ms-appx:///Misc/wordnewwhite (Custom).png"));
+                    BitmapImage doc = new BitmapImage(new Uri("ms-appx:///Misc/wordoldwhite (Custom).png"));
+                    docx_image.Source = docx;
+                    doc_image.Source = doc;
+                }
+                else
+                {
+                    BitmapImage docx = new BitmapImage(new Uri("ms-appx:///Misc/wordnewblack (Custom).png"));
+                    BitmapImage doc = new BitmapImage(new Uri("ms-appx:///Misc/wordoldblack (Custom).png"));
+                    docx_image.Source = docx;
+                    doc_image.Source = doc;
+                }
+            }
+            else if (Settings.Default.ThemeDark == true)
+            {
+                BitmapImage docx = new BitmapImage(new Uri("ms-appx:///Misc/wordnewwhite (Custom).png"));
+                BitmapImage doc = new BitmapImage(new Uri("ms-appx:///Misc/wordoldwhite (Custom).png"));
+                docx_image.Source = docx;
+                doc_image.Source = doc;
+            }
+            else if (Settings.Default.ThemeLight == true)
+            {
+                BitmapImage docx = new BitmapImage(new Uri("ms-appx:///Misc/wordnewblack (Custom).png"));
+                BitmapImage doc = new BitmapImage(new Uri("ms-appx:///Misc/wordoldblack (Custom).png"));
+                docx_image.Source = docx;
+                doc_image.Source = doc;
+
+            }
+        }
+
+        public async void SfSave(StorageFile docfile, Syncfusion.DocIO.FormatType formatType)
+        {
+            LoadingControl.IsLoading = true;
+            MainEdit.RequestedTheme = ElementTheme.Light;
+
+            StorageFile cachefile = await ApplicationData.Current.LocalCacheFolder.CreateFileAsync("sfcache.rtf", CreationCollisionOption.ReplaceExisting);
+
+            CachedFileManager.DeferUpdates(cachefile);
+            IRandomAccessStream randAccStream = await cachefile.OpenAsync(FileAccessMode.ReadWrite);
+            MainEdit.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
+            Debug.WriteLine("File saved");
+            randAccStream.Dispose();
+
+            Stream stream = await cachefile.OpenStreamForReadAsync();
+            WordDocument document = new WordDocument(stream, Syncfusion.DocIO.FormatType.Rtf);
+            Stream savestream = await docfile.OpenStreamForWriteAsync();
+            document.Save(savestream, formatType);
+            stream.Dispose();
+            savestream.Dispose();
+            if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
+            if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
+            if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
+            LoadingControl.IsLoading = false;
         }
     }
 }

@@ -196,7 +196,7 @@
     <value>Para a aplicação da mudança, reinicie o app</value>
   </data>
   <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
-    <value>VERIFICADOR DE ORTOGRAFIA</value>
+    <value>VERIFICADOR ORTOGRÁFICO</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
     <value>Habilitado</value>
@@ -357,6 +357,21 @@ Bugs resolvidos.
   </data>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
     <value>Compartilhe o texto inteiro</value>
+  </data>
+  <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
+    <value>POSIÇÃO DA BARRA DE TEXTO</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
+    <value>Em cima</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
+    <value>Embaixo</value>
+  </data>
+  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
+    <value>Você pode desabilitar a publicidade nas configurações</value>
+  </data>
+  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
+    <value>MOSTRAR PUBLICIDADE PARA AJUDAR O DESENVOLVEDOR</value>
   </data>
 
 </root>

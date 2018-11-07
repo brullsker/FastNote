@@ -229,7 +229,7 @@
     <value>JPG image (.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
-    <value>Portable Networks Graphics (.png)</value>
+    <value>Portable Network Graphics (.png)</value>
   </data>
   <data name="Share_File_ShareFile_RTF.Text" xml:space="preserve">
     <value>Rich Text (.rtf)</value>
@@ -370,5 +370,53 @@ Bugfixes</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>SHOW AD TO SUPPORT DEVELOPMENT</value>
+  </data>
+  <data name="DefaultString" xml:space="preserve">
+    <value>Default</value>
+  </data>
+  <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
+    <value>HTML ENCODING</value>
+  </data>
+  <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
+    <value>Word Document (old) (.doc)</value>
+  </data>
+  <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
+    <value>Word Document (.docx)</value>
+  </data>
+  <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
+    <value>eBook file (.epub)</value>
+  </data>
+  <data name="FileBMP" xml:space="preserve">
+    <value>Bitmap</value>
+  </data>
+  <data name="FileDoc" xml:space="preserve">
+    <value>Word Document (old)</value>
+  </data>
+  <data name="FileDocx" xml:space="preserve">
+    <value>Word Document</value>
+  </data>
+  <data name="FileEpub" xml:space="preserve">
+    <value>eBook file</value>
+  </data>
+  <data name="FileGIF" xml:space="preserve">
+    <value>GIF image</value>
+  </data>
+  <data name="FileHTML" xml:space="preserve">
+    <value>HTML page</value>
+  </data>
+  <data name="FileJPG" xml:space="preserve">
+    <value>JPG image</value>
+  </data>
+  <data name="FilePNG" xml:space="preserve">
+    <value>Portable Network Graphics</value>
+  </data>
+  <data name="FileRTF" xml:space="preserve">
+    <value>Rich Text</value>
+  </data>
+  <data name="FileTIFF" xml:space="preserve">
+    <value>TIFF image</value>
+  </data>
+  <data name="FileTXT" xml:space="preserve">
+    <value>Plain text</value>
   </data>
 </root>

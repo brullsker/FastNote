@@ -168,7 +168,7 @@
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal" Grid.Column="2">
                                                     <AppBarSeparator Style="{StaticResource AppBarSeparatorStyleThin}"/>
-                                                    <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44" Background="Transparent">
+                                                    <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44" Background="Transparent" Click="Button_Click">
                                                         <controls:LayoutTransformControl>
                                                             <controls:LayoutTransformControl.Transform>
                                                                 <TransformGroup>
@@ -190,7 +190,7 @@
                                                                         <StackPanel Orientation="Horizontal">
                                                                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE160;"/>
                                                                             <AppBarSeparator/>
-                                                                            <TextBlock x:Uid="More_File_ShareFile_RTF"  Text="Rich Text (.rtf)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_RTF"  Text="Rich Text (.rtf)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
                                                                         </StackPanel>
                                                                     </ListViewItem>
                                                                     <ListViewItem x:Name="ShareHTML" Tapped="ShareHTML_Click" VerticalContentAlignment="Center">
@@ -198,6 +198,27 @@
                                                                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE12B;"/>
                                                                             <AppBarSeparator/>
                                                                             <TextBlock x:Uid="Share_File_ShareFile_HTML" Text="HTML page (.html)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ShareDOCX" Tapped="ShareDOCX_Tapped" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <Image x:Name="docx_image" Width="20"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_DOCX"  Text="Word Document (.docx)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ShareDOC" Tapped="ShareDOC_Tapped" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <Image x:Name="doc_image" Width="20"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_DOC"  Text="Word Document (Old) (.doc)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ShareEPUB" Tapped="ShareEPUB_Tapped" VerticalContentAlignment="Center">
+                                                                        <StackPanel Orientation="Horizontal">
+                                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE160;"/>
+                                                                            <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="Share_File_ShareFile_EPUB"  Text="eBook file (.epub)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
                                                                         </StackPanel>
                                                                     </ListViewItem>
                                                                     <ListViewItem x:Name="ShareTXT" Tapped="ShareTXT_Click" VerticalContentAlignment="Center">
@@ -323,6 +344,9 @@
                                     </Grid>
                                     <TextBlock x:Uid="More_Settings_FontFamilyHeader" Text="FONT FAMILY" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ComboBox x:Name="FontFamBox" IsEnabled="True" HorizontalAlignment="Stretch" BorderThickness="0,0,0,2" SelectedIndex="{Binding FontFamily, Mode=TwoWay}" SelectionChanged="FontFamBox_SelectionChanged">
+                                    </ComboBox>
+                                    <TextBlock x:Uid="More_Settings_HTMLEncodingHeader" Text="HTML ENCODING" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                                    <ComboBox x:Name="HTMLEncodingBox" IsEnabled="True" HorizontalAlignment="Stretch" BorderThickness="0,0,0,2" SelectedIndex="{Binding HTMLEncoding, Mode=TwoWay}">
                                     </ComboBox>
                                     <TextBlock Text="THEME" x:Uid="More_Settings_ThemeHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <RadioButton x:Uid="More_Settings_Theme_Default" Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
