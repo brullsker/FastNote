@@ -298,6 +298,7 @@
                                             </Grid>
                                         </ListViewItem>
                                     </ListView>
+                                    <Button Content="Create PDF" x:Name="CreatePDFBtn" Click="CreatePDFBtn_Click"/>
                                 </StackPanel>
                             </ScrollViewer>
                         </PivotItem>

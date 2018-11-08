@@ -26,6 +26,8 @@ using Windows.UI;
 using Windows.System;
 using Syncfusion.DocIO.DLS;
 using Color = Windows.UI.Color;
+using System.Collections.Specialized;
+using System.Net.Http;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -530,10 +532,10 @@ namespace FastNote
             string strColour, strFntName, strHTML;
             richEditBox.Document.GetText(TextGetOptions.None, out string text);
             ITextRange txtRange = richEditBox.Document.GetRange(0, text.Length);
-            strHTML = "<html>";
+            strHTML = "<!DOCTYPE html><html><head><title>" + Settings.Default.DefaultExportName + "</title></head>";
             if (Settings.Default.HTMLEncoding != 0)
             {
-                strHTML += "<meta charset=&#x22;" + list[Settings.Default.HTMLEncoding] + "&#x22;>";
+                strHTML += "<meta charset=\"" + list[Settings.Default.HTMLEncoding] + "\"";
             }
             int lngOriginalStart = txtRange.StartPosition;
             int lngOriginalLength = txtRange.EndPosition;
@@ -1031,6 +1033,32 @@ namespace FastNote
         private void Donate9999_Click(object sender, RoutedEventArgs e)
         {
             purch.PurchaseAddOn("9P0K74P8PWGR");
+        }
+
+        private async void CreatePDFBtn_Click(object sender, RoutedEventArgs e)
+        {
+            string apiKey = "9e86-93cb-4385-b551-cc5b1fbba846";
+            string value = ConvertToHtml(MainEdit, EncodingList);
+            Debug.WriteLine(value);
+            using (var client = new HttpClient())
+            {
+                var content = new FormUrlEncodedContent(new[]
+                {
+                    new KeyValuePair<string, string>("apikey", apiKey),
+                    new KeyValuePair<string, string>("value", value)
+                });
+
+                var result = client.PostAsync("http://api.html2pdfrocket.com/pdf", content).Result;
+
+                if (result.IsSuccessStatusCode)
+                {
+                    MemoryStream stream = new MemoryStream();
+                    StorageFile pdfFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("CreatedPDF.pdf", CreationCollisionOption.ReplaceExisting);
+                    byte[] bytes = result.Content.ReadAsByteArrayAsync().Result;
+                    System.IO.File.WriteAllBytes(pdfFile.Path, bytes);
+                    await Launcher.LaunchFileAsync(pdfFile);
+                }
+            }
         }
     }
 }
