@@ -532,11 +532,12 @@ namespace FastNote
             string strColour, strFntName, strHTML;
             richEditBox.Document.GetText(TextGetOptions.None, out string text);
             ITextRange txtRange = richEditBox.Document.GetRange(0, text.Length);
-            strHTML = "<!DOCTYPE html><html><head><title>" + Settings.Default.DefaultExportName + "</title></head>";
+            strHTML = "<!DOCTYPE html><html>";
             if (Settings.Default.HTMLEncoding != 0)
             {
-                strHTML += "<meta charset=\"" + list[Settings.Default.HTMLEncoding] + "\"";
+                strHTML += "<meta charset=\"" + list[Settings.Default.HTMLEncoding] + "\">";
             }
+            strHTML += "<head><title>" + Settings.Default.DefaultExportName + "</title></head>";
             int lngOriginalStart = txtRange.StartPosition;
             int lngOriginalLength = txtRange.EndPosition;
             float shtSize = 11;
