@@ -428,4 +428,19 @@ Bugfixes</value>
   <data name="WebsiteText.Content" xml:space="preserve">
     <value>Website</value>
   </data>
+  <data name="ImportAfterText.Text" xml:space="preserve">
+    <value>Insert after current content</value>
+  </data>
+  <data name="ImportBeforeText.Text" xml:space="preserve">
+    <value>Insert before current content</value>
+  </data>
+  <data name="ImportReplaceText.Text" xml:space="preserve">
+    <value>Replace current content</value>
+  </data>
+  <data name="More_File_ImportText.Text" xml:space="preserve">
+    <value>IMPORT</value>
+  </data>
+  <data name="DialogCancelled" xml:space="preserve">
+    <value>Either no file was selected or the file picker was closed.</value>
+  </data>
 </root>

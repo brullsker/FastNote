@@ -127,7 +127,6 @@ namespace FastNote
             EncodingList.Add("ASCII");
             EncodingList.Add("ISO-8859-1");
             EncodingList.Add("UTF-8");
-            EncodingList.Add("UTF-16");
             List<ComboBoxItem> HTMLItems = new List<ComboBoxItem>();
             foreach (string code in EncodingList) { HTMLItems.Add(new ComboBoxItem { Content = new TextBlock { Text = code } }); };
             HTMLEncodingBox.ItemsSource = HTMLItems;
@@ -348,6 +347,13 @@ namespace FastNote
             }
             if (MoreOptionsList.SelectedIndex == 1)
             {
+                MainEdit.Document.GetText(TextGetOptions.None, out string value);
+                if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value)) Import(2);
+                else Import(Settings.Default.ImportOption);
+            }
+
+            if (MoreOptionsList.SelectedIndex == 2)
+            {
                 LoadingControl.IsLoading = true;
 
                 StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.CreateFolderAsync("share", CreationCollisionOption.ReplaceExisting);
@@ -458,7 +464,7 @@ namespace FastNote
                 DataTransferManager.ShowShareUI();
                 LoadingControl.IsLoading = false;
             }
-            if (MoreOptionsList.SelectedIndex == 2)
+            if (MoreOptionsList.SelectedIndex == 3)
             {
                 LoadingControl.IsLoading = true;
                 if (MainEdit.Document.Selection.Length == 0)
@@ -473,13 +479,13 @@ namespace FastNote
                 }
                 LoadingControl.IsLoading = false;
             }
-            if (MoreOptionsList.SelectedIndex == 3)
+            if (MoreOptionsList.SelectedIndex == 4)
             {
                 LoadingControl.IsLoading = true;
                 MainEdit.Document.SetText(TextSetOptions.None, "");
                 LoadingControl.IsLoading = false;
             }
-            if (MoreOptionsList.SelectedIndex == 4) Application.Current.Exit();
+            if (MoreOptionsList.SelectedIndex == 5) Application.Current.Exit();
             MoreOptionsList.SelectedItem = null;
         }
 
@@ -1060,6 +1066,84 @@ namespace FastNote
                     await Launcher.LaunchFileAsync(pdfFile);
                 }
             }
+        }
+
+        private void ImportMenu_OptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ImportMenu_OptionsList.SelectedItem != null)
+            {
+                Import(ImportMenu_OptionsList.SelectedIndex);
+                ImportMenu_OptionsList.SelectedItem = null;
+            }
+        }
+
+        private void ImportBefore_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Settings.Default.ImportOption = 0;
+        }
+
+        private void ImportAfter_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Settings.Default.ImportOption = 1;
+        }
+
+        private void ImportReplace_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
+        {
+            Settings.Default.ImportOption = 2;
+        }
+
+        public async void Import(int i)
+        {
+            LoadingControl.IsLoading = true;
+            Windows.Storage.Pickers.FileOpenPicker openpicker = new Windows.Storage.Pickers.FileOpenPicker();
+            openpicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            openpicker.FileTypeFilter.Add(".rtf");
+            StorageFile importfile = await openpicker.PickSingleFileAsync();
+            if (importfile != null)
+            {
+                MainEdit.Document.GetText(TextGetOptions.FormatRtf, out string content);
+
+                IRandomAccessStream randAccStream = await importfile.OpenAsync(FileAccessMode.Read);
+                MainEdit.Document.SetText(TextSetOptions.None, String.Empty);
+                MainEdit.Document.LoadFromStream(Windows.UI.Text.TextSetOptions.FormatRtf, randAccStream);
+                MainEdit.Document.GetText(TextGetOptions.FormatRtf, out string importcontent);
+                Debug.WriteLine(content);
+                Debug.WriteLine(importcontent);
+                if (i == 0)
+                {
+                    Debug.WriteLine("Import before content");
+                    MainEdit.Document.SetText(TextSetOptions.None, String.Empty);
+                    // Sets importcontent as the content of the document
+                    MainEdit.Document.SetText(TextSetOptions.FormatRtf, importcontent);
+                    // Get a new text range for the active story of the document.
+                    var range = MainEdit.Document.GetRange(0, importcontent.Length);
+                    // Collapses the text range into a degenerate point at the end of the range for inserting.
+                    range.Collapse(false);
+                    // Inserts original content
+                    range.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, content);
+                }
+                else if (i == 1)
+                {
+                    Debug.WriteLine("Import after content");
+                    MainEdit.Document.SetText(TextSetOptions.None, String.Empty);
+                    // Sets original content as the content of the document
+                    MainEdit.Document.SetText(TextSetOptions.FormatRtf, content);
+                    // Get a new text range for the active story of the document.
+                    var range = MainEdit.Document.GetRange(0, content.Length);
+                    // Collapses the text range into a degenerate point at the end of the range for inserting.
+                    range.Collapse(false);
+                    // Inserts importcontent
+                    range.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, importcontent);
+                }
+                else Debug.WriteLine("Replace existing");
+                MainEdit.Focus(FocusState.Keyboard);
+            }
+            else
+            {
+                MessageDialog md = new MessageDialog(resourceLoader.GetString("Dialog_Cancelled"), resourceLoader.GetString("Dialog_OperationCancelled"));
+                await md.ShowAsync();
+            }
+            LoadingControl.IsLoading = false;
         }
     }
 }

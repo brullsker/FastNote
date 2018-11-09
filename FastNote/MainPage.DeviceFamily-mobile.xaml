@@ -22,6 +22,8 @@
                         <Setter Target="MainView.(DisplayMode)" Value="Overlay"/>
                         <Setter Target="ShareArrow.(Angle)" Value="90"/>
                         <Setter Target="ShareMenu.(Placement)" Value="Bottom"/>
+                        <Setter Target="ImportArrow.(Angle)" Value="90"/>
+                        <Setter Target="ImportMenu.(Placement)" Value="Bottom"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="0"/>
@@ -32,6 +34,8 @@
                         <Setter Target="MainView.(DisplayMode)" Value="Inline"/>
                         <Setter Target="ShareArrow.(Angle)" Value="0"/>
                         <Setter Target="ShareMenu.(Placement)" Value="Right"/>
+                        <Setter Target="ImportArrow.(Angle)" Value="0"/>
+                        <Setter Target="ImportMenu.(Placement)" Value="Right"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="680"/>
@@ -147,6 +151,78 @@
                                                 <StackPanel Orientation="Horizontal" Grid.Column="1">
                                                     <AppBarSeparator/>
                                                     <TextBlock Text="EXPORT" Width="220" TextTrimming="CharacterEllipsis" x:Uid="More_File_ExportText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </ListViewItem>
+                                        <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ImportItem">
+                                            <Grid HorizontalAlignment="Stretch" Width="284">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <SymbolIcon Symbol="OpenFile"/>
+
+                                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                                    <AppBarSeparator/>
+                                                    <TextBlock Text="IMPORT" Width="167" TextTrimming="CharacterEllipsis" x:Uid="More_File_ImportText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                                    <AppBarSeparator Style="{StaticResource AppBarSeparatorStyleThin}"/>
+                                                    <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44" Background="Transparent">
+                                                        <controls:LayoutTransformControl>
+                                                            <controls:LayoutTransformControl.Transform>
+                                                                <TransformGroup>
+                                                                    <RotateTransform Angle="0" x:Name="ImportArrow"/>
+                                                                </TransformGroup>
+                                                            </controls:LayoutTransformControl.Transform>
+                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
+                                                        </controls:LayoutTransformControl>
+                                                        <Button.Flyout>
+                                                            <Flyout Placement="Right" x:Name="ImportMenu">
+
+                                                                <Flyout.FlyoutPresenterStyle>
+                                                                    <Style TargetType="FlyoutPresenter">
+                                                                        <Setter Property="Padding" Value="0" />
+                                                                    </Style>
+                                                                </Flyout.FlyoutPresenterStyle>
+                                                                <Grid>
+                                                                    <Border Height="1" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="12,0,12,46" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                                                                    <ListView Padding="0" Margin="0" x:Name="ImportMenu_OptionsList" SelectionChanged="ImportMenu_OptionsList_SelectionChanged">
+                                                                    <ListViewItem x:Name="ImportBefore" Tapped="ImportBefore_Tapped" VerticalContentAlignment="Center">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE118;" RenderTransformOrigin="0.5,0.5" >
+                                                                                    <FontIcon.RenderTransform>
+                                                                                        <CompositeTransform Rotation="90"/>
+                                                                                    </FontIcon.RenderTransform>
+                                                                                </FontIcon>
+                                                                                <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="ImportBeforeText"  Text="Insert before current content" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ImportAfter" Tapped="ImportAfter_Tapped" VerticalContentAlignment="Center">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE118;" RenderTransformOrigin="0.5,0.5" >
+                                                                                    <FontIcon.RenderTransform>
+                                                                                        <CompositeTransform Rotation="-90"/>
+                                                                                    </FontIcon.RenderTransform>
+                                                                                </FontIcon>
+                                                                                <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="ImportAfterText" Text="Insert after current content" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                    <ListViewItem x:Name="ImportReplace" Tapped="ImportReplace_Tapped" VerticalContentAlignment="Center">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE117;"/>
+                                                                                <AppBarSeparator/>
+                                                                            <TextBlock x:Uid="ImportReplaceText" Text="Replace current content" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
+                                                                </ListView>
+                                                                </Grid>
+                                                            </Flyout>
+                                                        </Button.Flyout>
+                                                    </Button>
                                                 </StackPanel>
                                             </Grid>
                                         </ListViewItem>

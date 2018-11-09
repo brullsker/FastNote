@@ -65,6 +65,13 @@ namespace FastNote
             set { Set(value); }
         }
 
+        [DefaultSettingValue(Value = 2)]
+        public int ImportOption
+        {
+            get { return Get<int>(); }
+            set { Set(value); }
+        }
+
         [DefaultSettingValue(Value = 0)]
         public int LanguageIndex
         {

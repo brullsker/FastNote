@@ -23,6 +23,8 @@
                         <Setter Target="MainView.(PaneBackground)" Value="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
                         <Setter Target="ShareArrow.(Angle)" Value="90"/>
                         <Setter Target="ShareMenu.(Placement)" Value="Bottom"/>
+                        <Setter Target="ImportArrow.(Angle)" Value="90"/>
+                        <Setter Target="ImportMenu.(Placement)" Value="Bottom"/>
                         <Setter Target="ToolBarPanel.(Grid.Column)" Value="1"/>
                         <Setter Target="Draggable1.(Grid.Column)" Value="2"/>
                         <Setter Target="SecondColumn.(Width)" Value="Auto"/>
@@ -37,6 +39,8 @@
                         <Setter Target="MainView.(PaneBackground)" Value="{ThemeResource SystemControlAcrylicWindowBrush}"/>
                         <Setter Target="ShareArrow.(Angle)" Value="0"/>
                         <Setter Target="ShareMenu.(Placement)" Value="Right"/>
+                        <Setter Target="ImportArrow.(Angle)" Value="0"/>
+                        <Setter Target="ImportMenu.(Placement)" Value="Right"/>
                         <Setter Target="ToolBarPanel.(Grid.Column)" Value="2"/>
                         <Setter Target="Draggable1.(Grid.Column)" Value="1"/>
                         <Setter Target="SecondColumn.(Width)" Value="*"/>
@@ -132,6 +136,79 @@
                                                 </StackPanel>
                                             </Grid>
                                         </ListViewItem>
+                                        <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ImportItem">
+                                            <Grid HorizontalAlignment="Stretch" Width="284">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <SymbolIcon Symbol="OpenFile"/>
+
+                                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+                                                    <AppBarSeparator/>
+                                                    <TextBlock Text="IMPORT" Width="167" TextTrimming="CharacterEllipsis" x:Uid="More_File_ImportText" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                                                </StackPanel>
+                                                <StackPanel Orientation="Horizontal" Grid.Column="2">
+                                                    <AppBarSeparator Style="{StaticResource AppBarSeparatorStyleThin}"/>
+                                                    <Button BorderThickness="0" HorizontalAlignment="Right" Width="48" Height="44" Background="Transparent">
+                                                        <controls:LayoutTransformControl>
+                                                            <controls:LayoutTransformControl.Transform>
+                                                                <TransformGroup>
+                                                                    <RotateTransform Angle="0" x:Name="ImportArrow"/>
+                                                                </TransformGroup>
+                                                            </controls:LayoutTransformControl.Transform>
+                                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE097;" />
+                                                        </controls:LayoutTransformControl>
+                                                        <Button.Flyout>
+                                                            <Flyout Placement="Right" x:Name="ImportMenu">
+
+                                                                <Flyout.FlyoutPresenterStyle>
+                                                                    <Style TargetType="FlyoutPresenter">
+                                                                        <Setter Property="Background" Value="{ThemeResource SystemControlAcrylicElementMediumHighBrush}" />
+                                                                        <Setter Property="Padding" Value="0" />
+                                                                    </Style>
+                                                                </Flyout.FlyoutPresenterStyle>
+                                                                <Grid>
+                                                                    <Border Height="1" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="12,0,12,46" Background="{ThemeResource SystemControlBackgroundChromeMediumRevealBorderBrush}"/>
+                                                                    <ListView Padding="0" Margin="0" x:Name="ImportMenu_OptionsList" SelectionChanged="ImportMenu_OptionsList_SelectionChanged">
+                                                                        <ListViewItem x:Name="ImportBefore" Tapped="ImportBefore_Tapped" VerticalContentAlignment="Center">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE118;" RenderTransformOrigin="0.5,0.5" >
+                                                                                    <FontIcon.RenderTransform>
+                                                                                        <CompositeTransform Rotation="90"/>
+                                                                                    </FontIcon.RenderTransform>
+                                                                                </FontIcon>
+                                                                                <AppBarSeparator/>
+                                                                                <TextBlock x:Uid="ImportBeforeText"  Text="Insert before current content" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                            </StackPanel>
+                                                                        </ListViewItem>
+                                                                        <ListViewItem x:Name="ImportAfter" Tapped="ImportAfter_Tapped" VerticalContentAlignment="Center">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE118;" RenderTransformOrigin="0.5,0.5" >
+                                                                                    <FontIcon.RenderTransform>
+                                                                                        <CompositeTransform Rotation="-90"/>
+                                                                                    </FontIcon.RenderTransform>
+                                                                                </FontIcon>
+                                                                                <AppBarSeparator/>
+                                                                                <TextBlock x:Uid="ImportAfterText" Text="Insert after current content" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                            </StackPanel>
+                                                                        </ListViewItem>
+                                                                        <ListViewItem Margin="0,5,0,0" x:Name="ImportReplace" Tapped="ImportReplace_Tapped" VerticalContentAlignment="Center">
+                                                                            <StackPanel Orientation="Horizontal">
+                                                                                <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE117;"/>
+                                                                                <AppBarSeparator/>
+                                                                                <TextBlock x:Uid="ImportReplaceText" Text="Replace current content" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
+                                                                            </StackPanel>
+                                                                        </ListViewItem>
+                                                                    </ListView>
+                                                                </Grid>
+                                                            </Flyout>
+                                                        </Button.Flyout>
+                                                    </Button>
+                                                </StackPanel>
+                                            </Grid>
+                                        </ListViewItem>
                                         <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ShareItem">
                                             <Grid HorizontalAlignment="Stretch" Width="284">
                                                 <Grid.ColumnDefinitions>
@@ -222,7 +299,8 @@
                                                                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE2AC;"/>
                                                                             <AppBarSeparator/>
                                                                             <TextBlock x:Uid="Share_File_ShareFile_PNG" Text="Portable Networks Graphics (.png)" TextTrimming="CharacterEllipsis" VerticalAlignment="Center"/>
-                                                                        </StackPanel></ListViewItem>
+                                                                        </StackPanel>
+                                                                    </ListViewItem>
                                                                     <ListViewItem x:Name="ShareBMP" Tapped="ShareBMP_Click" VerticalContentAlignment="Center">
                                                                         <StackPanel Orientation="Horizontal">
                                                                             <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE80A;"/>
@@ -298,7 +376,7 @@
                                             </Grid>
                                         </ListViewItem>
                                     </ListView>
-                                    <Button Content="Create PDF" x:Name="CreatePDFBtn" Click="CreatePDFBtn_Click"/>
+                                    <!--<Button Content="Create PDF" x:Name="CreatePDFBtn" Click="CreatePDFBtn_Click"/>-->
                                 </StackPanel>
                             </ScrollViewer>
                         </PivotItem>
@@ -476,7 +554,7 @@
                                             <HyperlinkButton Content="DeepL Translator" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://deepl.com/translator" Padding="0"/>
                                         </StackPanel>
                                     </Border>
-                                    <MenuFlyoutSeparator Margin="0,12"/>
+                                    <MenuFlyoutSeparator Margin="0,12" Background="{ThemeResource SystemControlBackgroundChromeMediumRevealBorderBrush}"/>
                                     <controls:Expander Header="Privacy Policy" x:Uid="More_About_PP" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                         <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Margin="6">
                                             This software does not send any information regarding the user and his input to any third party unless the user is explicitly allowing to do so. This does not apply for crash reports and telemetry automatically sent to the developer via Microsoft Store services in order to improve the software and find issues in it.<LineBreak/>
@@ -486,7 +564,8 @@
                                     <controls:Expander Header="The MIT License" x:Uid="More_About_MIT" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
                                         <TextBlock Margin="6" Style="{StaticResource CaptionTextBlockStyle}">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: <LineBreak/> <LineBreak/>
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. <LineBreak/> <LineBreak/>
-THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</TextBlock></controls:Expander>
+THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</TextBlock>
+                                    </controls:Expander>
                                 </StackPanel>
                             </ScrollViewer>
                         </PivotItem>
