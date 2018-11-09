@@ -142,7 +142,7 @@
     <value>Email</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Ayúdame con una donación:</value>
+    <value>Apoyar el desarrollo:</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
     <value>Librerías y SDKs usados</value>
@@ -229,7 +229,7 @@
     <value>Imagen JPG (.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
-    <value>Portable Networks Graphics (.png)</value>
+    <value>Portable Network Graphics (.png)</value>
   </data>
   <data name="Share_File_ShareFile_RTF.Text" xml:space="preserve">
     <value>Rich Text (.rtf)</value>
@@ -372,6 +372,78 @@ Corrección de errores</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>MOSTRAR ANUNCIO PARA APOYAR EL DESARROLLO</value>
+  </data>
+  <data name="DefaultString" xml:space="preserve">
+    <value>Estándar</value>
+  </data>
+  <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
+    <value>CODIFICACIÓN HTML</value>
+  </data>
+  <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
+    <value>Documento Word (antiguo) (.doc)</value>
+  </data>
+  <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
+    <value>Documento Word (.docx)</value>
+  </data>
+  <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
+    <value>Archivo eBook (.epub)</value>
+  </data>
+  <data name="FileBMP" xml:space="preserve">
+    <value>Bitmap</value>
+  </data>
+  <data name="FileDoc" xml:space="preserve">
+    <value>Documento Word (antiguo)</value>
+  </data>
+  <data name="FileDocx" xml:space="preserve">
+    <value>Documento Word</value>
+  </data>
+  <data name="FileEpub" xml:space="preserve">
+    <value>Archivo eBook</value>
+  </data>
+  <data name="FileGIF" xml:space="preserve">
+    <value>Imagen GIF</value>
+  </data>
+  <data name="FileHTML" xml:space="preserve">
+    <value>Página HTML</value>
+  </data>
+  <data name="FileJPG" xml:space="preserve">
+    <value>Imagen JPG</value>
+  </data>
+  <data name="FilePNG" xml:space="preserve">
+    <value>Portable Network Graphics</value>
+  </data>
+  <data name="FileRTF" xml:space="preserve">
+    <value>Rich Text</value>
+  </data>
+  <data name="FileTIFF" xml:space="preserve">
+    <value>Imagen TIFF</value>
+  </data>
+  <data name="FileTXT" xml:space="preserve">
+    <value>Texto sin formato</value>
+  </data>
+  <data name="DonateText.Content" xml:space="preserve">
+    <value> Donaciones!</value>
+  </data>
+  <data name="ProprietaryText.Text" xml:space="preserve">
+    <value>Propietario</value>
+  </data>
+  <data name="WebsiteText.Content" xml:space="preserve">
+    <value>Sitio web</value>
+  </data>
+  <data name="ImportAfterText.Text" xml:space="preserve">
+    <value>Insertar después del contenido existente</value>
+  </data>
+  <data name="ImportBeforeText.Text" xml:space="preserve">
+    <value>Insertar antes del contenido existente</value>
+  </data>
+  <data name="ImportReplaceText.Text" xml:space="preserve">
+    <value>Reemplazar el contenido existente</value>
+  </data>
+  <data name="More_File_ImportText.Text" xml:space="preserve">
+    <value>IMPORTAR</value>
+  </data>
+  <data name="DialogCancelled" xml:space="preserve">
+    <value>O bien no se seleccionó ningún archivo o bien se cerró el selector de archivos.</value>
   </data>
 
 </root>

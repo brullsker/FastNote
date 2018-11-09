@@ -1097,7 +1097,7 @@ namespace FastNote
             LoadingControl.IsLoading = true;
             Windows.Storage.Pickers.FileOpenPicker openpicker = new Windows.Storage.Pickers.FileOpenPicker();
             openpicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-            openpicker.FileTypeFilter.Add(".rtf");
+            openpicker.FileTypeFilter.Add(resourceLoader.GetString(".rtf"));
             StorageFile importfile = await openpicker.PickSingleFileAsync();
             if (importfile != null)
             {

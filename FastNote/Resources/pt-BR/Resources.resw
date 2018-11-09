@@ -373,5 +373,101 @@ Bugs resolvidos.
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>MOSTRAR PUBLICIDADE PARA AJUDAR O DESENVOLVEDOR</value>
   </data>
+  <data name="DefaultString" xml:space="preserve">
+    <value>Padrão</value>
+  </data>
+  <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
+    <value>CODIFICAÇÃO HTML</value>
+  </data>
+  <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
+    <value>Documento Word (antigo) (.doc)</value>
+  </data>
+  <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
+    <value>Documento Word (.docx)</value>
+  </data>
+  <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
+    <value>Arquivo e-book (.epub)</value>
+  </data>
+  <data name="FileBMP" xml:space="preserve">
+    <value>Bitmap</value>
+  </data>
+  <data name="FileDoc" xml:space="preserve">
+    <value>Documento Word (antigo)</value>
+  </data>
+  <data name="FileDocx" xml:space="preserve">
+    <value>Documento Word</value>
+  </data>
+  <data name="FileEpub" xml:space="preserve">
+    <value>Arquivo e-book</value>
+  </data>
+  <data name="FileGIF" xml:space="preserve">
+    <value>Imagem GIF</value>
+  </data>
+  <data name="FileHTML" xml:space="preserve">
+    <value>Página HTML</value>
+  </data>
+  <data name="FileJPG" xml:space="preserve">
+    <value>Imagem JPG</value>
+  </data>
+  <data name="FilePNG" xml:space="preserve">
+    <value>Arquivo PNG</value>
+  </data>
+  <data name="FileRTF" xml:space="preserve">
+    <value>Arquivo RTF</value>
+  </data>
+  <data name="FileTIFF" xml:space="preserve">
+    <value>Imagem TIFF</value>
+  </data>
+  <data name="FileTXT" xml:space="preserve">
+    <value>Arquivo TXT</value>
+  </data>
+  
+<!--
+<data name="DonateText.Content" xml:space="preserve">
+    <value> Donate!</value>
+  </data>
+-->
+  
+<!--
+<data name="ProprietaryText.Text" xml:space="preserve">
+    <value>Proprietary</value>
+  </data>
+-->
+  
+<!--
+<data name="WebsiteText.Content" xml:space="preserve">
+    <value>Website</value>
+  </data>
+-->
+  
+<!--
+<data name="ImportAfterText.Text" xml:space="preserve">
+    <value>Insert after current content</value>
+  </data>
+-->
+  
+<!--
+<data name="ImportBeforeText.Text" xml:space="preserve">
+    <value>Insert before current content</value>
+  </data>
+-->
+  
+<!--
+<data name="ImportReplaceText.Text" xml:space="preserve">
+    <value>Replace current content</value>
+  </data>
+-->
+  
+<!--
+<data name="More_File_ImportText.Text" xml:space="preserve">
+    <value>IMPORT</value>
+  </data>
+-->
+  
+<!--
+<data name="DialogCancelled" xml:space="preserve">
+    <value>Either no file was selected or the file picker was closed.</value>
+  </data>
+-->
 
 </root>

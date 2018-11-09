@@ -142,7 +142,7 @@
     <value>Mail</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Support the development:</value>
+    <value></value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
     <value>Used libraries &amp; SDKs</value>
@@ -443,4 +443,5 @@ Bugfixes</value>
   <data name="DialogCancelled" xml:space="preserve">
     <value>Either no file was selected or the file picker was closed.</value>
   </data>
+
 </root>

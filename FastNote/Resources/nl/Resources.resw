@@ -142,7 +142,7 @@
     <value>E-Mail</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Schenking</value>
+    <value>Ondersteunen van de ontwikkeling:</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
     <value>Gebruikte bibliotheken en SDK's</value>
@@ -229,7 +229,7 @@
     <value>JPG afbeelding (.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
-    <value>Portable Networks Graphics (.png)</value>
+    <value>Portable Network Graphics (.png)</value>
   </data>
   <data name="Share_File_ShareFile_RTF.Text" xml:space="preserve">
     <value>Rich Text (.rtf)</value>
@@ -370,6 +370,78 @@ Bugfixes</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>TOON ADVERTENTIE TER ONDERSTEUNING VAN DE ONTWIKKELING</value>
+  </data>
+  <data name="DefaultString" xml:space="preserve">
+    <value>Standaard</value>
+  </data>
+  <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
+    <value>HTML-CODERING</value>
+  </data>
+  <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
+    <value>Word-document (oud) (.doc)</value>
+  </data>
+  <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
+    <value>Word-document (.docx)</value>
+  </data>
+  <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
+    <value>eBook bestand (.epub)</value>
+  </data>
+  <data name="FileBMP" xml:space="preserve">
+    <value>Bitmap</value>
+  </data>
+  <data name="FileDoc" xml:space="preserve">
+    <value>Word-document (oud)</value>
+  </data>
+  <data name="FileDocx" xml:space="preserve">
+    <value>Word-document</value>
+  </data>
+  <data name="FileEpub" xml:space="preserve">
+    <value>eBook bestand</value>
+  </data>
+  <data name="FileGIF" xml:space="preserve">
+    <value>GIF afbeelding</value>
+  </data>
+  <data name="FileHTML" xml:space="preserve">
+    <value>HTML pagina</value>
+  </data>
+  <data name="FileJPG" xml:space="preserve">
+    <value>JPG afbeelding</value>
+  </data>
+  <data name="FilePNG" xml:space="preserve">
+    <value>Portable Network Graphics</value>
+  </data>
+  <data name="FileRTF" xml:space="preserve">
+    <value>Rich Text</value>
+  </data>
+  <data name="FileTIFF" xml:space="preserve">
+    <value>TIFF afbeelding</value>
+  </data>
+  <data name="FileTXT" xml:space="preserve">
+    <value>Tekstdocument</value>
+  </data>
+  <data name="DonateText.Content" xml:space="preserve">
+    <value> Doneer!</value>
+  </data>
+  <data name="ProprietaryText.Text" xml:space="preserve">
+    <value>Eigenaar</value>
+  </data>
+  <data name="WebsiteText.Content" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="ImportAfterText.Text" xml:space="preserve">
+    <value>Invoegen na bestaande inhoud</value>
+  </data>
+  <data name="ImportBeforeText.Text" xml:space="preserve">
+    <value>Invoegen voor bestaande inhoud</value>
+  </data>
+  <data name="ImportReplaceText.Text" xml:space="preserve">
+    <value>Bestaande inhoud vervangen</value>
+  </data>
+  <data name="More_File_ImportText.Text" xml:space="preserve">
+    <value>IMPORTEREN</value>
+  </data>
+  <data name="DialogCancelled" xml:space="preserve">
+    <value>Geen bestand geselecteerd of selectie geannuleerd.</value>
   </data>
 
 </root>

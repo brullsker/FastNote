@@ -142,7 +142,7 @@
     <value>E-Mail</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Spenden:</value>
+    <value>Finanzielle Unterstützung leisten:</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
     <value>Genutzte Libraries und SDKs</value>
@@ -229,7 +229,7 @@
     <value>JPG-Grafik (.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
-    <value>Portable Networks Graphics (.png)</value>
+    <value>Portable Network Graphics (.png)</value>
   </data>
   <data name="Share_File_ShareFile_RTF.Text" xml:space="preserve">
     <value>Rich Text (.rtf)</value>
@@ -370,6 +370,78 @@ Fehlerbehebungen</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>ENTWICKLUNG UNTERSTÜTZEN UND WERBUNG ANZEIGEN</value>
+  </data>
+  <data name="DefaultString" xml:space="preserve">
+    <value>Standard</value>
+  </data>
+  <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
+    <value>HTML-CODIERUNG</value>
+  </data>
+  <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
+    <value>Word-Dokument (veraltet) (.doc)</value>
+  </data>
+  <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
+    <value>Word-Dokument (.docx)</value>
+  </data>
+  <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
+    <value>eBook-Datei (.epub)</value>
+  </data>
+  <data name="FileBMP" xml:space="preserve">
+    <value>Bitmap</value>
+  </data>
+  <data name="FileDoc" xml:space="preserve">
+    <value>Word-Dokument (veraltet)</value>
+  </data>
+  <data name="FileDocx" xml:space="preserve">
+    <value>Word-Dokument</value>
+  </data>
+  <data name="FileEpub" xml:space="preserve">
+    <value>eBook-Datei</value>
+  </data>
+  <data name="FileGIF" xml:space="preserve">
+    <value>GIF-Grafik</value>
+  </data>
+  <data name="FileHTML" xml:space="preserve">
+    <value>HTML-Seite</value>
+  </data>
+  <data name="FileJPG" xml:space="preserve">
+    <value>JPG-Grafik</value>
+  </data>
+  <data name="FilePNG" xml:space="preserve">
+    <value>Portable Network Graphics</value>
+  </data>
+  <data name="FileRTF" xml:space="preserve">
+    <value>Rich Text</value>
+  </data>
+  <data name="FileTIFF" xml:space="preserve">
+    <value>TIFF-Grafik</value>
+  </data>
+  <data name="FileTXT" xml:space="preserve">
+    <value>Textdatei</value>
+  </data>
+  <data name="DonateText.Content" xml:space="preserve">
+    <value> Spenden!</value>
+  </data>
+  <data name="ProprietaryText.Text" xml:space="preserve">
+    <value>Proprietär</value>
+  </data>
+  <data name="WebsiteText.Content" xml:space="preserve">
+    <value>Website</value>
+  </data>
+  <data name="ImportAfterText.Text" xml:space="preserve">
+    <value>Nach vorhandenem Inhalt einfügen</value>
+  </data>
+  <data name="ImportBeforeText.Text" xml:space="preserve">
+    <value>Vor vorhandenem Inhalt einfügen</value>
+  </data>
+  <data name="ImportReplaceText.Text" xml:space="preserve">
+    <value>Vorhandenen Inhalt ersetzen</value>
+  </data>
+  <data name="More_File_ImportText.Text" xml:space="preserve">
+    <value>IMPORTIEREN</value>
+  </data>
+  <data name="DialogCancelled" xml:space="preserve">
+    <value>Keine Datei ausgewählt oder Auswahl abgebrochen.</value>
   </data>
 
 </root>
