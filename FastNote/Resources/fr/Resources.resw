@@ -301,9 +301,17 @@
     <value>Fluent Design</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>Portugais (Brésil) ajouté 
-Ajout d'informations sur la licence et la vie privée 
-Corrections de bogues</value>
+    <value>Pour célébrer les 1000 téléchargements de FastNote et parce que nous aimons développer davantage nos applications, nous abandonnons une mise à jour importante aujourd'hui. Voici le journal des modifications de FastNote 2.0.0.0: 
+
+⦁ Outils PDF: Créez un PDF à partir de vos notes et exportez, partagez et imprimez-le. Il se peut que vous deviez répondre à certaines exigences. Plus d'informations à ce sujet vous trouverez dans l'application. 
+⦁ Fonction d'importation: Vous permet d'importer un document, soit avant, soit après, soit en remplacement du contenu existant. 
+⦁ Choisissez l'encodage HTML de votre choix. Ceci corrigera le fait que certaines langues ne s'affichaient pas correctement. 
+⦁ Pour ajouter un design plus clair, la fenêtre d'édition principale ne devient plus blanche lors de la mise au point en utilisant l'application en mode sombre. Si vous n'aimez pas ce changement, envoyez-nous un mot. 
+⦁ Plus de formats d'exportation et de partage de fichiers: Document Word (.doc /.docx) et format eBook (.epub). 
+⦁ Dons: Pour soutenir activement le développement, vous pouvez maintenant faire un don en utilisant le Microsoft Store ainsi que PayPal. Néanmoins, la suppression de l'annonce restera disponible gratuitement. 
+⦁ Beaucoup de corrections de bugs, d'améliorations et de twerks sous le capot. 
+
+Ainsi, ce journal des changements semble plus court que ce que mérite l'effort pour que tous les changements se produisent. Néanmoins, passez un très bon Noël ! Nous attendons avec impatience tout retour d'information, qu'il soit positif ou négatif. Amusez-vous bien!</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
     <value>Egalement dans le design brillant et beau grâce à Fluent Design</value>
@@ -442,6 +450,57 @@ Corrections de bogues</value>
   </data>
   <data name="DialogCancelled" xml:space="preserve">
     <value>Soit aucun fichier n'a été sélectionné, soit le sélecteur de fichiers a été fermé.</value>
+  </data>
+  <data name="CommitExportText" xml:space="preserve">
+    <value>Exportation</value>
+  </data>
+  <data name="CommitImportText" xml:space="preserve">
+    <value>Importation</value>
+  </data>
+  <data name="DialogClose" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="FilePDF" xml:space="preserve">
+    <value>Fichier PDF</value>
+  </data>
+  <data name="HowPDFWorkContent" xml:space="preserve">
+    <value>Pour la création de PDF, nous faisons appel aux services de HTML2PDFROCKET. Il s'agit d'un service en ligne pour créer des fichiers PDF à partir de HTML. Pour le faire fonctionner, suivez les étapes suivantes :
+1. Allez à {0} et enregistrez un nouveau compte. Choisissez "C#" dans le menu déroulant "Language".
+2. Vous recevrez un mail avec un lien d'activation. Sers-t'en !
+3. Dans un autre mail, vous recevrez une clé API. Ceci est également utilisable comme mot de passe pour se connecter à html2pdfrocket.com.
+4. Copiez la clé API dans votre presse-papiers.
+5. Collez la clé dans la zone de saisie à gauche du bouton d'aide.
+6. Avec cet abonnement gratuit, vous pouvez créer 200 PDF chaque mois. Pour voir combien il en reste, consultez le site {1}.</value>
+  </data>
+  <data name="HowPDFWorkTitle" xml:space="preserve">
+    <value>Comment ça marche?</value>
+  </data>
+  <data name="PDFToolsHeader.Text" xml:space="preserve">
+    <value>OUTILS PDF</value>
+  </data>
+  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
+    <value>Clé API</value>
+  </data>
+  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
+    <value>Créer un PDF</value>
+  </data>
+  <data name="PDF_Export.Content" xml:space="preserve">
+    <value>Exportation</value>
+  </data>
+  <data name="PDF_OpenIn.Content" xml:space="preserve">
+    <value>Ouvrir dans...</value>
+  </data>
+  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
+    <value>Dernière Création PDF - Aperçu</value>
+  </data>
+  <data name="PDF_Print.Content" xml:space="preserve">
+    <value>Presse écrite</value>
+  </data>
+  <data name="PDF_Share.Content" xml:space="preserve">
+    <value>Partager</value>
+  </data>
+  <data name="PDFError.Text" xml:space="preserve">
+    <value>Aucun n'a encore été créé ou une erreur s'est produite</value>
   </data>
 
 </root>

@@ -1,0 +1,56 @@
+﻿<UserControl
+    x:Class="FastNote.PDFControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FastNote"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    xmlns:sf="using:Syncfusion.Windows.PdfViewer"
+    DataContext="{StaticResource settings}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Stretch">
+            <Grid Margin="0,0,0,6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBox HorizontalAlignment="Stretch" x:Uid="PDF_ApiKeyTextBox" x:Name="ApiKeyInput" Text="{Binding ApiKey, Mode=TwoWay}" PlaceholderText="API Key" TextChanged="ApiKeyInput_TextChanged"/>
+                <Button Grid.Column="1" x:Name="HelpBtn" Click="HelpBtn_Click">
+                    <Button.Content>
+                        <SymbolIcon Symbol="Help"/>
+                    </Button.Content>
+                </Button>
+            </Grid>
+            <Button Content="Create PDF from content" x:Uid="PDF_CreateFromContent" x:Name="CreatePDFBtn" HorizontalAlignment="Stretch" Click="CreatePDFBtn_Click"/>
+            <Grid Margin="0,6,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Export" x:Uid="PDF_Export" HorizontalAlignment="Stretch" Margin="0,0,3,0" x:Name="ExportPDFBtn" Click="ExportPDFBtn_Click"/>
+                <Button Content="Share" x:Uid="PDF_Share" Grid.Column="1" HorizontalAlignment="Stretch" x:Name="ShareBtn" Margin="3,0" Click="ShareBtn_Click"/>
+                <Button Content="Print" x:Uid="PDF_Print" Grid.Column="2" HorizontalAlignment="Stretch" Margin="3,0,0,0" x:Name="PrintBtn" Click="PrintBtn_Click"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,16,0,0">
+                <TextBlock Text="Last created PDF - Preview" x:Uid="PDF_PreviewHeader" Margin="0,0,6,0" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center"/>
+                <HyperlinkButton x:Uid="PDF_OpenIn" Content="Open in..." Margin="6,0,0,0" Padding="0" Style="{StaticResource TextBlockButtonStyle}" Click="HyperlinkButton_Click" x:Name="OpenInBtn"/>
+            </StackPanel>
+        </StackPanel>
+        <sf:SfPdfViewerControl Grid.Row="1" x:Name="Viewer" HorizontalScrollBarVisibility="Visible" IsThumbnailViewEnabled="False" IsTextSelectionEnabled="False" Height="500"/>
+        <Border x:Name="ErrorTB" Grid.Row="1" VerticalAlignment="Top" Height="Auto" Visibility="Collapsed">
+            <Border.Background>
+                <SolidColorBrush Color="Black" Opacity="0.25"/>
+            </Border.Background>
+            <TextBlock Margin="4" Text="None created yet or error occured" x:Uid="PDFError" HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource BaseTextBlockStyle}" Foreground="Red"/>
+        </Border>
+    </Grid>
+</UserControl>

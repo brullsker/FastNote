@@ -14,7 +14,7 @@
     xmlns:Ads="using:Microsoft.Advertising.WinRT.UI"
     x:Name="MainPagePage">
 
-    <Grid>
+    <Grid ManipulationStarted="Grid_ManipulationStarted" ManipulationDelta="Grid_ManipulationDelta">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowWidth">
                 <VisualState x:Name="small">
@@ -84,10 +84,6 @@
                 <Grid x:Name="container" Grid.Row="1" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
                     <RichEditBox FontSize="{Binding FontSize, Mode=OneWay}" PlaceholderText="Start taking notes..." x:Uid="EditPlaceHolder" x:Name="MainEdit" BorderThickness="0" FontFamily="Segoe UI" SelectionChanged="MainEdit_SelectionChanged" TextChanged="MainEdit_TextChanged" IsSpellCheckEnabled="{Binding SpellCheckEnabled, Mode=OneWay}"/>
                 </Grid>
-                <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="12,0">
-                    <TextBlock x:Name="CharCount"/>
-                    <TextBlock Text=" characters" x:Uid="CharactersText"/>
-                </StackPanel>
 
                 <Grid Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Grid.Row="2" x:Name="BottomBarGrid">
                     <interactivity:Interaction.Behaviors>
@@ -118,6 +114,14 @@
                         </CommandBar>
                     </Grid>
                 </Grid>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" BorderBrush="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderThickness="0,1,0,0">
+                    <TextBlock x:Name="CharCount" Margin="12,0,0,0"/>
+                    <TextBlock Text=" characters" x:Uid="CharactersText" Margin="0,0,12,0"/>
+                    <StackPanel.Background>
+                        <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" Opacity="0.4"/>
+                    </StackPanel.Background>
+                </StackPanel>
             </Grid>
 
             <SplitView.Pane>
@@ -139,7 +143,7 @@
                                 <TextBlock Text="File" x:Uid="More_FileHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
                             <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Hidden">
-                                <StackPanel Orientation="Vertical">
+                                <StackPanel Orientation="Vertical" x:Name="MoreStack">
                                     <ListView x:Name="MoreOptionsList" Margin="0,12" SelectionChanged="MoreOptionsList_SelectionChanged">
                                         <ListViewItem BorderThickness="0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                             <Grid HorizontalAlignment="Stretch">
@@ -154,7 +158,7 @@
                                                 </StackPanel>
                                             </Grid>
                                         </ListViewItem>
-                                        <ListViewItem BorderThickness="0" Margin="0,6" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ImportItem">
+                                        <ListViewItem BorderThickness="0" Margin="0,6,0,0" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Padding="12,0,0,0" x:Name="ImportItem">
                                             <Grid HorizontalAlignment="Stretch" Width="284">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="Auto"/>
@@ -187,7 +191,7 @@
                                                                     </Style>
                                                                 </Flyout.FlyoutPresenterStyle>
                                                                 <Grid>
-                                                                    <Border Height="1" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="12,0,12,46" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}"/>
+                                                                    <Border Height="1" BorderThickness="0" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="12,0,12,46" Background="Gray"/>
                                                                     <ListView Padding="0" Margin="0" x:Name="ImportMenu_OptionsList" SelectionChanged="ImportMenu_OptionsList_SelectionChanged">
                                                                     <ListViewItem x:Name="ImportBefore" Tapped="ImportBefore_Tapped" VerticalContentAlignment="Center">
                                                                             <StackPanel Orientation="Horizontal">
@@ -393,6 +397,16 @@
                                             </Grid>
                                         </ListViewItem>
                                     </ListView>
+                                    <ToggleButton HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" x:Name="CreatePDFBtn" Click="CreatePDFBtn_Click">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock Text="PDF TOOLS" x:Uid="PDFToolsHeader" Style="{StaticResource BaseTextBlockStyle}"/>
+                                            <FontIcon FontFamily="Segoe MDL2 Assets" Glyph="&#xE015;" Grid.Column="1" x:Name="PDFDownIcon"/>
+                                        </Grid>
+                                    </ToggleButton>
                                 </StackPanel>
                             </ScrollViewer>
                         </PivotItem>
@@ -508,12 +522,7 @@
                                                             <Button Grid.Column="5" x:Name="Donate9999" Content="$ 99.99" Click="Donate9999_Click" Margin="3,0,0,0"/>
                                                         </Grid>
                                                         <Grid Grid.Row="1" Margin="0,6,0,0">
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition/>
-                                                                <ColumnDefinition/>
-                                                            </Grid.ColumnDefinitions>
-                                                            <Button x:Name="DonateTest" HorizontalAlignment="Stretch" Content="Test" Click="DonateTest_Click" Margin="0,0,3,0"/>
-                                                            <Button Grid.Column="1" HorizontalAlignment="Stretch" x:Name="DonatePayPal" Content="PayPal" Click="DonatePayPal_Click" Margin="3,0,0,0"/>
+                                                            <Button Grid.Column="1" HorizontalAlignment="Stretch" x:Name="DonatePayPal" Content="PayPal" Click="DonatePayPal_Click"/>
                                                         </Grid>
                                                     </Grid>
                                                 </Flyout>

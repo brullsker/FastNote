@@ -142,7 +142,7 @@
     <value>E-Mail</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Finanzielle Unterstützung leisten:</value>
+    <value>Finanziell unterstützen:</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
     <value>Genutzte Libraries und SDKs</value>
@@ -301,9 +301,17 @@
     <value>Fluent Design</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>Portugiesisch (Brasilien) hinzugefügt
-Lizenz- / Privatsphäreninfos hinzugefügt
-Fehlerbehebungen</value>
+    <value>Wir feiern 1000 FastNote-Downloads! Außerdem lieben wir gut gepflegte Apps. Aus diesen Gründen lassen wir die Update-Bombe platzen: Hier ist FastNote 2.0.0.0! Freut euch auf folgende Neuerungen und Änderungen:
+
+⦁ PDF-Tools: Erstelle PDFs aus deinen Notizen, exportiere, teile und drucke sie. Hinweis: Möglicherweise sind hierfür weitere Schritte seitens des Benutzers nötig. Mehr dazu in der App.
+⦁ Import-Feature: Ihr habt gefragt, hier kommt die Antwort! Importiere ein Dokument und füge es vor oder nach dem bereits existierenden Text ein oder ersetze ihn!
+⦁ Wähle deine Lieblings-HTML-Kodierung. Neben der Auswahl werden außerdem Anzeigefehler bei einigen Sprachen behoben. Bitteschön!
+⦁ Für ein konsistenteres Design wird die Haupteingabebox nicht mehr weiß, wenn sie fokussiert ist und ihr das dunkle Design verwendet.
+⦁ Es gibt endlich mehr Dateiformate fürs Exportieren und Teilen! Word-Dokumente (.doc / .docx) sowie das eBook-Format EPUB (.epub).
+⦁ Spenden: Damit ihr endlich eure Freude finanziell ausdrücken könnt und die Entwicklung tatkräftig direkt voranbringen könnt, ist euch nun die Möglichkeit gegeben, per In-App-Kauf oder per PayPal zu spenden. Dieses Feature ist das Ausprobieren wert!
+⦁ Eine unglaubliche Menge an Bugfixes, Verbesserungen und Anpassungen unter der Haube.
+
+Naja, der Changelog sieht kürzer aus, als es die harte Arbeit, die dahinter steckt, rechtfertigen würde. Egal, frohe Weihnachten euch allen! Natürlich freuen wir uns über jedes Feedback, ob positiv oder negativ. Viel Spaß!</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
     <value>Auch im hellen Design wunderschön dank Fluent Design</value>
@@ -442,6 +450,57 @@ Fehlerbehebungen</value>
   </data>
   <data name="DialogCancelled" xml:space="preserve">
     <value>Keine Datei ausgewählt oder Auswahl abgebrochen.</value>
+  </data>
+  <data name="CommitExportText" xml:space="preserve">
+    <value>Exportieren</value>
+  </data>
+  <data name="CommitImportText" xml:space="preserve">
+    <value>Importieren</value>
+  </data>
+  <data name="DialogClose" xml:space="preserve">
+    <value>Schließen</value>
+  </data>
+  <data name="FilePDF" xml:space="preserve">
+    <value>PDF-Datei</value>
+  </data>
+  <data name="HowPDFWorkContent" xml:space="preserve">
+    <value>Für die PDF-Generierung verwenden nutzen wir die Dienste von HTML2PDFROCKET. Mit diesem Online-Service werden PDFs aus HTML erstellt. Folge folgenden Schritten, damit es funktioniert:
+1. Gehe zu {0} und registriere einen neuen Account. Im Feld "Language" sollte "C#" stehen.
+2. In deinem Mail-Postfach sollte eine Aktivierungs-E-Mail liegen. Nutze den enthaltenen Aktivierungslink.
+3. Mit einer weiteren E-Mail erhältst du deine API-Schlüssel. Dieser dient auch als Passwort zum Login bei html2pdfrocket.com.
+4. Kopiere den API-Schlüssel in die Zwischenablage.
+5. Füge den API-Schlüssel in das Eingabefeld links neben dem HIlfe-Button ein.
+6. Mit diesem kostenlosen Account kannst du 200 PDFs pro Monat generieren. Um die verbleibende Anzahl zu sehen, schau auf die {1}-Seite.</value>
+  </data>
+  <data name="HowPDFWorkTitle" xml:space="preserve">
+    <value>Wie funktioniert es?</value>
+  </data>
+  <data name="PDFToolsHeader.Text" xml:space="preserve">
+    <value>PDF-TOOLS</value>
+  </data>
+  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
+    <value>API-Schlüssel</value>
+  </data>
+  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
+    <value>PDF generieren</value>
+  </data>
+  <data name="PDF_Export.Content" xml:space="preserve">
+    <value>Exportieren</value>
+  </data>
+  <data name="PDF_OpenIn.Content" xml:space="preserve">
+    <value>Öffnen mit...</value>
+  </data>
+  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
+    <value>Zuletzt generierte PDF - Vorschau</value>
+  </data>
+  <data name="PDF_Print.Content" xml:space="preserve">
+    <value>Drucken</value>
+  </data>
+  <data name="PDF_Share.Content" xml:space="preserve">
+    <value>Teilen</value>
+  </data>
+  <data name="PDFError.Text" xml:space="preserve">
+    <value>Noch keine generiert oder ein Fehler ist aufgetreten</value>
   </data>
 
 </root>

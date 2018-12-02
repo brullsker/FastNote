@@ -469,5 +469,101 @@ Bugs resolvidos.
     <value>Either no file was selected or the file picker was closed.</value>
   </data>
 -->
+  
+<!--
+<data name="CommitExportText" xml:space="preserve">
+    <value>Export</value>
+  </data>
+-->
+  
+<!--
+<data name="CommitImportText" xml:space="preserve">
+    <value>Import</value>
+  </data>
+-->
+  
+<!--
+<data name="DialogClose" xml:space="preserve">
+    <value>Close</value>
+  </data>
+-->
+  
+<!--
+<data name="FilePDF" xml:space="preserve">
+    <value>PDF file</value>
+  </data>
+-->
+  
+<!--
+<data name="HowPDFWorkContent" xml:space="preserve">
+    <value>For creating PDFs, we make use of the services of HTML2PDFROCKET. This is an online service to create PDF files from HTML. To make it work, follow these steps:
+1. Go to {0} and register a new account. Leave the language as C#.
+2. You'll get a mail with an activation link. Use it!
+3. In another mail you'll get an API key. This is also usable as password to login to html2pdfrocket.com.
+4. Copy the API key to your clipboard.
+5. Paste the key into the input box left of the help button.
+6. With this free subscription, you can create 200 PDFs every month. To see how many are left, check it out on the {1} site.</value>
+  </data>
+-->
+  
+<!--
+<data name="HowPDFWorkTitle" xml:space="preserve">
+    <value>How does it work?</value>
+  </data>
+-->
+  
+<!--
+<data name="PDFToolsHeader.Text" xml:space="preserve">
+    <value>PDF TOOLS</value>
+  </data>
+-->
+  
+<!--
+<data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
+    <value>API key</value>
+  </data>
+-->
+  
+<!--
+<data name="PDF_CreateFromContent.Content" xml:space="preserve">
+    <value>Create PDF from content</value>
+  </data>
+-->
+  
+<!--
+<data name="PDF_Export.Content" xml:space="preserve">
+    <value>Export</value>
+  </data>
+-->
+  
+<!--
+<data name="PDF_OpenIn.Content" xml:space="preserve">
+    <value>Open in...</value>
+  </data>
+-->
+  
+<!--
+<data name="PDF_PreviewHeader.Text" xml:space="preserve">
+    <value>Last created PDF - Preview</value>
+  </data>
+-->
+  
+<!--
+<data name="PDF_Print.Content" xml:space="preserve">
+    <value>Print</value>
+  </data>
+-->
+  
+<!--
+<data name="PDF_Share.Content" xml:space="preserve">
+    <value>Share</value>
+  </data>
+-->
+  
+<!--
+<data name="PDFError.Text" xml:space="preserve">
+    <value>None created yet or error occured</value>
+  </data>
+-->
 
 </root>

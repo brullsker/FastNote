@@ -19,15 +19,13 @@ using Windows.UI.Text;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Graphics.Display;
 using Windows.Graphics.Imaging;
-using Windows.UI.ViewManagement;
 using Windows.ApplicationModel.Core;
 using Microsoft.Toolkit.Uwp.UI.Extensions;
-using Windows.UI;
 using Windows.System;
 using Syncfusion.DocIO.DLS;
 using Color = Windows.UI.Color;
-using System.Collections.Specialized;
-using System.Net.Http;
+using System.Threading.Tasks;
+using Windows.Foundation;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -38,14 +36,11 @@ namespace FastNote
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //Application ID: 9n5grr8757vq
-        //Ad Unit ID: 1100034498
+        public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1"; // Test App ID
+        public string adid = "test"; //Test Ad ID
 
-        //Test Application ID: 3f83fe91-d6be-434d-a0ae-7351c5a997f1
-        //Test Ad Unit ID: test
-
-        public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1";
-        public string adid = "test";
+        //public string appid = "9n5grr8757vq";
+        //public string adid = "1100034498";
 
         string documentName = "doc.rtf";
         string documentTempName = "temp.rtf";
@@ -195,6 +190,11 @@ namespace FastNote
             MainEdit.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
             //Debug.WriteLine("File saved");
             randAccStream.Dispose();
+            if (CreatePDFBtn.IsChecked == true)
+            {
+                string value = ConvertToHtml(MainEdit, EncodingList);
+                control.RefreshVal(value);
+            }
             //Debug.WriteLine(Window.Current.Bounds.Width.ToString() + "; " + Window.Current.Bounds.Height.ToString());
         }
 
@@ -221,6 +221,7 @@ namespace FastNote
                 picker.FileTypeChoices.Add(resourceLoader.GetString("FileBMP"), new List<string>() { ".bmp" });
                 picker.FileTypeChoices.Add(resourceLoader.GetString("FileGIF"), new List<string>() { ".gif" });
                 picker.FileTypeChoices.Add(resourceLoader.GetString("FileTIFF"), new List<string>() { ".tiff" });
+                picker.CommitButtonText = resourceLoader.GetString("CommitExportText");
                 picker.SuggestedFileName = Settings.Default.DefaultExportName;
                 StorageFile saveFile = await picker.PickSaveFileAsync();
                 if (saveFile != null)
@@ -1012,6 +1013,19 @@ namespace FastNote
             LoadingControl.IsLoading = false;
         }
 
+        public async Task SfImport(StorageFile importFile, Syncfusion.DocIO.FormatType formatType)
+        {
+            StorageFile cacheFile = await ApplicationData.Current.LocalCacheFolder.CreateFileAsync("sfimportcache.rtf", CreationCollisionOption.ReplaceExisting);
+            CachedFileManager.DeferUpdates(cacheFile);
+
+            Stream stream = await importFile.OpenStreamForReadAsync();
+            WordDocument document = new WordDocument(stream, formatType);
+            Stream saveStram = await cacheFile.OpenStreamForWriteAsync();
+            document.Save(saveStram, Syncfusion.DocIO.FormatType.Rtf);
+            stream.Dispose();
+            saveStram.Dispose();
+        }
+
         private void Donate0099_Click(object sender, RoutedEventArgs e)
         {
             purch.PurchaseAddOn("9PGVLJHM39HK");
@@ -1042,29 +1056,22 @@ namespace FastNote
             purch.PurchaseAddOn("9P0K74P8PWGR");
         }
 
-        private async void CreatePDFBtn_Click(object sender, RoutedEventArgs e)
+        PDFControl control;
+        bool pdfo = false;
+        private void CreatePDFBtn_Click(object sender, RoutedEventArgs e) // Called when a button is clicked
         {
-            string apiKey = "9e86-93cb-4385-b551-cc5b1fbba846";
-            string value = ConvertToHtml(MainEdit, EncodingList);
-            Debug.WriteLine(value);
-            using (var client = new HttpClient())
+            string value = ConvertToHtml(MainEdit, EncodingList); //Converts the content of a RichEditBox (Rich text editor contol in UWP) to a HTML string
+            control = new PDFControl(value);
+            if (pdfo == false)
+           {
+                MoreStack.Children.Add(control);
+                pdfo = true;
+            }
+            else
             {
-                var content = new FormUrlEncodedContent(new[]
-                {
-                    new KeyValuePair<string, string>("apikey", apiKey),
-                    new KeyValuePair<string, string>("value", value)
-                });
-
-                var result = client.PostAsync("http://api.html2pdfrocket.com/pdf", content).Result;
-
-                if (result.IsSuccessStatusCode)
-                {
-                    MemoryStream stream = new MemoryStream();
-                    StorageFile pdfFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("CreatedPDF.pdf", CreationCollisionOption.ReplaceExisting);
-                    byte[] bytes = result.Content.ReadAsByteArrayAsync().Result;
-                    System.IO.File.WriteAllBytes(pdfFile.Path, bytes);
-                    await Launcher.LaunchFileAsync(pdfFile);
-                }
+                int c = MoreStack.Children.Count - 1;
+                MoreStack.Children.RemoveAt(c);
+                pdfo = false;
             }
         }
 
@@ -1097,10 +1104,28 @@ namespace FastNote
             LoadingControl.IsLoading = true;
             Windows.Storage.Pickers.FileOpenPicker openpicker = new Windows.Storage.Pickers.FileOpenPicker();
             openpicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-            openpicker.FileTypeFilter.Add(resourceLoader.GetString(".rtf"));
+            openpicker.FileTypeFilter.Add(".rtf");
+            openpicker.FileTypeFilter.Add(".doc");
+            openpicker.FileTypeFilter.Add(".docx");
+            openpicker.FileTypeFilter.Add(".epub");
+            openpicker.FileTypeFilter.Add(".html");
+            openpicker.FileTypeFilter.Add(".txt");
+            openpicker.CommitButtonText = resourceLoader.GetString("CommitImportText");
             StorageFile importfile = await openpicker.PickSingleFileAsync();
             if (importfile != null)
             {
+                if (importfile.FileType != ".rtf")
+                {
+                    if (importfile.FileType == ".doc") await SfImport(importfile, Syncfusion.DocIO.FormatType.Doc);
+                    else if (importfile.FileType == ".docx") await SfImport(importfile, Syncfusion.DocIO.FormatType.Docx);
+                    else if (importfile.FileType == ".epub") await SfImport(importfile, Syncfusion.DocIO.FormatType.EPub);
+                    else if (importfile.FileType == ".html") await SfImport(importfile, Syncfusion.DocIO.FormatType.Html);
+                    else if (importfile.FileType == ".txt") await SfImport(importfile, Syncfusion.DocIO.FormatType.Txt);
+
+
+                    importfile = await ApplicationData.Current.LocalCacheFolder.GetFileAsync("sfimportcache.rtf");
+                }
+
                 MainEdit.Document.GetText(TextGetOptions.FormatRtf, out string content);
 
                 IRandomAccessStream randAccStream = await importfile.OpenAsync(FileAccessMode.Read);
@@ -1140,10 +1165,32 @@ namespace FastNote
             }
             else
             {
-                MessageDialog md = new MessageDialog(resourceLoader.GetString("Dialog_Cancelled"), resourceLoader.GetString("Dialog_OperationCancelled"));
+                MessageDialog md = new MessageDialog(resourceLoader.GetString("DialogCancelled"), resourceLoader.GetString("Dialog_OperationCancelled"));
                 await md.ShowAsync();
             }
             LoadingControl.IsLoading = false;
+        }
+
+        private Point initialpoint;
+        private void Grid_ManipulationStarted(object sender, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e)
+        {
+            initialpoint = e.Position;
+        }
+
+        private void Grid_ManipulationDelta(object sender, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs e)
+        {
+            if (e.IsInertial)
+            {
+                Point currentpoint = e.Position;
+                if (currentpoint.X - initialpoint.X >= 500 && MainView.IsPaneOpen != true)
+                {
+                    MainView_PaneOpening(sender, e);
+                }
+                else if (initialpoint.X - currentpoint.X >= 500 && MainView.IsPaneOpen == true)
+                {
+                    SettingsButton_Close_Click(sender, e);
+                }
+            }
         }
     }
 }

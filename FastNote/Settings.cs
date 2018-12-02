@@ -134,5 +134,12 @@ namespace FastNote
             get { return Get<int>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = "")]
+        public string ApiKey
+        {
+            get { return Get<string>(); }
+            set { Set(value); }
+        }
     }
 }
