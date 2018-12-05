@@ -2,8 +2,7 @@
     x:Class="FastNote.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:FastNote"
-    xmlns:Custom="using:Microsoft.Toolkit.Uwp.UI.Controls">
+    xmlns:local="using:FastNote">
     <Application.Resources>
         <local:Settings x:Key="settings"/>
         <Style x:Key="MenuFlyoutItemIconStyle" TargetType="MenuFlyoutItem">

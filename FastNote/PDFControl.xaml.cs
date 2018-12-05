@@ -23,7 +23,7 @@ namespace FastNote
 
         public PDFControl(string value)
         {
-            this.InitializeComponent();
+            InitializeComponent();
             ExportPDFBtn.IsEnabled = false; PrintBtn.IsEnabled = false; ShareBtn.IsEnabled = false; OpenInBtn.IsEnabled = false;
             val = value;
             DisplayPDF();
@@ -55,11 +55,11 @@ namespace FastNote
                     {
                         StorageFile pdfFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("CreatedPDF.pdf", CreationCollisionOption.ReplaceExisting); // Creates a PDF file in the app's applicationdata folder
                         byte[] bytes = result.Content.ReadAsByteArrayAsync().Result; // gets the bytes out of the result
-                        System.IO.File.WriteAllBytes(pdfFile.Path, bytes); // writes the bytes to the pdf
+                        File.WriteAllBytes(pdfFile.Path, bytes); // writes the bytes to the pdf
                         DisplayPDF();
                     }
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     ErrorTB.Visibility = Visibility.Visible;
                 }
@@ -83,7 +83,7 @@ namespace FastNote
                 PrintBtn.IsEnabled = true;
                 OpenInBtn.IsEnabled = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 ExportPDFBtn.IsEnabled = false; PrintBtn.IsEnabled = false; ShareBtn.IsEnabled = false; OpenInBtn.IsEnabled = false;
                 ErrorTB.Visibility = Visibility.Visible;
@@ -150,7 +150,7 @@ namespace FastNote
 
         private void ApiKeyInput_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (String.IsNullOrEmpty(ApiKeyInput.Text) || String.IsNullOrWhiteSpace(ApiKeyInput.Text)) CreatePDFBtn.IsEnabled = false;
+            if (string.IsNullOrEmpty(ApiKeyInput.Text) || string.IsNullOrWhiteSpace(ApiKeyInput.Text)) CreatePDFBtn.IsEnabled = false;
             else CreatePDFBtn.IsEnabled = true;
         }
 
@@ -165,10 +165,10 @@ namespace FastNote
 
             if (pickedFiles.Count > 0)
             {
-                this.storageItems = pickedFiles;
+                storageItems = pickedFiles;
 
                 // Display the file names in the UI.
-                string selectedFiles = String.Empty;
+                string selectedFiles = string.Empty;
                 for (int index = 0; index < pickedFiles.Count; index++)
                 {
                     selectedFiles += pickedFiles[index].Name;
@@ -185,7 +185,7 @@ namespace FastNote
 
         private void ShareFile_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
-            args.Request.Data.SetStorageItems(this.storageItems);
+            args.Request.Data.SetStorageItems(storageItems);
             args.Request.Data.Properties.Title = "FastNote";
             args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_FileDesc");
         }

@@ -36,11 +36,11 @@ namespace FastNote
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        //public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1"; // Test App ID
-        //public string adid = "test"; //Test Ad ID
+        public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1"; // Test App ID
+        public string adid = "test"; //Test Ad ID
 
-        public string appid = "9n5grr8757vq";
-        public string adid = "1100034498";
+        //public string appid = "9n5grr8757vq";
+        //public string adid = "1100034498";
 
         string documentName = "doc.rtf";
         string documentTempName = "temp.rtf";
@@ -61,7 +61,7 @@ namespace FastNote
 
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
 
             if (SystemInformation.DeviceFamily == "Windows.Mobile")
             {
@@ -89,9 +89,9 @@ namespace FastNote
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timer.Tick += Timer_Tick;
             ShareSelectedTextContent.Visibility = Visibility.Collapsed;
-            if (Settings.Default.ThemeDefault == true) this.RequestedTheme = ElementTheme.Default;
-            if (Settings.Default.ThemeDark == true) this.RequestedTheme = ElementTheme.Dark;
-            if (Settings.Default.ThemeLight == true) this.RequestedTheme = ElementTheme.Light;
+            if (Settings.Default.ThemeDefault == true) RequestedTheme = ElementTheme.Default;
+            if (Settings.Default.ThemeDark == true) RequestedTheme = ElementTheme.Dark;
+            if (Settings.Default.ThemeLight == true) RequestedTheme = ElementTheme.Light;
             if (Settings.Default.ShowAd == false) MenuAd.Visibility = Visibility.Collapsed;
             LoadDocument();
         }
@@ -100,7 +100,7 @@ namespace FastNote
         {
             string[] fonts = Microsoft.Graphics.Canvas.Text.CanvasTextFormat.GetSystemFontFamilies();
             Debug.WriteLine("Got fonts");
-            FontList = fonts.ToList<string>(); Debug.WriteLine("FontList made");
+            FontList = fonts.ToList(); Debug.WriteLine("FontList made");
             FontList.Sort(); Debug.WriteLine("List ordered");
             List<ComboBoxItem> FontItems = new List<ComboBoxItem>();
             foreach (string font in FontList) { FontItems.Add(new ComboBoxItem { Content = new TextBlock { Text = font, FontFamily = new FontFamily(font) } }); };
@@ -152,7 +152,7 @@ namespace FastNote
             await file.CopyAndReplaceAsync(tempFile);
             Debug.WriteLine("file copied");
             IRandomAccessStream randAccStream = await tempFile.OpenAsync(FileAccessMode.Read);
-            MainEdit.Document.LoadFromStream(Windows.UI.Text.TextSetOptions.FormatRtf, randAccStream);
+            MainEdit.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
             Debug.WriteLine("File loaded");
             randAccStream.Dispose();
             MainEdit.Focus(FocusState.Keyboard); MainEdit.Document.GetText(TextGetOptions.None, out string txt);
@@ -174,9 +174,9 @@ namespace FastNote
             else
             {
                 await MainView.Fade(value: 0f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
-                if (TDefault.IsChecked == true) this.RequestedTheme = ElementTheme.Default;
-                if (TDark.IsChecked == true) this.RequestedTheme = ElementTheme.Dark;
-                if (TLight.IsChecked == true) this.RequestedTheme = ElementTheme.Light;
+                if (TDefault.IsChecked == true) RequestedTheme = ElementTheme.Default;
+                if (TDark.IsChecked == true) RequestedTheme = ElementTheme.Dark;
+                if (TLight.IsChecked == true) RequestedTheme = ElementTheme.Light;
                 await MainView.Fade(value: 1f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
             }
         }
@@ -187,7 +187,7 @@ namespace FastNote
             StorageFile file = await storageFolder.GetFileAsync(documentName);
             CachedFileManager.DeferUpdates(file);
             IRandomAccessStream randAccStream = await file.OpenAsync(FileAccessMode.ReadWrite);
-            MainEdit.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
+            MainEdit.Document.SaveToStream(TextGetOptions.FormatRtf, randAccStream);
             //Debug.WriteLine("File saved");
             randAccStream.Dispose();
             if (CreatePDFBtn.IsChecked == true)
@@ -349,7 +349,7 @@ namespace FastNote
             if (MoreOptionsList.SelectedIndex == 1)
             {
                 MainEdit.Document.GetText(TextGetOptions.None, out string value);
-                if (String.IsNullOrEmpty(value) || String.IsNullOrWhiteSpace(value)) Import(2);
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value)) Import(2);
                 else Import(Settings.Default.ImportOption);
             }
 
@@ -447,10 +447,10 @@ namespace FastNote
 
                 if (pickedFiles.Count > 0)
                 {
-                    this.storageItems = pickedFiles;
+                    storageItems = pickedFiles;
 
                     // Display the file names in the UI.
-                    string selectedFiles = String.Empty;
+                    string selectedFiles = string.Empty;
                     for (int index = 0; index < pickedFiles.Count; index++)
                     {
                         selectedFiles += pickedFiles[index].Name;
@@ -501,7 +501,7 @@ namespace FastNote
 
         private void ShareTextAll_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
-            MainEdit.Document.GetText(Windows.UI.Text.TextGetOptions.None, out string data);
+            MainEdit.Document.GetText(TextGetOptions.None, out string data);
             args.Request.Data.SetText(data);
             args.Request.Data.Properties.Title = "FastNote";
             args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_WholeTextDesc");
@@ -509,7 +509,7 @@ namespace FastNote
 
         private void ShareFile_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
         {
-            args.Request.Data.SetStorageItems(this.storageItems);
+            args.Request.Data.SetStorageItems(storageItems);
             args.Request.Data.Properties.Title = "FastNote";
             args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_FileDesc");
         }
@@ -908,7 +908,7 @@ namespace FastNote
             {
                 if (Settings.Default.ToolBarOnBottomDesktop == true)
                 {
-                    var color = (Color)this.Resources["SystemAltHighColor"];
+                    var color = (Color)Resources["SystemAltHighColor"];
                     Debug.WriteLine(color.ToString());
                     Grid.SetRow(TopBarGrid, 2);
                     coreTitleBar.ExtendViewIntoTitleBar = false;
@@ -997,7 +997,7 @@ namespace FastNote
 
             CachedFileManager.DeferUpdates(cachefile);
             IRandomAccessStream randAccStream = await cachefile.OpenAsync(FileAccessMode.ReadWrite);
-            MainEdit.Document.SaveToStream(Windows.UI.Text.TextGetOptions.FormatRtf, randAccStream);
+            MainEdit.Document.SaveToStream(TextGetOptions.FormatRtf, randAccStream);
             Debug.WriteLine("File saved");
             randAccStream.Dispose();
 
@@ -1129,15 +1129,15 @@ namespace FastNote
                 MainEdit.Document.GetText(TextGetOptions.FormatRtf, out string content);
 
                 IRandomAccessStream randAccStream = await importfile.OpenAsync(FileAccessMode.Read);
-                MainEdit.Document.SetText(TextSetOptions.None, String.Empty);
-                MainEdit.Document.LoadFromStream(Windows.UI.Text.TextSetOptions.FormatRtf, randAccStream);
+                MainEdit.Document.SetText(TextSetOptions.None, string.Empty);
+                MainEdit.Document.LoadFromStream(TextSetOptions.FormatRtf, randAccStream);
                 MainEdit.Document.GetText(TextGetOptions.FormatRtf, out string importcontent);
                 Debug.WriteLine(content);
                 Debug.WriteLine(importcontent);
                 if (i == 0)
                 {
                     Debug.WriteLine("Import before content");
-                    MainEdit.Document.SetText(TextSetOptions.None, String.Empty);
+                    MainEdit.Document.SetText(TextSetOptions.None, string.Empty);
                     // Sets importcontent as the content of the document
                     MainEdit.Document.SetText(TextSetOptions.FormatRtf, importcontent);
                     // Get a new text range for the active story of the document.
@@ -1145,12 +1145,12 @@ namespace FastNote
                     // Collapses the text range into a degenerate point at the end of the range for inserting.
                     range.Collapse(false);
                     // Inserts original content
-                    range.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, content);
+                    range.SetText(TextSetOptions.FormatRtf, content);
                 }
                 else if (i == 1)
                 {
                     Debug.WriteLine("Import after content");
-                    MainEdit.Document.SetText(TextSetOptions.None, String.Empty);
+                    MainEdit.Document.SetText(TextSetOptions.None, string.Empty);
                     // Sets original content as the content of the document
                     MainEdit.Document.SetText(TextSetOptions.FormatRtf, content);
                     // Get a new text range for the active story of the document.
@@ -1158,7 +1158,7 @@ namespace FastNote
                     // Collapses the text range into a degenerate point at the end of the range for inserting.
                     range.Collapse(false);
                     // Inserts importcontent
-                    range.SetText(Windows.UI.Text.TextSetOptions.FormatRtf, importcontent);
+                    range.SetText(TextSetOptions.FormatRtf, importcontent);
                 }
                 else Debug.WriteLine("Replace existing");
                 MainEdit.Focus(FocusState.Keyboard);
