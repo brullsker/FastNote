@@ -421,149 +421,80 @@ Bugs resolvidos.
   <data name="FileTXT" xml:space="preserve">
     <value>Arquivo TXT</value>
   </data>
-  
-<!--
-<data name="DonateText.Content" xml:space="preserve">
-    <value> Donate!</value>
+  <data name="DonateText.Content" xml:space="preserve">
+    <value> Doe!</value>
   </data>
--->
-  
-<!--
-<data name="ProprietaryText.Text" xml:space="preserve">
-    <value>Proprietary</value>
+  <data name="ProprietaryText.Text" xml:space="preserve">
+    <value>Proprietário</value>
   </data>
--->
-  
-<!--
-<data name="WebsiteText.Content" xml:space="preserve">
-    <value>Website</value>
+  <data name="WebsiteText.Content" xml:space="preserve">
+    <value>Site</value>
   </data>
--->
-  
-<!--
-<data name="ImportAfterText.Text" xml:space="preserve">
-    <value>Insert after current content</value>
+  <data name="ImportAfterText.Text" xml:space="preserve">
+    <value>Inserir após conteúdo corrente</value>
   </data>
--->
-  
-<!--
-<data name="ImportBeforeText.Text" xml:space="preserve">
-    <value>Insert before current content</value>
+  <data name="ImportBeforeText.Text" xml:space="preserve">
+    <value>Inserir antes do conteúdo corrente.</value>
   </data>
--->
-  
-<!--
-<data name="ImportReplaceText.Text" xml:space="preserve">
-    <value>Replace current content</value>
+  <data name="ImportReplaceText.Text" xml:space="preserve">
+    <value>Substitua o conteúdo corrente</value>
   </data>
--->
-  
-<!--
-<data name="More_File_ImportText.Text" xml:space="preserve">
-    <value>IMPORT</value>
+  <data name="More_File_ImportText.Text" xml:space="preserve">
+    <value>IMPORTAR</value>
   </data>
--->
-  
-<!--
-<data name="DialogCancelled" xml:space="preserve">
-    <value>Either no file was selected or the file picker was closed.</value>
+  <data name="DialogCancelled" xml:space="preserve">
+    <value>Nenhum arquivo foi selecionado ou o arquivo buscado foi fechado. </value>
   </data>
--->
-  
-<!--
-<data name="CommitExportText" xml:space="preserve">
-    <value>Export</value>
+  <data name="CommitExportText" xml:space="preserve">
+    <value>Exportar</value>
   </data>
--->
-  
-<!--
-<data name="CommitImportText" xml:space="preserve">
-    <value>Import</value>
+  <data name="CommitImportText" xml:space="preserve">
+    <value>Importar</value>
   </data>
--->
-  
-<!--
-<data name="DialogClose" xml:space="preserve">
-    <value>Close</value>
+  <data name="DialogClose" xml:space="preserve">
+    <value>Fechar</value>
   </data>
--->
-  
-<!--
-<data name="FilePDF" xml:space="preserve">
-    <value>PDF file</value>
+  <data name="FilePDF" xml:space="preserve">
+    <value>Arquivo PDF</value>
   </data>
--->
-  
-<!--
-<data name="HowPDFWorkContent" xml:space="preserve">
-    <value>For creating PDFs, we make use of the services of HTML2PDFROCKET. This is an online service to create PDF files from HTML. To make it work, follow these steps:
-1. Go to {0} and register a new account. Leave the language as C#.
-2. You'll get a mail with an activation link. Use it!
-3. In another mail you'll get an API key. This is also usable as password to login to html2pdfrocket.com.
-4. Copy the API key to your clipboard.
-5. Paste the key into the input box left of the help button.
-6. With this free subscription, you can create 200 PDFs every month. To see how many are left, check it out on the {1} site.</value>
+  <data name="HowPDFWorkContent" xml:space="preserve">
+    <value>Para a criação de PDFs, fazemos uso dos serviços de HTML2PDFROCKET. Este é um serviço online para criar arquivos PDF a partir de HTML. Para fazê-lo funcionar, siga estes passos: 
+1. Vá para {0} e registre uma nova conta. Deixe o idioma como C#. 
+2. Você receberá um e-mail com um link de ativação. Use-o! 
+3. Em outro e-mail você terá uma chave de API. Isso também é utilizável como senha para login em html2pdfrocket.com. 
+4. Copie a chave de API para a área de transferência. 
+5. Cole a chave na caixa de entrada esquerda do botão de ajuda. 
+6. Com esta subscrição gratuita, você pode criar 200 PDFs por mês. Para ver quantos foram feitos, verifique no site {1}.</value>
   </data>
--->
-  
-<!--
-<data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>How does it work?</value>
+  <data name="HowPDFWorkTitle" xml:space="preserve">
+    <value>Como isso funciona?</value>
   </data>
--->
-  
-<!--
-<data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>PDF TOOLS</value>
+  <data name="PDFToolsHeader.Text" xml:space="preserve">
+    <value>FERRAMENTAS DE PDF</value>
   </data>
--->
-  
-<!--
-<data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>API key</value>
+  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
+    <value>Chave da API</value>
   </data>
--->
-  
-<!--
-<data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>Create PDF from content</value>
+  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
+    <value>Criar PDF a partir do conteúdo</value>
   </data>
--->
-  
-<!--
-<data name="PDF_Export.Content" xml:space="preserve">
-    <value>Export</value>
+  <data name="PDF_Export.Content" xml:space="preserve">
+    <value>Exportar</value>
   </data>
--->
-  
-<!--
-<data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Open in...</value>
+  <data name="PDF_OpenIn.Content" xml:space="preserve">
+    <value>Abrir em...</value>
   </data>
--->
-  
-<!--
-<data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>Last created PDF - Preview</value>
+  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
+    <value>PDF criado pela última vez - Preview</value>
   </data>
--->
-  
-<!--
-<data name="PDF_Print.Content" xml:space="preserve">
-    <value>Print</value>
+  <data name="PDF_Print.Content" xml:space="preserve">
+    <value>Imprimir</value>
   </data>
--->
-  
-<!--
-<data name="PDF_Share.Content" xml:space="preserve">
-    <value>Share</value>
+  <data name="PDF_Share.Content" xml:space="preserve">
+    <value>Compartilhar</value>
   </data>
--->
-  
-<!--
-<data name="PDFError.Text" xml:space="preserve">
-    <value>None created yet or error occured</value>
+  <data name="PDFError.Text" xml:space="preserve">
+    <value>Nada criado ainda ou um erro ocorreu</value>
   </data>
--->
 
 </root>

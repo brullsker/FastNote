@@ -36,11 +36,11 @@ namespace FastNote
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1"; // Test App ID
-        public string adid = "test"; //Test Ad ID
+        //public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1"; // Test App ID
+        //public string adid = "test"; //Test Ad ID
 
-        //public string appid = "9n5grr8757vq";
-        //public string adid = "1100034498";
+        public string appid = "9n5grr8757vq";
+        public string adid = "1100034498";
 
         string documentName = "doc.rtf";
         string documentTempName = "temp.rtf";
