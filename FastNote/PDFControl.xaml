@@ -40,10 +40,14 @@
                 <Button Content="Share" x:Uid="PDF_Share" Grid.Column="1" HorizontalAlignment="Stretch" x:Name="ShareBtn" Margin="3,0" Click="ShareBtn_Click"/>
                 <Button Content="Print" x:Uid="PDF_Print" Grid.Column="2" HorizontalAlignment="Stretch" Margin="3,0,0,0" x:Name="PrintBtn" Click="PrintBtn_Click"/>
             </Grid>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,16,0,0">
-                <TextBlock Text="Last created PDF - Preview" x:Uid="PDF_PreviewHeader" Margin="0,0,6,0" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center"/>
-                <HyperlinkButton x:Uid="PDF_OpenIn" Content="Open in..." Margin="6,0,0,0" Padding="0" Style="{StaticResource TextBlockButtonStyle}" Click="HyperlinkButton_Click" x:Name="OpenInBtn"/>
-            </StackPanel>
+            <Grid HorizontalAlignment="Stretch" Margin="0,16,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Last created PDF - Preview" TextAlignment="Center" HorizontalAlignment="Left" x:Uid="PDF_PreviewHeader" Margin="0,0,6,0" Style="{StaticResource BaseTextBlockStyle}"/>
+                <HyperlinkButton x:Uid="PDF_OpenIn" Grid.Column="1" Content="Open in..." Margin="6,0,0,0" Padding="0" Style="{StaticResource TextBlockButtonStyle}" Click="HyperlinkButton_Click" x:Name="OpenInBtn"/>
+            </Grid>
         </StackPanel>
         <sf:SfPdfViewerControl Grid.Row="1" x:Name="Viewer" HorizontalScrollBarVisibility="Visible" IsThumbnailViewEnabled="False" IsTextSelectionEnabled="False" Height="500"/>
         <Border x:Name="ErrorTB" Grid.Row="1" VerticalAlignment="Top" Height="Auto" Visibility="Collapsed">
