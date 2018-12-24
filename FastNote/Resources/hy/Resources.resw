@@ -1,0 +1,500 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CharactersText.Text" xml:space="preserve">
+    <value>հատկանիշ</value>
+  </data>
+  <data name="Dialog_FileNotSaved" xml:space="preserve">
+    <value>Նիշքը չի պահպանվել</value>
+  </data>
+  <data name="Dialog_OperationCancelled" xml:space="preserve">
+    <value>Գործողությունը հետաձգվեց</value>
+  </data>
+  <data name="LoadingText.Text" xml:space="preserve">
+    <value>Ընթացքում է</value>
+  </data>
+  <data name="Manifest_AppDescText" xml:space="preserve">
+    <value>FastNote-ը ծրագրային բաց կոդով, իրական ժամանակում տեքստային խմբագրիչ է Windows օպ.համակարգերի համար.</value>
+  </data>
+  <data name="More_AboutHeaderText.Text" xml:space="preserve">
+    <value>Տեղեկություն</value>
+  </data>
+  <data name="More_About_Contribute.Text" xml:space="preserve">
+    <value>Աջակցել ծրագրին</value>
+  </data>
+  <data name="More_About_DevEmail.Content" xml:space="preserve">
+    <value>Փոստ</value>
+  </data>
+  <data name="More_About_Donate.Text" xml:space="preserve">
+    <value>Աջակցում ծրագրավորողին</value>
+  </data>
+  <data name="More_About_Libs.Text" xml:space="preserve">
+    <value>Օգտագործում է բաց կոդով նիշքեր և SDK-ներ</value>
+  </data>
+  <data name="More_About_LicenseMIT.Text" xml:space="preserve">
+    <value>Հավաստագրված է MIT վկայականով</value>
+  </data>
+  <data name="More_FileHeaderText.Text" xml:space="preserve">
+    <value>Նիշք</value>
+  </data>
+  <data name="More_File_ClearAll.Text" xml:space="preserve">
+    <value>Մաքրել բոլորը</value>
+  </data>
+  <data name="More_File_ExportText.Text" xml:space="preserve">
+    <value>Պահել(արտահանել)</value>
+  </data>
+  <data name="More_File_ShareFileText.Text" xml:space="preserve">
+    <value>Կիսվել նիշքով</value>
+  </data>
+  <data name="More_File_ShareText_Selected.Text" xml:space="preserve">
+    <value>Կիսվել ընտրված տեքստով</value>
+  </data>
+  <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
+    <value>Կիսվել ամբողջական տեքստով</value>
+  </data>
+  <data name="More_SettingsHeaderText.Text" xml:space="preserve">
+    <value>Կարգավորումներ</value>
+  </data>
+  <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
+    <value>Արտահանման կանխադրված անունը</value>
+  </data>
+  <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
+    <value>Մուտքագրե՛ք անվանումը...</value>
+  </data>
+  <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
+    <value>Կանխադրված կիսվելու նիշքի անվանումը</value>
+  </data>
+  <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
+    <value>Մուտքագրե՛ք անվանումը...</value>
+  </data>
+  <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
+    <value>Վերականգնել</value>
+  </data>
+  <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
+    <value>Լեզու</value>
+  </data>
+  <data name="More_Settings_Language_Default.Content" xml:space="preserve">
+    <value>Կանխադրված</value>
+  </data>
+  <data name="More_Settings_Lang_AppRest.Text" xml:space="preserve">
+    <value>Կպահանջվի ծրագրի վերամեկնարկ հաստատման համար</value>
+  </data>
+  <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
+    <value>Ուղղագրության ստուգում</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
+    <value>Միացված է</value>
+  </data>
+  <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
+    <value>Անջատված է</value>
+  </data>
+  <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
+    <value>Ոճ</value>
+  </data>
+  <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
+    <value>Մուգ</value>
+  </data>
+  <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
+    <value>Կանխադրված</value>
+  </data>
+  <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
+    <value>Բաց</value>
+  </data>
+  <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
+    <value>բիթմապ (.bmp)</value>
+  </data>
+  <data name="Share_File_ShareFile_GIF.Text" xml:space="preserve">
+    <value>Գիֆ (.gif)</value>
+  </data>
+  <data name="Share_File_ShareFile_HTML.Text" xml:space="preserve">
+    <value>HTML էջ (.html)</value>
+  </data>
+  <data name="Share_File_ShareFile_JPG.Text" xml:space="preserve">
+    <value>Ջպեգ նկար (.jpg)</value>
+  </data>
+  <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
+    <value>Շարժ. ցանցային նկար (.png)</value>
+  </data>
+  <data name="Share_File_ShareFile_RTF.Text" xml:space="preserve">
+    <value>Ռիչ տեքստ (.rtf)</value>
+  </data>
+  <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
+    <value>ՏԻՖՖ նկար (.tiff)</value>
+  </data>
+  <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
+    <value>Պարզ նիշք (.txt)</value>
+  </data>
+  <data name="More_File_Exit.Text" xml:space="preserve">
+    <value>Փակել ծրագիրը</value>
+  </data>
+  <data name="More_About_Langs.Text" xml:space="preserve">
+    <value>Թարգմանություններ</value>
+  </data>
+  <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
+    <value>Բացել ընտրանքները մեկնարկելիս</value>
+  </data>
+  <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
+    <value>Անցնել հուշագրի ստեղծմանը</value>
+  </data>
+  <data name="More_Settings_FontSizeHeader.Text" xml:space="preserve">
+    <value>Տառատեսակի չափը</value>
+  </data>
+  <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
+    <value>Մուտքագրեք թիվը...</value>
+  </data>
+  <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
+    <value>Տառատեսակի խումբ</value>
+  </data>
+  <data name="More_About_NoLicense.Text" xml:space="preserve">
+    <value>Հանրային տիրույթ</value>
+  </data>
+  <data name="More_About_MIT.Header" xml:space="preserve">
+    <value>MIT վկայական</value>
+  </data>
+  <data name="More_About_PP.Header" xml:space="preserve">
+    <value>Գաղտնիության քաղաքականություն</value>
+  </data>
+  <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
+    <value>2018թ. Ծրագրի հեղինակ՝ brullsker։ Բոլոր իրավունքները պաշտպանված են։</value>
+  </data>
+  <data name="Store_Description" xml:space="preserve">
+    <value>Եթե դուք փնտրում էիք ծրագիր արագ նշումների համար, ապա ճիշտ տեղում եք։ FastNote-ն ունի մի քանի առանձնահատկություններ, որոնք կնշենք.
+-արտահանում մի քանի ձևաչափով
+-կիսում տեքստով կամ նիշքով
+-ուղղագրության ստուգում</value>
+  </data>
+  <data name="Store_Feature1" xml:space="preserve">
+    <value>Հուշեր</value>
+  </data>
+  <data name="Store_Feature2" xml:space="preserve">
+    <value>Ինքնապահում</value>
+  </data>
+  <data name="Store_Feature3" xml:space="preserve">
+    <value>Արտահանել(.txt, .rtf կամ այլ ձևաչափերով)</value>
+  </data>
+  <data name="Store_Feature4" xml:space="preserve">
+    <value>Կիսվել (նիշք կամ տեքստ)</value>
+  </data>
+  <data name="Store_Feature5" xml:space="preserve">
+    <value>Հուշագրի ոճը</value>
+  </data>
+  <data name="Store_Feature6" xml:space="preserve">
+    <value>Թափանցիկ տեսք</value>
+  </data>
+  <data name="Store_ReleaseNotes" xml:space="preserve">
+    <value>Հավելվածի հազարերորդ ներբեռնման առթիվ ծրագրավորողը ներկայացնում է նոր տարբերակը մի քանի նորամուծություններով.
+-PDF գործիքներ-Կարող եք ստեղծել PDF նիշք Ձեր տեքստային նիշքից և տպագրել
+-կարող եք ներմուծել նոր նիշք չփոխարինելով հինը
+-HTML կոդավորումը և արտահանումը ևս հասանելի է
+-ոճային երկու ընտրություն (մուգ և բաց)
+-աջակցվում են նաև .doc / .docx և .epub նիշքերը
+-Հեղինակաին աջակցելու համար կարող եք կապ հաստատել փոստով կամ նվիրատվություն անել PayPal համակարգի միջոցով։
+Շնորհակալություն Ձեր աջակցության համար և հաճախ ժպտացեք) </value>
+  </data>
+  <data name="Store_Sc_Desktop4" xml:space="preserve">
+    <value>Բաց կերպը գեղեցիկ կլինի թափանցիկ ոճում</value>
+  </data>
+  <data name="Store_Sc_Mobile4" xml:space="preserve">
+    <value>Թափանցիկ ոճը հասանելի է նաև UWP տարբերակով</value>
+  </data>
+  <data name="Store_Sc_MR1" xml:space="preserve">
+    <value>Հասանելի է նաև վիրտուալ իրականություն  տարբերակում</value>
+  </data>
+  <data name="Store_Sc_Universal1" xml:space="preserve">
+    <value>Ստեղծեք հուշագրեր և ձևավորեք</value>
+  </data>
+  <data name="Store_Sc_Universal2" xml:space="preserve">
+    <value>Կիսվեք կամ արտահանեք Ձեր աշխատանքը յուրահատուկ գործիքների օգնությամբ</value>
+  </data>
+  <data name="Store_Sc_Universal3" xml:space="preserve">
+    <value>Տառատեսակների ընտրության գործիքներ</value>
+  </data>
+  <data name="Store_SearchTerm1" xml:space="preserve">
+    <value>Արագ նշում (FastNote)</value>
+  </data>
+  <data name="Store_SearchTerm2" xml:space="preserve">
+    <value>Արագ</value>
+  </data>
+  <data name="Store_SearchTerm3" xml:space="preserve">
+    <value>Հուշագիր</value>
+  </data>
+  <data name="Store_SearchTerm4" xml:space="preserve">
+    <value>Հուշագրեր</value>
+  </data>
+  <data name="Store_SearchTerm5" xml:space="preserve">
+    <value>Խմբագրիչ (.txt)</value>
+  </data>
+  <data name="Store_SearchTerm6" xml:space="preserve">
+    <value>Հուշատետր</value>
+  </data>
+  <data name="Store_SearchTerm7" xml:space="preserve">
+    <value>Ինքնապահում</value>
+  </data>
+  <data name="Store_ShortDescription" xml:space="preserve">
+    <value>Ստեղծել որոշ հուշագրեր</value>
+  </data>
+  <data name="ShareUI_FileDesc" xml:space="preserve">
+    <value>Կիսվել նիշքով</value>
+  </data>
+  <data name="ShareUI_SelectedTextDesc" xml:space="preserve">
+    <value>Կիսվել ընդգծված տեքստով</value>
+  </data>
+  <data name="ShareUI_WholeTextDesc" xml:space="preserve">
+    <value>Կիսվել ամբողջական տեքստով</value>
+  </data>
+  <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
+    <value>Տեքստի գործիքակազմի դիրքը</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
+    <value>Վերև</value>
+  </data>
+  <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
+    <value>Ներքև</value>
+  </data>
+  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
+    <value>Դուք կարող եք անջատել գովազդները (անվճար)</value>
+  </data>
+  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
+    <value>Ցուցադրել գովազդները ծրագրավորողին աջակցելու համար</value>
+  </data>
+  <data name="DefaultString" xml:space="preserve">
+    <value>Կանխադրված</value>
+  </data>
+  <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
+    <value>HTML կոդավորում</value>
+  </data>
+  <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
+    <value>Word փաստաթուղթ (հին), (.doc)</value>
+  </data>
+  <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
+    <value>Word փաստաթուղթ (.docx)</value>
+  </data>
+  <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
+    <value>eBook նիշք</value>
+  </data>
+  <data name="FileBMP" xml:space="preserve">
+    <value>Բիթմապ</value>
+  </data>
+  <data name="FileDoc" xml:space="preserve">
+    <value>word փաստաթուղթ (հին)</value>
+  </data>
+  <data name="FileDocx" xml:space="preserve">
+    <value>word փաստաթուղթ</value>
+  </data>
+  <data name="FileEpub" xml:space="preserve">
+    <value>eBook նիշք</value>
+  </data>
+  <data name="FileGIF" xml:space="preserve">
+    <value>Gif նկար</value>
+  </data>
+  <data name="FileHTML" xml:space="preserve">
+    <value>HTML էջ</value>
+  </data>
+  <data name="FileJPG" xml:space="preserve">
+    <value>JPG նկար</value>
+  </data>
+  <data name="FilePNG" xml:space="preserve">
+    <value>PNG նկար</value>
+  </data>
+  <data name="FileRTF" xml:space="preserve">
+    <value>Ռիչ տեքստ</value>
+  </data>
+  <data name="FileTIFF" xml:space="preserve">
+    <value>Տիֆֆ նկար</value>
+  </data>
+  <data name="FileTXT" xml:space="preserve">
+    <value>Պարզ տեքստ</value>
+  </data>
+  <data name="DonateText.Content" xml:space="preserve">
+    <value>Նվիրատվություն (աջակցություն)</value>
+  </data>
+  <data name="ProprietaryText.Text" xml:space="preserve">
+    <value>Խմբագիր (վարիչ)</value>
+  </data>
+  <data name="WebsiteText.Content" xml:space="preserve">
+    <value>Կայքէջ</value>
+  </data>
+  <data name="ImportAfterText.Text" xml:space="preserve">
+    <value>Մուտքագրել ընթացիկ նիշքից հետո</value>
+  </data>
+  <data name="ImportBeforeText.Text" xml:space="preserve">
+    <value>Մուտքագրել ընթացիկ նիշքից առաջ</value>
+  </data>
+  <data name="ImportReplaceText.Text" xml:space="preserve">
+    <value>Փոխարինել ընթացիկ նիշքը</value>
+  </data>
+  <data name="More_File_ImportText.Text" xml:space="preserve">
+    <value>Ներմուծել</value>
+  </data>
+  <data name="DialogCancelled" xml:space="preserve">
+    <value>Նիշքը ընտրված չի կամ փակվել է</value>
+  </data>
+  <data name="CommitExportText" xml:space="preserve">
+    <value>Արտահանել</value>
+  </data>
+  <data name="CommitImportText" xml:space="preserve">
+    <value>Ներմուծել</value>
+  </data>
+  <data name="DialogClose" xml:space="preserve">
+    <value>Փակել</value>
+  </data>
+  <data name="FilePDF" xml:space="preserve">
+    <value>PDF նիշք</value>
+  </data>
+  <data name="HowPDFWorkContent" xml:space="preserve">
+    <value>PDF նիշք ստեղծելու համար մենք օգտվում ենք HTML2PDFROCKET ծառայությունից, որպեսզի ստանանք PDF՝ HTML նիշքից.
+ 1.Գնացեք {0} և գրանցեք նոր օգտանուն՝ ընտրելով C# լեզուն։
+2. Ձեր փոստում փնտրեք գործունացման հղումը, օգտագործեք։
+3. Հաջորդ փոստարկղում կլինի նաև API բանալին, դա էլ կլինի ձեր օգտանունը, որով կարող եք մուտք գործել html2pdfrocket.com էջը։
+4. Պատճենեք API բանալին նշոցում։
+5. Տեղադրեք այդ բանալին մուտքագրման ամապատասխան բաժնում։
+Այս կերպ Դուք կարող եք ամսական ստեղծել 200 PDF  նիշքեր. ստուգել կարող եք այս  {1} կայքում։</value>
+  </data>
+  <data name="HowPDFWorkTitle" xml:space="preserve">
+    <value>Ինչպե՞ս է դա աշխատում</value>
+  </data>
+  <data name="PDFToolsHeader.Text" xml:space="preserve">
+    <value>PDF գործիքներ</value>
+  </data>
+  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
+    <value>API բանալի</value>
+  </data>
+  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
+    <value>Ստեղծել PDF նիշքից</value>
+  </data>
+  <data name="PDF_Export.Content" xml:space="preserve">
+    <value>Արտահանել</value>
+  </data>
+  <data name="PDF_OpenIn.Content" xml:space="preserve">
+    <value>Բացել միջոցով...</value>
+  </data>
+  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
+    <value>Վերջին ստեղծած PDF-ն-Նախատեսք</value>
+  </data>
+  <data name="PDF_Print.Content" xml:space="preserve">
+    <value>Տպել</value>
+  </data>
+  <data name="PDF_Share.Content" xml:space="preserve">
+    <value>Կիսվել</value>
+  </data>
+  <data name="PDFError.Text" xml:space="preserve">
+    <value>Չհաջողվեց ստեղծել, առաջացել է խնդիր</value>
+  </data>
+
+</root>

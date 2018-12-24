@@ -457,6 +457,7 @@
                                         <ComboBoxItem Content="Español"/>
                                         <ComboBoxItem Content="Nederlandse"/>
                                         <ComboBoxItem Content="Polska"/>
+                                        <ComboBoxItem Content="Հայերեն"/>
                                     </ComboBox>
                                     <TextBlock HorizontalAlignment="Center" TextAlignment="Center" Text="App restart required to apply" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
                                     <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
@@ -568,6 +569,12 @@
                                         <StackPanel Orientation="Vertical" Margin="6,2,6,6">
                                             <TextBlock Text="Português do Brasil - JNMarcos"/>
                                             <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/JNMarcos" Padding="0"/>
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
+                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
+                                            <TextBlock Text="Հայերեն - Hmayak"/>
+                                            <HyperlinkButton Content="Mail" x:Uid="More_About_DevEmail" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="mailto:hmayak007@live.com" Padding="0"/>
                                         </StackPanel>
                                     </Border>
                                     <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">

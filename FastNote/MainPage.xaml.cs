@@ -26,6 +26,7 @@ using Syncfusion.DocIO.DLS;
 using Color = Windows.UI.Color;
 using System.Threading.Tasks;
 using Windows.Foundation;
+using Windows.UI.Xaml.Controls.Primitives;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -36,11 +37,10 @@ namespace FastNote
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public string appid = "3f83fe91-d6be-434d-a0ae-7351c5a997f1"; // Test App ID
-        public string adid = "test"; //Test Ad ID
+        public string appid = new Constants().appid;
+        public string adid = new Constants().adid;
 
-        //public string appid = "9n5grr8757vq";
-        //public string adid = "1100034498";
+        string cversion = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
 
         string documentName = "doc.rtf";
         string documentTempName = "temp.rtf";
@@ -85,6 +85,11 @@ namespace FastNote
                     Window.Current.SetTitleBar(Draggable1);
                     TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, Windows.UI.Colors.Transparent);
                 }
+            }
+            if (Settings.Default.version == cversion)
+            {
+                Settings.Default.version = cversion;
+                ChangelogPopUp();
             }
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timer.Tick += Timer_Tick;
@@ -1191,6 +1196,10 @@ namespace FastNote
                     SettingsButton_Close_Click(sender, e);
                 }
             }
+        }
+
+        void ChangelogPopUp()
+        {
         }
     }
 }

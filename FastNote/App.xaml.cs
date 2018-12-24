@@ -21,7 +21,7 @@ namespace FastNote
         /// </summary>
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mzg0NTFAMzEzNjJlMzMyZTMwSGJNNE42VWhCa1lxWG1RVm84Z1AremZZcUdPKzZ6TXJjcklNVGp3UHU4MD0=");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(new Constants().SfKey);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
             langlist.Add(SystemInformation.Culture.ToString());
@@ -33,6 +33,7 @@ namespace FastNote
             langlist.Add("es");
             langlist.Add("nl");
             langlist.Add("pl");
+            langlist.Add("hy");
             ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];
         }
 

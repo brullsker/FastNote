@@ -141,5 +141,12 @@ namespace FastNote
             get { return Get<string>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = "")]
+        public string version
+        {
+            get { return Get<string>(); }
+            set { Set(value); }
+        }
     }
 }
