@@ -34,6 +34,7 @@ namespace FastNote
             langlist.Add("nl");
             langlist.Add("pl");
             langlist.Add("hy");
+            langlist.Add("ru");
             ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];
         }
 

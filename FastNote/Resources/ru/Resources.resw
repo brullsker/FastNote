@@ -118,115 +118,115 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CharactersText.Text" xml:space="preserve">
-    <value> Zeichen</value>
+    <value> жетоны</value>
   </data>
   <data name="Dialog_FileNotSaved" xml:space="preserve">
-    <value>Datei wurde nicht gespeichert.</value>
+    <value>Файл не был сохранен.</value>
   </data>
   <data name="Dialog_OperationCancelled" xml:space="preserve">
-    <value>Operation abgebrochen</value>
+    <value>Отмена операции</value>
   </data>
   <data name="LoadingText.Text" xml:space="preserve">
-    <value>Einen Moment Geduld...</value>
+    <value>Момент терпения...</value>
   </data>
   <data name="Manifest_AppDescText" xml:space="preserve">
-    <value>FastNote ist ein minimalistischer Open-Source Rich-Text-Editor für die Universal Windows Platform, der Änderungen in Echtzeit speichert.</value>
+    <value>FastNote - это минималистичный текстовый редактор с открытым исходным кодом для Universal Windows Platform, который сохраняет изменения в режиме реального времени.</value>
   </data>
   <data name="More_AboutHeaderText.Text" xml:space="preserve">
-    <value>Über</value>
+    <value>О приложении</value>
   </data>
   <data name="More_About_Contribute.Text" xml:space="preserve">
-    <value>Bei der Entwicklung helfen:</value>
+    <value>Помощь в развитии</value>
   </data>
   <data name="More_About_DevEmail.Content" xml:space="preserve">
-    <value>E-Mail</value>
+    <value>E-мейл</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Finanziell unterstützen:</value>
+    <value>Финансовая поддержка:</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
-    <value>Genutzte Libraries und SDKs</value>
+    <value>Библиотеки и SDK для пользователей</value>
   </data>
   <data name="More_About_LicenseMIT.Text" xml:space="preserve">
-    <value>Lizensiert unter der MIT-Lizenz</value>
+    <value>Лицензия по лицензии MIT</value>
   </data>
   <data name="More_FileHeaderText.Text" xml:space="preserve">
-    <value>Datei</value>
+    <value>Файл</value>
   </data>
   <data name="More_File_ClearAll.Text" xml:space="preserve">
-    <value>ALLES LÖSCHEN</value>
+    <value>УДАЛИТЬ ВСЕ</value>
   </data>
   <data name="More_File_ExportText.Text" xml:space="preserve">
-    <value>EXPORTIEREN</value>
+    <value>ЭКСПОРТ</value>
   </data>
   <data name="More_File_ShareFileText.Text" xml:space="preserve">
-    <value>DATEI TEILEN</value>
+    <value>ШАРЕ ФАЙЛ</value>
   </data>
   <data name="More_File_ShareText_Selected.Text" xml:space="preserve">
-    <value>AUSWAHL TEILEN</value>
+    <value>ВЫБОР ТЕКСТА ПУБЛИКАЦИИ</value>
   </data>
   <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
-    <value>ALLES TEILEN</value>
+    <value>ШАРЛЬ ВСЕ ТЕКСТА</value>
   </data>
   <data name="More_SettingsHeaderText.Text" xml:space="preserve">
-    <value>Optionen</value>
+    <value>Параметры</value>
   </data>
   <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
-    <value>STANDARD-DATEINAME (EXPORT)</value>
+    <value>ИМЯ ФАЙЛА ПО УМОЛЧАНИЮ (ЭКСПОРТ)</value>
   </data>
   <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Name eingeben...</value>
+    <value>Введите имя...</value>
   </data>
   <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
-    <value>STANDARD-DATEINAME (TEILEN)</value>
+    <value>ИМЯ ФАЙЛА ПО УМОЛЧАНИЮ (ШАРЕ)</value>
   </data>
   <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Name eingeben...</value>
+    <value>Введите имя...</value>
   </data>
   <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
-    <value>Zürücksetzen</value>
+    <value>Перезагрузка</value>
   </data>
   <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
-    <value>SPRACHE</value>
+    <value>ЯЗЫК</value>
   </data>
   <data name="More_Settings_Language_Default.Content" xml:space="preserve">
-    <value>Auto</value>
+    <value>Автоматический</value>
   </data>
   <data name="More_Settings_Lang_AppRest.Text" xml:space="preserve">
-    <value>App benötigt Neustart zum Übernehmen</value>
+    <value>Нужно перезапустить приложение, чтобы взять на себя управление</value>
   </data>
   <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
-    <value>RECHTSCHREIBUNG PRÜFEN</value>
+    <value>ПРОВЕРКА ОРФОГРАФИИ</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
-    <value>Ein</value>
+    <value>Вкл</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
-    <value>Aus</value>
+    <value>Выкл</value>
   </data>
   <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
-    <value>DESIGN-MODUS</value>
+    <value>ВОЗНИКНОВЕНИЕ</value>
   </data>
   <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Dunkel</value>
+    <value>Тьма</value>
   </data>
   <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Standard</value>
+    <value>По умолчанию</value>
   </data>
   <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Hell</value>
+    <value>Свет</value>
   </data>
   <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
-    <value>Bitmap (.bmp)</value>
+    <value>Битмап (.bmp)</value>
   </data>
   <data name="Share_File_ShareFile_GIF.Text" xml:space="preserve">
-    <value>GIF-Grafik (.gif)</value>
+    <value>Графика GIF (.gif)</value>
   </data>
   <data name="Share_File_ShareFile_HTML.Text" xml:space="preserve">
-    <value>HTML-Seite (.html)</value>
+    <value>HTML-страница (.html)</value>
   </data>
   <data name="Share_File_ShareFile_JPG.Text" xml:space="preserve">
-    <value>JPG-Grafik (.jpg)</value>
+    <value>График JPG (.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
     <value>Portable Network Graphics (.png)</value>
@@ -235,101 +235,101 @@
     <value>Rich Text (.rtf)</value>
   </data>
   <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
-    <value>TIFF-Grafik (.tiff)</value>
+    <value>График TIFF (.tiff)</value>
   </data>
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
-    <value>Textdatei (.txt)</value>
+    <value>Текстовый файл (.txt)</value>
   </data>
   <data name="More_File_Exit.Text" xml:space="preserve">
-    <value>APP BEENDEN</value>
+    <value>ЗАКРЫТЬ ПРИЛОЖЕНИЕ</value>
   </data>
   <data name="More_About_Langs.Text" xml:space="preserve">
-    <value>Übersetzungen</value>
+    <value>Переводы</value>
   </data>
   <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
-    <value>MENÜ BEIM START ÖFFNEN</value>
+    <value>ОТКРЫТЬ МЕНЮ ПРИ ВВОДЕ В ЭКСПЛУАТАЦИЮ</value>
   </data>
   <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
-    <value>Notiz eingeben...</value>
+    <value>Введите записку...</value>
   </data>
   <data name="More_Settings_FontSizeHeader.Text" xml:space="preserve">
-    <value>SCHIRFTGRÖSSE</value>
+    <value>РАЗМЕР ШРИФТА</value>
   </data>
   <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>Zahl eingeben...</value>
+    <value>Введите номер....</value>
   </data>
   <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
-    <value>SCHRIFTART</value>
+    <value>КУПЕЛЬ</value>
   </data>
   <data name="More_About_NoLicense.Text" xml:space="preserve">
-    <value>Lizenzfrei</value>
+    <value>Роялти Бесплатно</value>
   </data>
   <data name="More_About_MIT.Header" xml:space="preserve">
-    <value>Die MIT-Lizenz</value>
+    <value>Лицензия MIT</value>
   </data>
   <data name="More_About_PP.Header" xml:space="preserve">
-    <value>Datenschutzerklärung</value>
+    <value>Положение о конфиденциальности</value>
   </data>
   <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
-    <value>© 2018 by brullsker. Alle Rechte vorbehalten.</value>
+    <value>© 2019 by brullsker. Все права защищены.</value>
   </data>
   <data name="Store_Description" xml:space="preserve">
-    <value>Du suchst eine Notizen-App, die sich deine Änderungen merkt, ohne dass du extra speichern musst? Dann bist du hier genau an der richtigen Stelle. FastNote hat viele tolle Features, wie z.B:
+    <value>Вы ищете приложение для заметок, которое запоминает ваши изменения без необходимости их сохранения? Тогда вы пришли в нужное место. FastNote имеет множество замечательных функций, таких как 
 
-- Exportieren in verschiedene Dateiformate
-- Teilen von Text oder Datei
-- Rechtschreibprüfung
+- Экспорт в различные форматы файлов 
+- Общий доступ к тексту или файлу 
+- проверка орфографии 
 
-... und vieles mehr! Lass dich noch heute überraschen.</value>
+... и многое другое! Позвольте мне удивить вас сегодня.</value>
   </data>
   <data name="Store_Feature1" xml:space="preserve">
-    <value>Notizen</value>
+    <value>Нотизен</value>
   </data>
   <data name="Store_Feature2" xml:space="preserve">
-    <value>Automatisches Speichern</value>
+    <value>Автоматическое сохранение</value>
   </data>
   <data name="Store_Feature3" xml:space="preserve">
-    <value>Exportieren (z.B. rtf, txt, verschiedene Bildformate)</value>
+    <value>Экспорт (например, rtf, txt, различные форматы изображений)</value>
   </data>
   <data name="Store_Feature4" xml:space="preserve">
-    <value>Teilen (Datei oder Text)</value>
+    <value>Поделиться (файлом или текстом)</value>
   </data>
   <data name="Store_Feature5" xml:space="preserve">
-    <value>Notizen formatieren</value>
+    <value>Примечания формата</value>
   </data>
   <data name="Store_Feature6" xml:space="preserve">
     <value>Fluent Design</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>Wir feiern 1000 FastNote-Downloads! Außerdem lieben wir gut gepflegte Apps. Aus diesen Gründen lassen wir die Update-Bombe platzen: Hier ist FastNote 2.0.0.0! Freut euch auf folgende Neuerungen und Änderungen:
+    <value>Мы празднуем 1000 загрузок FastNote! Мы также любим хорошо поддерживаемые приложения. По этим причинам мы позволили бомбе взорваться: Это FastNote 2.0.0.0.0! Мы с нетерпением ждем следующих нововведений и изменений:
 
-⦁ PDF-Tools: Erstelle PDFs aus deinen Notizen, exportiere, teile und drucke sie. Hinweis: Möglicherweise sind hierfür weitere Schritte seitens des Benutzers nötig. Mehr dazu in der App.
-⦁ Import-Feature: Ihr habt gefragt, hier kommt die Antwort! Importiere ein Dokument und füge es vor oder nach dem bereits existierenden Text ein oder ersetze ihn!
-⦁ Wähle deine Lieblings-HTML-Kodierung. Neben der Auswahl werden außerdem Anzeigefehler bei einigen Sprachen behoben. Bitteschön!
-⦁ Für ein konsistenteres Design wird die Haupteingabebox nicht mehr weiß, wenn sie fokussiert ist und ihr das dunkle Design verwendet.
-⦁ Es gibt endlich mehr Dateiformate fürs Exportieren und Teilen! Word-Dokumente (.doc / .docx) sowie das eBook-Format EPUB (.epub).
-⦁ Spenden: Damit ihr endlich eure Freude finanziell ausdrücken könnt und die Entwicklung tatkräftig direkt voranbringen könnt, ist euch nun die Möglichkeit gegeben, per In-App-Kauf oder per PayPal zu spenden. Dieses Feature ist das Ausprobieren wert!
-⦁ Eine unglaubliche Menge an Bugfixes, Verbesserungen und Anpassungen unter der Haube.
+⦁ PDF Tools: Создавайте PDF-файлы из заметок, экспортируйте, публикуйте и распечатывайте их. Примечание: Для этого могут потребоваться дополнительные шаги со стороны пользователя. Подробнее об этом можно прочитать в приложении.
+⦁ Особенность импорта: Вы спросили, вот и ответ! Импортируйте документ и вставьте или замените его до или после существующего текста!
+⦁ Выберите любимую HTML-кодировку. В дополнение к выбору исправлены ошибки отображения для некоторых языков. Держите!
+⦁ Для более согласованного дизайна основная область ввода данных больше не является белой, когда она сфокусирована и используется темный дизайн.
+⦁ Наконец-то появилось больше форматов файлов для экспорта и обмена! Документы Word (.doc / .docx) и формат электронной книги EPUB (.epub).
+⦁ Пожертвовать: Чтобы вы могли выразить свою радость финансово и активно продвигать разработку напрямую, теперь у вас есть возможность сделать пожертвование через покупку In-App или PayPal. Эту функцию стоит попробовать!
+⦁ Невероятное количество исправлений ошибок, улучшений и корректировок под капотом.
 
-Naja, der Changelog sieht kürzer aus, als es die harte Arbeit, die dahinter steckt, rechtfertigen würde. Egal, frohe Weihnachten euch allen! Natürlich freuen wir uns über jedes Feedback, ob positiv oder negativ. Viel Spaß!</value>
+Ну, журнал изменений выглядит короче, чем это оправдывает тяжелую работу, которая за ним стоит. В любом случае, с Рождеством всех вас! Конечно, мы будем рады любым отзывам, положительным или отрицательным. Повеселитесь!</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
-    <value>Auch im hellen Design wunderschön dank Fluent Design</value>
+    <value>Красивый также в ярком дизайне благодаря FastNote</value>
   </data>
   <data name="Store_Sc_Mobile4" xml:space="preserve">
-    <value>Auch im hellen Design wunderschön dank dem UWP Design System</value>
+    <value>Красивый также в ярком дизайне благодаря системе дизайна UWP</value>
   </data>
   <data name="Store_Sc_MR1" xml:space="preserve">
-    <value>Sei auch in der Mixed Reality produktiv!</value>
+    <value>Будьте продуктивны и в Mixed Reality!</value>
   </data>
   <data name="Store_Sc_Universal1" xml:space="preserve">
-    <value>Mach dir Notizen und formatiere sie</value>
+    <value>Делайте заметки и форматируйте их</value>
   </data>
   <data name="Store_Sc_Universal2" xml:space="preserve">
-    <value>Exportiere und Teile deine Arbeit mithilfe umfangreicher Tools</value>
+    <value>Экспортируйте и делитесь результатами своей работы с помощью обширных инструментов</value>
   </data>
   <data name="Store_Sc_Universal3" xml:space="preserve">
-    <value>Passe Optionen wie Schriftgröße oder -art an</value>
+    <value>Настройка параметров, таких как размер шрифта или тип шрифта</value>
   </data>
   <data name="Store_SearchTerm1" xml:space="preserve">
     <value>FastNote</value>
@@ -341,79 +341,79 @@ Naja, der Changelog sieht kürzer aus, als es die harte Arbeit, die dahinter ste
     <value>Note</value>
   </data>
   <data name="Store_SearchTerm4" xml:space="preserve">
-    <value>Notizen</value>
+    <value>Нотизен</value>
   </data>
   <data name="Store_SearchTerm5" xml:space="preserve">
-    <value>Textverarbeitung</value>
+    <value>Обработка текста</value>
   </data>
   <data name="Store_SearchTerm6" xml:space="preserve">
-    <value>Notepad</value>
+    <value>Блокнот</value>
   </data>
   <data name="Store_SearchTerm7" xml:space="preserve">
-    <value>Autosave</value>
+    <value>Автосохранение</value>
   </data>
   <data name="Store_ShortDescription" xml:space="preserve">
-    <value>Mach dir Notizen! Speichert Änderungen automatisch.</value>
+    <value>Запишите! Автоматическое сохранение изменений.</value>
   </data>
   <data name="ShareUI_FileDesc" xml:space="preserve">
-    <value>Datei teilen</value>
+    <value>Общий доступ к файлу</value>
   </data>
   <data name="ShareUI_SelectedTextDesc" xml:space="preserve">
-    <value>Auswahl teilen</value>
+    <value>Выбор ресурса</value>
   </data>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
-    <value>Alles teilen</value>
+    <value>Поделиться всем</value>
   </data>
   <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
-    <value>POSITION DER FORMATIERUNGSLEISTE</value>
+    <value>ПОЛОЖЕНИЕ ПАНЕЛИ ИНСТРУМЕНТОВ ТЕКСТА</value>
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
-    <value>Oben</value>
+    <value>Лучший</value>
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
-    <value>Unten</value>
+    <value>Ниже</value>
   </data>
   <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>Die Werbung kann kostenlos in den Optionen ausgeschaltet werden</value>
+    <value>Рекламу можно бесплатно отключить в опциях</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
-    <value>ENTWICKLUNG UNTERSTÜTZEN UND WERBUNG ANZEIGEN</value>
+    <value>ПОКАЗАТЬ РЕКЛАМУ В ПОДДЕРЖКУ РАЗВИТИЯ</value>
   </data>
   <data name="DefaultString" xml:space="preserve">
-    <value>Standard</value>
+    <value>Стандарт</value>
   </data>
   <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
-    <value>HTML-CODIERUNG</value>
+    <value>HTML-КОДИРОВКА</value>
   </data>
   <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
-    <value>Word-Dokument (veraltet) (.doc)</value>
+    <value>Документ Word (устаревший) (.doc)</value>
   </data>
   <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
-    <value>Word-Dokument (.docx)</value>
+    <value>Документ Word (.docx)</value>
   </data>
   <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
-    <value>eBook-Datei (.epub)</value>
+    <value>Файл электронной книги (.epub)</value>
   </data>
   <data name="FileBMP" xml:space="preserve">
-    <value>Bitmap</value>
+    <value>Битмап</value>
   </data>
   <data name="FileDoc" xml:space="preserve">
-    <value>Word-Dokument (veraltet)</value>
+    <value>Документ Word (устаревший)</value>
   </data>
   <data name="FileDocx" xml:space="preserve">
-    <value>Word-Dokument</value>
+    <value>Документ Word</value>
   </data>
   <data name="FileEpub" xml:space="preserve">
-    <value>eBook-Datei</value>
+    <value>Файл электронной книги</value>
   </data>
   <data name="FileGIF" xml:space="preserve">
-    <value>GIF-Grafik</value>
+    <value>Графика GIF</value>
   </data>
   <data name="FileHTML" xml:space="preserve">
-    <value>HTML-Seite</value>
+    <value>HTML-страница</value>
   </data>
   <data name="FileJPG" xml:space="preserve">
-    <value>JPG-Grafik</value>
+    <value>График JPG</value>
   </data>
   <data name="FilePNG" xml:space="preserve">
     <value>Portable Network Graphics</value>
@@ -422,85 +422,85 @@ Naja, der Changelog sieht kürzer aus, als es die harte Arbeit, die dahinter ste
     <value>Rich Text</value>
   </data>
   <data name="FileTIFF" xml:space="preserve">
-    <value>TIFF-Grafik</value>
+    <value>График TIFF</value>
   </data>
   <data name="FileTXT" xml:space="preserve">
-    <value>Textdatei</value>
+    <value>Текстовый файл</value>
   </data>
   <data name="DonateText.Content" xml:space="preserve">
-    <value> Spenden!</value>
+    <value> Пожертвования!</value>
   </data>
   <data name="ProprietaryText.Text" xml:space="preserve">
-    <value>Proprietär</value>
+    <value>Собственный</value>
   </data>
   <data name="WebsiteText.Content" xml:space="preserve">
-    <value>Website</value>
+    <value>Интернет-сайт</value>
   </data>
   <data name="ImportAfterText.Text" xml:space="preserve">
-    <value>Nach vorhandenem Inhalt einfügen</value>
+    <value>Вставить в соответствии с существующим содержанием</value>
   </data>
   <data name="ImportBeforeText.Text" xml:space="preserve">
-    <value>Vor vorhandenem Inhalt einfügen</value>
+    <value>Вставить перед существующим контентом</value>
   </data>
   <data name="ImportReplaceText.Text" xml:space="preserve">
-    <value>Vorhandenen Inhalt ersetzen</value>
+    <value>Замена существующего контента</value>
   </data>
   <data name="More_File_ImportText.Text" xml:space="preserve">
-    <value>IMPORTIEREN</value>
+    <value>ИМПОРТ</value>
   </data>
   <data name="DialogCancelled" xml:space="preserve">
-    <value>Keine Datei ausgewählt oder Auswahl abgebrochen.</value>
+    <value>Выбранный или отмененный файл отсутствует.</value>
   </data>
   <data name="CommitExportText" xml:space="preserve">
-    <value>Exportieren</value>
+    <value>Экспорт</value>
   </data>
   <data name="CommitImportText" xml:space="preserve">
-    <value>Importieren</value>
+    <value>Импорт</value>
   </data>
   <data name="DialogClose" xml:space="preserve">
-    <value>Schließen</value>
+    <value>Близко</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>PDF-Datei</value>
+    <value>PDF-файл</value>
   </data>
   <data name="HowPDFWorkContent" xml:space="preserve">
-    <value>Für die PDF-Generierung nehmen wir die Dienste von HTML2PDFROCKET in Anspruch. Mit diesem Online-Service werden PDFs aus HTML erstellt. Folge folgenden Schritten, damit es funktioniert:
-1. Gehe zu {0} und registriere einen neuen Account. Im Feld "Language" sollte "C#" stehen.
-2. In deinem Mail-Postfach sollte eine Aktivierungs-E-Mail liegen. Nutze den enthaltenen Aktivierungslink.
-3. Mit einer weiteren E-Mail erhältst du deine API-Schlüssel. Dieser dient auch als Passwort zum Login bei html2pdfrocket.com.
-4. Kopiere den API-Schlüssel in die Zwischenablage.
-5. Füge den API-Schlüssel in das Eingabefeld links neben dem HIlfe-Button ein.
-6. Mit diesem kostenlosen Account kannst du 200 PDFs pro Monat generieren. Um die verbleibende Anzahl zu sehen, schau auf die {1}-Seite.</value>
+    <value>Для генерации PDF файлов мы используем услуги HTML2PDFROCKET. Этот онлайн-сервис используется для создания PDF-файлов из HTML. Чтобы это сработало, выполните следующие действия:
+1. зайдите в раздел {0} и зарегистрируйте новую учетную запись. Поле "Язык" должно содержать "C#".
+2. в вашем почтовом ящике должен быть адрес электронной почты для активации. Используйте входящую в комплект активационную ссылку.
+3. другим электронным письмом вы получите ключи API. Это также служит паролем для входа на html2pdfrocket.com.
+Скопируйте ключ API в буфер обмена.
+5. вставьте ключ API в поле ввода слева от кнопки HIlfe.
+6 С помощью этого бесплатного аккаунта вы можете создавать 200 PDF файлов в месяц. Чтобы увидеть оставшийся номер, посмотрите на страницу {1}.</value>
   </data>
   <data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>Wie funktioniert es?</value>
+    <value>Как это работает?</value>
   </data>
   <data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>PDF-TOOLS</value>
+    <value>ИНСТРУМЕНТЫ PDF</value>
   </data>
   <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>API-Schlüssel</value>
+    <value>Ключ API</value>
   </data>
   <data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>PDF generieren</value>
+    <value>Создать PDF-файл</value>
   </data>
   <data name="PDF_Export.Content" xml:space="preserve">
-    <value>Exportieren</value>
+    <value>Экспорт</value>
   </data>
   <data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Öffnen mit...</value>
+    <value>Открой с...</value>
   </data>
   <data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>Zuletzt generierte PDF - Vorschau</value>
+    <value>Последний сгенерированный PDF - Предварительный просмотр</value>
   </data>
   <data name="PDF_Print.Content" xml:space="preserve">
-    <value>Drucken</value>
+    <value>Печатный</value>
   </data>
   <data name="PDF_Share.Content" xml:space="preserve">
-    <value>Teilen</value>
+    <value>Совместное использование</value>
   </data>
   <data name="PDFError.Text" xml:space="preserve">
-    <value>Noch keine generiert oder ein Fehler ist aufgetreten</value>
+    <value>Пока ничего не сгенерировано или возникла ошибка</value>
   </data>
 
 </root>
