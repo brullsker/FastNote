@@ -20,7 +20,7 @@
 - Export your text in 8 file formats (including RTF, HTML, TXT and several image formats)
 - Share selected text or the whole file
 - Set up a different font size and font family
-- Supports English and German (contact me to translate into your language)
+- Supports 10 languages (contact me to translate into your language; for translation issues please open a new issue)
 
 ## Screenshots
 See [here](https://github.com/brullsker/FastNote/tree/master/GHAssets/Screenshots)
