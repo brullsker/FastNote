@@ -1,4 +1,5 @@
-﻿using Syncfusion.Pdf.Parsing;
+﻿using Microsoft.Advertising.WinRT.UI;
+using Syncfusion.Pdf.Parsing;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -21,12 +22,21 @@ namespace FastNote
         string val;
         ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView();
 
+        public string intappid = new Constants().intappid;
+        public string intadid = new Constants().intadid;
+        InterstitialAd myInterstitialAd = null;
+
         public PDFControl(string value)
         {
             InitializeComponent();
+            if (Settings.Default.ShowAd == true)
+            {
+                myInterstitialAd = new InterstitialAd();
+            }
             ExportPDFBtn.IsEnabled = false; PrintBtn.IsEnabled = false; ShareBtn.IsEnabled = false; OpenInBtn.IsEnabled = false;
             val = value;
             DisplayPDF();
+            if (Settings.Default.ShowAd == true && myInterstitialAd != null) myInterstitialAd.RequestAd(AdType.Display, intappid, intadid);
         }
 
         public void RefreshVal(string value) { val = value; }
@@ -124,6 +134,7 @@ namespace FastNote
 
         private async void ExportPDFBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (Settings.Default.ShowAd == true && InterstitialAdState.Ready == myInterstitialAd.State) myInterstitialAd.Show();
             Windows.Storage.Pickers.FileSavePicker savepicker = new Windows.Storage.Pickers.FileSavePicker();
             savepicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
             savepicker.SuggestedFileName = Settings.Default.DefaultExportName + ".pdf";
@@ -140,6 +151,7 @@ namespace FastNote
                 MessageDialog md = new MessageDialog(resourceLoader.GetString("Dialog_FileNotSaved"), resourceLoader.GetString("Dialog_OperationCancelled"));
                 await md.ShowAsync();
             }
+            if (Settings.Default.ShowAd == true && InterstitialAdState.Showing == myInterstitialAd.State) myInterstitialAd.Close();
         }
 
         private async void HyperlinkButton_Click(object sender, RoutedEventArgs e)
@@ -188,6 +200,12 @@ namespace FastNote
             args.Request.Data.SetStorageItems(storageItems);
             args.Request.Data.Properties.Title = "FastNote";
             args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_FileDesc");
+        }
+
+        private void UserControl_Unloaded(object sender, RoutedEventArgs e)
+        {
+            if (myInterstitialAd.State == InterstitialAdState.Ready || myInterstitialAd.State == InterstitialAdState.Showing) myInterstitialAd.Close();
+            myInterstitialAd = null;
         }
     }
 }

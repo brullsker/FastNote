@@ -374,7 +374,7 @@ Ainsi, ce journal des changements semble plus court que ce que mérite l'effort 
     <value>Sur le fond</value>
   </data>
   <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>Vous pouvez désactiver gratuitement les publicités dans les paramètres suivants</value>
+    <value>Vous pouvez désactiver les publicités dans les paramètres</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>MONTRER LA PUBLICITÉ POUR SOUTENIR LE DÉVELOPPEMENT</value>
@@ -501,6 +501,12 @@ Ainsi, ce journal des changements semble plus court que ce que mérite l'effort 
   </data>
   <data name="PDFError.Text" xml:space="preserve">
     <value>Aucun n'a encore été créé ou une erreur s'est produite</value>
+  </data>
+  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
+    <value>SUPPRIMER LES ANNONCES - $1,49</value>
+  </data>
+  <data name="DonateDescText.Text" xml:space="preserve">
+    <value>Faire un don (et réduire l'annonce dans le menu)</value>
   </data>
 
 </root>

@@ -374,7 +374,7 @@ Nou, de changelog ziet er korter uit dan dat hij het harde werk erachter rechtva
     <value>Hieronder</value>
   </data>
   <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>U kunt advertenties gratis uitschakelen in de instellingen</value>
+    <value>Reclame kan worden uitgeschakeld in de opties</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>TOON ADVERTENTIE TER ONDERSTEUNING VAN DE ONTWIKKELING</value>
@@ -501,6 +501,12 @@ Nou, de changelog ziet er korter uit dan dat hij het harde werk erachter rechtva
   </data>
   <data name="PDFError.Text" xml:space="preserve">
     <value>Er is nog geen enkele keer gegenereerd of er is een fout opgetreden</value>
+  </data>
+  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
+    <value>RECLAME VERWIJDEREN - $1.49</value>
+  </data>
+  <data name="DonateDescText.Text" xml:space="preserve">
+    <value>Doneer (en verminder de reclame in het menu)</value>
   </data>
 
 </root>

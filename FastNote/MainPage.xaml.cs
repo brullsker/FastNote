@@ -27,6 +27,7 @@ using Color = Windows.UI.Color;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Controls.Primitives;
+using Microsoft.Advertising.WinRT.UI;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -39,6 +40,8 @@ namespace FastNote
     {
         public string appid = new Constants().appid;
         public string adid = new Constants().adid;
+        public string intappid = new Constants().intappid;
+        public string intadid = new Constants().intadid;
 
         string cversion = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
 
@@ -58,6 +61,7 @@ namespace FastNote
         List<string> EncodingList = new List<string>();
 
         CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+        InterstitialAd myInterstitialAd = null;
 
         public MainPage()
         {
@@ -98,7 +102,13 @@ namespace FastNote
             if (Settings.Default.ThemeDark == true) RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) RequestedTheme = ElementTheme.Light;
             if (Settings.Default.ShowAd == false) MenuAd.Visibility = Visibility.Collapsed;
+
+            if (Settings.Default.ShowAd == true)
+            {
+                myInterstitialAd = new InterstitialAd();
+            }
             LoadDocument();
+            Debug.WriteLine("AdFree: " + Settings.Default.AdFree.ToString());
         }
 
         private void FontStuff()
@@ -170,6 +180,7 @@ namespace FastNote
             if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
             MainView.IsPaneOpen = true;
             MainView_PaneOpening(sender, e);
+            if (Settings.Default.ShowAd == true && myInterstitialAd != null) myInterstitialAd.RequestAd(AdType.Display, intappid, intadid);
         }
 
         bool updatetheme = false;
@@ -212,6 +223,7 @@ namespace FastNote
         {
             if (MoreOptionsList.SelectedIndex == 0)
             {
+                if (Settings.Default.ShowAd == true && InterstitialAdState.Ready == myInterstitialAd.State) myInterstitialAd.Show();
                 LoadingControl.IsLoading = true;
                 Windows.Storage.Pickers.FileSavePicker picker = new Windows.Storage.Pickers.FileSavePicker();
                 picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
@@ -350,6 +362,7 @@ namespace FastNote
                     await md.ShowAsync();
                 }
                 LoadingControl.IsLoading = false;
+                if (Settings.Default.ShowAd == true && InterstitialAdState.Showing == myInterstitialAd.State) myInterstitialAd.Close();
             }
             if (MoreOptionsList.SelectedIndex == 1)
             {
@@ -931,8 +944,8 @@ namespace FastNote
 
         private void ToggleAd_Toggled(object sender, RoutedEventArgs e)
         {
-            if (ToggleAd.IsOn == true) MenuAd.Visibility = Visibility.Visible;
-            else if (ToggleAd.IsOn == false) MenuAd.Visibility = Visibility.Collapsed;
+            //if (ToggleAd.IsOn == true) MenuAd.Suspend();
+            //else if (ToggleAd.IsOn == false) { MenuAd.Resume(); if (MenuAd.HasAd == false) MenuAd.Refresh(); }
         }
 
         private void DonateLink_Click(object sender, RoutedEventArgs e)
@@ -946,13 +959,7 @@ namespace FastNote
 
         private void DonateTest_Click(object sender, RoutedEventArgs e)
         {
-            purch.PurchaseAddOn("9MW7825XP327");
-        }
-
-        private async void DonatePayPal_Click(object sender, RoutedEventArgs e)
-        {
-            Uri uri = new Uri("https://paypal.me/brullskerservices");
-            await Launcher.LaunchUriAsync(uri);
+            purch.PurchaseAddOn(0);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -1033,32 +1040,32 @@ namespace FastNote
 
         private void Donate0099_Click(object sender, RoutedEventArgs e)
         {
-            purch.PurchaseAddOn("9PGVLJHM39HK");
+            purch.PurchaseAddOn(1);
         }
 
         private void Donate0249_Click(object sender, RoutedEventArgs e)
         {
-            purch.PurchaseAddOn("9PFTZQ520ZLH");
+            purch.PurchaseAddOn(2);
         }
 
         private void Donate0999_Click(object sender, RoutedEventArgs e)
         {
-            purch.PurchaseAddOn("9PHKXXG943N2");
+            purch.PurchaseAddOn(3);
         }
 
         private void Donate2499_Click(object sender, RoutedEventArgs e)
         {
-            purch.PurchaseAddOn("9N7214FXLS49");
+            purch.PurchaseAddOn(4);
         }
 
         private void Donate4999_Click(object sender, RoutedEventArgs e)
         {
-            purch.PurchaseAddOn("9PNNTW5G9ZK7");
+            purch.PurchaseAddOn(5);
         }
 
         private void Donate9999_Click(object sender, RoutedEventArgs e)
         {
-            purch.PurchaseAddOn("9P0K74P8PWGR");
+            purch.PurchaseAddOn(6);
         }
 
         PDFControl control;
@@ -1068,12 +1075,15 @@ namespace FastNote
             string value = ConvertToHtml(MainEdit, EncodingList); //Converts the content of a RichEditBox (Rich text editor contol in UWP) to a HTML string
             control = new PDFControl(value);
             if (pdfo == false)
-           {
+            {
+                if (Settings.Default.ShowAd == true && myInterstitialAd.State == InterstitialAdState.Ready) { myInterstitialAd.Close(); myInterstitialAd = null; }
                 MoreStack.Children.Add(control);
                 pdfo = true;
             }
             else
             {
+                if (Settings.Default.ShowAd == true) myInterstitialAd = new InterstitialAd();
+                if (myInterstitialAd != null) myInterstitialAd.RequestAd(AdType.Display, intappid, intadid);
                 int c = MoreStack.Children.Count - 1;
                 MoreStack.Children.RemoveAt(c);
                 pdfo = false;
@@ -1106,6 +1116,7 @@ namespace FastNote
 
         public async void Import(int i)
         {
+            if (Settings.Default.ShowAd == true && InterstitialAdState.Ready == myInterstitialAd.State) myInterstitialAd.Show();
             LoadingControl.IsLoading = true;
             Windows.Storage.Pickers.FileOpenPicker openpicker = new Windows.Storage.Pickers.FileOpenPicker();
             openpicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
@@ -1173,33 +1184,17 @@ namespace FastNote
                 MessageDialog md = new MessageDialog(resourceLoader.GetString("DialogCancelled"), resourceLoader.GetString("Dialog_OperationCancelled"));
                 await md.ShowAsync();
             }
+            if (Settings.Default.ShowAd == true && InterstitialAdState.Showing == myInterstitialAd.State) myInterstitialAd.Close();
             LoadingControl.IsLoading = false;
-        }
-
-        private Point initialpoint;
-        private void Grid_ManipulationStarted(object sender, Windows.UI.Xaml.Input.ManipulationStartedRoutedEventArgs e)
-        {
-            initialpoint = e.Position;
-        }
-
-        private void Grid_ManipulationDelta(object sender, Windows.UI.Xaml.Input.ManipulationDeltaRoutedEventArgs e)
-        {
-            if (e.IsInertial)
-            {
-                Point currentpoint = e.Position;
-                if (currentpoint.X - initialpoint.X >= 500 && MainView.IsPaneOpen != true)
-                {
-                    MainView_PaneOpening(sender, e);
-                }
-                else if (initialpoint.X - currentpoint.X >= 500 && MainView.IsPaneOpen == true)
-                {
-                    SettingsButton_Close_Click(sender, e);
-                }
-            }
         }
 
         void ChangelogPopUp()
         {
+        }
+
+        private void BuyAdFree_Click(object sender, RoutedEventArgs e)
+        {
+            purch.PurchaseAddOn2();
         }
     }
 }

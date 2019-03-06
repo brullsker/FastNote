@@ -148,5 +148,19 @@ namespace FastNote
             get { return Get<string>(); }
             set { Set(value); }
         }
+
+        [DefaultSettingValue(Value = false)]
+        public bool AdFree
+        {
+            get { return Get<bool>(); }
+            set { Set(value); }
+        }
+
+        [DefaultSettingValue(Value = (double)250)]
+        public double AdHeight
+        {
+            get { return Get<double>(); }
+            set { Set(value); }
+        }
     }
 }

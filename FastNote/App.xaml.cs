@@ -35,6 +35,8 @@ namespace FastNote
             langlist.Add("pl");
             langlist.Add("hy");
             langlist.Add("ru");
+            if (Settings.Default.AdFree == true) Settings.Default.AdHeight = (double)50;
+            System.Diagnostics.Debug.WriteLine("Ad height: " + Settings.Default.AdHeight.ToString());
             ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];
         }
 

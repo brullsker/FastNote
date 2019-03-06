@@ -11,9 +11,18 @@ namespace FastNote.Misc
     public class Purchases
     {
         private StoreContext context = null;
+        List<string> purch = new List<string>();
 
-        public async void PurchaseAddOn(string storeId)
+        public async void PurchaseAddOn(int storeId)
         {
+            purch.Add(new Constants().storeid01);
+            purch.Add(new Constants().storeid02);
+            purch.Add(new Constants().storeid03);
+            purch.Add(new Constants().storeid04);
+            purch.Add(new Constants().storeid05);
+            purch.Add(new Constants().storeid06);
+            purch.Add(new Constants().storeid07);
+            purch.Add(new Constants().storeid08);
             if (context == null)
             {
                 context = StoreContext.GetDefault();
@@ -21,7 +30,7 @@ namespace FastNote.Misc
                 // may need additional code to configure the StoreContext object.
                 // For more info, see https://aka.ms/storecontext-for-desktop.
             }
-            StorePurchaseResult result = await context.RequestPurchaseAsync(storeId);
+            StorePurchaseResult result = await context.RequestPurchaseAsync(purch[storeId]);
 
             // Capture the error message for the operation, if any.
             string extendedError = string.Empty;
@@ -33,13 +42,11 @@ namespace FastNote.Misc
             switch (result.Status)
             {
                 case StorePurchaseStatus.AlreadyPurchased:
-                    Debug.WriteLine("The user has already purchased the product. Try again later.");
-                    ConsumeAddOn(storeId);
+                    Debug.WriteLine("The user has already purchased the product. Try again later."); Settings.Default.AdHeight = (double)50;
                     break;
 
                 case StorePurchaseStatus.Succeeded:
-                    Debug.WriteLine("The purchase was successful.");
-                    ConsumeAddOn(storeId);
+                    Debug.WriteLine("The purchase was successful."); Settings.Default.AdHeight = (double)50;
                     break;
 
                 case StorePurchaseStatus.NotPurchased:
@@ -95,7 +102,7 @@ namespace FastNote.Misc
             {
                 case StoreConsumableStatus.Succeeded:
                     Debug.WriteLine("The fulfillment was successful. " +
-                        $"Remaining balance: {result.BalanceRemaining}");
+                        $"Remaining balance: {result.BalanceRemaining}"); Settings.Default.AdHeight = (double)50;
                     break;
 
                 case StoreConsumableStatus.InsufficentQuantity:
@@ -118,6 +125,59 @@ namespace FastNote.Misc
                         "ExtendedError: " + extendedError);
                     break;
             }
+        }
+        public async void PurchaseAddOn2()
+        {
+            if (context == null)
+            {
+                context = StoreContext.GetDefault();
+                // If your app is a desktop app that uses the Desktop Bridge, you
+                // may need additional code to configure the StoreContext object.
+                // For more info, see https://aka.ms/storecontext-for-desktop.
+            }
+            
+            StorePurchaseResult result = await context.RequestPurchaseAsync(new Constants().storeid08);
+
+            // Capture the error message for the operation, if any.
+            string extendedError = string.Empty;
+            if (result.ExtendedError != null)
+            {
+                extendedError = result.ExtendedError.Message;
+            }
+
+            switch (result.Status)
+            {
+                case StorePurchaseStatus.AlreadyPurchased:
+                    Debug.WriteLine("The user has already purchased the product."); Settings.Default.AdHeight = (double)50;
+                    Settings.Default.AdFree = true;
+                    break;
+
+                case StorePurchaseStatus.Succeeded:
+                    Debug.WriteLine("The purchase was successful."); Settings.Default.AdHeight = (double)50;
+                    Settings.Default.AdFree = true;
+                    break;
+
+                case StorePurchaseStatus.NotPurchased:
+                    Debug.WriteLine("The purchase did not complete. " +
+                        "The user may have cancelled the purchase. ExtendedError: " + extendedError);
+                    break;
+
+                case StorePurchaseStatus.NetworkError:
+                    Debug.WriteLine("The purchase was unsuccessful due to a network error. " +
+                        "ExtendedError: " + extendedError);
+                    break;
+
+                case StorePurchaseStatus.ServerError:
+                    Debug.WriteLine("The purchase was unsuccessful due to a server error. " +
+                        "ExtendedError: " + extendedError);
+                    break;
+
+                default:
+                    Debug.WriteLine("The purchase was unsuccessful due to an unknown error. " +
+                        "ExtendedError: " + extendedError);
+                    break;
+            }
+            Debug.WriteLine("AdFree: " + Settings.Default.AdFree.ToString());
         }
     }
 }

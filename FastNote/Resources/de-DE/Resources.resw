@@ -374,7 +374,7 @@ Naja, der Changelog sieht kürzer aus, als es die harte Arbeit, die dahinter ste
     <value>Unten</value>
   </data>
   <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>Die Werbung kann kostenlos in den Optionen ausgeschaltet werden</value>
+    <value>Die Werbung kann in den Optionen ausgeschaltet werden</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>ENTWICKLUNG UNTERSTÜTZEN UND WERBUNG ANZEIGEN</value>
@@ -501,6 +501,12 @@ Naja, der Changelog sieht kürzer aus, als es die harte Arbeit, die dahinter ste
   </data>
   <data name="PDFError.Text" xml:space="preserve">
     <value>Noch keine generiert oder ein Fehler ist aufgetreten</value>
+  </data>
+  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
+    <value>WERBUNG ENTFERNEN - $1,49</value>
+  </data>
+  <data name="DonateDescText.Text" xml:space="preserve">
+    <value>Spenden (und Werbung im Menü verkleinern)</value>
   </data>
 
 </root>

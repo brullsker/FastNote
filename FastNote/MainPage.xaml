@@ -14,6 +14,24 @@
 
     <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}" x:Name="LRoot">
         <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowHeight">
+                <VisualState x:Name="low">
+                    <VisualState.Setters>
+                        <Setter Target="MenuAd.(Height)" Value="50"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="0"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="medium">
+                    <VisualState.Setters>
+                        <Setter Target="MenuAd.(Height)" Value="{Binding AdHeight, Mode=OneWay}"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="500"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
             <VisualStateGroup x:Name="WindowWidth">
                 <VisualState x:Name="small">
                     <VisualState.Setters>
@@ -422,7 +440,8 @@
                                     <TextBlock Text="TEXT TOOLBAR POSITION" x:Uid="More_Settings_ToolbarPositionHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ToggleSwitch x:Uid="More_Settings_ToolbarPosition_Switch" OffContent="Top" OnContent="Bottom" IsOn="{Binding ToolBarOnBottomDesktop, Mode=TwoWay}" x:Name="ToggleToolBar" Toggled="ToggleToolBar_Toggled"/>
                                     <TextBlock Text="SHOW AD TO SUPPORT DEVELOPMENT" x:Uid="More_Settings_ShowAdHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disable" OnContent="Enable" IsOn="{Binding ShowAd, Mode=TwoWay}" x:Name="ToggleAd" Toggled="ToggleAd_Toggled"/>
+                                    <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" IsEnabled="{Binding AdFree, Mode=OneWay}" OffContent="Disable" OnContent="Enable" IsOn="{Binding ShowAd, Mode=TwoWay}" x:Name="ToggleAd" Toggled="ToggleAd_Toggled"/>
+                                    <HyperlinkButton x:Uid="More_Settings_BuyAdFree" Visibility="{Binding AdFree, Converter={StaticResource NegBoolVis},Mode=OneWay}"  Content="BUY AD FREE - $0.00" x:Name="BuyAdFree" Click="BuyAdFree_Click"/>
                                     <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ComboBox x:Name="LangBox" IsEnabled="True" HorizontalAlignment="Stretch" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" BorderThickness="0,0,0,2">
                                         <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>
@@ -478,16 +497,19 @@
                                                 <Flyout x:Name="DonateFlyout">
                                                     <Flyout.FlyoutPresenterStyle>
                                                         <Style TargetType="FlyoutPresenter">
-                                                            <Setter Property="Background" Value="{ThemeResource SystemControlAcrylicElementMediumHighBrush}" />
+                                                            <Setter Property="Background" Value="Transparent" />
                                                             <Setter Property="Padding" Value="0" />
                                                         </Style>
                                                     </Flyout.FlyoutPresenterStyle>
-                                                    <Grid Margin="6">
+                                                    <Grid>
                                                         <Grid.RowDefinitions>
                                                             <RowDefinition Height="Auto"/>
-                                                            <RowDefinition/>
+                                                            <RowDefinition Height="Auto"/>
                                                         </Grid.RowDefinitions>
-                                                        <Grid>
+                                                        <Border Padding="6" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderThickness="0">
+                                                            <TextBlock TextAlignment="Center" Text="Donate to shrink the ad in the menu" HorizontalAlignment="Center" x:Uid="DonateDescText" Style="{StaticResource BaseTextBlockStyle}"/>
+                                                        </Border>
+                                                        <Grid Grid.Row="1" Padding="6" Background="{ThemeResource SystemControlAcrylicElementMediumHighBrush}">
                                                             <Grid.ColumnDefinitions>
                                                                 <ColumnDefinition/>
                                                                 <ColumnDefinition/>
@@ -502,9 +524,6 @@
                                                             <Button Grid.Column="3" x:Name="Donate2499" Content="$ 24.99" Click="Donate2499_Click" Margin="3,0,3,0"/>
                                                             <Button Grid.Column="4" x:Name="Donate4999" Content="$ 49.99" Click="Donate4999_Click" Margin="3,0,3,0"/>
                                                             <Button Grid.Column="5" x:Name="Donate9999" Content="$ 99.99" Click="Donate9999_Click" Margin="3,0,0,0"/>
-                                                        </Grid>
-                                                        <Grid Grid.Row="1" Margin="0,6,0,0">
-                                                            <Button Grid.Column="1" HorizontalAlignment="Stretch" x:Name="DonatePayPal" Content="PayPal" Click="DonatePayPal_Click"/>
                                                         </Grid>
                                                     </Grid>
                                                 </Flyout>
@@ -581,9 +600,9 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
                         </PivotItem>
                     </Pivot>
 
-                    <StackPanel Orientation="Vertical" x:Name="MenuAd" Grid.Row="1">
+                    <StackPanel Orientation="Vertical" Grid.Row="1" Visibility="{Binding ShowAd, Mode=OneWay, Converter={StaticResource BoolVis}}">
                         <TextBlock Text="You can disable ads for free in the settings" HorizontalAlignment="Center" TextAlignment="Center" Margin="12,0" x:Uid="DisableAdDisclaimer" Style="{StaticResource CaptionTextBlockStyle}"/>
-                        <Ads:AdControl Width="320" Height="50" AdUnitId="{x:Bind adid}" ApplicationId="{x:Bind appid}"/>
+                        <Ads:AdControl Width="300" Height="{Binding AdHeight, Mode=OneWay}" x:Name="MenuAd" AdUnitId="{x:Bind adid}" ApplicationId="{x:Bind appid}"/>
                     </StackPanel>
                 </Grid>
             </SplitView.Pane>

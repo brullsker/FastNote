@@ -374,7 +374,7 @@ So, this changelog looks shorter than the effort to make all the changes happen 
     <value>Bottom</value>
   </data>
   <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>You can disable ads for free in the settings</value>
+    <value>You can disable ads in the settings</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>SHOW AD TO SUPPORT DEVELOPMENT</value>
@@ -501,6 +501,12 @@ So, this changelog looks shorter than the effort to make all the changes happen 
   </data>
   <data name="PDFError.Text" xml:space="preserve">
     <value>None created yet or error occured</value>
+  </data>
+  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
+    <value>REMOVE ADS - $1.49</value>
+  </data>
+  <data name="DonateDescText.Text" xml:space="preserve">
+    <value>Donate (and shrink the ad in the menu)</value>
   </data>
 
 </root>

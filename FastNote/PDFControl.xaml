@@ -8,7 +8,7 @@
     d:DesignHeight="300"
     d:DesignWidth="400"
     xmlns:sf="using:Syncfusion.Windows.PdfViewer"
-    DataContext="{StaticResource settings}">
+    DataContext="{StaticResource settings}" Unloaded="UserControl_Unloaded">
 
     <Grid>
         <Grid.RowDefinitions>

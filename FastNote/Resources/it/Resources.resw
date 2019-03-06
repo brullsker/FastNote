@@ -374,7 +374,7 @@ Quindi, questo changelog sembra più breve dello sforzo che si merita per fare i
     <value>Sul fondo</value>
   </data>
   <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>È possibile disabilitare gli annunci gratuitamente nelle impostazioni</value>
+    <value>È possibile disattivare gli annunci nelle impostazioni</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>MOSTRA ANNUNCIO PER SOSTENERE LO SVILUPPO</value>
@@ -501,6 +501,12 @@ Quindi, questo changelog sembra più breve dello sforzo che si merita per fare i
   </data>
   <data name="PDFError.Text" xml:space="preserve">
     <value>Non è stato ancora creato o si è verificato un errore</value>
+  </data>
+  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
+    <value>RIMUOVI ANNUNCI - $1.49</value>
+  </data>
+  <data name="DonateDescText.Text" xml:space="preserve">
+    <value>Donare (e ridurre l'annuncio nel menu)</value>
   </data>
 
 </root>

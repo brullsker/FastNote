@@ -376,7 +376,7 @@ Por lo tanto, este registro de cambios parece más corto de lo que se merece el 
     <value>En la parte inferior</value>
   </data>
   <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>Puede desactivar los anuncios gratuitamente en la configuración</value>
+    <value>Puede desactivar los anuncios en la configuración</value>
   </data>
   <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
     <value>MOSTRAR ANUNCIO PARA APOYAR EL DESARROLLO</value>
@@ -503,6 +503,12 @@ Por lo tanto, este registro de cambios parece más corto de lo que se merece el 
   </data>
   <data name="PDFError.Text" xml:space="preserve">
     <value>Jeszcze nie utworzono lub wystąpił błąd</value>
+  </data>
+  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
+    <value>ELIMINAR ANUNCIOS - $1.49</value>
+  </data>
+  <data name="DonateDescText.Text" xml:space="preserve">
+    <value>Donar (y reducir el anuncio en el menú)</value>
   </data>
 
 </root>

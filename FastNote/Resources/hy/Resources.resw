@@ -496,5 +496,17 @@
   <data name="PDFError.Text" xml:space="preserve">
     <value>Չհաջողվեց ստեղծել, առաջացել է խնդիր</value>
   </data>
+  
+<!--
+<data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
+    <value>REMOVE ADS - $1.49</value>
+  </data>
+-->
+  
+<!--
+<data name="DonateDescText.Text" xml:space="preserve">
+    <value>Donate (and shrink the ad in the menu)</value>
+  </data>
+-->
 
 </root>

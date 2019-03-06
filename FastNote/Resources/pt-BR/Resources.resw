@@ -302,10 +302,17 @@ FastNote tem ótimos recursos, como:
     <value>Fluent Design</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>Português (Brasil) adicionado como linguagem de UI
-Política de privacidade e informação de licença adicionados
-Bugs resolvidos.
-</value>
+    <value>Para comemorar os 1000 downloads de FastNote e porque nós gostamos de desenvolver nossos aplicativos ainda mais, estamos soltando uma grande atualização hoje. Aqui está o changelog para FastNote 2.0.0.0: 
+
+⦁ Ferramentas de PDF: criar um PDF a partir de suas anotações e exportá-lo, compartilhá-lo e imprimi-lo. Talvez seja necessário ajustar alguns requisitos. Mais informações sobre isso que você encontra especificado no aplicativo. 
+⦁ Importar recurso: permite que você importe um documento, antes, depois ou substituindo o conteúdo existente. 
+⦁ Escolha a sua codificação HTML preferida. Isso corrigirá alguns idiomas que não estavam sendo exibidos corretamente. 
+⦁ Para adicionar um design mais claro, a caixa de edição principal não fica mais branca quando se concentra ao usar o aplicativo no modo escuro. Se você não gosta desta mudança, deixe-nos uma resenha. 
+⦁ Mais formatos de arquivo de exportação e compartilhamento: documento do Word (.doc/.docx) e formato eBook (.ePub). 
+⦁ Doações: para apoiar o desenvolvimento ativamente, agora você pode doar usando a Microsoft Store, bem como PayPal. No entanto, a remoção do anúncio permanecerá disponível gratuitamente. 
+⦁ Lotes de correções de bugs, melhorias e rebolar o capô. 
+
+Assim, este changelog parece mais curto do que o esforço para fazer todas as mudanças acontecerem merecem. No entanto, ter um Natal muito agradável! Nós estamos olhando para a frente a toda avaliação positiva assim como a negativa. Divertir-se!</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
     <value>Belíssimo também quando usa-se o tema claro graças ao Fluent Design System</value>
@@ -495,6 +502,12 @@ Bugs resolvidos.
   </data>
   <data name="PDFError.Text" xml:space="preserve">
     <value>Nada criado ainda ou um erro ocorreu</value>
+  </data>
+  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
+    <value>REMOVER ANÚNCIOS - $ 1,49</value>
+  </data>
+  <data name="DonateDescText.Text" xml:space="preserve">
+    <value>Doar (e reduzir os anúncios no menu)</value>
   </data>
 
 </root>
