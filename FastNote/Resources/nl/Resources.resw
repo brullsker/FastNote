@@ -461,52 +461,16 @@ Nou, de changelog ziet er korter uit dan dat hij het harde werk erachter rechtva
     <value>Sluiten</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>PDF bestand</value>
-  </data>
-  <data name="HowPDFWorkContent" xml:space="preserve">
-    <value>Voor het genereren van PDF's maken wij gebruik van de diensten van HTML2PDFROCKET. Deze online dienst wordt gebruikt om PDF's te maken van HTML. Volg de onderstaande stappen om het te laten werken:
-1. Ga naar {0} en registreer een nieuw account. Het veld "Language" moet "C#" bevatten.
-2. Er moet een activeringsmail in uw mailbox zitten. Gebruik de meegeleverde activeringslink.
-3. Met een andere e-mail ontvangt u uw API-sleutels. Dit dient ook als wachtwoord om in te loggen op html2pdfrocket.com.
-4. Kopieer de API-sleutel naar het klembord.
-5. Plaats de API-sleutel in het invoerveld links van de HIlfe-knop.
-6. Met dit gratis account kunt u 200 PDF's per maand genereren. Om het resterende aantal te zien, kijk op de {1} pagina.</value>
-  </data>
-  <data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>Hoe werkt et?</value>
-  </data>
-  <data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>PDF-GEREEDSCHAPPEN</value>
-  </data>
-  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>API-sleutel</value>
-  </data>
-  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>PDF genereren</value>
-  </data>
-  <data name="PDF_Export.Content" xml:space="preserve">
-    <value>Exporten</value>
-  </data>
-  <data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Open met...</value>
-  </data>
-  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>Laatst gegenereerde PDF - Voorproefje</value>
-  </data>
-  <data name="PDF_Print.Content" xml:space="preserve">
-    <value>Drukken</value>
-  </data>
-  <data name="PDF_Share.Content" xml:space="preserve">
-    <value>Delen</value>
-  </data>
-  <data name="PDFError.Text" xml:space="preserve">
-    <value>Er is nog geen enkele keer gegenereerd of er is een fout opgetreden</value>
+    <value>PDF-document</value>
   </data>
   <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
     <value>RECLAME VERWIJDEREN - $1.49</value>
   </data>
   <data name="DonateDescText.Text" xml:space="preserve">
     <value>Doneer (en verminder de reclame in het menu)</value>
+  </data>
+  <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
+    <value>PDF-document (.pdf)</value>
   </data>
 
 </root>

@@ -461,52 +461,16 @@ Tak więc, ten changelog wygląda krócej niż wysiłek, aby wszystkie zmiany si
     <value>Zamknięty</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>Plik PDF</value>
-  </data>
-  <data name="HowPDFWorkContent" xml:space="preserve">
-    <value>Do tworzenia plików PDF korzystamy z usług HTML2PDFROCKET. Jest to usługa online do tworzenia plików PDF z HTML. Aby to działało, postępuj zgodnie z poniższymi krokami:
-1. Przejdź do {0} i zarejestruj nowe konto. Wybierz "C#" z rozwijanej listy "Language".
-2. Otrzymasz maila z linkiem aktywacyjnym. Użyj go!
-3. W innej wiadomości otrzymasz klucz API. Jest to również użyteczne jako hasło do logowania do html2pdfrocket.com.
-4. Skopiuj klucz API do schowka.
-5. Wklej klucz do pola wprowadzania z lewej strony przycisku pomocy.
-6. Dzięki tej bezpłatnej subskrypcji możesz tworzyć 200 plików PDF miesięcznie. Aby zobaczyć, ile pozostało, sprawdź to na stronie {1}.</value>
-  </data>
-  <data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>Jak to działa?</value>
-  </data>
-  <data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>NARZĘDZIA PDF</value>
-  </data>
-  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>Klucz API</value>
-  </data>
-  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>Utwórz plik PDF</value>
-  </data>
-  <data name="PDF_Export.Content" xml:space="preserve">
-    <value>Eksport</value>
-  </data>
-  <data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Otwarte w...</value>
-  </data>
-  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>Ostatnio utworzony plik PDF - Podgląd</value>
-  </data>
-  <data name="PDF_Print.Content" xml:space="preserve">
-    <value>Wydruk</value>
-  </data>
-  <data name="PDF_Share.Content" xml:space="preserve">
-    <value>Udział</value>
-  </data>
-  <data name="PDFError.Text" xml:space="preserve">
-    <value>Jeszcze nie utworzono lub wystąpił błąd</value>
+    <value>Dokument PDF</value>
   </data>
   <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
     <value>USUŃ REKLAMĘ - $1,49</value>
   </data>
   <data name="DonateDescText.Text" xml:space="preserve">
     <value>Ofiaruj (i skurcz reklamę w menu)</value>
+  </data>
+  <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
+    <value>Dokument PDF (.pdf)</value>
   </data>
 
 </root>

@@ -463,52 +463,16 @@ Por lo tanto, este registro de cambios parece más corto de lo que se merece el 
     <value>Cerrar</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>Archivo PDF</value>
-  </data>
-  <data name="HowPDFWorkContent" xml:space="preserve">
-    <value>Para la creación de PDFs, utilizamos los servicios de HTML2PDFROCKET. Este es un servicio en línea para crear archivos PDF a partir de HTML. Para que funcione, siga estos pasos:
-1. Vaya a {0} y registre una nueva cuenta. Seleccione "C#" en el menú desplegable "Language".
-2. Recibirá un correo con un enlace de activación. ¡Úsala!
-3. En otro correo recibirá una clave de API. También se puede utilizar como contraseña para iniciar sesión en html2pdfdfrocket.com.
-4. Copie la clave de la API en su portapapeles.
-5. Pegue la clave en el cuadro de entrada a la izquierda del botón de ayuda.
-6. Con esta suscripción gratuita, puede crear 200 PDF cada mes. Para ver cuántos quedan, compruébelo en el sitio {1}.</value>
-  </data>
-  <data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>¿Cómo funciona el sistema?</value>
-  </data>
-  <data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>HERRAMIENTAS EN PDF</value>
-  </data>
-  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>Clave API</value>
-  </data>
-  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>Crear PDF</value>
-  </data>
-  <data name="PDF_Export.Content" xml:space="preserve">
-    <value>Exportar</value>
-  </data>
-  <data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Abrir en...</value>
-  </data>
-  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>Último creado PDF - Vista previa</value>
-  </data>
-  <data name="PDF_Print.Content" xml:space="preserve">
-    <value>Letra de molde</value>
-  </data>
-  <data name="PDF_Share.Content" xml:space="preserve">
-    <value>Compartir</value>
-  </data>
-  <data name="PDFError.Text" xml:space="preserve">
-    <value>Jeszcze nie utworzono lub wystąpił błąd</value>
+    <value>Documento PDF</value>
   </data>
   <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
     <value>ELIMINAR ANUNCIOS - $1.49</value>
   </data>
   <data name="DonateDescText.Text" xml:space="preserve">
     <value>Donar (y reducir el anuncio en el menú)</value>
+  </data>
+  <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
+    <value>Documento PDF (.pdf)</value>
   </data>
 
 </root>

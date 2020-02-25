@@ -461,52 +461,16 @@ Naja, der Changelog sieht kürzer aus, als es die harte Arbeit, die dahinter ste
     <value>Schließen</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>PDF-Datei</value>
-  </data>
-  <data name="HowPDFWorkContent" xml:space="preserve">
-    <value>Für die PDF-Generierung nehmen wir die Dienste von HTML2PDFROCKET in Anspruch. Mit diesem Online-Service werden PDFs aus HTML erstellt. Folge folgenden Schritten, damit es funktioniert:
-1. Gehe zu {0} und registriere einen neuen Account. Im Feld "Language" sollte "C#" stehen.
-2. In deinem Mail-Postfach sollte eine Aktivierungs-E-Mail liegen. Nutze den enthaltenen Aktivierungslink.
-3. Mit einer weiteren E-Mail erhältst du deine API-Schlüssel. Dieser dient auch als Passwort zum Login bei html2pdfrocket.com.
-4. Kopiere den API-Schlüssel in die Zwischenablage.
-5. Füge den API-Schlüssel in das Eingabefeld links neben dem HIlfe-Button ein.
-6. Mit diesem kostenlosen Account kannst du 200 PDFs pro Monat generieren. Um die verbleibende Anzahl zu sehen, schau auf die {1}-Seite.</value>
-  </data>
-  <data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>Wie funktioniert es?</value>
-  </data>
-  <data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>PDF-TOOLS</value>
-  </data>
-  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>API-Schlüssel</value>
-  </data>
-  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>PDF generieren</value>
-  </data>
-  <data name="PDF_Export.Content" xml:space="preserve">
-    <value>Exportieren</value>
-  </data>
-  <data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Öffnen mit...</value>
-  </data>
-  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>Zuletzt generierte PDF - Vorschau</value>
-  </data>
-  <data name="PDF_Print.Content" xml:space="preserve">
-    <value>Drucken</value>
-  </data>
-  <data name="PDF_Share.Content" xml:space="preserve">
-    <value>Teilen</value>
-  </data>
-  <data name="PDFError.Text" xml:space="preserve">
-    <value>Noch keine generiert oder ein Fehler ist aufgetreten</value>
+    <value>PDF-Dokument</value>
   </data>
   <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
     <value>WERBUNG ENTFERNEN - $1,49</value>
   </data>
   <data name="DonateDescText.Text" xml:space="preserve">
     <value>Spenden (und Werbung im Menü verkleinern)</value>
+  </data>
+  <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
+    <value>PDF-Dokument (.pdf)</value>
   </data>
 
 </root>

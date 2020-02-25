@@ -461,52 +461,16 @@
     <value>Близко</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>PDF-файл</value>
-  </data>
-  <data name="HowPDFWorkContent" xml:space="preserve">
-    <value>Для генерации PDF файлов мы используем услуги HTML2PDFROCKET. Этот онлайн-сервис используется для создания PDF-файлов из HTML. Чтобы это сработало, выполните следующие действия:
-1. зайдите в раздел {0} и зарегистрируйте новую учетную запись. Поле "Язык" должно содержать "C#".
-2. в вашем почтовом ящике должен быть адрес электронной почты для активации. Используйте входящую в комплект активационную ссылку.
-3. другим электронным письмом вы получите ключи API. Это также служит паролем для входа на html2pdfrocket.com.
-Скопируйте ключ API в буфер обмена.
-5. вставьте ключ API в поле ввода слева от кнопки HIlfe.
-6 С помощью этого бесплатного аккаунта вы можете создавать 200 PDF файлов в месяц. Чтобы увидеть оставшийся номер, посмотрите на страницу {1}.</value>
-  </data>
-  <data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>Как это работает?</value>
-  </data>
-  <data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>ИНСТРУМЕНТЫ PDF</value>
-  </data>
-  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>Ключ API</value>
-  </data>
-  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>Создать PDF-файл</value>
-  </data>
-  <data name="PDF_Export.Content" xml:space="preserve">
-    <value>Экспорт</value>
-  </data>
-  <data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Открой с...</value>
-  </data>
-  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>Последний сгенерированный PDF - Предварительный просмотр</value>
-  </data>
-  <data name="PDF_Print.Content" xml:space="preserve">
-    <value>Печатный</value>
-  </data>
-  <data name="PDF_Share.Content" xml:space="preserve">
-    <value>Совместное использование</value>
-  </data>
-  <data name="PDFError.Text" xml:space="preserve">
-    <value>Пока ничего не сгенерировано или возникла ошибка</value>
+    <value>PDF документ</value>
   </data>
   <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
     <value>УДАЛИТЬ ОБЪЯВЛЕНИЯ - $1,49</value>
   </data>
   <data name="DonateDescText.Text" xml:space="preserve">
     <value>Пожертвовать (и уменьшить объявление в меню)</value>
+  </data>
+  <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
+    <value>PDF документ (.pdf)</value>
   </data>
 
 </root>

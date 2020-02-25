@@ -11,22 +11,26 @@
     <AssemblyName>FastNote</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.14393.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.18362.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
-    <PackageCertificateKeyFile>FastNote_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>FastNote_TemporaryKey.pfx</PackageCertificateKeyFile>
     <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
     <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
     <AppxBundle>Always</AppxBundle>
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
-    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerUpdateFrequency>0</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
-    <PackageCertificateThumbprint>EF6F5C4450AC22B74A7B0FCE78DAB0D88FEDF7FF</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>B53D78F1BA84611D9B74EC43526BC49FB4F6358A</PackageCertificateThumbprint>
     <AppxBundleAutoResourcePackageQualifiers>Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
     <AppxDefaultResourceQualifiers>Language=de-DE;en-US;pt-BR;fr;it;es;nl;pl;hy;ru</AppxDefaultResourceQualifiers>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -105,14 +109,14 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
+    <Compile Include="CustomTextToolBarControl.xaml.cs">
+      <DependentUpon>CustomTextToolBarControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="KeepAboveInputPaneBehavior.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Misc\Purchases.cs" />
-    <Compile Include="PDFControl.xaml.cs">
-      <DependentUpon>PDFControl.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings.cs" />
   </ItemGroup>
@@ -194,49 +198,47 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainPage.DeviceFamily-mobile.xaml">
+    <None Include="MainPage.DeviceFamily-mobile.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </None>
+    <Page Include="CustomTextToolBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PDFControl.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.1.7</Version>
+      <Version>6.2.9</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit">
-      <Version>4.0.0</Version>
+      <Version>6.0.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Animations">
-      <Version>4.0.0</Version>
+      <Version>6.0.0</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Uwp.UI.Controls">
-      <Version>4.0.0</Version>
+      <Version>6.0.0</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.DocIO.UWP">
-      <Version>16.4.0.52</Version>
+      <Version>17.4.0.41</Version>
+    </PackageReference>
+    <PackageReference Include="Syncfusion.DocIORenderer.Net.Core">
+      <Version>17.4.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Pdf.UWP">
-      <Version>16.4.0.52</Version>
+      <Version>17.4.0.41</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.SfPdfViewer.UWP">
-      <Version>16.4.0.52</Version>
+      <Version>17.4.0.41</Version>
     </PackageReference>
     <PackageReference Include="XamlBrewer.Uwp.BackDrop">
       <Version>1.0.0</Version>
     </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Common">
-      <HintPath>..\..\..\Dependencies\Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.Advertising.Xaml, Version=10.0">
@@ -246,7 +248,11 @@
       <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="Common">
+      <HintPath>..\..\..\..\ObservableSettings\Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
@@ -259,4 +265,25 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Target Name="ChangeAliases" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'Syncfusion.DocIO.UWP'">
+        <Aliases>global,syncfusion</Aliases>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
+  <Target Name="ChangeAliases2" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'Syncfusion.Pdf.Portable'">
+        <Aliases>global,syncfusionport</Aliases>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
+  <Target Name="ChangeAliases3" BeforeTargets="FindReferenceAssembliesForReferences;ResolveReferences">
+    <ItemGroup>
+      <ReferencePath Condition="'%(FileName)' == 'Syncfusion.Pdf.UWP'">
+        <Aliases>global,syncfusionpdf</Aliases>
+      </ReferencePath>
+    </ItemGroup>
+  </Target>
 </Project>
