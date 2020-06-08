@@ -7,7 +7,6 @@
 *.userosscache
 *.sln.docstates
 Constants.txt
-Constants.cs
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
