@@ -6,7 +6,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     xmlns:buttons="using:Microsoft.Toolkit.Uwp.UI.Controls.TextToolbarButtons"
-    xmlns:Ads="using:Microsoft.Advertising.WinRT.UI"
     xmlns:local="using:FastNote"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
@@ -15,24 +14,6 @@
 
     <Grid Background="{ThemeResource SystemControlAcrylicWindowMediumHighBrush}" x:Name="LRoot">
         <VisualStateManager.VisualStateGroups>
-            <VisualStateGroup x:Name="WindowHeight">
-                <VisualState x:Name="low">
-                    <VisualState.Setters>
-                        <Setter Target="MenuAd.(Height)" Value="50"/>
-                    </VisualState.Setters>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="0"/>
-                    </VisualState.StateTriggers>
-                </VisualState>
-                <VisualState x:Name="medium">
-                    <VisualState.Setters>
-                        <Setter Target="MenuAd.(Height)" Value="{Binding AdHeight, Mode=OneWay}"/>
-                    </VisualState.Setters>
-                    <VisualState.StateTriggers>
-                        <AdaptiveTrigger MinWindowHeight="500"/>
-                    </VisualState.StateTriggers>
-                </VisualState>
-            </VisualStateGroup>
             <VisualStateGroup x:Name="WindowWidth">
                 <VisualState x:Name="small">
                     <VisualState.Setters>
@@ -439,22 +420,22 @@
                                     <RadioButton x:Uid="More_Settings_Theme_Light" Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
                                     <TextBlock Text="TEXT TOOLBAR POSITION" x:Uid="More_Settings_ToolbarPositionHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ToggleSwitch x:Uid="More_Settings_ToolbarPosition_Switch" OffContent="Top" OnContent="Bottom" IsOn="{Binding ToolBarOnBottomDesktop, Mode=TwoWay}" x:Name="ToggleToolBar" Toggled="ToggleToolBar_Toggled"/>
-                                    <TextBlock Text="SHOW AD TO SUPPORT DEVELOPMENT" x:Uid="More_Settings_ShowAdHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
-                                    <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" IsEnabled="{Binding AdFree, Mode=OneWay}" OffContent="Disable" OnContent="Enable" IsOn="{Binding ShowAd, Mode=TwoWay}" x:Name="ToggleAd" Toggled="ToggleAd_Toggled"/>
-                                    <HyperlinkButton x:Uid="More_Settings_BuyAdFree" Visibility="{Binding AdFree, Converter={StaticResource NegBoolVis},Mode=OneWay}"  Content="BUY AD FREE - $0.00" x:Name="BuyAdFree" Click="BuyAdFree_Click"/>
                                     <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
                                     <ComboBox x:Name="LangBox" IsEnabled="True" HorizontalAlignment="Stretch" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" BorderThickness="0,0,0,2">
                                         <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>
-                                        <ComboBoxItem Content="English (United States)"/>
-                                        <ComboBoxItem Content="Deutsch (Deutschland)"/>
-                                        <ComboBoxItem Content="Português (Brasil)"/>
-                                        <ComboBoxItem Content="Français"/>
-                                        <ComboBoxItem Content="Italiano"/>
-                                        <ComboBoxItem Content="Español"/>
-                                        <ComboBoxItem Content="Nederlandse"/>
-                                        <ComboBoxItem Content="Polska"/>
-                                        <ComboBoxItem Content="Հայերեն"/>
-                                        <ComboBoxItem Content="Русский"/>
+                                        <ComboBoxItem Content="English (United States) [en-US]"/>
+                                        <ComboBoxItem Content="Deutsch (Deutschland) [de-DE]"/>
+                                        <ComboBoxItem Content="Español [es]"/>
+                                        <ComboBoxItem Content="Français [fr]"/>
+                                        <ComboBoxItem Content="Հայերեն [hy]"/>
+                                        <ComboBoxItem Content="Italiano [it]"/>
+                                        <ComboBoxItem Content="にほんしゅ [ja]"/>
+                                        <ComboBoxItem Content="Nederlandse [nl]"/>
+                                        <ComboBoxItem Content="Polska [pl]"/>
+                                        <ComboBoxItem Content="Português (Brasil) [pt-BR]"/>
+                                        <ComboBoxItem Content="Português (Portugal) [pt-PT]"/>
+                                        <ComboBoxItem Content="Русский [ru]"/>
+                                        <ComboBoxItem Content="中文(简体) [zh-CN]"/>
                                     </ComboBox>
                                     <TextBlock Text="App restart required to apply" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
                                     <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
@@ -480,7 +461,7 @@
                                         </Border>
                                         <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
                                             <TextBlock Text="1" x:Name="AboutAppTextBlock" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,6"/>
-                                            <TextBlock Text="&#xA9; 2018 by brullsker" HorizontalAlignment="Center"/>
+                                            <TextBlock Text="&#xA9; 2018-2020 by brullsker and all contributors" HorizontalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" TextAlignment="Center"/>
                                             <HyperlinkButton x:Uid="More_About_DevEmail" Content="Mail" NavigateUri="mailto:brullsker@outlook.de" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
                                             <HyperlinkButton Content="Telegram" NavigateUri="https://t.me/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
                                             <HyperlinkButton Content="Twitter" NavigateUri="https://t.co/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
@@ -501,31 +482,7 @@
                                                             <Setter Property="Padding" Value="0" />
                                                         </Style>
                                                     </Flyout.FlyoutPresenterStyle>
-                                                    <Grid>
-                                                        <Grid.RowDefinitions>
-                                                            <RowDefinition Height="Auto"/>
-                                                            <RowDefinition Height="Auto"/>
-                                                        </Grid.RowDefinitions>
-                                                        <Border Padding="6" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" BorderThickness="0">
-                                                            <TextBlock TextAlignment="Center" Text="Donate to shrink the ad in the menu" HorizontalAlignment="Center" x:Uid="DonateDescText" Style="{StaticResource BaseTextBlockStyle}"/>
-                                                        </Border>
-                                                        <Grid Grid.Row="1" Padding="6" Background="{ThemeResource SystemControlAcrylicElementMediumHighBrush}">
-                                                            <Grid.ColumnDefinitions>
-                                                                <ColumnDefinition/>
-                                                                <ColumnDefinition/>
-                                                                <ColumnDefinition/>
-                                                                <ColumnDefinition/>
-                                                                <ColumnDefinition/>
-                                                                <ColumnDefinition/>
-                                                            </Grid.ColumnDefinitions>
-                                                            <Button x:Name="Donate0099" Content="$ 0.99" Click="Donate0099_Click" Margin="0,0,3,0"/>
-                                                            <Button Grid.Column="1" x:Name="Donate0249" Content="$ 2.49" Click="Donate0249_Click" Margin="3,0,3,0"/>
-                                                            <Button Grid.Column="2" x:Name="Donate0999" Content="$ 9.99" Click="Donate0999_Click" Margin="3,0,3,0"/>
-                                                            <Button Grid.Column="3" x:Name="Donate2499" Content="$ 24.99" Click="Donate2499_Click" Margin="3,0,3,0"/>
-                                                            <Button Grid.Column="4" x:Name="Donate4999" Content="$ 49.99" Click="Donate4999_Click" Margin="3,0,3,0"/>
-                                                            <Button Grid.Column="5" x:Name="Donate9999" Content="$ 99.99" Click="Donate9999_Click" Margin="3,0,0,0"/>
-                                                        </Grid>
-                                                    </Grid>
+                                                    <local:DonateFlyoutControl/>
                                                 </Flyout>
                                             </FlyoutBase.AttachedFlyout>
                                         </HyperlinkButton>
@@ -579,15 +536,15 @@
                                     </Border>
                                     <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
                                         <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                            <TextBlock Text="FR, IT, ES, NL, PL, RU - powered by DeepL" Style="{StaticResource BodyTextBlockStyle}"/>
+                                            <TextBlock Text="es, fr, it, ja, nl, pl, pt-PT, ru, zh-CN - powered by DeepL" Style="{StaticResource BodyTextBlockStyle}"/>
                                             <HyperlinkButton Content="DeepL Translator" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://deepl.com/translator" Padding="0"/>
                                         </StackPanel>
                                     </Border>
                                     <MenuFlyoutSeparator Margin="0,12" Background="{ThemeResource SystemControlBackgroundChromeMediumRevealBorderBrush}"/>
                                     <controls:Expander Header="Privacy Policy" x:Uid="More_About_PP" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                                         <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Margin="6">
-                                            This software does not send any information regarding the user and his input to any third party unless the user is explicitly allowing to do so. This does not apply for crash reports and telemetry automatically sent to the developer via Microsoft Store services in order to improve the software and find issues in it.<LineBreak/>
-                                            If there are any further questions about privacy in this software, use the contact data above.
+                                            This software does not send any information regarding the user and the user's input to any third party unless the user is explicitly allowing to do so. This does not apply to crash reports and other telemetry automatically sent to the developer or Microsoft via Microsoft Store services in order to improve the software and find issues in it.<LineBreak/>
+                                            In case of any further inquiries regarding privacy in this software, use the contact information above.
                                         </TextBlock>
                                     </controls:Expander>
                                     <controls:Expander Header="The MIT License" x:Uid="More_About_MIT" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
@@ -599,11 +556,13 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
                             </ScrollViewer>
                         </PivotItem>
                     </Pivot>
-
-                    <StackPanel Orientation="Vertical" Grid.Row="1" Visibility="{Binding ShowAd, Mode=OneWay, Converter={StaticResource BoolVis}}">
-                        <TextBlock Text="You can disable ads for free in the settings" HorizontalAlignment="Center" TextAlignment="Center" Margin="12,0" x:Uid="DisableAdDisclaimer" Style="{StaticResource CaptionTextBlockStyle}"/>
-                        <Ads:AdControl Width="300" Height="{Binding AdHeight, Mode=OneWay}" x:Name="MenuAd" AdUnitId="{x:Bind adid}" ApplicationId="{x:Bind appid}"/>
-                    </StackPanel>
+                    <CommandBar Background="Transparent" Grid.Row="1" HorizontalAlignment="Left" DefaultLabelPosition="Right">
+                        <AppBarButton Label="Donate" Click="DonateLink_Click" x:Uid="DonateButton">
+                            <AppBarButton.Icon>
+                                <FontIcon Glyph="&#xE170;" FontFamily="Segoe MDL2 Assets"/>
+                            </AppBarButton.Icon>
+                        </AppBarButton>
+                    </CommandBar>
                 </Grid>
             </SplitView.Pane>
         </SplitView>

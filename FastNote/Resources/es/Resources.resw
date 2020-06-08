@@ -375,12 +375,6 @@ Por lo tanto, este registro de cambios parece más corto de lo que se merece el 
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
     <value>En la parte inferior</value>
   </data>
-  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>Puede desactivar los anuncios en la configuración</value>
-  </data>
-  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
-    <value>MOSTRAR ANUNCIO PARA APOYAR EL DESARROLLO</value>
-  </data>
   <data name="DefaultString" xml:space="preserve">
     <value>Estándar</value>
   </data>
@@ -465,14 +459,14 @@ Por lo tanto, este registro de cambios parece más corto de lo que se merece el 
   <data name="FilePDF" xml:space="preserve">
     <value>Documento PDF</value>
   </data>
-  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
-    <value>ELIMINAR ANUNCIOS - $1.49</value>
-  </data>
   <data name="DonateDescText.Text" xml:space="preserve">
-    <value>Donar (y reducir el anuncio en el menú)</value>
+    <value>Darowizna na wsparcie rozwoju</value>
   </data>
   <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
     <value>Documento PDF (.pdf)</value>
+  </data>
+  <data name="DonateButton.Label" xml:space="preserve">
+    <value>Donar</value>
   </data>
 
 </root>

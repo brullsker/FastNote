@@ -373,12 +373,6 @@ Quindi, questo changelog sembra più breve dello sforzo che si merita per fare i
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
     <value>Sul fondo</value>
   </data>
-  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>È possibile disattivare gli annunci nelle impostazioni</value>
-  </data>
-  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
-    <value>MOSTRA ANNUNCIO PER SOSTENERE LO SVILUPPO</value>
-  </data>
   <data name="DefaultString" xml:space="preserve">
     <value>Automatico</value>
   </data>
@@ -463,14 +457,14 @@ Quindi, questo changelog sembra più breve dello sforzo che si merita per fare i
   <data name="FilePDF" xml:space="preserve">
     <value>Documento PDF</value>
   </data>
-  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
-    <value>RIMUOVI ANNUNCI - $1.49</value>
-  </data>
   <data name="DonateDescText.Text" xml:space="preserve">
-    <value>Donare (e ridurre l'annuncio nel menu)</value>
+    <value>Donare per sostenere lo sviluppo</value>
   </data>
   <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
     <value>Documento PDF (.pdf)</value>
+  </data>
+  <data name="DonateButton.Label" xml:space="preserve">
+    <value>Dona</value>
   </data>
 
 </root>

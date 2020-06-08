@@ -118,234 +118,218 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CharactersText.Text" xml:space="preserve">
-    <value> caractères</value>
+    <value> 人物</value>
   </data>
   <data name="Dialog_FileNotSaved" xml:space="preserve">
-    <value>Le fichier n'a pas été sauvegardé.</value>
+    <value>文件没有保存。</value>
   </data>
   <data name="Dialog_OperationCancelled" xml:space="preserve">
-    <value>Opération annulée</value>
+    <value>行动被取消</value>
   </data>
   <data name="LoadingText.Text" xml:space="preserve">
-    <value>Un moment de patience....</value>
+    <value>正在努力...</value>
   </data>
   <data name="Manifest_AppDescText" xml:space="preserve">
-    <value>FastNote est un éditeur de texte minimaliste open source riche pour la plate-forme Windows universelle qui permet d'enregistrer les modifications en temps réel.</value>
+    <value>FastNote是一款开源的最小化实时保存富文本编辑器，适用于通用windows平台。</value>
   </data>
   <data name="More_AboutHeaderText.Text" xml:space="preserve">
-    <value>A propos de</value>
+    <value>关于我们</value>
   </data>
   <data name="More_About_Contribute.Text" xml:space="preserve">
-    <value>Aide au développement:</value>
+    <value>贡献给FastNote。</value>
   </data>
   <data name="More_About_DevEmail.Content" xml:space="preserve">
-    <value>Email</value>
+    <value>电子邮件</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Soutenir le développement:</value>
+    <value>支持发展。</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
-    <value>Bibliothèques et SDK d'occasion</value>
+    <value>二手库和SDK</value>
   </data>
   <data name="More_About_LicenseMIT.Text" xml:space="preserve">
-    <value>Licencié sous licence du MIT</value>
+    <value>根据麻省理工学院的许可证授权</value>
   </data>
   <data name="More_FileHeaderText.Text" xml:space="preserve">
-    <value>Fichier</value>
+    <value>文件</value>
   </data>
   <data name="More_File_ClearAll.Text" xml:space="preserve">
-    <value>SUPPRIMER TOUT</value>
+    <value>删除一切</value>
   </data>
   <data name="More_File_ExportText.Text" xml:space="preserve">
-    <value>EXPORTATION</value>
+    <value>出口</value>
   </data>
   <data name="More_File_ShareFileText.Text" xml:space="preserve">
-    <value>PARTAGER LE FICHIER</value>
+    <value>分享文件</value>
   </data>
   <data name="More_File_ShareText_Selected.Text" xml:space="preserve">
-    <value>PARTAGER LE SÉLECTION DU TEXTE</value>
+    <value>分享选定的文本</value>
   </data>
   <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
-    <value>PARTAGER LE TEXTE ENTIER</value>
+    <value>分享全文</value>
   </data>
   <data name="More_SettingsHeaderText.Text" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>设置</value>
   </data>
   <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
-    <value>NOM DE FICHIER STANDARD (EXPORTATION)</value>
+    <value>默认导出文件名</value>
   </data>
   <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Entrer le nom.....</value>
+    <value>输入名字...</value>
   </data>
   <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
-    <value>NOM DE FICHIER STANDARD (PARTAGE)</value>
+    <value>默认份额</value>
   </data>
   <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Entrer le nom.....</value>
+    <value>输入名字...</value>
   </data>
   <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
-    <value>Remise à l'état initial</value>
+    <value>重置</value>
   </data>
   <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
-    <value>LANGUE</value>
+    <value>语种</value>
   </data>
   <data name="More_Settings_Language_Default.Content" xml:space="preserve">
-    <value>Automatique</value>
+    <value>默认</value>
   </data>
   <data name="More_Settings_Lang_AppRest.Text" xml:space="preserve">
-    <value>L'application a besoin d'être redémarrée pour prendre le relais</value>
+    <value>应用程序需要重新启动才能应用</value>
   </data>
   <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
-    <value>VÉRIFIER L'ORTHOGRAPHE</value>
+    <value>拼写检查器</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
-    <value>Activé</value>
+    <value>关于</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
-    <value>Désactivé</value>
+    <value>关</value>
   </data>
   <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
-    <value>THÈME</value>
+    <value>主题</value>
   </data>
   <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Sombre</value>
+    <value>黑暗</value>
   </data>
   <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Standard</value>
+    <value>默认</value>
   </data>
   <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Lumière</value>
+    <value>灯光</value>
   </data>
   <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
-    <value>Bitmap (.bmp)</value>
+    <value>位图(.bmp)</value>
   </data>
   <data name="Share_File_ShareFile_GIF.Text" xml:space="preserve">
-    <value>GIF graphique (.gif)</value>
+    <value>GIF图片(.gif)</value>
   </data>
   <data name="Share_File_ShareFile_HTML.Text" xml:space="preserve">
-    <value>Page HTML (.html)</value>
+    <value>HTML页面(.html)</value>
   </data>
   <data name="Share_File_ShareFile_JPG.Text" xml:space="preserve">
-    <value>Graphique JPG (.jpg)</value>
+    <value>JPG图像(.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
-    <value>Portable Network Graphics (.png)</value>
+    <value>PNG图像(.png)</value>
   </data>
   <data name="Share_File_ShareFile_RTF.Text" xml:space="preserve">
-    <value>Rich Text (.rtf)</value>
+    <value>RTF文档(.rtf)</value>
   </data>
   <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
-    <value>Graphique TIFF (.tiff)</value>
+    <value>TIFF图像(.tiff)</value>
   </data>
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
-    <value>Fichier texte (.txt)</value>
+    <value>纯文本(.txt)</value>
   </data>
   <data name="More_File_Exit.Text" xml:space="preserve">
-    <value>QUITT APP</value>
+    <value>退出应用程序</value>
   </data>
   <data name="More_About_Langs.Text" xml:space="preserve">
-    <value>Traductions</value>
+    <value>翻译</value>
   </data>
   <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
-    <value>OUVRIR LE MENU AU DÉMARRAGE</value>
+    <value>在启动时打开菜单</value>
   </data>
   <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
-    <value>Entrer note...</value>
+    <value>开始做笔记...</value>
   </data>
   <data name="More_Settings_FontSizeHeader.Text" xml:space="preserve">
-    <value>TAILLE DE LA CHEMISE</value>
+    <value>字体大小</value>
   </data>
   <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>Entrer le numéro...</value>
+    <value>输入号码...</value>
   </data>
   <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
-    <value>TYPE DE FONTE</value>
+    <value>字体系列</value>
   </data>
   <data name="More_About_NoLicense.Text" xml:space="preserve">
-    <value>Sans licence</value>
+    <value>公共领域</value>
   </data>
   <data name="More_About_MIT.Header" xml:space="preserve">
-    <value>La licence MIT</value>
+    <value>MIT许可证</value>
   </data>
   <data name="More_About_PP.Header" xml:space="preserve">
-    <value>Politique de confidentialité</value>
+    <value>私隐政策</value>
   </data>
   <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
-    <value>© 2018 by brullsker. Tous droits réservés.</value>
+    <value>© 2020 by brullsker. 版权所有，不得转载。</value>
   </data>
   <data name="Store_Description" xml:space="preserve">
-    <value>FastNote : Prendre des notes n'a jamais été aussi facile et rapide !
+    <value>你正在寻找一个应用程序来记录笔记，保存他们发生的变化，而不要求你保存它们？那么你来对地方了! FastNote有很多不错的功能，比如。
 
-Vous cherchez une application pour prendre des notes qui enregistre les modifications au fur et à mesure, sans vous obliger à les sauvegarder ? Alors vous êtes au bon endroit ! FastNote possède de nombreuses fonctionnalités intéressantes, telles que :
+- 导出成多种文件格式
+- 共享文本或文件
+- 拼写检查器
 
-- Exportation dans plusieurs formats de fichiers (y compris PDF)
-- Partager un texte ou un fichier
-- Vérificateur d'orthographe
-
-... et bien plus encore ! Faites l'expérience de FastNote dès aujourd'hui et facilitez-vous la vie.
-
---- Attention : Après que Microsoft ait fermé sa plate-forme de monétisation des publicités, cette application ne propose plus de publicités in-app. Vous pouvez toujours soutenir le développement en faisant un don via des achats dans l'application. Cependant, toutes les fonctionnalités restent gratuites. ---
-
-La traduction française a été réalisée par traduction automatique AI. Elle n'est pas parfaite, et ne doit en aucun cas être considérée comme une offense. Si vous trouvez des erreurs, n'hésitez pas à contacter le développeur (via les coordonnées fournies dans l'application)
-The French translation has been accomplished by AI machine translation. It is not perfect, and in no way meant to be taken as an offence. If you find any errors, do not hesitate to contact the developer (via contact info provided within the app.)</value>
+... 还有更多 今天就体验FastNote，让您的生活更轻松。</value>
   </data>
   <data name="Store_Feature1" xml:space="preserve">
-    <value>Consignes</value>
+    <value>笔记</value>
   </data>
   <data name="Store_Feature2" xml:space="preserve">
-    <value>Sauvegarde automatique</value>
+    <value>自动保存</value>
   </data>
   <data name="Store_Feature3" xml:space="preserve">
-    <value>Exporter (par ex. rtf, txt, différents formats d'images)</value>
+    <value>导出（如rtf，txt，几种图像格式）。</value>
   </data>
   <data name="Store_Feature4" xml:space="preserve">
-    <value>Partager (fichier ou texte)</value>
+    <value>共享(文件或文本)</value>
   </data>
   <data name="Store_Feature5" xml:space="preserve">
-    <value>Notes de format</value>
+    <value>格式说明</value>
   </data>
   <data name="Store_Feature6" xml:space="preserve">
-    <value>Fluent Design</value>
+    <value>流利的设计</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>--- Attention : Après que Microsoft ait fermé sa plate-forme de monétisation des publicités, cette application ne comporte plus de publicités in-app. Vous pouvez toujours soutenir le développement en faisant un don par le biais d'achats dans l'application. Cependant, toutes les fonctionnalités restent gratuites. ---
+    <value>为了庆祝FastNote的1000次下载，也因为我们喜欢进一步开发我们的应用程序，我们今天推出了一个大更新。以下是FastNote 2.0.0.0的更新日志。
 
-Nouveau dans la version 2.2.14.0
-- Traduction en japonais
-- Traduction en portugais (Portugal)
-- Traduction en chinois (simplifié)
-- Suppression de toutes les annonces dans l'application
-- Suppression de tous les paramètres relatifs aux publicités dans l'application
-- Suppression de l'achat "Supprimer les annonces".
-- Nouveau bouton de don dans le menu
-- Des dons retravaillés
-- Corrections de bogues
+⦁ PDF工具。从你的笔记中创建一个PDF，并导出、分享和打印它。你可能需要符合一些要求。更多的信息你可以在应用中找到指定的信息。
+⦁导入功能。可以让你导入一个文档，无论是之前，之后，还是替换现有的内容。
+⦁选择你喜欢的HTML编码。这将修复一些语言无法正确显示的问题。
+⦁为了增加更清晰的设计，在黑暗模式下使用应用程序时，主编辑框在对焦时不会再变成白色。如果你不喜欢这个改动，请给我们留言。
+⦁更多导出和分享文件格式。Word 文档 (.doc / .docx) 和电子书格式 (.epub)。
+⦁ 捐款。为了积极支持开发，您现在可以使用Microsoft Store以及PayPal进行捐赠。不过，广告删除仍将免费提供。
+⦁大量的bug修复、改进和底层的小技巧。
 
---- Arriéré ---
-FastNote 2.2.0.0 est là !
-ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
-- Traduction en russe
-- Exportation PDF retravaillée (plus besoin de clé API tierce partie)
-- Monétisation des applications retravaillée
-- Corrections de bogues</value>
+所以，这篇更新日志看起来比为实现所有变化所付出的努力要短。尽管如此，还是祝大家圣诞快乐! 我们期待着任何反馈--无论是正面的还是负面的。祝您玩得开心</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
-    <value>Egalement dans le design brillant et beau grâce à Fluent Design</value>
+    <value>使用轻型主题时也很华丽，这要归功于Fluent设计系统。</value>
   </data>
   <data name="Store_Sc_Mobile4" xml:space="preserve">
-    <value>Beau aussi dans le design brillant grâce au système UWP Design System</value>
+    <value>当使用轻量级主题时，由于UWP设计系统，也很华丽。</value>
   </data>
   <data name="Store_Sc_MR1" xml:space="preserve">
-    <value>Soyez productif dans Mixed Reality aussi!</value>
+    <value>在混合现实中也要有所收获!</value>
   </data>
   <data name="Store_Sc_Universal1" xml:space="preserve">
-    <value>Prenez des notes et formatez-les.</value>
+    <value>记下笔记和风格</value>
   </data>
   <data name="Store_Sc_Universal2" xml:space="preserve">
-    <value>Exportez et partagez votre travail à l'aide d'outils complets</value>
+    <value>使用强大的工具导出和分享你的作品</value>
   </data>
   <data name="Store_Sc_Universal3" xml:space="preserve">
-    <value>Personnaliser des options telles que la taille ou le type de police</value>
+    <value>设置字体大小或字体系列等选项。</value>
   </data>
   <data name="Store_SearchTerm1" xml:space="preserve">
     <value>FastNote</value>
@@ -357,10 +341,10 @@ ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
     <value>Note</value>
   </data>
   <data name="Store_SearchTerm4" xml:space="preserve">
-    <value>Consignes</value>
+    <value>笔记</value>
   </data>
   <data name="Store_SearchTerm5" xml:space="preserve">
-    <value>Traitement de texte</value>
+    <value>文本编辑</value>
   </data>
   <data name="Store_SearchTerm6" xml:space="preserve">
     <value>Notepad</value>
@@ -369,118 +353,118 @@ ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
     <value>Autosave</value>
   </data>
   <data name="Store_ShortDescription" xml:space="preserve">
-    <value>Prenez des notes! Enregistre automatiquement les modifications.</value>
+    <value>做一些笔记! 保存发生的变化。</value>
   </data>
   <data name="ShareUI_FileDesc" xml:space="preserve">
-    <value>Partager le fichier</value>
+    <value>共享文件</value>
   </data>
   <data name="ShareUI_SelectedTextDesc" xml:space="preserve">
-    <value>Partager le sélection du texte</value>
+    <value>分享选定的文本</value>
   </data>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
-    <value>Partager le texte entier</value>
+    <value>分享全文</value>
   </data>
   <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
-    <value>POSITION DE LA BARRE D'OUTILS TEXTE</value>
+    <value>文本工具条位置</value>
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
-    <value>Sur le dessus</value>
+    <value>顶端</value>
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
-    <value>Sur le fond</value>
+    <value>底部</value>
   </data>
   <data name="DefaultString" xml:space="preserve">
-    <value>Automatique</value>
+    <value>默认</value>
   </data>
   <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
-    <value>ENCODAGE HTML</value>
+    <value>HTML编码</value>
   </data>
   <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
-    <value>Document Word (ancien) (.doc)</value>
+    <value>Word文档（旧）(.doc)</value>
   </data>
   <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
-    <value>Document Word (.docx)</value>
+    <value>Word文档(.docx)</value>
   </data>
   <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
-    <value>Fichier eBook (.epub)</value>
+    <value>电子书文件(.epub)</value>
   </data>
   <data name="FileBMP" xml:space="preserve">
-    <value>Bitmap</value>
+    <value>位图</value>
   </data>
   <data name="FileDoc" xml:space="preserve">
-    <value>Document Word (ancien)</value>
+    <value>Word文档(旧)</value>
   </data>
   <data name="FileDocx" xml:space="preserve">
-    <value>Document Word</value>
+    <value>Word文档</value>
   </data>
   <data name="FileEpub" xml:space="preserve">
-    <value>Fichier eBook</value>
+    <value>电子书文件</value>
   </data>
   <data name="FileGIF" xml:space="preserve">
-    <value>GIF graphique</value>
+    <value>GIF图片</value>
   </data>
   <data name="FileHTML" xml:space="preserve">
-    <value>Page HTML</value>
+    <value>HTML页面</value>
   </data>
   <data name="FileJPG" xml:space="preserve">
-    <value>JPG graphique</value>
+    <value>JPG图像</value>
   </data>
   <data name="FilePNG" xml:space="preserve">
-    <value>Portable Network Graphics</value>
+    <value>PNG图片</value>
   </data>
   <data name="FileRTF" xml:space="preserve">
-    <value>Rich Text</value>
+    <value>RTF文件</value>
   </data>
   <data name="FileTIFF" xml:space="preserve">
-    <value>TIFF graphique</value>
+    <value>TIFF图像</value>
   </data>
   <data name="FileTXT" xml:space="preserve">
-    <value>Fichier texte</value>
+    <value>纯文本</value>
   </data>
   <data name="DonateText.Content" xml:space="preserve">
-    <value> Faites un don!</value>
+    <value> 捐献!</value>
   </data>
   <data name="ProprietaryText.Text" xml:space="preserve">
-    <value>Propriétaire</value>
+    <value>专有</value>
   </data>
   <data name="WebsiteText.Content" xml:space="preserve">
-    <value>Site Internet</value>
+    <value>网站建设</value>
   </data>
   <data name="ImportAfterText.Text" xml:space="preserve">
-    <value>Insérer après le contenu existant</value>
+    <value>在当前内容后插入</value>
   </data>
   <data name="ImportBeforeText.Text" xml:space="preserve">
-    <value>Insérer avant le contenu existant</value>
+    <value>在当前内容之前插入</value>
   </data>
   <data name="ImportReplaceText.Text" xml:space="preserve">
-    <value>Remplacer le contenu existant</value>
+    <value>替换当前内容</value>
   </data>
   <data name="More_File_ImportText.Text" xml:space="preserve">
-    <value>IMPORTATION</value>
+    <value>进口</value>
   </data>
   <data name="DialogCancelled" xml:space="preserve">
-    <value>Soit aucun fichier n'a été sélectionné, soit le sélecteur de fichiers a été fermé.</value>
+    <value>要么没有选择文件，要么关闭了文件拾取器。</value>
   </data>
   <data name="CommitExportText" xml:space="preserve">
-    <value>Exportation</value>
+    <value>出口</value>
   </data>
   <data name="CommitImportText" xml:space="preserve">
-    <value>Importation</value>
+    <value>小数点</value>
   </data>
   <data name="DialogClose" xml:space="preserve">
-    <value>Fermer</value>
+    <value>关闭</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>Document PDF</value>
+    <value>PDF文件</value>
   </data>
   <data name="DonateDescText.Text" xml:space="preserve">
-    <value>Faire un don pour soutenir le développement</value>
+    <value>捐助支持发展</value>
   </data>
   <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
-    <value>Document PDF (.pdf)</value>
+    <value>PDF文件 (.pdf)</value>
   </data>
   <data name="DonateButton.Label" xml:space="preserve">
-    <value>Faire un don</value>
+    <value>捐献</value>
   </data>
 
 </root>

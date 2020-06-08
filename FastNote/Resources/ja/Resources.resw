@@ -118,115 +118,115 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CharactersText.Text" xml:space="preserve">
-    <value> caractères</value>
+    <value> 登場人物</value>
   </data>
   <data name="Dialog_FileNotSaved" xml:space="preserve">
-    <value>Le fichier n'a pas été sauvegardé.</value>
+    <value>ファイルが保存されませんでした。</value>
   </data>
   <data name="Dialog_OperationCancelled" xml:space="preserve">
-    <value>Opération annulée</value>
+    <value>作戦中止</value>
   </data>
   <data name="LoadingText.Text" xml:space="preserve">
-    <value>Un moment de patience....</value>
+    <value>それに取り組んでいる...</value>
   </data>
   <data name="Manifest_AppDescText" xml:space="preserve">
-    <value>FastNote est un éditeur de texte minimaliste open source riche pour la plate-forme Windows universelle qui permet d'enregistrer les modifications en temps réel.</value>
+    <value>FastNoteは、ユニバーサルウィンドウズプラットフォームのためのオープンソースの最小限のリアルタイム変更保存リッチテキストエディタです。</value>
   </data>
   <data name="More_AboutHeaderText.Text" xml:space="preserve">
-    <value>A propos de</value>
+    <value>について</value>
   </data>
   <data name="More_About_Contribute.Text" xml:space="preserve">
-    <value>Aide au développement:</value>
+    <value>FastNoteに寄稿します。</value>
   </data>
   <data name="More_About_DevEmail.Content" xml:space="preserve">
-    <value>Email</value>
+    <value>電子メール</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Soutenir le développement:</value>
+    <value>開発をサポートします。</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
-    <value>Bibliothèques et SDK d'occasion</value>
+    <value>中古のライブラリとSDK</value>
   </data>
   <data name="More_About_LicenseMIT.Text" xml:space="preserve">
-    <value>Licencié sous licence du MIT</value>
+    <value>MITライセンスに基づくライセンス</value>
   </data>
   <data name="More_FileHeaderText.Text" xml:space="preserve">
-    <value>Fichier</value>
+    <value>ファイル</value>
   </data>
   <data name="More_File_ClearAll.Text" xml:space="preserve">
-    <value>SUPPRIMER TOUT</value>
+    <value>削ぎ落とす</value>
   </data>
   <data name="More_File_ExportText.Text" xml:space="preserve">
-    <value>EXPORTATION</value>
+    <value>ゆしゅつ</value>
   </data>
   <data name="More_File_ShareFileText.Text" xml:space="preserve">
-    <value>PARTAGER LE FICHIER</value>
+    <value>共有ファイル</value>
   </data>
   <data name="More_File_ShareText_Selected.Text" xml:space="preserve">
-    <value>PARTAGER LE SÉLECTION DU TEXTE</value>
+    <value>選択テキストの共有</value>
   </data>
   <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
-    <value>PARTAGER LE TEXTE ENTIER</value>
+    <value>全文共有</value>
   </data>
   <data name="More_SettingsHeaderText.Text" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>設定</value>
   </data>
   <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
-    <value>NOM DE FICHIER STANDARD (EXPORTATION)</value>
+    <value>デフォルトのエクスポートファイル名</value>
   </data>
   <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Entrer le nom.....</value>
+    <value>名前を入力してください...</value>
   </data>
   <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
-    <value>NOM DE FICHIER STANDARD (PARTAGE)</value>
+    <value>デフォルトの共有ファイル名</value>
   </data>
   <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Entrer le nom.....</value>
+    <value>名前を入力してください...</value>
   </data>
   <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
-    <value>Remise à l'état initial</value>
+    <value>元に戻す</value>
   </data>
   <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
-    <value>LANGUE</value>
+    <value>げんご</value>
   </data>
   <data name="More_Settings_Language_Default.Content" xml:space="preserve">
-    <value>Automatique</value>
+    <value>デフォルト</value>
   </data>
   <data name="More_Settings_Lang_AppRest.Text" xml:space="preserve">
-    <value>L'application a besoin d'être redémarrée pour prendre le relais</value>
+    <value>アプリの適用には再起動が必要</value>
   </data>
   <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
-    <value>VÉRIFIER L'ORTHOGRAPHE</value>
+    <value>スペルチェッカー</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
-    <value>Activé</value>
+    <value>有効化された</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
-    <value>Désactivé</value>
+    <value>無効化された</value>
   </data>
   <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
-    <value>THÈME</value>
+    <value>テーマ</value>
   </data>
   <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Sombre</value>
+    <value>暗い</value>
   </data>
   <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Standard</value>
+    <value>デフォルト</value>
   </data>
   <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Lumière</value>
+    <value>灯り</value>
   </data>
   <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
-    <value>Bitmap (.bmp)</value>
+    <value>ビットマップ (.bmp)</value>
   </data>
   <data name="Share_File_ShareFile_GIF.Text" xml:space="preserve">
-    <value>GIF graphique (.gif)</value>
+    <value>GIF 画像 (.gif)</value>
   </data>
   <data name="Share_File_ShareFile_HTML.Text" xml:space="preserve">
-    <value>Page HTML (.html)</value>
+    <value>HTML ページ (.html)</value>
   </data>
   <data name="Share_File_ShareFile_JPG.Text" xml:space="preserve">
-    <value>Graphique JPG (.jpg)</value>
+    <value>JPG画像(.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
     <value>Portable Network Graphics (.png)</value>
@@ -235,117 +235,101 @@
     <value>Rich Text (.rtf)</value>
   </data>
   <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
-    <value>Graphique TIFF (.tiff)</value>
+    <value>TIFF 画像 (.tiff)</value>
   </data>
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
-    <value>Fichier texte (.txt)</value>
+    <value>プレーンテキスト (.txt)</value>
   </data>
   <data name="More_File_Exit.Text" xml:space="preserve">
-    <value>QUITT APP</value>
+    <value>終了アプリ</value>
   </data>
   <data name="More_About_Langs.Text" xml:space="preserve">
-    <value>Traductions</value>
+    <value>翻訳</value>
   </data>
   <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
-    <value>OUVRIR LE MENU AU DÉMARRAGE</value>
+    <value>起動時に開くメニュー</value>
   </data>
   <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
-    <value>Entrer note...</value>
+    <value>メモを取って...</value>
   </data>
   <data name="More_Settings_FontSizeHeader.Text" xml:space="preserve">
-    <value>TAILLE DE LA CHEMISE</value>
+    <value>フォントサイズ</value>
   </data>
   <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>Entrer le numéro...</value>
+    <value>番号を入力して...</value>
   </data>
   <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
-    <value>TYPE DE FONTE</value>
+    <value>フォントファミリ</value>
   </data>
   <data name="More_About_NoLicense.Text" xml:space="preserve">
-    <value>Sans licence</value>
+    <value>パブリックドメイン</value>
   </data>
   <data name="More_About_MIT.Header" xml:space="preserve">
-    <value>La licence MIT</value>
+    <value>MITライセンス</value>
   </data>
   <data name="More_About_PP.Header" xml:space="preserve">
-    <value>Politique de confidentialité</value>
+    <value>個人情報保護方針</value>
   </data>
   <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
-    <value>© 2018 by brullsker. Tous droits réservés.</value>
+    <value>© 2018 by brullsker. All rights reserved.</value>
   </data>
   <data name="Store_Description" xml:space="preserve">
-    <value>FastNote : Prendre des notes n'a jamais été aussi facile et rapide !
+    <value>あなたは、それらを保存する必要がなく、彼らが起こるように変更を保存するメモを取るためのアプリを探していますか？そして、あなたは適切な場所に着いた! FastNoteには、次のような多くの素晴らしい機能があります。
 
-Vous cherchez une application pour prendre des notes qui enregistre les modifications au fur et à mesure, sans vous obliger à les sauvegarder ? Alors vous êtes au bon endroit ! FastNote possède de nombreuses fonctionnalités intéressantes, telles que :
+- いくつかのファイル形式にエクスポート
+- テキストまたはファイルを共有する
+- スペルチェッカー
 
-- Exportation dans plusieurs formats de fichiers (y compris PDF)
-- Partager un texte ou un fichier
-- Vérificateur d'orthographe
-
-... et bien plus encore ! Faites l'expérience de FastNote dès aujourd'hui et facilitez-vous la vie.
-
---- Attention : Après que Microsoft ait fermé sa plate-forme de monétisation des publicités, cette application ne propose plus de publicités in-app. Vous pouvez toujours soutenir le développement en faisant un don via des achats dans l'application. Cependant, toutes les fonctionnalités restent gratuites. ---
-
-La traduction française a été réalisée par traduction automatique AI. Elle n'est pas parfaite, et ne doit en aucun cas être considérée comme une offense. Si vous trouvez des erreurs, n'hésitez pas à contacter le développeur (via les coordonnées fournies dans l'application)
-The French translation has been accomplished by AI machine translation. It is not perfect, and in no way meant to be taken as an offence. If you find any errors, do not hesitate to contact the developer (via contact info provided within the app.)</value>
+...などなど! FastNoteを今日体験して、あなたの人生をより簡単にしましょう。</value>
   </data>
   <data name="Store_Feature1" xml:space="preserve">
-    <value>Consignes</value>
+    <value>注意事項</value>
   </data>
   <data name="Store_Feature2" xml:space="preserve">
-    <value>Sauvegarde automatique</value>
+    <value>自動保存</value>
   </data>
   <data name="Store_Feature3" xml:space="preserve">
-    <value>Exporter (par ex. rtf, txt, différents formats d'images)</value>
+    <value>エクスポート（例：rtf、txt、複数の画像フォーマット</value>
   </data>
   <data name="Store_Feature4" xml:space="preserve">
-    <value>Partager (fichier ou texte)</value>
+    <value>共有（ファイルまたはテキスト</value>
   </data>
   <data name="Store_Feature5" xml:space="preserve">
-    <value>Notes de format</value>
+    <value>書式注</value>
   </data>
   <data name="Store_Feature6" xml:space="preserve">
     <value>Fluent Design</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>--- Attention : Après que Microsoft ait fermé sa plate-forme de monétisation des publicités, cette application ne comporte plus de publicités in-app. Vous pouvez toujours soutenir le développement en faisant un don par le biais d'achats dans l'application. Cependant, toutes les fonctionnalités restent gratuites. ---
+    <value>FastNoteの1000ダウンロードを記念して、また、私たちはアプリをさらに開発するのが好きなので、今日は大きなアップデートをドロップアウトします。以下、FastNote 2.0.0.0の変更履歴です。
 
-Nouveau dans la version 2.2.14.0
-- Traduction en japonais
-- Traduction en portugais (Portugal)
-- Traduction en chinois (simplifié)
-- Suppression de toutes les annonces dans l'application
-- Suppression de tous les paramètres relatifs aux publicités dans l'application
-- Suppression de l'achat "Supprimer les annonces".
-- Nouveau bouton de don dans le menu
-- Des dons retravaillés
-- Corrections de bogues
+⦁ PDFツール。ノートからPDFを作成して、エクスポート、共有、印刷することができます。あなたは、いくつかの要件に適合する必要があるかもしれません。このことについての詳細は、アプリ内で指定されたものを見つける。
+⦁ インポート機能。あなたは、どちらかの前に、後に、または既存のコンテンツを置き換えて、ドキュメントをインポートすることができます。
+⦁ お好みのHTMLエンコーディングを選択してください。これにより、一部の言語が正しく表示されなかった問題が修正されます。
+⦁ より明確なデザインを追加するために、ダークモードでアプリを使用しているときにフォーカスを合わせたときにメインの編集ボックスが白くならないようになりました。この変更がお気に召さない場合はメモをお願いします。
+⦁ より多くのエクスポートと共有ファイル形式。Word文書（.doc / .docx）とeBook形式（.epub）。
+⦁ 寄付。積極的に開発をサポートするために、あなたは今、Microsoftストアだけでなく、PayPalを使用して寄付することができます。それにもかかわらず、広告の削除は無料で利用できるようになります。
+⦁ たくさんのバグフィックス、改善、そしてアンダーザフッドトゥワー。
 
---- Arriéré ---
-FastNote 2.2.0.0 est là !
-ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
-- Traduction en russe
-- Exportation PDF retravaillée (plus besoin de clé API tierce partie)
-- Monétisation des applications retravaillée
-- Corrections de bogues</value>
+そのため、この変更履歴は、すべての変更を実現するための努力に値するよりも短く見えます。それにもかかわらず、とても良いクリスマスをお過ごしください。肯定的なものも否定的なものも含めて、どんなフィードバックもお待ちしています。楽しんでください</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
-    <value>Egalement dans le design brillant et beau grâce à Fluent Design</value>
+    <value>Fluent Design Systemのおかげでライトテーマでもゴージャスに</value>
   </data>
   <data name="Store_Sc_Mobile4" xml:space="preserve">
-    <value>Beau aussi dans le design brillant grâce au système UWP Design System</value>
+    <value>UWPデザインシステムのおかげでライトテーマ使用時もゴージャスに</value>
   </data>
   <data name="Store_Sc_MR1" xml:space="preserve">
-    <value>Soyez productif dans Mixed Reality aussi!</value>
+    <value>Mixed Realityでも生産性を高めよう</value>
   </data>
   <data name="Store_Sc_Universal1" xml:space="preserve">
-    <value>Prenez des notes et formatez-les.</value>
+    <value>メモを取ってスタイルを整える</value>
   </data>
   <data name="Store_Sc_Universal2" xml:space="preserve">
-    <value>Exportez et partagez votre travail à l'aide d'outils complets</value>
+    <value>強力なツールを使って作品をエクスポートして共有</value>
   </data>
   <data name="Store_Sc_Universal3" xml:space="preserve">
-    <value>Personnaliser des options telles que la taille ou le type de police</value>
+    <value>フォントサイズやフォントファミリなどのオプションを設定する</value>
   </data>
   <data name="Store_SearchTerm1" xml:space="preserve">
     <value>FastNote</value>
@@ -357,10 +341,10 @@ ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
     <value>Note</value>
   </data>
   <data name="Store_SearchTerm4" xml:space="preserve">
-    <value>Consignes</value>
+    <value>注意事項</value>
   </data>
   <data name="Store_SearchTerm5" xml:space="preserve">
-    <value>Traitement de texte</value>
+    <value>テキストエディタ</value>
   </data>
   <data name="Store_SearchTerm6" xml:space="preserve">
     <value>Notepad</value>
@@ -369,118 +353,118 @@ ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
     <value>Autosave</value>
   </data>
   <data name="Store_ShortDescription" xml:space="preserve">
-    <value>Prenez des notes! Enregistre automatiquement les modifications.</value>
+    <value>いくつかのメモを取る! 変更を保存します。</value>
   </data>
   <data name="ShareUI_FileDesc" xml:space="preserve">
-    <value>Partager le fichier</value>
+    <value>共有ファイル</value>
   </data>
   <data name="ShareUI_SelectedTextDesc" xml:space="preserve">
-    <value>Partager le sélection du texte</value>
+    <value>選択したテキストを共有する</value>
   </data>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
-    <value>Partager le texte entier</value>
+    <value>テキスト全体を共有する</value>
   </data>
   <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
-    <value>POSITION DE LA BARRE D'OUTILS TEXTE</value>
+    <value>テキストツールバー位置</value>
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
-    <value>Sur le dessus</value>
+    <value>トップ</value>
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
-    <value>Sur le fond</value>
+    <value>底部</value>
   </data>
   <data name="DefaultString" xml:space="preserve">
-    <value>Automatique</value>
+    <value>デフォルト</value>
   </data>
   <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
-    <value>ENCODAGE HTML</value>
+    <value>ＨＴＭＬエンコーディング</value>
   </data>
   <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
-    <value>Document Word (ancien) (.doc)</value>
+    <value>ワード文書（旧版）（.doc</value>
   </data>
   <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
-    <value>Document Word (.docx)</value>
+    <value>ワード文書（.docx</value>
   </data>
   <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
-    <value>Fichier eBook (.epub)</value>
+    <value>電子ブックファイル（.epub</value>
   </data>
   <data name="FileBMP" xml:space="preserve">
-    <value>Bitmap</value>
+    <value>ビットマップ</value>
   </data>
   <data name="FileDoc" xml:space="preserve">
-    <value>Document Word (ancien)</value>
+    <value>ワード文書（旧版）</value>
   </data>
   <data name="FileDocx" xml:space="preserve">
-    <value>Document Word</value>
+    <value>ワード文書</value>
   </data>
   <data name="FileEpub" xml:space="preserve">
-    <value>Fichier eBook</value>
+    <value>電子書籍ファイル</value>
   </data>
   <data name="FileGIF" xml:space="preserve">
-    <value>GIF graphique</value>
+    <value>ＧＩＦ画像</value>
   </data>
   <data name="FileHTML" xml:space="preserve">
-    <value>Page HTML</value>
+    <value>HTMLページ</value>
   </data>
   <data name="FileJPG" xml:space="preserve">
-    <value>JPG graphique</value>
+    <value>ＪＰＧ画像</value>
   </data>
   <data name="FilePNG" xml:space="preserve">
-    <value>Portable Network Graphics</value>
+    <value>PNG</value>
   </data>
   <data name="FileRTF" xml:space="preserve">
     <value>Rich Text</value>
   </data>
   <data name="FileTIFF" xml:space="preserve">
-    <value>TIFF graphique</value>
+    <value>TIFF画像</value>
   </data>
   <data name="FileTXT" xml:space="preserve">
-    <value>Fichier texte</value>
+    <value>プレーンテキスト</value>
   </data>
   <data name="DonateText.Content" xml:space="preserve">
-    <value> Faites un don!</value>
+    <value> 寄付して！</value>
   </data>
   <data name="ProprietaryText.Text" xml:space="preserve">
-    <value>Propriétaire</value>
+    <value>専有</value>
   </data>
   <data name="WebsiteText.Content" xml:space="preserve">
-    <value>Site Internet</value>
+    <value>ウェブサイト</value>
   </data>
   <data name="ImportAfterText.Text" xml:space="preserve">
-    <value>Insérer après le contenu existant</value>
+    <value>  現在の内容の後に挿入</value>
   </data>
   <data name="ImportBeforeText.Text" xml:space="preserve">
-    <value>Insérer avant le contenu existant</value>
+    <value>現在のコンテンツの前に挿入</value>
   </data>
   <data name="ImportReplaceText.Text" xml:space="preserve">
-    <value>Remplacer le contenu existant</value>
+    <value>現在の内容を置き換える</value>
   </data>
   <data name="More_File_ImportText.Text" xml:space="preserve">
-    <value>IMPORTATION</value>
+    <value>インポート</value>
   </data>
   <data name="DialogCancelled" xml:space="preserve">
-    <value>Soit aucun fichier n'a été sélectionné, soit le sélecteur de fichiers a été fermé.</value>
+    <value>ファイルが選択されていないか、ファイルピッカーが閉じられています。</value>
   </data>
   <data name="CommitExportText" xml:space="preserve">
-    <value>Exportation</value>
+    <value>ゆしゅつ</value>
   </data>
   <data name="CommitImportText" xml:space="preserve">
-    <value>Importation</value>
+    <value>インポート</value>
   </data>
   <data name="DialogClose" xml:space="preserve">
-    <value>Fermer</value>
+    <value>締めくくる</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>Document PDF</value>
+    <value>PDF文書</value>
   </data>
   <data name="DonateDescText.Text" xml:space="preserve">
-    <value>Faire un don pour soutenir le développement</value>
+    <value>開発を支援するために寄付をする</value>
   </data>
   <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
-    <value>Document PDF (.pdf)</value>
+    <value>PDFドキュメント(.pdf)</value>
   </data>
   <data name="DonateButton.Label" xml:space="preserve">
-    <value>Faire un don</value>
+    <value>寄付をする</value>
   </data>
 
 </root>

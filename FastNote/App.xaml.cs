@@ -19,6 +19,7 @@ namespace FastNote
         /// Initialisiert das Singletonanwendungsobjekt. Dies ist die erste Zeile von erstelltem Code
         /// und daher das logische Äquivalent von main() bzw. WinMain().
         /// </summary>
+
         public App()
         {
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(new Constants().SfKey);
@@ -27,17 +28,26 @@ namespace FastNote
             langlist.Add(SystemInformation.Culture.ToString());
             langlist.Add("en-US");
             langlist.Add("de-DE");
-            langlist.Add("pt-BR");
-            langlist.Add("fr");
-            langlist.Add("it");
             langlist.Add("es");
+            langlist.Add("fr");
+            langlist.Add("hy");
+            langlist.Add("it");
+            langlist.Add("ja");
             langlist.Add("nl");
             langlist.Add("pl");
-            langlist.Add("hy");
+            langlist.Add("pt-BR");
+            langlist.Add("pt-PT");
             langlist.Add("ru");
-            if (Settings.Default.AdFree == true) Settings.Default.AdHeight = (double)50;
-            System.Diagnostics.Debug.WriteLine("Ad height: " + Settings.Default.AdHeight.ToString());
-            ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];
+            langlist.Add("zh-CN");
+            try
+            {
+                ApplicationLanguages.PrimaryLanguageOverride = langlist[Settings.Default.LanguageIndex];
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Language could not be set, reverting to en-US");
+                ApplicationLanguages.PrimaryLanguageOverride = "en-US";
+            }
         }
 
         List<string> langlist = new List<string>();

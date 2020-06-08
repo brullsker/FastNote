@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="46011brullsker.FastNote" Publisher="CN=4D28A236-B8C9-4EDF-9780-AD562CC80BDB" Version="2.2.6.0" />
+  <Identity Name="46011brullsker.FastNote" Publisher="CN=4D28A236-B8C9-4EDF-9780-AD562CC80BDB" Version="2.2.16.0" />
   <mp:PhoneIdentity PhoneProductId="ebfe7abb-fac7-453f-b0ce-a97d872ec527" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Fast_Note</DisplayName>
@@ -15,7 +15,7 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="FastNote.App">
-      <uap:VisualElements DisplayName="FastNote" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="ms-resource:Manifest_AppDescText" BackgroundColor="gray">
+      <uap:VisualElements DisplayName="FastNote" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="ms-resource:Manifest_AppDescText" BackgroundColor="#282828">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="FastNote" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo" />
@@ -23,7 +23,7 @@
             <uap:ShowOn Tile="square310x310Logo" />
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="gray" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png"  BackgroundColor="#282828"/>
       </uap:VisualElements>
       <Extensions>
         <uap:Extension Category="windows.protocol" EntryPoint="FastNote.App">

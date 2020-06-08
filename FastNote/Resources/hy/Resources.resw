@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CharactersText.Text" xml:space="preserve">
-    <value>հատկանիշ</value>
+    <value> հատկանիշ</value>
   </data>
   <data name="Dialog_FileNotSaved" xml:space="preserve">
     <value>Նիշքը չի պահպանվել</value>
@@ -274,10 +274,20 @@
     <value>2018թ. Ծրագրի հեղինակ՝ brullsker։ Բոլոր իրավունքները պաշտպանված են։</value>
   </data>
   <data name="Store_Description" xml:space="preserve">
-    <value>Եթե դուք փնտրում էիք ծրագիր արագ նշումների համար, ապա ճիշտ տեղում եք։ FastNote-ն ունի մի քանի առանձնահատկություններ, որոնք կնշենք.
--արտահանում մի քանի ձևաչափով
--կիսում տեքստով կամ նիշքով
--ուղղագրության ստուգում</value>
+    <value>FastNote. Նշումներ գրելը երբեք այդքան հեշտ և արագ չէր:
+
+Դուք փնտրում եք հավելված ՝ գրառումներ կատարելու համար, որը պահպանում է փոփոխությունները ինչպես տեղի են ունենում, առանց պահանջելու ձեզ դրանք փրկել: Հետո հասաք ճիշտ տեղում: FastNote- ն ունի շատ գեղեցիկ հատկություններ, ինչպիսիք են.
+
+- Արտահանել մի քանի ֆայլի ձևաչափեր (ներառյալ PDF)
+- Կիսեք տեքստ կամ ֆայլ
+- Spellchecker
+
+... և շատ ավելին: Այսօր փորձեք FastNote- ը և դարձրեք ձեր կյանքը ավելի հեշտ:
+
+--- Ուշադրություն. Microsoft- ը փակել է գովազդի դրամայնացման պլատֆորմը, այս ծրագիրը այլևս չի ներառում հավելյալ գովազդներ: Դեռ կարող եք աջակցել զարգացմանը ՝ նվիրատվություն կատարելով ներսից գնումների միջոցով: Այնուամենայնիվ, բոլոր հատկանիշները մնում են անվճար: ---
+
+Հայ թարգմանության փոքր մասերը կատարվել են մեքենայական թարգմանությամբ: Դա կատարյալ չէ, և ոչ մի իմաստով չի կարելի դիտարկել որպես վիրավորանք: Եթե որևէ սխալ եք հայտնաբերել, մի հապաղեք կապվել ծրագրավորողի հետ (հավելվածի շրջանակներում տրամադրված կոնտակտային տեղեկատվության միջոցով):
+Small parts of the Armenian translation has been accomplished by machine translation. It is not perfect, and in no way meant to be taken as an offence. If you find any errors, do not hesitate to contact the developer (via contact info provided within the app.)</value>
   </data>
   <data name="Store_Feature1" xml:space="preserve">
     <value>Հուշեր</value>
@@ -298,14 +308,26 @@
     <value>Թափանցիկ տեսք</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>Հավելվածի հազարերորդ ներբեռնման առթիվ ծրագրավորողը ներկայացնում է նոր տարբերակը մի քանի նորամուծություններով.
--PDF գործիքներ-Կարող եք ստեղծել PDF նիշք Ձեր տեքստային նիշքից և տպագրել
--կարող եք ներմուծել նոր նիշք չփոխարինելով հինը
--HTML կոդավորումը և արտահանումը ևս հասանելի է
--ոճային երկու ընտրություն (մուգ և բաց)
--աջակցվում են նաև .doc / .docx և .epub նիշքերը
--Հեղինակաին աջակցելու համար կարող եք կապ հաստատել փոստով կամ նվիրատվություն անել PayPal համակարգի միջոցով։
-Շնորհակալություն Ձեր աջակցության համար և հաճախ ժպտացեք) </value>
+    <value>--- Ուշադրություն. Microsoft- ը փակել է գովազդի դրամայնացման պլատֆորմը, այս ծրագիրը այլևս չի ներառում հավելյալ գովազդներ: Դեռ կարող եք աջակցել զարգացմանը ՝ նվիրատվություն կատարելով ներսից գնումների միջոցով: Այնուամենայնիվ, բոլոր հատկանիշները մնում են անվճար: ---
+
+2.2.14.0 տարբերակով նոր
+- Japaneseապոնական թարգմանություն
+- Պորտուգալերեն (Պորտուգալիա) թարգմանություն
+- չինարեն (պարզեցված) թարգմանություն
+- Ներքին բոլոր գովազդները հանվել են
+- Ներքին հավելված գովազդներին վերաբերող բոլոր պարամետրերը հանված են
+- Հեռացվեց «Հեռացրեք գովազդները» գնումը
+- donանկի մեջ նվիրատվության նոր կոճակ
+- Վերանայված նվիրատվություններ
+- վրիպակները
+
+--- Backlog ---
+FastNote 2.2.0.0- ն այստեղ է:
+ՈՒՇԱԴՐՈՒԹՅՈՒՆ. Այս տարբերակը պահանջում է Windows 10 տարբերակը 1903 կամ ավելի բարձր:
+- ռուսերեն թարգմանություն
+- Վերամշակված PDF արտահանում (3-րդ կողմի API բանալին այլևս կարիք չունի)
+- Վերամշակված հավելվածի դրամայնացում
+- Սխալների շտկում</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
     <value>Բաց կերպը գեղեցիկ կլինի թափանցիկ ոճում</value>
@@ -366,12 +388,6 @@
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
     <value>Ներքև</value>
-  </data>
-  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>Դուք կարող եք անջատել գովազդները (անվճար)</value>
-  </data>
-  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
-    <value>Ցուցադրել գովազդները ծրագրավորողին աջակցելու համար</value>
   </data>
   <data name="DefaultString" xml:space="preserve">
     <value>Կանխադրված</value>
@@ -457,56 +473,14 @@
   <data name="FilePDF" xml:space="preserve">
     <value>PDF նիշք</value>
   </data>
-  <data name="HowPDFWorkContent" xml:space="preserve">
-    <value>PDF նիշք ստեղծելու համար մենք օգտվում ենք HTML2PDFROCKET ծառայությունից, որպեսզի ստանանք PDF՝ HTML նիշքից.
- 1.Գնացեք {0} և գրանցեք նոր օգտանուն՝ ընտրելով C# լեզուն։
-2. Ձեր փոստում փնտրեք գործունացման հղումը, օգտագործեք։
-3. Հաջորդ փոստարկղում կլինի նաև API բանալին, դա էլ կլինի ձեր օգտանունը, որով կարող եք մուտք գործել html2pdfrocket.com էջը։
-4. Պատճենեք API բանալին նշոցում։
-5. Տեղադրեք այդ բանալին մուտքագրման ամապատասխան բաժնում։
-Այս կերպ Դուք կարող եք ամսական ստեղծել 200 PDF  նիշքեր. ստուգել կարող եք այս  {1} կայքում։</value>
+  <data name="DonateDescText.Text" xml:space="preserve">
+    <value>Նվիրաբերեք զարգացմանը աջակցելու համար</value>
   </data>
-  <data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>Ինչպե՞ս է դա աշխատում</value>
+  <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
+    <value>PDF փաստաթուղթ (.pdf)</value>
   </data>
-  <data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>PDF գործիքներ</value>
+  <data name="DonateButton.Label" xml:space="preserve">
+    <value>Նվիրաբերել</value>
   </data>
-  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>API բանալի</value>
-  </data>
-  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>Ստեղծել PDF նիշքից</value>
-  </data>
-  <data name="PDF_Export.Content" xml:space="preserve">
-    <value>Արտահանել</value>
-  </data>
-  <data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Բացել միջոցով...</value>
-  </data>
-  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>Վերջին ստեղծած PDF-ն-Նախատեսք</value>
-  </data>
-  <data name="PDF_Print.Content" xml:space="preserve">
-    <value>Տպել</value>
-  </data>
-  <data name="PDF_Share.Content" xml:space="preserve">
-    <value>Կիսվել</value>
-  </data>
-  <data name="PDFError.Text" xml:space="preserve">
-    <value>Չհաջողվեց ստեղծել, առաջացել է խնդիր</value>
-  </data>
-  
-<!--
-<data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
-    <value>REMOVE ADS - $1.49</value>
-  </data>
--->
-  
-<!--
-<data name="DonateDescText.Text" xml:space="preserve">
-    <value>Donate (and shrink the ad in the menu)</value>
-  </data>
--->
 
 </root>

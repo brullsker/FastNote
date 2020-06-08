@@ -374,12 +374,6 @@ Assim, este changelog parece mais curto do que o esforço para fazer todas as mu
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
     <value>Embaixo</value>
   </data>
-  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>Você pode desabilitar a publicidade nas configurações</value>
-  </data>
-  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
-    <value>MOSTRAR PUBLICIDADE PARA AJUDAR O DESENVOLVEDOR</value>
-  </data>
   <data name="DefaultString" xml:space="preserve">
     <value>Padrão</value>
   </data>
@@ -464,50 +458,14 @@ Assim, este changelog parece mais curto do que o esforço para fazer todas as mu
   <data name="FilePDF" xml:space="preserve">
     <value>Arquivo PDF</value>
   </data>
-  <data name="HowPDFWorkContent" xml:space="preserve">
-    <value>Para a criação de PDFs, fazemos uso dos serviços de HTML2PDFROCKET. Este é um serviço online para criar arquivos PDF a partir de HTML. Para fazê-lo funcionar, siga estes passos: 
-1. Vá para {0} e registre uma nova conta. Deixe o idioma como C#. 
-2. Você receberá um e-mail com um link de ativação. Use-o! 
-3. Em outro e-mail você terá uma chave de API. Isso também é utilizável como senha para login em html2pdfrocket.com. 
-4. Copie a chave de API para a área de transferência. 
-5. Cole a chave na caixa de entrada esquerda do botão de ajuda. 
-6. Com esta subscrição gratuita, você pode criar 200 PDFs por mês. Para ver quantos foram feitos, verifique no site {1}.</value>
-  </data>
-  <data name="HowPDFWorkTitle" xml:space="preserve">
-    <value>Como isso funciona?</value>
-  </data>
-  <data name="PDFToolsHeader.Text" xml:space="preserve">
-    <value>FERRAMENTAS DE PDF</value>
-  </data>
-  <data name="PDF_ApiKeyTextBox.PlaceholderText" xml:space="preserve">
-    <value>Chave da API</value>
-  </data>
-  <data name="PDF_CreateFromContent.Content" xml:space="preserve">
-    <value>Criar PDF a partir do conteúdo</value>
-  </data>
-  <data name="PDF_Export.Content" xml:space="preserve">
-    <value>Exportar</value>
-  </data>
-  <data name="PDF_OpenIn.Content" xml:space="preserve">
-    <value>Abrir em...</value>
-  </data>
-  <data name="PDF_PreviewHeader.Text" xml:space="preserve">
-    <value>PDF criado pela última vez - Preview</value>
-  </data>
-  <data name="PDF_Print.Content" xml:space="preserve">
-    <value>Imprimir</value>
-  </data>
-  <data name="PDF_Share.Content" xml:space="preserve">
-    <value>Compartilhar</value>
-  </data>
-  <data name="PDFError.Text" xml:space="preserve">
-    <value>Nada criado ainda ou um erro ocorreu</value>
-  </data>
-  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
-    <value>REMOVER ANÚNCIOS - $ 1,49</value>
-  </data>
   <data name="DonateDescText.Text" xml:space="preserve">
-    <value>Doar (e reduzir os anúncios no menu)</value>
+    <value>Doar para apoiar o desenvolvimento</value>
+  </data>
+  <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
+    <value>Documento PDF (.pdf)</value>
+  </data>
+  <data name="DonateButton.Label" xml:space="preserve">
+    <value>Doe</value>
   </data>
 
 </root>

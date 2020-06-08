@@ -24,9 +24,10 @@
     <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
     <AppInstallerUpdateFrequency>0</AppInstallerUpdateFrequency>
     <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
-    <PackageCertificateThumbprint>B53D78F1BA84611D9B74EC43526BC49FB4F6358A</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>
+    </PackageCertificateThumbprint>
     <AppxBundleAutoResourcePackageQualifiers>Scale|DXFeatureLevel</AppxBundleAutoResourcePackageQualifiers>
-    <AppxDefaultResourceQualifiers>Language=de-DE;en-US;pt-BR;fr;it;es;nl;pl;hy;ru</AppxDefaultResourceQualifiers>
+    <AppxDefaultResourceQualifiers>Language=de-DE;en-US;es;fr;hy;it;ja;nl;pl;pt-BR;pt-PT;ru;zh-CN</AppxDefaultResourceQualifiers>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
@@ -112,7 +113,9 @@
     <Compile Include="CustomTextToolBarControl.xaml.cs">
       <DependentUpon>CustomTextToolBarControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="KeepAboveInputPaneBehavior.cs" />
+    <Compile Include="DonateFlyoutControl.xaml.cs">
+      <DependentUpon>DonateFlyoutControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -126,13 +129,16 @@
     </AppxManifest>
     <None Include="FastNote_StoreKey.pfx" />
     <None Include="FastNote_TemporaryKey.pfx" />
-    <PRIResource Include="Resources\hy\Resources.resw" />
     <PRIResource Include="Resources\ru\Resources.resw" />
+    <PRIResource Include="Resources\hy\Resources.resw" />
+    <PRIResource Include="Resources\fr\Resources.resw" />
+    <PRIResource Include="Resources\zh-CN\Resources.resw" />
+    <PRIResource Include="Resources\pt-PT\Resources.resw" />
     <PRIResource Include="Resources\pt-BR\Resources.resw" />
     <PRIResource Include="Resources\pl\Resources.resw" />
     <PRIResource Include="Resources\nl\Resources.resw" />
+    <PRIResource Include="Resources\ja\Resources.resw" />
     <PRIResource Include="Resources\it\Resources.resw" />
-    <PRIResource Include="Resources\fr\Resources.resw" />
     <PRIResource Include="Resources\es\Resources.resw" />
     <PRIResource Include="Resources\de-DE\Resources.resw" />
     <PRIResource Include="Resources\en-US\Resources.resw" />
@@ -156,6 +162,11 @@
     <Content Include="Assets\Square150x150Logo.scale-125.png" />
     <Content Include="Assets\Square150x150Logo.scale-150.png" />
     <Content Include="Assets\Square150x150Logo.scale-400.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png" />
+    <Content Include="Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png" />
     <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-16.png" />
     <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-256.png" />
     <Content Include="Assets\Square44x44Logo.altform-unplated_targetsize-32.png" />
@@ -198,11 +209,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <None Include="MainPage.DeviceFamily-mobile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </None>
     <Page Include="CustomTextToolBarControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DonateFlyoutControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -241,9 +252,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <SDKReference Include="Microsoft.Advertising.Xaml, Version=10.0">
-      <Name>Microsoft Advertising SDK for XAML</Name>
-    </SDKReference>
     <SDKReference Include="Microsoft.VCLibs, Version=14.0">
       <Name>Visual C++ 2015 Runtime for Universal Windows Platform Apps</Name>
     </SDKReference>
@@ -253,6 +261,7 @@
       <HintPath>..\..\..\..\ObservableSettings\Common.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

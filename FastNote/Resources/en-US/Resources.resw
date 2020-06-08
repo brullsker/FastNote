@@ -373,12 +373,6 @@ So, this changelog looks shorter than the effort to make all the changes happen 
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
     <value>Bottom</value>
   </data>
-  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>You can disable ads in the settings</value>
-  </data>
-  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
-    <value>SHOW AD TO SUPPORT DEVELOPMENT</value>
-  </data>
   <data name="DefaultString" xml:space="preserve">
     <value>Default</value>
   </data>
@@ -463,13 +457,14 @@ So, this changelog looks shorter than the effort to make all the changes happen 
   <data name="FilePDF" xml:space="preserve">
     <value>PDF Document</value>
   </data>
-  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
-    <value>REMOVE ADS - $1.49</value>
-  </data>
   <data name="DonateDescText.Text" xml:space="preserve">
-    <value>Donate (and shrink the ad in the menu)</value>
+    <value>Donate to support the development</value>
   </data>
   <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
     <value>PDF Document (.pdf)</value>
   </data>
+  <data name="DonateButton.Label" xml:space="preserve">
+    <value>Donate</value>
+  </data>
+
 </root>

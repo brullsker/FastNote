@@ -118,115 +118,115 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="CharactersText.Text" xml:space="preserve">
-    <value> caractères</value>
+    <value> caracteres</value>
   </data>
   <data name="Dialog_FileNotSaved" xml:space="preserve">
-    <value>Le fichier n'a pas été sauvegardé.</value>
+    <value>O ficheiro não foi guardado.</value>
   </data>
   <data name="Dialog_OperationCancelled" xml:space="preserve">
-    <value>Opération annulée</value>
+    <value>Operação cancelada</value>
   </data>
   <data name="LoadingText.Text" xml:space="preserve">
-    <value>Un moment de patience....</value>
+    <value>A trabalhar nisso...</value>
   </data>
   <data name="Manifest_AppDescText" xml:space="preserve">
-    <value>FastNote est un éditeur de texte minimaliste open source riche pour la plate-forme Windows universelle qui permet d'enregistrer les modifications en temps réel.</value>
+    <value>FastNote é um editor de código aberto minimalista em tempo real, que poupa texto rico para a plataforma Windows universal.</value>
   </data>
   <data name="More_AboutHeaderText.Text" xml:space="preserve">
-    <value>A propos de</value>
+    <value>Sobre</value>
   </data>
   <data name="More_About_Contribute.Text" xml:space="preserve">
-    <value>Aide au développement:</value>
+    <value>Contribua para o FastNote:</value>
   </data>
   <data name="More_About_DevEmail.Content" xml:space="preserve">
-    <value>Email</value>
+    <value>E-Mail</value>
   </data>
   <data name="More_About_Donate.Text" xml:space="preserve">
-    <value>Soutenir le développement:</value>
+    <value>Apoiar o desenvolvimento:</value>
   </data>
   <data name="More_About_Libs.Text" xml:space="preserve">
-    <value>Bibliothèques et SDK d'occasion</value>
+    <value>SDKs e bibliotecas usadas</value>
   </data>
   <data name="More_About_LicenseMIT.Text" xml:space="preserve">
-    <value>Licencié sous licence du MIT</value>
+    <value>Licenciado ao abrigo da licença do MIT</value>
   </data>
   <data name="More_FileHeaderText.Text" xml:space="preserve">
-    <value>Fichier</value>
+    <value>Arquivo</value>
   </data>
   <data name="More_File_ClearAll.Text" xml:space="preserve">
-    <value>SUPPRIMER TOUT</value>
+    <value>LIMPAR TODOS</value>
   </data>
   <data name="More_File_ExportText.Text" xml:space="preserve">
-    <value>EXPORTATION</value>
+    <value>EXPORTAÇÃO</value>
   </data>
   <data name="More_File_ShareFileText.Text" xml:space="preserve">
-    <value>PARTAGER LE FICHIER</value>
+    <value>PARTILHAR FICHEIRO</value>
   </data>
   <data name="More_File_ShareText_Selected.Text" xml:space="preserve">
-    <value>PARTAGER LE SÉLECTION DU TEXTE</value>
+    <value>PARTILHAR TEXTO SELECCIONADO</value>
   </data>
   <data name="More_File_ShareText_Whole.Text" xml:space="preserve">
-    <value>PARTAGER LE TEXTE ENTIER</value>
+    <value>PARTILHAR TODO O TEXTO</value>
   </data>
   <data name="More_SettingsHeaderText.Text" xml:space="preserve">
-    <value>Paramètres</value>
+    <value>Definições</value>
   </data>
   <data name="More_Settings_DefExpNameText.Text" xml:space="preserve">
-    <value>NOM DE FICHIER STANDARD (EXPORTATION)</value>
+    <value>NOME DO FICHEIRO DE EXPORTAÇÃO POR DEFEITO</value>
   </data>
   <data name="More_Settings_DefExpName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Entrer le nom.....</value>
+    <value>Digite o nome...</value>
   </data>
   <data name="More_Settings_DefShrNameText.Text" xml:space="preserve">
-    <value>NOM DE FICHIER STANDARD (PARTAGE)</value>
+    <value>NOME DE FICHEIRO POR DEFEITO DAS ACÇÕES</value>
   </data>
   <data name="More_Settings_DefShrName_TextBox.PlaceholderText" xml:space="preserve">
-    <value>Entrer le nom.....</value>
+    <value>Digite o nome...</value>
   </data>
   <data name="More_Settings_FileNamesRestoreDefault.Content" xml:space="preserve">
-    <value>Remise à l'état initial</value>
+    <value>Reinicialização</value>
   </data>
   <data name="More_Settings_LangHeaderText.Text" xml:space="preserve">
-    <value>LANGUE</value>
+    <value>LÍNGUA</value>
   </data>
   <data name="More_Settings_Language_Default.Content" xml:space="preserve">
-    <value>Automatique</value>
+    <value>Por defeito</value>
   </data>
   <data name="More_Settings_Lang_AppRest.Text" xml:space="preserve">
-    <value>L'application a besoin d'être redémarrée pour prendre le relais</value>
+    <value>O aplicativo requer reinício para ser aplicado</value>
   </data>
   <data name="More_Settings_SpellCheckHeaderText.Text" xml:space="preserve">
-    <value>VÉRIFIER L'ORTHOGRAPHE</value>
+    <value>CORRECTOR ORTOGRÁFICO</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OnContent" xml:space="preserve">
-    <value>Activé</value>
+    <value>Activado</value>
   </data>
   <data name="More_Settings_SpellCheck_Switch.OffContent" xml:space="preserve">
-    <value>Désactivé</value>
+    <value>Deficientes</value>
   </data>
   <data name="More_Settings_ThemeHeaderText.Text" xml:space="preserve">
-    <value>THÈME</value>
+    <value>TEMA</value>
   </data>
   <data name="More_Settings_Theme_Dark.Content" xml:space="preserve">
-    <value>Sombre</value>
+    <value>Escuro</value>
   </data>
   <data name="More_Settings_Theme_Default.Content" xml:space="preserve">
-    <value>Standard</value>
+    <value>Por defeito</value>
   </data>
   <data name="More_Settings_Theme_Light.Content" xml:space="preserve">
-    <value>Lumière</value>
+    <value>Luz</value>
   </data>
   <data name="Share_File_ShareFile_BMP.Text" xml:space="preserve">
     <value>Bitmap (.bmp)</value>
   </data>
   <data name="Share_File_ShareFile_GIF.Text" xml:space="preserve">
-    <value>GIF graphique (.gif)</value>
+    <value>Imagem GIF (.gif)</value>
   </data>
   <data name="Share_File_ShareFile_HTML.Text" xml:space="preserve">
-    <value>Page HTML (.html)</value>
+    <value>Página HTML (.html)</value>
   </data>
   <data name="Share_File_ShareFile_JPG.Text" xml:space="preserve">
-    <value>Graphique JPG (.jpg)</value>
+    <value>Imagem JPG (.jpg)</value>
   </data>
   <data name="Share_File_ShareFile_PNG.Text" xml:space="preserve">
     <value>Portable Network Graphics (.png)</value>
@@ -235,117 +235,101 @@
     <value>Rich Text (.rtf)</value>
   </data>
   <data name="Share_File_ShareFile_TIFF.Text" xml:space="preserve">
-    <value>Graphique TIFF (.tiff)</value>
+    <value>Imagem TIFF (.tiff)</value>
   </data>
   <data name="Share_File_ShareFile_TXT.Text" xml:space="preserve">
-    <value>Fichier texte (.txt)</value>
+    <value>Texto simples (.txt)</value>
   </data>
   <data name="More_File_Exit.Text" xml:space="preserve">
-    <value>QUITT APP</value>
+    <value>FECHAR APP</value>
   </data>
   <data name="More_About_Langs.Text" xml:space="preserve">
-    <value>Traductions</value>
+    <value>Traduções</value>
   </data>
   <data name="More_Settings_OpenMenuOnStartUpText.Text" xml:space="preserve">
-    <value>OUVRIR LE MENU AU DÉMARRAGE</value>
+    <value>MENU ABERTO NO INÍCIO DA OPERAÇÃO</value>
   </data>
   <data name="EditPlaceHolder.PlaceholderText" xml:space="preserve">
-    <value>Entrer note...</value>
+    <value>Comece a tomar notas...</value>
   </data>
   <data name="More_Settings_FontSizeHeader.Text" xml:space="preserve">
-    <value>TAILLE DE LA CHEMISE</value>
+    <value>TAMANHO FONT</value>
   </data>
   <data name="NumberPlaceholder.PlaceholderText" xml:space="preserve">
-    <value>Entrer le numéro...</value>
+    <value>Digite o número...</value>
   </data>
   <data name="More_Settings_FontFamilyHeader.Text" xml:space="preserve">
-    <value>TYPE DE FONTE</value>
+    <value>FAMÍLIA FONT</value>
   </data>
   <data name="More_About_NoLicense.Text" xml:space="preserve">
-    <value>Sans licence</value>
+    <value>Domínio público</value>
   </data>
   <data name="More_About_MIT.Header" xml:space="preserve">
-    <value>La licence MIT</value>
+    <value>A licença do MIT</value>
   </data>
   <data name="More_About_PP.Header" xml:space="preserve">
-    <value>Politique de confidentialité</value>
+    <value>Política de Privacidade</value>
   </data>
   <data name="Store_CopyrightTrademarkInformation" xml:space="preserve">
-    <value>© 2018 by brullsker. Tous droits réservés.</value>
+    <value>© 2018 by brullsker. All rights reserved.</value>
   </data>
   <data name="Store_Description" xml:space="preserve">
-    <value>FastNote : Prendre des notes n'a jamais été aussi facile et rapide !
+    <value>Está à procura de uma aplicação para tomar notas que salve as alterações à medida que elas acontecem, sem exigir que as salve? Então você chegou ao lugar certo! A FastNote tem muitas características simpáticas, como por exemplo:
 
-Vous cherchez une application pour prendre des notes qui enregistre les modifications au fur et à mesure, sans vous obliger à les sauvegarder ? Alors vous êtes au bon endroit ! FastNote possède de nombreuses fonctionnalités intéressantes, telles que :
+- Exportação para vários formatos de ficheiro
+- Partilhar texto ou ficheiro
+- Spellchecker
 
-- Exportation dans plusieurs formats de fichiers (y compris PDF)
-- Partager un texte ou un fichier
-- Vérificateur d'orthographe
-
-... et bien plus encore ! Faites l'expérience de FastNote dès aujourd'hui et facilitez-vous la vie.
-
---- Attention : Après que Microsoft ait fermé sa plate-forme de monétisation des publicités, cette application ne propose plus de publicités in-app. Vous pouvez toujours soutenir le développement en faisant un don via des achats dans l'application. Cependant, toutes les fonctionnalités restent gratuites. ---
-
-La traduction française a été réalisée par traduction automatique AI. Elle n'est pas parfaite, et ne doit en aucun cas être considérée comme une offense. Si vous trouvez des erreurs, n'hésitez pas à contacter le développeur (via les coordonnées fournies dans l'application)
-The French translation has been accomplished by AI machine translation. It is not perfect, and in no way meant to be taken as an offence. If you find any errors, do not hesitate to contact the developer (via contact info provided within the app.)</value>
+... e muito mais! Experimente hoje o FastNote e torne a sua vida mais fácil.</value>
   </data>
   <data name="Store_Feature1" xml:space="preserve">
-    <value>Consignes</value>
+    <value>Notas</value>
   </data>
   <data name="Store_Feature2" xml:space="preserve">
-    <value>Sauvegarde automatique</value>
+    <value>Poupança automática</value>
   </data>
   <data name="Store_Feature3" xml:space="preserve">
-    <value>Exporter (par ex. rtf, txt, différents formats d'images)</value>
+    <value>Exportação (por exemplo, rtf, txt, vários formatos de imagem)</value>
   </data>
   <data name="Store_Feature4" xml:space="preserve">
-    <value>Partager (fichier ou texte)</value>
+    <value>Partilhar (ficheiro ou texto)</value>
   </data>
   <data name="Store_Feature5" xml:space="preserve">
-    <value>Notes de format</value>
+    <value>Notas de formatação</value>
   </data>
   <data name="Store_Feature6" xml:space="preserve">
     <value>Fluent Design</value>
   </data>
   <data name="Store_ReleaseNotes" xml:space="preserve">
-    <value>--- Attention : Après que Microsoft ait fermé sa plate-forme de monétisation des publicités, cette application ne comporte plus de publicités in-app. Vous pouvez toujours soutenir le développement en faisant un don par le biais d'achats dans l'application. Cependant, toutes les fonctionnalités restent gratuites. ---
+    <value>Para celebrar 1000 downloads do FastNote e porque gostamos de desenvolver mais as nossas aplicações, estamos hoje a deixar de fazer uma grande actualização. Aqui está a mudança para o FastNote 2.0.0.0:
 
-Nouveau dans la version 2.2.14.0
-- Traduction en japonais
-- Traduction en portugais (Portugal)
-- Traduction en chinois (simplifié)
-- Suppression de toutes les annonces dans l'application
-- Suppression de tous les paramètres relatifs aux publicités dans l'application
-- Suppression de l'achat "Supprimer les annonces".
-- Nouveau bouton de don dans le menu
-- Des dons retravaillés
-- Corrections de bogues
+⦁ Ferramentas PDF: Crie um PDF a partir das suas notas e exporte, partilhe e imprima-o. Talvez você precise se adequar a alguns requisitos. Mais informações sobre isto você encontra especificado na aplicação.
+⦁ Importar funcionalidade: Permite-lhe importar um documento, seja antes, depois ou em substituição do conteúdo existente.
+⦁ Escolha a codificação HTML da sua preferência. Isto irá corrigir que alguns idiomas não estavam a ser apresentados correctamente.
+⦁ Para adicionar um design mais claro, a caixa de edição principal não fica mais branca quando se foca enquanto se usa a aplicação no modo escuro. Se não gostar desta alteração, deixe-nos uma nota.
+⦁ Mais exportação e partilha de formatos de ficheiros: Documento Word (.doc / .docx) e formato eBook (.epub).
+⦁ Doações: Para apoiar activamente o desenvolvimento, pode agora doar utilizando o Microsoft Store, bem como o PayPal. No entanto, a remoção de anúncios continuará a estar disponível gratuitamente.
+⦁ Muitas correcções de bugs, melhoramentos e idiotas de baixo do nível.
 
---- Arriéré ---
-FastNote 2.2.0.0 est là !
-ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
-- Traduction en russe
-- Exportation PDF retravaillée (plus besoin de clé API tierce partie)
-- Monétisation des applications retravaillée
-- Corrections de bogues</value>
+Portanto, esta mudança parece ser mais curta do que merece o esforço para que todas as mudanças aconteçam. No entanto, tenha um Natal muito agradável! Estamos à espera de qualquer feedback - tanto positivo como negativo. Divirtam-se!</value>
   </data>
   <data name="Store_Sc_Desktop4" xml:space="preserve">
-    <value>Egalement dans le design brillant et beau grâce à Fluent Design</value>
+    <value>Lindo também na utilização de temas leves graças ao Fluent Design System</value>
   </data>
   <data name="Store_Sc_Mobile4" xml:space="preserve">
-    <value>Beau aussi dans le design brillant grâce au système UWP Design System</value>
+    <value>Deslumbrante também na utilização de temas leves graças ao UWP Design System</value>
   </data>
   <data name="Store_Sc_MR1" xml:space="preserve">
-    <value>Soyez productif dans Mixed Reality aussi!</value>
+    <value>Seja produtivo também em Realidade Mista!</value>
   </data>
   <data name="Store_Sc_Universal1" xml:space="preserve">
-    <value>Prenez des notes et formatez-les.</value>
+    <value>Tome notas e estilize-as</value>
   </data>
   <data name="Store_Sc_Universal2" xml:space="preserve">
-    <value>Exportez et partagez votre travail à l'aide d'outils complets</value>
+    <value>Exporte e partilhe o seu trabalho, utilizando ferramentas poderosas</value>
   </data>
   <data name="Store_Sc_Universal3" xml:space="preserve">
-    <value>Personnaliser des options telles que la taille ou le type de police</value>
+    <value>Configurar opções como tamanho da fonte ou família de fontes</value>
   </data>
   <data name="Store_SearchTerm1" xml:space="preserve">
     <value>FastNote</value>
@@ -357,73 +341,73 @@ ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
     <value>Note</value>
   </data>
   <data name="Store_SearchTerm4" xml:space="preserve">
-    <value>Consignes</value>
+    <value>Notas</value>
   </data>
   <data name="Store_SearchTerm5" xml:space="preserve">
-    <value>Traitement de texte</value>
+    <value>Editor de texto</value>
   </data>
   <data name="Store_SearchTerm6" xml:space="preserve">
     <value>Notepad</value>
   </data>
   <data name="Store_SearchTerm7" xml:space="preserve">
-    <value>Autosave</value>
+    <value>autosave</value>
   </data>
   <data name="Store_ShortDescription" xml:space="preserve">
-    <value>Prenez des notes! Enregistre automatiquement les modifications.</value>
+    <value>Tome algumas notas! Guarde as mudanças à medida que elas acontecem.</value>
   </data>
   <data name="ShareUI_FileDesc" xml:space="preserve">
-    <value>Partager le fichier</value>
+    <value>Partilhar ficheiro</value>
   </data>
   <data name="ShareUI_SelectedTextDesc" xml:space="preserve">
-    <value>Partager le sélection du texte</value>
+    <value>Partilhar o texto seleccionado</value>
   </data>
   <data name="ShareUI_WholeTextDesc" xml:space="preserve">
-    <value>Partager le texte entier</value>
+    <value>Partilhar todo o texto</value>
   </data>
   <data name="More_Settings_ToolbarPositionHeaderText.Text" xml:space="preserve">
-    <value>POSITION DE LA BARRE D'OUTILS TEXTE</value>
+    <value>POSIÇÃO DA BARRA DE FERRAMENTAS DE TEXTO</value>
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OffContent" xml:space="preserve">
-    <value>Sur le dessus</value>
+    <value>Início</value>
   </data>
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
-    <value>Sur le fond</value>
+    <value>Em baixo</value>
   </data>
   <data name="DefaultString" xml:space="preserve">
-    <value>Automatique</value>
+    <value>Por defeito</value>
   </data>
   <data name="More_Settings_HTMLEncodingHeader.Text" xml:space="preserve">
-    <value>ENCODAGE HTML</value>
+    <value>HTML ENCONTRADO</value>
   </data>
   <data name="Share_File_ShareFile_DOC.Text" xml:space="preserve">
-    <value>Document Word (ancien) (.doc)</value>
+    <value>Documento Word (antigo) (.doc)</value>
   </data>
   <data name="Share_File_ShareFile_DOCX.Text" xml:space="preserve">
-    <value>Document Word (.docx)</value>
+    <value>Documento Word (.docx)</value>
   </data>
   <data name="Share_File_ShareFile_EPUB.Text" xml:space="preserve">
-    <value>Fichier eBook (.epub)</value>
+    <value>Ficheiro eBook (.epub)</value>
   </data>
   <data name="FileBMP" xml:space="preserve">
     <value>Bitmap</value>
   </data>
   <data name="FileDoc" xml:space="preserve">
-    <value>Document Word (ancien)</value>
+    <value>Documento Word (antigo)</value>
   </data>
   <data name="FileDocx" xml:space="preserve">
-    <value>Document Word</value>
+    <value>Documento Word</value>
   </data>
   <data name="FileEpub" xml:space="preserve">
-    <value>Fichier eBook</value>
+    <value>Ficheiro eBook</value>
   </data>
   <data name="FileGIF" xml:space="preserve">
-    <value>GIF graphique</value>
+    <value>Imagem GIF</value>
   </data>
   <data name="FileHTML" xml:space="preserve">
-    <value>Page HTML</value>
+    <value>Página HTML</value>
   </data>
   <data name="FileJPG" xml:space="preserve">
-    <value>JPG graphique</value>
+    <value>Imagem JPG</value>
   </data>
   <data name="FilePNG" xml:space="preserve">
     <value>Portable Network Graphics</value>
@@ -432,55 +416,55 @@ ATTENTION : Cette version nécessite Windows 10 version 1903 ou supérieure.
     <value>Rich Text</value>
   </data>
   <data name="FileTIFF" xml:space="preserve">
-    <value>TIFF graphique</value>
+    <value>Imagem TIFF</value>
   </data>
   <data name="FileTXT" xml:space="preserve">
-    <value>Fichier texte</value>
+    <value>Texto simples</value>
   </data>
   <data name="DonateText.Content" xml:space="preserve">
-    <value> Faites un don!</value>
+    <value> Doe!</value>
   </data>
   <data name="ProprietaryText.Text" xml:space="preserve">
-    <value>Propriétaire</value>
+    <value>Proprietário</value>
   </data>
   <data name="WebsiteText.Content" xml:space="preserve">
-    <value>Site Internet</value>
+    <value>Sítio Web</value>
   </data>
   <data name="ImportAfterText.Text" xml:space="preserve">
-    <value>Insérer après le contenu existant</value>
+    <value>Inserir após o conteúdo actual</value>
   </data>
   <data name="ImportBeforeText.Text" xml:space="preserve">
-    <value>Insérer avant le contenu existant</value>
+    <value>Inserir antes do conteúdo actual</value>
   </data>
   <data name="ImportReplaceText.Text" xml:space="preserve">
-    <value>Remplacer le contenu existant</value>
+    <value>Substituir o conteúdo actual</value>
   </data>
   <data name="More_File_ImportText.Text" xml:space="preserve">
-    <value>IMPORTATION</value>
+    <value>IMPORTAÇÃO</value>
   </data>
   <data name="DialogCancelled" xml:space="preserve">
-    <value>Soit aucun fichier n'a été sélectionné, soit le sélecteur de fichiers a été fermé.</value>
+    <value>Ou não foi seleccionado nenhum ficheiro ou o dispositivo de recolha de ficheiros foi encerrado.</value>
   </data>
   <data name="CommitExportText" xml:space="preserve">
-    <value>Exportation</value>
+    <value>Exportação</value>
   </data>
   <data name="CommitImportText" xml:space="preserve">
-    <value>Importation</value>
+    <value>Importação</value>
   </data>
   <data name="DialogClose" xml:space="preserve">
-    <value>Fermer</value>
+    <value>Fechar</value>
   </data>
   <data name="FilePDF" xml:space="preserve">
-    <value>Document PDF</value>
+    <value>Documento PDF</value>
   </data>
   <data name="DonateDescText.Text" xml:space="preserve">
-    <value>Faire un don pour soutenir le développement</value>
+    <value>Doar para apoiar o desenvolvimento</value>
   </data>
   <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
-    <value>Document PDF (.pdf)</value>
+    <value>Documento PDF (.pdf)</value>
   </data>
   <data name="DonateButton.Label" xml:space="preserve">
-    <value>Faire un don</value>
+    <value>Doe</value>
   </data>
 
 </root>

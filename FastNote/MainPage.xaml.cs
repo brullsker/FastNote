@@ -31,9 +31,9 @@ using Color = Windows.UI.Color;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.UI.Xaml.Controls.Primitives;
-using Microsoft.Advertising.WinRT.UI;
 using Syncfusion.DocIORenderer;
 using syncfusionport.Syncfusion.Pdf;
+using Windows.UI;
 
 // Die Elementvorlage "Leere Seite" wird unter https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x407 dokumentiert.
 
@@ -104,10 +104,8 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) RequestedTheme = ElementTheme.Light;
-            if (Settings.Default.ShowAd == false) MenuAd.Visibility = Visibility.Collapsed;
 
             LoadDocument();
-            Debug.WriteLine("AdFree: " + Settings.Default.AdFree.ToString());
         }
 
         private void FontStuff()
@@ -947,22 +945,9 @@ namespace FastNote
             }
         }
 
-        private void ToggleAd_Toggled(object sender, RoutedEventArgs e)
-        {
-            //if (ToggleAd.IsOn == true) MenuAd.Suspend();
-            //else if (ToggleAd.IsOn == false) { MenuAd.Resume(); if (MenuAd.HasAd == false) MenuAd.Refresh(); }
-        }
-
         private void DonateLink_Click(object sender, RoutedEventArgs e)
         {
-            DonateFlyout.ShowAt(DonateLink);
-        }
-
-        Misc.Purchases purch = new Misc.Purchases();
-
-        private void DonateTest_Click(object sender, RoutedEventArgs e)
-        {
-            purch.PurchaseAddOn(0);
+            DonateFlyout.ShowAt(sender as FrameworkElement);
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -1077,37 +1062,7 @@ namespace FastNote
             document.Save(saveStram, FormatType.Rtf);
             stream.Dispose();
             saveStram.Dispose();
-        }
-
-        private void Donate0099_Click(object sender, RoutedEventArgs e)
-        {
-            purch.PurchaseAddOn(1);
-        }
-
-        private void Donate0249_Click(object sender, RoutedEventArgs e)
-        {
-            purch.PurchaseAddOn(2);
-        }
-
-        private void Donate0999_Click(object sender, RoutedEventArgs e)
-        {
-            purch.PurchaseAddOn(3);
-        }
-
-        private void Donate2499_Click(object sender, RoutedEventArgs e)
-        {
-            purch.PurchaseAddOn(4);
-        }
-
-        private void Donate4999_Click(object sender, RoutedEventArgs e)
-        {
-            purch.PurchaseAddOn(5);
-        }
-
-        private void Donate9999_Click(object sender, RoutedEventArgs e)
-        {
-            purch.PurchaseAddOn(6);
-        }
+        }        
 
         private void ImportMenu_OptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -1207,11 +1162,6 @@ namespace FastNote
 
         void ChangelogPopUp()
         {
-        }
-
-        private void BuyAdFree_Click(object sender, RoutedEventArgs e)
-        {
-            purch.PurchaseAddOn2();
         }
     }
 }

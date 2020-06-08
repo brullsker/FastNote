@@ -373,12 +373,6 @@ Nou, de changelog ziet er korter uit dan dat hij het harde werk erachter rechtva
   <data name="More_Settings_ToolbarPosition_Switch.OnContent" xml:space="preserve">
     <value>Hieronder</value>
   </data>
-  <data name="DisableAdDisclaimer.Text" xml:space="preserve">
-    <value>Reclame kan worden uitgeschakeld in de opties</value>
-  </data>
-  <data name="More_Settings_ShowAdHeaderText.Text" xml:space="preserve">
-    <value>TOON ADVERTENTIE TER ONDERSTEUNING VAN DE ONTWIKKELING</value>
-  </data>
   <data name="DefaultString" xml:space="preserve">
     <value>Standaard</value>
   </data>
@@ -463,14 +457,14 @@ Nou, de changelog ziet er korter uit dan dat hij het harde werk erachter rechtva
   <data name="FilePDF" xml:space="preserve">
     <value>PDF-document</value>
   </data>
-  <data name="More_Settings_BuyAdFree.Content" xml:space="preserve">
-    <value>RECLAME VERWIJDEREN - $1.49</value>
-  </data>
   <data name="DonateDescText.Text" xml:space="preserve">
-    <value>Doneer (en verminder de reclame in het menu)</value>
+    <value>Doneer om de ontwikkeling te ondersteunen</value>
   </data>
   <data name="Share_File_ShareFile_PDF.Text" xml:space="preserve">
     <value>PDF-document (.pdf)</value>
+  </data>
+  <data name="DonateButton.Label" xml:space="preserve">
+    <value>Doneer</value>
   </data>
 
 </root>

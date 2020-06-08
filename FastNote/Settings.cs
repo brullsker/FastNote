@@ -121,13 +121,6 @@ namespace FastNote
             set { Set(value); }
         }
 
-        [DefaultSettingValue(Value = true)]
-        public bool ShowAd
-        {
-            get { return Get<bool>(); }
-            set { Set(value); }
-        }
-
         [DefaultSettingValue(Value = 0)]
         public int HTMLEncoding
         {
@@ -146,20 +139,6 @@ namespace FastNote
         public string version
         {
             get { return Get<string>(); }
-            set { Set(value); }
-        }
-
-        [DefaultSettingValue(Value = false)]
-        public bool AdFree
-        {
-            get { return Get<bool>(); }
-            set { Set(value); }
-        }
-
-        [DefaultSettingValue(Value = (double)250)]
-        public double AdHeight
-        {
-            get { return Get<double>(); }
             set { Set(value); }
         }
     }
