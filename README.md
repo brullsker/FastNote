@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/brullsker/FastNote/releases">
-    <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/GHAssets/Square44x44Logo.scale-200.png" width=80 height=80>
+    <img src="https://raw.githubusercontent.com/brullsker/FastNote/master/FastNote/Assets/Square44x44Logo.scale-200.png" width=80 height=80>
   </a>
 
   <h3 align="center">FastNote</h3>
