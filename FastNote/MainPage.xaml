@@ -454,7 +454,10 @@
                                             <ColumnDefinition Width="Auto"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
-                                        <Border Background="Gray" Margin="0,0,12,0" Width="136" Height="136">
+                                        <Border Margin="0,0,12,0" Width="136" Height="136">
+                                            <Border.Background>
+                                                <SolidColorBrush Color="{ThemeResource SystemColorBackgroundColor}" Opacity="0.1"/>
+                                            </Border.Background>
                                             <Grid>
                                                 <Image Source="ms-appx:///Assets/StoreLogo.png" Width="68"/>
                                             </Grid>

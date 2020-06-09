@@ -44,9 +44,6 @@ namespace FastNote
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public string appid = new Constants().appid;
-        public string adid = new Constants().adid;
-
         string cversion = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
 
         string documentName = "doc.rtf";
