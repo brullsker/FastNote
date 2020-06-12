@@ -109,41 +109,8 @@ namespace FastNote
             LoadDocument();
         }
 
-        private void FontStuff()
-        {
-            string[] fonts = Microsoft.Graphics.Canvas.Text.CanvasTextFormat.GetSystemFontFamilies();
-            Debug.WriteLine("Got fonts");
-            FontList = fonts.ToList(); Debug.WriteLine("FontList made");
-            FontList.Sort(); Debug.WriteLine("List ordered");
-            List<ComboBoxItem> FontItems = new List<ComboBoxItem>();
-            foreach (string font in FontList) { FontItems.Add(new ComboBoxItem { Content = new TextBlock { Text = font, FontFamily = new FontFamily(font) } }); };
-            FontFamBox.ItemsSource = FontItems;
-            if (Settings.Default.FontFamSegFS == true)
-            {
-                int sui = FontList.IndexOf("Segoe UI");
-                Debug.WriteLine(sui);
-                Settings.Default.FontFamily = sui;
-                Settings.Default.FontFamSegFS = false;
-            }
-            else Debug.WriteLine("Not first scan");
-        }
-
-        private void HTMLStuff()
-        {
-            EncodingList.Add(resourceLoader.GetString("DefaultString"));
-            EncodingList.Add("ANSI");
-            EncodingList.Add("ASCII");
-            EncodingList.Add("ISO-8859-1");
-            EncodingList.Add("UTF-8");
-            List<ComboBoxItem> HTMLItems = new List<ComboBoxItem>();
-            foreach (string code in EncodingList) { HTMLItems.Add(new ComboBoxItem { Content = new TextBlock { Text = code } }); };
-            HTMLEncodingBox.ItemsSource = HTMLItems;
-        }
-
         public async void LoadDocument()
         {
-            FontStuff();
-            HTMLStuff();
             storageFolder = ApplicationData.Current.LocalFolder;
             Debug.WriteLine("Loading document: StorageFolder found");
             string filepath = storageFolder.Path.ToString() + "/" + documentName;
@@ -192,21 +159,7 @@ namespace FastNote
             if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
 
             if (FileMenuPivotItem.Content != fileMenu) FileMenuPivotItem.Content = fileMenu;
-            if (!SR.Children.Contains(settingsMenu)) SR.Children.Add(settingsMenu);
-        }
-
-        bool updatetheme = false;
-        private async void ThemeRB_Checked(object sender, RoutedEventArgs e)
-        {
-            if (updatetheme == false) updatetheme = true;
-            else
-            {
-                await MainView.Fade(value: 0f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
-                if (TDefault.IsChecked == true) RequestedTheme = ElementTheme.Default;
-                if (TDark.IsChecked == true) RequestedTheme = ElementTheme.Dark;
-                if (TLight.IsChecked == true) RequestedTheme = ElementTheme.Light;
-                await MainView.Fade(value: 1f, duration: 125, delay: 0, easingType: EasingType.Linear).StartAsync();
-            }
+            if (SettingsMenuPivotItem.Content != settingsMenu) SettingsMenuPivotItem.Content = settingsMenu;
         }
 
         private async void Timer_Tick(object sender, object e)
@@ -229,8 +182,6 @@ namespace FastNote
 
         public void ChangeLoading(bool b) => LoadingControl.IsLoading = b;
 
-        private IReadOnlyList<StorageFile> storageItems;
-
         private void MainView_PaneOpening(object sender, RoutedEventArgs e)
         {
             SettingsButton.Scale(scaleX: 0f, scaleY: 0f, centerX: 34, centerY: 24, duration: 250, delay: 0, easingType: EasingType.Linear).Start();
@@ -250,171 +201,6 @@ namespace FastNote
             fileMenu.MainEditSelectionLength = MainEdit.Document.Selection.Length;
         }
 
-        public static string ConvertToHtml(RichEditBox richEditBox, List<string> list)
-        {
-            string strColour, strFntName, strHTML;
-            richEditBox.Document.GetText(TextGetOptions.None, out string text);
-            ITextRange txtRange = richEditBox.Document.GetRange(0, text.Length);
-            strHTML = "<!DOCTYPE html><html>";
-            if (Settings.Default.HTMLEncoding != 0)
-            {
-                strHTML += "<meta charset=\"" + list[Settings.Default.HTMLEncoding] + "\">";
-            }
-            strHTML += "<head><title>" + Settings.Default.DefaultExportName + "</title></head>";
-            int lngOriginalStart = txtRange.StartPosition;
-            int lngOriginalLength = txtRange.EndPosition;
-            float shtSize = 11;
-            // txtRange.SetRange(txtRange.StartPosition, txtRange.EndPosition);
-            bool bOpened = false, liOpened = false, numbLiOpened = false, iOpened = false, uOpened = false, bulletOpened = false, numberingOpened = false;
-            for (int i = 0; i < text.Length; i++)
-            {
-                txtRange.SetRange(i, i + 1);
-                if (i == 0)
-                {
-                    strColour = Windows.UI.Colors.Black.ToHex().ToString();
-                    shtSize = txtRange.CharacterFormat.Size;
-                    strFntName = txtRange.CharacterFormat.Name;
-                    strHTML += "<span style=\"font-family:" + strFntName + "; font-size: " + shtSize + "pt; color: #" + strColour.Substring(3) + "\">";
-                }
-                if (txtRange.CharacterFormat.Size != shtSize)
-                {
-                    shtSize = txtRange.CharacterFormat.Size;
-                    strHTML += "</span><span style=\"font-family: " + txtRange.CharacterFormat.Name + "; font-size: " + txtRange.CharacterFormat.Size + "pt; color: #" + txtRange.CharacterFormat.ForegroundColor.ToString().Substring(3) + "\">";
-                }
-                if (txtRange.Character == Convert.ToChar(13))
-                {
-                    strHTML += "<br/>";
-                }
-                #region bullet
-                if (txtRange.ParagraphFormat.ListType == MarkerType.Bullet)
-                {
-                    if (!bulletOpened)
-                    {
-                        strHTML += "<ul>";
-                        bulletOpened = true;
-                    }
-
-                    if (!liOpened)
-                    {
-                        strHTML += "<li>";
-                        liOpened = true;
-                    }
-
-                    if (txtRange.Character == Convert.ToChar(13))
-                    {
-                        strHTML += "</li>";
-                        liOpened = false;
-                    }
-                }
-                else
-                {
-                    if (bulletOpened)
-                    {
-                        strHTML += "</ul>";
-                        bulletOpened = false;
-                    }
-                }
-                #endregion
-                #region numbering
-                if (txtRange.ParagraphFormat.ListType == MarkerType.LowercaseRoman)
-                {
-                    if (!numberingOpened)
-                    {
-                        strHTML += "<ol type=\"i\">";
-                        numberingOpened = true;
-                    }
-
-                    if (!numbLiOpened)
-                    {
-                        strHTML += "<li>";
-                        numbLiOpened = true;
-                    }
-
-                    if (txtRange.Character == Convert.ToChar(13))
-                    {
-                        strHTML += "</li>";
-                        numbLiOpened = false;
-                    }
-                }
-                else
-                {
-                    if (numberingOpened)
-                    {
-                        strHTML += "</ol>";
-                        numberingOpened = false;
-                    }
-                }
-                #endregion
-                #region bold
-                if (txtRange.CharacterFormat.Bold == FormatEffect.On)
-                {
-                    if (!bOpened)
-                    {
-                        strHTML += "<b>";
-                        bOpened = true;
-                    }
-                }
-                else
-                {
-                    if (bOpened)
-                    {
-                        strHTML += "</b>";
-                        bOpened = false;
-                    }
-                }
-                #endregion
-                #region italic
-                if (txtRange.CharacterFormat.Italic == FormatEffect.On)
-                {
-                    if (!iOpened)
-                    {
-                        strHTML += "<i>";
-                        iOpened = true;
-                    }
-                }
-                else
-                {
-                    if (iOpened)
-                    {
-                        strHTML += "</i>";
-                        iOpened = false;
-                    }
-                }
-                #endregion
-                #region underline
-                if (txtRange.CharacterFormat.Underline == UnderlineType.Single)
-                {
-                    if (!uOpened)
-                    {
-                        strHTML += "<u>";
-                        uOpened = true;
-                    }
-                }
-                else
-                {
-                    if (uOpened)
-                    {
-                        strHTML += "</u>";
-                        uOpened = false;
-                    }
-                }
-                #endregion
-                strHTML += txtRange.Character;
-            }
-            strHTML += "</span></html>";
-            return strHTML;
-        }
-
-        private void RestoreDefaultExpFN_Click(object sender, RoutedEventArgs e)
-        {
-            DefExpFN.Text = "FastNote Export";
-        }
-
-        private void RestoreDefaultShrFN_Click(object sender, RoutedEventArgs e)
-        {
-            DefShrFN.Text = "FastNote Share";
-        }
-
         private void MainEdit_TextChanged(object sender, RoutedEventArgs e)
         {
             MainEdit.Document.GetText(TextGetOptions.None, out string charcount);
@@ -427,76 +213,6 @@ namespace FastNote
             Debug.WriteLine(font);
             FontFamily fontfam = new FontFamily(font);
             MainEdit.FontFamily = fontfam;
-        }
-
-        private void RepeatButton_Click(object sender, RoutedEventArgs e)
-        {
-            int fs = Convert.ToInt32(FontSizeTextBox.Text);
-            if (fs < 1638)
-            {
-                fs++;
-                FontSizeTextBox.Text = fs.ToString();
-            }
-        }
-
-        private void RepeatButton_Click_1(object sender, RoutedEventArgs e)
-        {
-            int fs = Convert.ToInt32(FontSizeTextBox.Text);
-            if (fs > 0)
-            {
-                fs--;
-                FontSizeTextBox.Text = fs.ToString();
-            }
-        }
-
-        private void FontSizeTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            try
-            {
-                if (FontSizeTextBox.Text != null)
-                {
-                    int fs = Convert.ToInt32(FontSizeTextBox.Text);
-                    if (fs < 1)
-                    {
-                        fs = 1;
-                        MainEdit.FontSize = fs;
-                        Settings.Default.FontSize = fs;
-                    }
-                    else if (fs > 1368)
-                    {
-                        fs = 1368;
-                    }
-                    else
-                    {
-                        MainEdit.FontSize = fs;
-                        Settings.Default.FontSize = fs;
-                    }
-                }
-                else
-                {
-                    MainEdit.FontSize = 1;
-                    Settings.Default.FontSize = 1;
-                }
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine(ex);
-                MainEdit.FontSize = 1;
-                Settings.Default.FontSize = 1;
-                FontSizeTextBox.Text = "1";
-            }
-        }
-
-        private void FontSizeTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            FontSizeButtons.RequestedTheme = ElementTheme.Light;
-        }
-
-        private void FontSizeTextBox_LostFocus(object sender, RoutedEventArgs e)
-        {
-            if (Settings.Default.ThemeDefault == true) FontSizeButtons.RequestedTheme = ElementTheme.Default;
-            if (Settings.Default.ThemeLight == true) FontSizeButtons.RequestedTheme = ElementTheme.Light;
-            if (Settings.Default.ThemeDark == true) FontSizeButtons.RequestedTheme = ElementTheme.Dark;
         }
 
         private void Draggable1_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
@@ -648,21 +364,6 @@ namespace FastNote
             document.Save(saveStram, FormatType.Rtf);
             stream.Dispose();
             saveStram.Dispose();
-        }
-
-        private void ImportBefore_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            Settings.Default.ImportOption = 0;
-        }
-
-        private void ImportAfter_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            Settings.Default.ImportOption = 1;
-        }
-
-        private void ImportReplace_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            Settings.Default.ImportOption = 2;
         }
 
         public async void Import(int i)
