@@ -9,7 +9,58 @@
     d:DesignHeight="300"
     d:DesignWidth="400">
 
-    <Grid>
-
+    <Grid x:Name="Root" Background="Transparent">
+        <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Orientation="Vertical" Margin="0,12">
+                <TextBlock Text="DEFAULT EXPORT FILENAME" x:Uid="More_Settings_DefExpNameText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,0,0,6"/>
+                <TextBox x:Name="DefExpFN" PlaceholderText="Enter name..." x:Uid="More_Settings_DefExpName_TextBox" Text="{Binding DefaultExportName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
+                <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" x:Uid="More_Settings_FileNamesRestoreDefault" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultExpFN" Click="RestoreDefaultExpFN_Click"/>
+                <TextBlock Text="DEFAULT SHARE FILENAME" x:Uid="More_Settings_DefShrNameText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <TextBox x:Name="DefShrFN" PlaceholderText="Enter name..." x:Uid="More_Settings_DefShrName_TextBox" Text="{Binding DefaultShareName, Mode=TwoWay}" BorderThickness="0,0,0,2"/>
+                <HyperlinkButton Style="{StaticResource TextBlockButtonStyle}" x:Uid="More_Settings_FileNamesRestoreDefault" Padding="0,2,0,0" Content="Restore Default" x:Name="RestoreDefaultShrFN" Click="RestoreDefaultShrFN_Click"/>
+                <TextBlock Text="SPELLCHECKER" x:Uid="More_Settings_SpellCheckHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding SpellCheckEnabled, Mode=TwoWay}"/>
+                <TextBlock x:Uid="More_Settings_FontSizeHeader" Text="FONT SIZE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <Grid>
+                    <TextBox Style="{StaticResource TextBoxStyle}" Height="32" x:Name="FontSizeTextBox" Text="{Binding FontSize, Mode=TwoWay}" PlaceholderText="Enter number..." x:Uid="NumberPlaceholder" TextChanged="FontSizeTextBox_TextChanged" BorderThickness="0,0,0,2" GotFocus="FontSizeTextBox_GotFocus" LostFocus="FontSizeTextBox_LostFocus"/>
+                    <StackPanel Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" x:Name="FontSizeButtons">
+                        <RepeatButton Style="{StaticResource RepeatButtonStyle}" Content="&#xE014;" FontFamily="Segoe MDL2 Assets" FontSize="12" Padding="0" Width="24" Height="15" Click="RepeatButton_Click" Background="Transparent"/>
+                        <RepeatButton Style="{StaticResource RepeatButtonStyle}" Content="&#xE015;" FontFamily="Segoe MDL2 Assets" FontSize="12" Padding="0" Width="24" Height="15" Click="RepeatButton_Click_1" Background="Transparent"/>
+                    </StackPanel>
+                </Grid>
+                <TextBlock x:Uid="More_Settings_FontFamilyHeader" Text="FONT FAMILY" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <ComboBox BorderThickness="0,0,0,2" x:Name="FontFamBox" IsEnabled="True" HorizontalAlignment="Stretch" SelectedIndex="{Binding FontFamily, Mode=TwoWay}" SelectionChanged="FontFamBox_SelectionChanged" >
+                </ComboBox>
+                <TextBlock x:Uid="More_Settings_HTMLEncodingHeader" Text="HTML ENCODING" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <ComboBox x:Name="HTMLEncodingBox" IsEnabled="True" HorizontalAlignment="Stretch" BorderThickness="0,0,0,2" SelectedIndex="{Binding HTMLEncoding, Mode=TwoWay}">
+                </ComboBox>
+                <TextBlock Text="THEME" x:Uid="More_Settings_ThemeHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <RadioButton x:Uid="More_Settings_Theme_Default" Content="Default" GroupName="Theme" IsChecked="{Binding ThemeDefault, Mode=TwoWay}" x:Name="TDefault" Checked="ThemeRB_Checked"/>
+                <RadioButton x:Uid="More_Settings_Theme_Dark" Content="Dark" GroupName="Theme" IsChecked="{Binding ThemeDark, Mode=TwoWay}" x:Name="TDark" Checked="ThemeRB_Checked"/>
+                <RadioButton x:Uid="More_Settings_Theme_Light" Content="Light" GroupName="Theme" IsChecked="{Binding ThemeLight, Mode=TwoWay}" x:Name="TLight" Checked="ThemeRB_Checked"/>
+                <TextBlock Text="TEXT TOOLBAR POSITION" x:Uid="More_Settings_ToolbarPositionHeaderText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <ToggleSwitch x:Uid="More_Settings_ToolbarPosition_Switch" OffContent="Top" OnContent="Bottom" IsOn="{Binding ToolBarOnBottomDesktop, Mode=TwoWay}" x:Name="ToggleToolBar" Toggled="ToggleToolBar_Toggled"/>
+                <TextBlock x:Uid="More_Settings_LangHeaderText" Text="LANGUAGE" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <ComboBox x:Name="LangBox" IsEnabled="True" HorizontalAlignment="Stretch" SelectedIndex="{Binding LanguageIndex, Mode=TwoWay}" BorderThickness="0,0,0,2">
+                    <ComboBoxItem Content="Default" x:Uid="More_Settings_Language_Default"/>
+                    <ComboBoxItem Content="English (United States) [en-US]"/>
+                    <ComboBoxItem Content="Deutsch (Deutschland) [de-DE]"/>
+                    <ComboBoxItem Content="Español [es]"/>
+                    <ComboBoxItem Content="Français [fr]"/>
+                    <ComboBoxItem Content="Հայերեն [hy]"/>
+                    <ComboBoxItem Content="Italiano [it]"/>
+                    <ComboBoxItem Content="にほんしゅ [ja]"/>
+                    <ComboBoxItem Content="Nederlandse [nl]"/>
+                    <ComboBoxItem Content="Polska [pl]"/>
+                    <ComboBoxItem Content="Português (Brasil) [pt-BR]"/>
+                    <ComboBoxItem Content="Português (Portugal) [pt-PT]"/>
+                    <ComboBoxItem Content="Русский [ru]"/>
+                    <ComboBoxItem Content="中文(简体) [zh-CN]"/>
+                </ComboBox>
+                <TextBlock Text="App restart required to apply" TextAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" x:Uid="More_Settings_Lang_AppRest" Margin="0,2,0,0"/>
+                <TextBlock Text="OPEN MENU ON STARTUP" x:Uid="More_Settings_OpenMenuOnStartUpText" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,6"/>
+                <ToggleSwitch x:Uid="More_Settings_SpellCheck_Switch" OffContent="Disabled" OnContent="Enabled" IsOn="{Binding MenuOpenOnStartup, Mode=TwoWay}"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </UserControl>

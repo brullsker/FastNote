@@ -64,6 +64,7 @@ namespace FastNote
         CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
 
         Controls.FileMenuControl fileMenu;
+        Controls.SettingsMenuControl settingsMenu;
 
         public MainPage()
         {
@@ -103,6 +104,7 @@ namespace FastNote
             if (Settings.Default.ThemeDark == true) RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) RequestedTheme = ElementTheme.Light;
             fileMenu = new Controls.FileMenuControl(this, MainEdit);
+            settingsMenu = new Controls.SettingsMenuControl(this, MainEdit);
 
             LoadDocument();
         }
@@ -169,16 +171,28 @@ namespace FastNote
             MainEdit.Focus(FocusState.Keyboard); MainEdit.Document.GetText(TextGetOptions.None, out string txt);
             MainEdit.Document.Selection.SetRange(startPosition: txt.Length, endPosition: txt.Length);
             timer.Start();
+            settingsMenu.fontList = FontList;
+            settingsMenu.EncodingList = EncodingList;
+            if (Settings.Default.MenuOpenOnStartup)
+            {
+                AddMenus();
+            }
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
-
-            if (FileMenuPivotItem.Content != fileMenu) FileMenuPivotItem.Content = fileMenu;
+            AddMenus();
 
             MainView.IsPaneOpen = true;
             MainView_PaneOpening(sender, e);
+        }
+
+        void AddMenus()
+        {
+            if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
+
+            if (FileMenuPivotItem.Content != fileMenu) FileMenuPivotItem.Content = fileMenu;
+            if (!SR.Children.Contains(settingsMenu)) SR.Children.Add(settingsMenu);
         }
 
         bool updatetheme = false;
@@ -721,6 +735,30 @@ namespace FastNote
                 await md.ShowAsync();
             }
             ChangeLoading(false);
+        }
+
+        public async Task MainViewFade(float value, double duration, double delay, EasingType easingType)
+        {
+            await MainView.Fade(value, duration, delay, easingType).StartAsync();
+        }
+
+        public void ChangeToolBarPosition(bool bottom)
+        {
+            if (bottom)
+            {
+                var color = (Color)Resources["SystemAltHighColor"];
+                Debug.WriteLine(color.ToString());
+                Grid.SetRow(TopBarGrid, 2);
+                coreTitleBar.ExtendViewIntoTitleBar = false;
+                TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, color);
+            }
+            else
+            {
+                Grid.SetRow(TopBarGrid, 0);
+                coreTitleBar.ExtendViewIntoTitleBar = true;
+                Window.Current.SetTitleBar(Draggable1);
+                TitleBarExtensions.SetButtonBackgroundColor(MainPagePage, Windows.UI.Colors.Transparent);
+            }
         }
 
         void ChangelogPopUp()
