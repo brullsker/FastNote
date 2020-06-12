@@ -50,18 +50,20 @@ namespace FastNote
         string documentTempName = "temp.rtf";
 
         StorageFolder storageFolder;
-        StorageFile file;
+        public StorageFile file;
         StorageFile tempFile;
 
         DispatcherTimer timer = new DispatcherTimer();
 
-        RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
-        ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView();
+        public RenderTargetBitmap renderTargetBitmap = new RenderTargetBitmap();
+        public ResourceLoader resourceLoader = ResourceLoader.GetForCurrentView();
 
         List<string> FontList = new List<string>();
-        List<string> EncodingList = new List<string>();
+        public List<string> EncodingList = new List<string>();
 
         CoreApplicationViewTitleBar coreTitleBar = CoreApplication.GetCurrentView().TitleBar;
+
+        Controls.FileMenuControl fileMenu;
 
         public MainPage()
         {
@@ -101,6 +103,7 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) RequestedTheme = ElementTheme.Light;
+            fileMenu = new Controls.FileMenuControl(this, MainEdit);
 
             LoadDocument();
         }
@@ -172,6 +175,9 @@ namespace FastNote
         private void SettingsButton_Click(object sender, RoutedEventArgs e)
         {
             if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
+
+            if (!FileMenuGrid.Children.Contains(fileMenu)) FileMenuGrid.Children.Add(fileMenu);
+
             MainView.IsPaneOpen = true;
             MainView_PaneOpening(sender, e);
         }
@@ -208,11 +214,13 @@ namespace FastNote
             Debug.WriteLine(TextToolBar.Height.ToString() + ", " + ToolBarPanel.Height.ToString());
         }
 
+        public void ChangeLoading(bool b) => LoadingControl.IsLoading = b;
+
         private async void MoreOptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (MoreOptionsList.SelectedIndex == 0)
             {
-                LoadingControl.IsLoading = true;
+                ChangeLoading(true);
                 Windows.Storage.Pickers.FileSavePicker picker = new Windows.Storage.Pickers.FileSavePicker();
                 picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
                 picker.FileTypeChoices.Add(resourceLoader.GetString("FileRTF"), new List<string>() { ".rtf" });
@@ -351,7 +359,7 @@ namespace FastNote
                     MessageDialog md = new MessageDialog(resourceLoader.GetString("Dialog_FileNotSaved"), resourceLoader.GetString("Dialog_OperationCancelled"));
                     await md.ShowAsync();
                 }
-                LoadingControl.IsLoading = false;
+                ChangeLoading(false);
             }
             if (MoreOptionsList.SelectedIndex == 1)
             {
@@ -362,7 +370,7 @@ namespace FastNote
 
             if (MoreOptionsList.SelectedIndex == 2)
             {
-                LoadingControl.IsLoading = true;
+                ChangeLoading(true);
 
                 StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.CreateFolderAsync("share", CreationCollisionOption.ReplaceExisting);
 
@@ -475,11 +483,11 @@ namespace FastNote
                 }
                 DataTransferManager.GetForCurrentView().DataRequested += ShareFile_DataRequested;
                 DataTransferManager.ShowShareUI();
-                LoadingControl.IsLoading = false;
+                ChangeLoading(false);
             }
             if (MoreOptionsList.SelectedIndex == 3)
             {
-                LoadingControl.IsLoading = true;
+                ChangeLoading(true);
                 if (MainEdit.Document.Selection.Length == 0)
                 {
                     DataTransferManager.GetForCurrentView().DataRequested += ShareTextAll_DataRequested;
@@ -490,13 +498,13 @@ namespace FastNote
                     DataTransferManager.GetForCurrentView().DataRequested += ShareText_DataRequested;
                     DataTransferManager.ShowShareUI();
                 }
-                LoadingControl.IsLoading = false;
+                ChangeLoading(false);
             }
             if (MoreOptionsList.SelectedIndex == 4)
             {
-                LoadingControl.IsLoading = true;
+                ChangeLoading(true);
                 MainEdit.Document.SetText(TextSetOptions.None, "");
-                LoadingControl.IsLoading = false;
+                ChangeLoading(false);
             }
             if (MoreOptionsList.SelectedIndex == 5) Application.Current.Exit();
             MoreOptionsList.SelectedItem = null;
@@ -544,6 +552,7 @@ namespace FastNote
         {
             if (MainEdit.Document.Selection.Length == 0) { ShareSelectedTextContent.Visibility = Visibility.Collapsed; ShareWholeTextContent.Visibility = Visibility.Visible; }
             else { ShareWholeTextContent.Visibility = Visibility.Collapsed; ShareSelectedTextContent.Visibility = Visibility.Visible; }
+            fileMenu.MainEditSelectionLength = MainEdit.Document.Selection.Length;
         }
 
         public static string ConvertToHtml(RichEditBox richEditBox, List<string> list)
@@ -987,7 +996,7 @@ namespace FastNote
 
         public async void SfSave(StorageFile docfile, syncfusion.Syncfusion.DocIO.FormatType formatType)
         {
-            LoadingControl.IsLoading = true;
+            ChangeLoading(true);
             MainEdit.RequestedTheme = ElementTheme.Light;
 
             StorageFile cachefile = await ApplicationData.Current.LocalCacheFolder.CreateFileAsync("sfcache.rtf", CreationCollisionOption.ReplaceExisting);
@@ -1007,12 +1016,12 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-            LoadingControl.IsLoading = false;
+            ChangeLoading(false);
         }
 
         public async Task SfPdfSave(StorageFile docfile)
         {
-            LoadingControl.IsLoading = true;
+            ChangeLoading(true);
             MainEdit.RequestedTheme = ElementTheme.Light;
 
             StorageFile cachefile = await ApplicationData.Current.LocalCacheFolder.CreateFileAsync("sfcache.rtf", CreationCollisionOption.ReplaceExisting);
@@ -1045,7 +1054,7 @@ namespace FastNote
             if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-            LoadingControl.IsLoading = false;
+            ChangeLoading(false);
         }
 
         public async Task SfImport(StorageFile importFile, FormatType formatType)
@@ -1087,7 +1096,7 @@ namespace FastNote
 
         public async void Import(int i)
         {
-            LoadingControl.IsLoading = true;
+            ChangeLoading(true);
             Windows.Storage.Pickers.FileOpenPicker openpicker = new Windows.Storage.Pickers.FileOpenPicker();
             openpicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
             openpicker.FileTypeFilter.Add(".rtf");
@@ -1154,7 +1163,7 @@ namespace FastNote
                 MessageDialog md = new MessageDialog(resourceLoader.GetString("DialogCancelled"), resourceLoader.GetString("Dialog_OperationCancelled"));
                 await md.ShowAsync();
             }
-            LoadingControl.IsLoading = false;
+            ChangeLoading(false);
         }
 
         void ChangelogPopUp()

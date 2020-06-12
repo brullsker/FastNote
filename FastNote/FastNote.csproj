@@ -110,6 +110,15 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
+    <Compile Include="Controls\AboutMenuControl.xaml.cs">
+      <DependentUpon>AboutMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\FileMenuControl.xaml.cs">
+      <DependentUpon>FileMenuControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SettingsMenuControl.xaml.cs">
+      <DependentUpon>SettingsMenuControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CustomTextToolBarControl.xaml.cs">
       <DependentUpon>CustomTextToolBarControl.xaml</DependentUpon>
     </Compile>
@@ -209,6 +218,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\AboutMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\FileMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SettingsMenuControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="CustomTextToolBarControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
