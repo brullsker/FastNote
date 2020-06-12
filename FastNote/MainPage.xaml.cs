@@ -99,7 +99,6 @@ namespace FastNote
             }
             timer.Interval = new TimeSpan(0, 0, 0, 0, 500);
             timer.Tick += Timer_Tick;
-            ShareSelectedTextContent.Visibility = Visibility.Collapsed;
             if (Settings.Default.ThemeDefault == true) RequestedTheme = ElementTheme.Default;
             if (Settings.Default.ThemeDark == true) RequestedTheme = ElementTheme.Dark;
             if (Settings.Default.ThemeLight == true) RequestedTheme = ElementTheme.Light;
@@ -176,7 +175,7 @@ namespace FastNote
         {
             if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
 
-            if (!FileMenuGrid.Children.Contains(fileMenu)) FileMenuGrid.Children.Add(fileMenu);
+            if (FileMenuPivotItem.Content != fileMenu) FileMenuPivotItem.Content = fileMenu;
 
             MainView.IsPaneOpen = true;
             MainView_PaneOpening(sender, e);
@@ -216,323 +215,7 @@ namespace FastNote
 
         public void ChangeLoading(bool b) => LoadingControl.IsLoading = b;
 
-        private async void MoreOptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (MoreOptionsList.SelectedIndex == 0)
-            {
-                ChangeLoading(true);
-                Windows.Storage.Pickers.FileSavePicker picker = new Windows.Storage.Pickers.FileSavePicker();
-                picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileRTF"), new List<string>() { ".rtf" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FilePDF"), new List<string>() { ".pdf" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileHTML"), new List<string>() { ".html" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileDocx"), new List<string>() { ".docx" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileDoc"), new List<string>() { ".doc" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileEpub"), new List<string>() { ".epub" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileTXT"), new List<string>() { ".txt" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileJPG"), new List<string>() { ".jpg" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FilePNG"), new List<string>() { ".png" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileBMP"), new List<string>() { ".bmp" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileGIF"), new List<string>() { ".gif" });
-                picker.FileTypeChoices.Add(resourceLoader.GetString("FileTIFF"), new List<string>() { ".tiff" });
-                picker.CommitButtonText = resourceLoader.GetString("CommitExportText");
-                picker.SuggestedFileName = Settings.Default.DefaultExportName;
-                StorageFile saveFile = await picker.PickSaveFileAsync();
-                if (saveFile != null)
-                {
-                    if (saveFile.FileType == ".rtf")
-                    {
-                        MainEdit.RequestedTheme = ElementTheme.Light;
-                        await file.CopyAndReplaceAsync(saveFile);
-                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
-                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
-                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-                    }
-                    if (saveFile.FileType == ".html") await FileIO.WriteTextAsync(saveFile, ConvertToHtml(MainEdit, EncodingList));
-                    if (saveFile.FileType == ".docx") SfSave(saveFile, FormatType.Docx);
-                    if (saveFile.FileType == ".doc") SfSave(saveFile, FormatType.Doc);
-                    if (saveFile.FileType == ".epub") SfSave(saveFile, FormatType.EPub);
-                    if (saveFile.FileType == ".txt")
-                    {
-                        MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
-                        await FileIO.WriteTextAsync(saveFile, txtstring);
-                    }
-                    if (saveFile.FileType == ".jpg")
-                    {
-                        MainEdit.RequestedTheme = ElementTheme.Light;
-                        MainEdit.Focus(FocusState.Programmatic);
-                        Debug.WriteLine("Focus set");
-                        await renderTargetBitmap.RenderAsync(MainEdit);
-                        Debug.WriteLine("Rendered");
-                        using (var stream = await saveFile.OpenStreamForWriteAsync())
-                        {
-                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
-                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
-                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream.AsRandomAccessStream());
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
-                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
-                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-                    }
-                    if (saveFile.FileType == ".png")
-                    {
-                        MainEdit.RequestedTheme = ElementTheme.Light;
-                        MainEdit.Focus(FocusState.Programmatic);
-                        Debug.WriteLine("Focus set");
-                        await renderTargetBitmap.RenderAsync(MainEdit);
-                        Debug.WriteLine("Rendered");
-                        using (var stream = await saveFile.OpenStreamForWriteAsync())
-                        {
-                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
-                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
-                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.PngEncoderId, stream.AsRandomAccessStream());
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
-                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
-                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-                    }
-                    if (saveFile.FileType == ".bmp")
-                    {
-                        MainEdit.RequestedTheme = ElementTheme.Light;
-                        MainEdit.Focus(FocusState.Programmatic);
-                        Debug.WriteLine("Focus set");
-                        await renderTargetBitmap.RenderAsync(MainEdit);
-                        Debug.WriteLine("Rendered");
-                        using (var stream = await saveFile.OpenStreamForWriteAsync())
-                        {
-                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
-                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
-                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.BmpEncoderId, stream.AsRandomAccessStream());
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
-                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
-                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-                    }
-                    if (saveFile.FileType == ".gif")
-                    {
-                        MainEdit.RequestedTheme = ElementTheme.Light;
-                        MainEdit.Focus(FocusState.Programmatic);
-                        Debug.WriteLine("Focus set");
-                        await renderTargetBitmap.RenderAsync(MainEdit);
-                        Debug.WriteLine("Rendered");
-                        using (var stream = await saveFile.OpenStreamForWriteAsync())
-                        {
-                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
-                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
-                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, stream.AsRandomAccessStream());
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
-                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
-                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-                    }
-                    if (saveFile.FileType == ".tiff")
-                    {
-                        MainEdit.RequestedTheme = ElementTheme.Light;
-                        MainEdit.Focus(FocusState.Programmatic);
-                        Debug.WriteLine("Focus set");
-                        await renderTargetBitmap.RenderAsync(MainEdit);
-                        Debug.WriteLine("Rendered");
-                        using (var stream = await saveFile.OpenStreamForWriteAsync())
-                        {
-                            var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
-                            var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
-                            var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.TiffEncoderId, stream.AsRandomAccessStream());
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
-                        if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
-                        if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-                    }
-                    if (saveFile.FileType == ".pdf") await SfPdfSave(saveFile);
-                }
-                else
-                {
-                    MessageDialog md = new MessageDialog(resourceLoader.GetString("Dialog_FileNotSaved"), resourceLoader.GetString("Dialog_OperationCancelled"));
-                    await md.ShowAsync();
-                }
-                ChangeLoading(false);
-            }
-            if (MoreOptionsList.SelectedIndex == 1)
-            {
-                MainEdit.Document.GetText(TextGetOptions.None, out string value);
-                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value)) Import(2);
-                else Import(Settings.Default.ImportOption);
-            }
-
-            if (MoreOptionsList.SelectedIndex == 2)
-            {
-                ChangeLoading(true);
-
-                StorageFolder folder = await ApplicationData.Current.LocalCacheFolder.CreateFolderAsync("share", CreationCollisionOption.ReplaceExisting);
-
-                if (Settings.Default.ShareFileType == 0)
-                {
-                    StorageFile sharefile = await file.CopyAsync(folder, Settings.Default.DefaultShareName + ".rtf", NameCollisionOption.ReplaceExisting);
-                }
-                if (Settings.Default.ShareFileType == 1)
-                {
-                    StorageFile sharefile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".pdf", CreationCollisionOption.ReplaceExisting);
-                    await SfPdfSave(sharefile);
-                }
-                if (Settings.Default.ShareFileType == 2)
-                {
-                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".html", CreationCollisionOption.ReplaceExisting);
-                    await FileIO.WriteTextAsync(shareFile, ConvertToHtml(MainEdit, EncodingList));
-                }
-                if (Settings.Default.ShareFileType == 3)
-                {
-                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".docx", CreationCollisionOption.ReplaceExisting);
-                    SfSave(shareFile, FormatType.Docx);
-                }
-                if (Settings.Default.ShareFileType == 4)
-                {
-                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".doc", CreationCollisionOption.ReplaceExisting);
-                    SfSave(shareFile, FormatType.Doc);
-                }
-                if (Settings.Default.ShareFileType == 5)
-                {
-                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".epub", CreationCollisionOption.ReplaceExisting);
-                    SfSave(shareFile, FormatType.EPub);
-                }
-                if (Settings.Default.ShareFileType == 6)
-                {
-                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ".txt", CreationCollisionOption.ReplaceExisting);
-                    MainEdit.Document.GetText(TextGetOptions.None, out string txtstring);
-                    await FileIO.WriteTextAsync(shareFile, txtstring);
-                }
-                if (Settings.Default.ShareFileType >= 7)
-                {
-                    string ext = ".jpg";
-                    if (Settings.Default.ShareFileType == 8) ext = ".png";
-                    if (Settings.Default.ShareFileType == 9) ext = ".bmp";
-                    if (Settings.Default.ShareFileType == 10) ext = ".gif";
-                    if (Settings.Default.ShareFileType == 11) ext = ".tiff";
-                    StorageFile shareFile = await folder.CreateFileAsync(Settings.Default.DefaultShareName + ext, CreationCollisionOption.ReplaceExisting);
-                    MainEdit.RequestedTheme = ElementTheme.Light;
-                    MainEdit.Focus(FocusState.Programmatic);
-                    Debug.WriteLine("Focus set");
-                    await renderTargetBitmap.RenderAsync(MainEdit);
-                    Debug.WriteLine("Rendered");
-                    using (var stream = await shareFile.OpenStreamForWriteAsync())
-                    {
-                        var logicalDpi = DisplayInformation.GetForCurrentView().LogicalDpi;
-                        var pixelBuffer = await renderTargetBitmap.GetPixelsAsync();
-                        if (Settings.Default.ShareFileType == 7)
-                        {
-                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.JpegEncoderId, stream.AsRandomAccessStream()); ;
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ShareFileType == 8)
-                        {
-                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.PngEncoderId, stream.AsRandomAccessStream()); ;
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ShareFileType == 9)
-                        {
-                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.BmpEncoderId, stream.AsRandomAccessStream()); ;
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ShareFileType == 10)
-                        {
-                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, stream.AsRandomAccessStream()); ;
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        if (Settings.Default.ShareFileType == 11)
-                        {
-                            BitmapEncoder encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.TiffEncoderId, stream.AsRandomAccessStream()); ;
-                            encoder.SetPixelData(BitmapPixelFormat.Bgra8, BitmapAlphaMode.Straight, (uint)renderTargetBitmap.PixelWidth, (uint)renderTargetBitmap.PixelHeight, logicalDpi, logicalDpi, pixelBuffer.ToArray());
-                            await encoder.FlushAsync();
-                        }
-                        stream.Dispose();
-                    }
-                    if (Settings.Default.ThemeDefault == true) MainEdit.RequestedTheme = ElementTheme.Default;
-                    if (Settings.Default.ThemeDark == true) MainEdit.RequestedTheme = ElementTheme.Dark;
-                    if (Settings.Default.ThemeLight == true) MainEdit.RequestedTheme = ElementTheme.Light;
-                }
-
-                IReadOnlyList<StorageFile> pickedFiles = await folder.GetFilesAsync();
-
-                if (pickedFiles.Count > 0)
-                {
-                    storageItems = pickedFiles;
-
-                    // Display the file names in the UI.
-                    string selectedFiles = string.Empty;
-                    for (int index = 0; index < pickedFiles.Count; index++)
-                    {
-                        selectedFiles += pickedFiles[index].Name;
-
-                        if (index != (pickedFiles.Count - 1))
-                        {
-                            selectedFiles += ", ";
-                        }
-                    }
-                }
-                DataTransferManager.GetForCurrentView().DataRequested += ShareFile_DataRequested;
-                DataTransferManager.ShowShareUI();
-                ChangeLoading(false);
-            }
-            if (MoreOptionsList.SelectedIndex == 3)
-            {
-                ChangeLoading(true);
-                if (MainEdit.Document.Selection.Length == 0)
-                {
-                    DataTransferManager.GetForCurrentView().DataRequested += ShareTextAll_DataRequested;
-                    DataTransferManager.ShowShareUI();
-                }
-                else
-                {
-                    DataTransferManager.GetForCurrentView().DataRequested += ShareText_DataRequested;
-                    DataTransferManager.ShowShareUI();
-                }
-                ChangeLoading(false);
-            }
-            if (MoreOptionsList.SelectedIndex == 4)
-            {
-                ChangeLoading(true);
-                MainEdit.Document.SetText(TextSetOptions.None, "");
-                ChangeLoading(false);
-            }
-            if (MoreOptionsList.SelectedIndex == 5) Application.Current.Exit();
-            MoreOptionsList.SelectedItem = null;
-        }
-
         private IReadOnlyList<StorageFile> storageItems;
-
-        private void ShareText_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
-        {
-            args.Request.Data.SetText(MainEdit.Document.Selection.Text);
-            args.Request.Data.Properties.Title = "FastNote";
-            args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_SelectedTextDesc");
-        }
-
-        private void ShareTextAll_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
-        {
-            MainEdit.Document.GetText(TextGetOptions.None, out string data);
-            args.Request.Data.SetText(data);
-            args.Request.Data.Properties.Title = "FastNote";
-            args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_WholeTextDesc");
-        }
-
-        private void ShareFile_DataRequested(DataTransferManager sender, DataRequestedEventArgs args)
-        {
-            args.Request.Data.SetStorageItems(storageItems);
-            args.Request.Data.Properties.Title = "FastNote";
-            args.Request.Data.Properties.Description = resourceLoader.GetString("ShareUI_FileDesc");
-        }
 
         private void MainView_PaneOpening(object sender, RoutedEventArgs e)
         {
@@ -550,8 +233,6 @@ namespace FastNote
 
         private void MainEdit_SelectionChanged(object sender, RoutedEventArgs e)
         {
-            if (MainEdit.Document.Selection.Length == 0) { ShareSelectedTextContent.Visibility = Visibility.Collapsed; ShareWholeTextContent.Visibility = Visibility.Visible; }
-            else { ShareWholeTextContent.Visibility = Visibility.Collapsed; ShareSelectedTextContent.Visibility = Visibility.Visible; }
             fileMenu.MainEditSelectionLength = MainEdit.Document.Selection.Length;
         }
 
@@ -726,78 +407,6 @@ namespace FastNote
             CharCount.Text = Convert.ToString(charcount.Length - 1);
         }
 
-        private void ShareRTF_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 0;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void SharePDF_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 1;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareHTML_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 2;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareDOCX_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 3;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareDOC_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 4;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareEPUB_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 5;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareTXT_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 6;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareJPG_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 7;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void SharePNG_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 8;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareBMP_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 9;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareGIF_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 10;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
-        private void ShareTIFF_Click(object sender, RoutedEventArgs e)
-        {
-            Settings.Default.ShareFileType = 11;
-            MoreOptionsList.SelectedItem = ShareItem;
-        }
-
         private void FontFamBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string font = FontList[Settings.Default.FontFamily];
@@ -876,11 +485,6 @@ namespace FastNote
             if (Settings.Default.ThemeDark == true) FontSizeButtons.RequestedTheme = ElementTheme.Dark;
         }
 
-        private void ShareMenu_OptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            ShareMenu_OptionsList.SelectedItem = null;
-        }
-
         private void Draggable1_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
         {
             Window.Current.SetTitleBar(Draggable1);
@@ -954,44 +558,6 @@ namespace FastNote
         private void DonateLink_Click(object sender, RoutedEventArgs e)
         {
             DonateFlyout.ShowAt(sender as FrameworkElement);
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            if (Settings.Default.ThemeDefault == true)
-            {
-                var c = Application.Current.Resources["SystemAltHighColor"];
-                Debug.WriteLine(c.ToString());
-                if (c.ToString() == "#FF000000")
-                {
-                    BitmapImage docx = new BitmapImage(new Uri("ms-appx:///Misc/wordnewwhite (Custom).png"));
-                    BitmapImage doc = new BitmapImage(new Uri("ms-appx:///Misc/wordoldwhite (Custom).png"));
-                    docx_image.Source = docx;
-                    doc_image.Source = doc;
-                }
-                else
-                {
-                    BitmapImage docx = new BitmapImage(new Uri("ms-appx:///Misc/wordnewblack (Custom).png"));
-                    BitmapImage doc = new BitmapImage(new Uri("ms-appx:///Misc/wordoldblack (Custom).png"));
-                    docx_image.Source = docx;
-                    doc_image.Source = doc;
-                }
-            }
-            else if (Settings.Default.ThemeDark == true)
-            {
-                BitmapImage docx = new BitmapImage(new Uri("ms-appx:///Misc/wordnewwhite (Custom).png"));
-                BitmapImage doc = new BitmapImage(new Uri("ms-appx:///Misc/wordoldwhite (Custom).png"));
-                docx_image.Source = docx;
-                doc_image.Source = doc;
-            }
-            else if (Settings.Default.ThemeLight == true)
-            {
-                BitmapImage docx = new BitmapImage(new Uri("ms-appx:///Misc/wordnewblack (Custom).png"));
-                BitmapImage doc = new BitmapImage(new Uri("ms-appx:///Misc/wordoldblack (Custom).png"));
-                docx_image.Source = docx;
-                doc_image.Source = doc;
-
-            }
         }
 
         public async void SfSave(StorageFile docfile, syncfusion.Syncfusion.DocIO.FormatType formatType)
@@ -1068,15 +634,6 @@ namespace FastNote
             document.Save(saveStram, FormatType.Rtf);
             stream.Dispose();
             saveStram.Dispose();
-        }        
-
-        private void ImportMenu_OptionsList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (ImportMenu_OptionsList.SelectedItem != null)
-            {
-                Import(ImportMenu_OptionsList.SelectedIndex);
-                ImportMenu_OptionsList.SelectedItem = null;
-            }
         }
 
         private void ImportBefore_Tapped(object sender, Windows.UI.Xaml.Input.TappedRoutedEventArgs e)
