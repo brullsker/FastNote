@@ -65,6 +65,7 @@ namespace FastNote
 
         Controls.FileMenuControl fileMenu;
         Controls.SettingsMenuControl settingsMenu;
+        Controls.AboutMenuControl aboutMenu;
 
         public MainPage()
         {
@@ -105,6 +106,7 @@ namespace FastNote
             if (Settings.Default.ThemeLight == true) RequestedTheme = ElementTheme.Light;
             fileMenu = new Controls.FileMenuControl(this, MainEdit);
             settingsMenu = new Controls.SettingsMenuControl(this, MainEdit);
+            aboutMenu = new Controls.AboutMenuControl(this);
 
             LoadDocument();
         }
@@ -156,10 +158,13 @@ namespace FastNote
 
         void AddMenus()
         {
-            if (AboutAppTextBlock.Text == "1") AboutAppTextBlock.Text = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
-
             if (FileMenuPivotItem.Content != fileMenu) FileMenuPivotItem.Content = fileMenu;
             if (SettingsMenuPivotItem.Content != settingsMenu) SettingsMenuPivotItem.Content = settingsMenu;
+            if (AboutMenuPivotItem.Content != aboutMenu)
+            {
+                aboutMenu.AppVersion = string.Format("{0} {1}.{2}.{3}.{4}", "FASTNOTE", Package.Current.Id.Version.Major.ToString(), Package.Current.Id.Version.Minor.ToString(), Package.Current.Id.Version.Build, Package.Current.Id.Version.Revision);
+                AboutMenuPivotItem.Content = aboutMenu;
+            }
         }
 
         private async void Timer_Tick(object sender, object e)
@@ -285,7 +290,7 @@ namespace FastNote
             }
         }
 
-        private void DonateLink_Click(object sender, RoutedEventArgs e)
+        public void DonateLink_Click(object sender, RoutedEventArgs e)
         {
             DonateFlyout.ShowAt(sender as FrameworkElement);
         }

@@ -19,9 +19,28 @@ namespace FastNote.Controls
 {
     public sealed partial class AboutMenuControl : UserControl
     {
-        public AboutMenuControl()
+        MainPage mp;
+        public string AppVersion
+        {
+            get { return _appVersion; }
+            set
+            {
+                _appVersion = value;
+                AboutAppTextBlock.Text = AppVersion;
+            }
+        }
+        private string _appVersion;
+
+        public AboutMenuControl(MainPage m)
         {
             this.InitializeComponent();
+
+            mp = m;
+        }
+
+        private void DonateLink_Click(object sender, RoutedEventArgs e)
+        {
+            mp.DonateLink_Click(sender, e);
         }
     }
 }

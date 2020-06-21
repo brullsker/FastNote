@@ -121,120 +121,10 @@
                                 <TextBlock Text="Settings" x:Uid="More_SettingsHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
                         </PivotItem>
-                        <PivotItem>
+                        <PivotItem x:Name="AboutMenuPivotItem">
                             <PivotItem.Header>
                                 <TextBlock Text="About" x:Uid="More_AboutHeaderText" Style="{StaticResource TitleTextBlockStyle}" FontSize="20"/>
                             </PivotItem.Header>
-                            <ScrollViewer VerticalScrollMode="Auto" VerticalScrollBarVisibility="Hidden">
-                                <StackPanel Orientation="Vertical" Margin="0,12">
-                                    <Grid Margin="0,0,0,6">
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="Auto"/>
-                                            <ColumnDefinition/>
-                                        </Grid.ColumnDefinitions>
-                                        <Border Margin="0,0,12,0" Width="136" Height="136">
-                                            <Border.Background>
-                                                <SolidColorBrush Color="{ThemeResource SystemColorBackgroundColor}" Opacity="0.1"/>
-                                            </Border.Background>
-                                            <Grid>
-                                                <Image Source="ms-appx:///Assets/StoreLogo.png" Width="68"/>
-                                            </Grid>
-                                        </Border>
-                                        <StackPanel Grid.Column="1" Orientation="Vertical" VerticalAlignment="Center">
-                                            <TextBlock Text="1" x:Name="AboutAppTextBlock" Style="{StaticResource BaseTextBlockStyle}" HorizontalAlignment="Center" Margin="0,0,0,6"/>
-                                            <TextBlock Text="&#xA9; 2018-2020 by brullsker and all contributors" HorizontalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" TextAlignment="Center"/>
-                                            <HyperlinkButton x:Uid="More_About_DevEmail" Content="Mail" NavigateUri="mailto:brullsker@outlook.de" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
-                                            <HyperlinkButton Content="Telegram" NavigateUri="https://t.me/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
-                                            <HyperlinkButton Content="Twitter" NavigateUri="https://t.co/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
-                                        </StackPanel>
-                                    </Grid>
-                                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                                        <TextBlock Text="Contribute to FastNote:" x:Uid="More_About_Contribute" Style="{StaticResource BaseTextBlockStyle}"/>
-                                        <HyperlinkButton Content=" GitHub" NavigateUri="https://github.com/brullsker/FastNote" Padding="0" Style="{StaticResource TextBlockButtonStyle}"/>
-                                    </StackPanel>
-                                    <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
-                                        <TextBlock Text="Support the development:" x:Uid="More_About_Donate" Style="{StaticResource BaseTextBlockStyle}"/>
-                                        <HyperlinkButton Content=" Donate!" x:Uid="DonateText" x:Name="DonateLink" Click="DonateLink_Click" Padding="0" Style="{StaticResource TextBlockButtonStyle}">
-                                            <FlyoutBase.AttachedFlyout>
-                                                <Flyout x:Name="DonateFlyout">
-                                                    <Flyout.FlyoutPresenterStyle>
-                                                        <Style TargetType="FlyoutPresenter">
-                                                            <Setter Property="Background" Value="Transparent" />
-                                                            <Setter Property="Padding" Value="0" />
-                                                        </Style>
-                                                    </Flyout.FlyoutPresenterStyle>
-                                                    <local:DonateFlyoutControl/>
-                                                </Flyout>
-                                            </FlyoutBase.AttachedFlyout>
-                                        </HyperlinkButton>
-                                    </StackPanel>
-                                    <TextBlock Text="Used Libraries and SDKs" x:Uid="More_About_Libs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0"/>
-                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
-                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                            <TextBlock Text="Windows Community Toolkit"/>
-                                            <StackPanel Orientation="Horizontal">
-                                                <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/Microsoft/UWPCommunityToolkit" Padding="0"/>
-                                                <TextBlock Text="Licensed under the MIT License" x:Uid="More_About_LicenseMIT" FontSize="12" Margin="12,0,0,0"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
-                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                            <TextBlock Text="Observable Settings"/>
-                                            <StackPanel Orientation="Horizontal">
-                                                <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/joseangelmt/ObservableSettings" Padding="0"/>
-                                                <TextBlock Text="Public domain" x:Uid="More_About_NoLicense" FontSize="12" Margin="12,0,0,0"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
-                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                            <TextBlock Text="Syncfusion Essential Studio UWP"/>
-                                            <StackPanel Orientation="Horizontal">
-                                                <HyperlinkButton Content="Website" x:Uid="WebsiteText" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://www.syncfusion.com/uwp-ui-controls" Padding="0"/>
-                                                <TextBlock Text="Proprietary" x:Uid="ProprietaryText" FontSize="12" Margin="12,0,0,0"/>
-                                            </StackPanel>
-                                        </StackPanel>
-                                    </Border>
-                                    <TextBlock Text="Translations" x:Uid="More_About_Langs" Style="{StaticResource BaseTextBlockStyle}" Margin="0,12,0,0"/>
-                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
-                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                            <TextBlock Text="Deutsch - brullsker"/>
-                                            <HyperlinkButton Content="Mail" x:Uid="More_About_DevEmail" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="mailto:brullsker@outlook.de" Padding="0"/>
-                                        </StackPanel>
-                                    </Border>
-                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
-                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                            <TextBlock Text="Português do Brasil - JNMarcos"/>
-                                            <HyperlinkButton Content="GitHub" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://github.com/JNMarcos" Padding="0"/>
-                                        </StackPanel>
-                                    </Border>
-                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
-                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                            <TextBlock Text="Հայերեն - Hmayak"/>
-                                            <HyperlinkButton Content="Mail" x:Uid="More_About_DevEmail" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="mailto:hmayak007@live.com" Padding="0"/>
-                                        </StackPanel>
-                                    </Border>
-                                    <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
-                                        <StackPanel Orientation="Vertical" Margin="6,2,6,6">
-                                            <TextBlock Text="es, fr, it, ja, nl, pl, pt-PT, ru, zh-CN - powered by DeepL" Style="{StaticResource BodyTextBlockStyle}"/>
-                                            <HyperlinkButton Content="DeepL Translator" FontSize="12" Style="{StaticResource TextBlockButtonStyle}" NavigateUri="https://deepl.com/translator" Padding="0"/>
-                                        </StackPanel>
-                                    </Border>
-                                    <MenuFlyoutSeparator Margin="0,12" Background="{ThemeResource SystemControlBackgroundChromeMediumRevealBorderBrush}"/>
-                                    <controls:Expander Header="Privacy Policy" x:Uid="More_About_PP" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                                        <TextBlock Style="{StaticResource CaptionTextBlockStyle}" Margin="6">
-                                            This software does not send any information regarding the user and the user's input to any third party unless the user is explicitly allowing to do so. This does not apply to crash reports and other telemetry automatically sent to the developer or Microsoft via Microsoft Store services in order to improve the software and find issues in it.<LineBreak/>
-                                            In case of any further inquiries regarding privacy in this software, use the contact information above.
-                                        </TextBlock>
-                                    </controls:Expander>
-                                    <controls:Expander Header="The MIT License" x:Uid="More_About_MIT" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Margin="0,6,0,0">
-                                        <TextBlock Margin="6" Style="{StaticResource CaptionTextBlockStyle}">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: <LineBreak/> <LineBreak/>
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. <LineBreak/> <LineBreak/>
-THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</TextBlock>
-                                    </controls:Expander>
-                                </StackPanel>
-                            </ScrollViewer>
                         </PivotItem>
                     </Pivot>
                     <CommandBar Background="Transparent" Grid.Row="1" HorizontalAlignment="Left" DefaultLabelPosition="Right">
@@ -256,5 +146,16 @@ THE SOFTWARE IS PROVIDED AS IS, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
                 <TextBlock Foreground="White" Text="Working on it..." x:Uid="LoadingText" VerticalAlignment="Center" Margin="12,0,0,0"/>
             </StackPanel>
         </controls:Loading>
+        <FlyoutBase.AttachedFlyout>
+            <Flyout x:Name="DonateFlyout">
+                <Flyout.FlyoutPresenterStyle>
+                    <Style TargetType="FlyoutPresenter">
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="Padding" Value="0" />
+                    </Style>
+                </Flyout.FlyoutPresenterStyle>
+                <local:DonateFlyoutControl/>
+            </Flyout>
+        </FlyoutBase.AttachedFlyout>
     </Grid>
 </Page>
