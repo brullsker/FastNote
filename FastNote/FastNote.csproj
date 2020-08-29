@@ -268,9 +268,6 @@
     <PackageReference Include="Syncfusion.SfPdfViewer.UWP">
       <Version>17.4.0.41</Version>
     </PackageReference>
-    <PackageReference Include="XamlBrewer.Uwp.BackDrop">
-      <Version>1.0.0</Version>
-    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="Microsoft.VCLibs, Version=14.0">

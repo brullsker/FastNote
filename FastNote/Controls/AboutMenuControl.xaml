@@ -31,7 +31,7 @@
                         <TextBlock Text="&#xA9; 2018-2020 by brullsker and all contributors" HorizontalAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" TextAlignment="Center"/>
                         <HyperlinkButton x:Uid="More_About_DevEmail" Content="Mail" NavigateUri="mailto:brullsker@outlook.de" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
                         <HyperlinkButton Content="Telegram" NavigateUri="https://t.me/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
-                        <HyperlinkButton Content="Twitter" NavigateUri="https://t.co/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
+                        <HyperlinkButton Content="Twitter" NavigateUri="https://twitter.com/brullsker" Style="{StaticResource TextBlockButtonStyle}" Padding="0" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Grid>
                 <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
